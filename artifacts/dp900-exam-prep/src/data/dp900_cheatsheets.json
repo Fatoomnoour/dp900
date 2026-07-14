@@ -1,0 +1,134 @@
+[
+  {
+    "id": "cs-data-types",
+    "topic": "أنواع البيانات",
+    "color": "blue",
+    "rules": [
+      { "keyword": "Tables / rows / columns / fixed schema", "answer": "Structured Data → Azure SQL Database" },
+      { "keyword": "JSON / XML / flexible fields / nested", "answer": "Semi-structured → Azure Cosmos DB" },
+      { "keyword": "Images / videos / audio / binary / files", "answer": "Unstructured → Azure Blob Storage" }
+    ]
+  },
+  {
+    "id": "cs-workload",
+    "topic": "نوع الـ Workload",
+    "color": "purple",
+    "rules": [
+      { "keyword": "Orders / payments / bank transfer / POS / transactions", "answer": "OLTP → Azure SQL Database" },
+      { "keyword": "Reports / trends / aggregations / dashboard / data warehouse", "answer": "OLAP → Azure Synapse Analytics" }
+    ]
+  },
+  {
+    "id": "cs-processing",
+    "topic": "نوع المعالجة",
+    "color": "green",
+    "rules": [
+      { "keyword": "Transform before load", "answer": "ETL (Extract → Transform → Load)" },
+      { "keyword": "Load before transform", "answer": "ELT (Extract → Load → Transform)" },
+      { "keyword": "Daily / monthly / scheduled / after threshold", "answer": "Batch Processing → Azure Data Factory" },
+      { "keyword": "Real-time / sensors / telemetry / rolling average", "answer": "Streaming → Azure Stream Analytics" }
+    ]
+  },
+  {
+    "id": "cs-analytics-types",
+    "topic": "أنواع التحليل",
+    "color": "orange",
+    "rules": [
+      { "keyword": "What happened? (historical charts/reports)", "answer": "Descriptive Analytics" },
+      { "keyword": "Why did it happen?", "answer": "Diagnostic Analytics" },
+      { "keyword": "What will happen? / forecast / predict", "answer": "Predictive Analytics" },
+      { "keyword": "What action should we take? / recommend", "answer": "Prescriptive Analytics" },
+      { "keyword": "AI / speech / image / text understanding", "answer": "Cognitive Analytics" }
+    ]
+  },
+  {
+    "id": "cs-sql",
+    "topic": "SQL Categories",
+    "color": "cyan",
+    "rules": [
+      { "keyword": "CREATE / ALTER / DROP / TRUNCATE", "answer": "DDL – Data Definition Language" },
+      { "keyword": "SELECT / INSERT / UPDATE / DELETE", "answer": "DML – Data Manipulation Language" },
+      { "keyword": "GRANT / REVOKE / DENY", "answer": "DCL – Data Control Language" }
+    ]
+  },
+  {
+    "id": "cs-roles",
+    "topic": "أدوار البيانات",
+    "color": "indigo",
+    "rules": [
+      { "keyword": "Backup / restore / security / performance / availability", "answer": "Database Administrator (DBA)" },
+      { "keyword": "Pipelines / ingestion / transformation / data lake", "answer": "Data Engineer" },
+      { "keyword": "Reports / dashboards / charts / business insights", "answer": "Data Analyst" },
+      { "keyword": "Machine learning / hidden patterns / prediction models", "answer": "Data Scientist" }
+    ]
+  },
+  {
+    "id": "cs-azure-sql",
+    "topic": "Azure SQL Options",
+    "color": "teal",
+    "rules": [
+      { "keyword": "Managed single DB, cloud-native, SaaS apps", "answer": "Azure SQL Database (PaaS)" },
+      { "keyword": "High SQL Server compatibility, managed, migration", "answer": "Azure SQL Managed Instance (PaaS)" },
+      { "keyword": "Full OS + SQL Server control, lift-and-shift", "answer": "SQL Server on Azure VM (IaaS)" }
+    ]
+  },
+  {
+    "id": "cs-storage",
+    "topic": "Azure Storage Services",
+    "color": "emerald",
+    "rules": [
+      { "keyword": "Images / audio / video / binary / object storage", "answer": "Azure Blob Storage" },
+      { "keyword": "SMB / NFS / shared folder replacement", "answer": "Azure Files" },
+      { "keyword": "PartitionKey + RowKey / NoSQL key-value", "answer": "Azure Table Storage" },
+      { "keyword": "Data lake / hierarchical namespace / ACLs / big data", "answer": "ADLS Gen2" },
+      { "keyword": "JSON / global / NoSQL / low latency / flexible", "answer": "Azure Cosmos DB" }
+    ]
+  },
+  {
+    "id": "cs-powerbi",
+    "topic": "Power BI",
+    "color": "yellow",
+    "rules": [
+      { "keyword": "Create / model / design reports", "answer": "Power BI Desktop" },
+      { "keyword": "Publish / share / collaborate / dashboards", "answer": "Power BI Service" },
+      { "keyword": "Single page canvas of KPI tiles", "answer": "Dashboard (Service only)" },
+      { "keyword": "Multiple pages with interactive visuals", "answer": "Report" },
+      { "keyword": "Fixed layout, printable, pixel-perfect", "answer": "Paginated Report" }
+    ]
+  },
+  {
+    "id": "cs-analytics-services",
+    "topic": "Azure Analytics Services",
+    "color": "pink",
+    "rules": [
+      { "keyword": "Pipelines / orchestration / data movement / integration", "answer": "Azure Data Factory" },
+      { "keyword": "Enterprise data warehouse / MPP / large-scale SQL analytics", "answer": "Azure Synapse Analytics" },
+      { "keyword": "Spark / ML / big data / collaborative notebooks", "answer": "Azure Databricks" },
+      { "keyword": "Real-time stream processing / SQL on streams", "answer": "Azure Stream Analytics" },
+      { "keyword": "KQL / log analytics / time-series / telemetry", "answer": "Azure Data Explorer" },
+      { "keyword": "Reports / dashboards / BI / visualizations", "answer": "Power BI" }
+    ]
+  },
+  {
+    "id": "cs-acid",
+    "topic": "ACID Properties",
+    "color": "red",
+    "rules": [
+      { "keyword": "All-or-nothing / Rollback on failure", "answer": "Atomicity" },
+      { "keyword": "Data always in valid state / business rules enforced", "answer": "Consistency" },
+      { "keyword": "Concurrent transactions don't see each other's interim state", "answer": "Isolation" },
+      { "keyword": "Committed data persists after crash / power failure", "answer": "Durability" }
+    ]
+  },
+  {
+    "id": "cs-cosmos-apis",
+    "topic": "Azure Cosmos DB APIs",
+    "color": "violet",
+    "rules": [
+      { "keyword": "JSON documents + SQL-style queries (default)", "answer": "Cosmos DB for NoSQL" },
+      { "keyword": "Graph database / nodes + edges / relationships", "answer": "Cosmos DB for Apache Gremlin" },
+      { "keyword": "Key-value style / PartitionKey + RowKey", "answer": "Cosmos DB for Table" },
+      { "keyword": "MongoDB-compatible document workloads", "answer": "Cosmos DB for MongoDB" }
+    ]
+  }
+]

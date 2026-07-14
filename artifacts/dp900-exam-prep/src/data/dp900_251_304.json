@@ -1,0 +1,844 @@
+{
+  "source": "corrected200.pdf",
+  "range": "251-304",
+  "questions": [
+    {
+      "id": "251",
+      "sourceNumber": 251,
+      "sourcePage": 180,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q251-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q251-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "252",
+      "sourceNumber": 252,
+      "sourcePage": 181,
+      "topic": "DP-900 Source Bank",
+      "question": "Which type of Azure resource supports the serverless configuration of an Azure SQL database?",
+      "type": "single_choice",
+      "options": [
+        "SQL Server on Azure Virtual Machines",
+        "an Azure SQL Database elastic pool",
+        "a single database in Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "correctAnswer": "a single database in Azure SQL Database"
+    },
+    {
+      "id": "253",
+      "sourceNumber": 253,
+      "sourcePage": 181,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q253-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q253-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "254",
+      "sourceNumber": 254,
+      "sourcePage": 182,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the data processing languages to the appropriate real-time analytics services. To answer, drag the appropriate language from the column on the left to its service on the right. Each language may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q254-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q254-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "255",
+      "sourceNumber": 255,
+      "sourcePage": 183,
+      "topic": "DP-900 Source Bank",
+      "question": "Which Azure Cosmos DB API should you use for a graph database?",
+      "type": "single_choice",
+      "options": [
+        "Table",
+        "Cassandra",
+        "NoSQL",
+        "Gremlin"
+      ],
+      "correctAnswer": "Gremlin"
+    },
+    {
+      "id": "256",
+      "sourceNumber": 256,
+      "sourcePage": 183,
+      "topic": "DP-900 Source Bank",
+      "question": "In an analytical data model, which type of table contains entities that are used to aggregate numeric values, where each entity is represented by a row with a unique key value?",
+      "type": "single_choice",
+      "options": [
+        "bridge",
+        "dimension",
+        "fact"
+      ],
+      "correctAnswer": "fact"
+    },
+    {
+      "id": "257",
+      "sourceNumber": 257,
+      "sourcePage": 183,
+      "topic": "DP-900 Source Bank",
+      "question": "What is a difference between structured data and semi-structured data?",
+      "type": "single_choice",
+      "options": [
+        "Structured data has a fixed schema and semi-structured data has a flexible schema.",
+        "Only Structured data supports entities.",
+        "Structured data has a flexible schema and semi-structured data has a fixed schema.",
+        "Only Structured data supports attributes."
+      ],
+      "correctAnswer": "Structured data has a fixed schema and semi-structured data has a flexible schema."
+    },
+    {
+      "id": "258",
+      "sourceNumber": 258,
+      "sourcePage": 184,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q258-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q258-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "259",
+      "sourceNumber": 259,
+      "sourcePage": 184,
+      "topic": "DP-900 Source Bank",
+      "question": "A bank needs to ensure that after an account transfer transaction completes, the revised account balances persists even if the database system hosting the transaction becomes temporarily unavailable. Of which ACID semantic is this an example?",
+      "type": "single_choice",
+      "options": [
+        "durability",
+        "isolation",
+        "atomicity",
+        "consistency"
+      ],
+      "correctAnswer": "durability"
+    },
+    {
+      "id": "260",
+      "sourceNumber": 260,
+      "sourcePage": 185,
+      "topic": "DP-900 Source Bank",
+      "question": "Which statement is an example of Data Manipulation Language (DML)?",
+      "type": "single_choice",
+      "options": [
+        "INSERT",
+        "ALTER",
+        "DROP",
+        "CREATE"
+      ],
+      "correctAnswer": "INSERT"
+    },
+    {
+      "id": "261",
+      "sourceNumber": 261,
+      "sourcePage": 185,
+      "topic": "DP-900 Source Bank",
+      "question": "Which language is used to define queries in Azure Synapse Data Explorer?",
+      "type": "single_choice",
+      "options": [
+        "Bash",
+        "PowerShell",
+        "KQL",
+        "SQL"
+      ],
+      "correctAnswer": "KQL"
+    },
+    {
+      "id": "262",
+      "sourceNumber": 262,
+      "sourcePage": 185,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q262-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q262-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "263",
+      "sourceNumber": 263,
+      "sourcePage": 186,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q263-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q263-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "264",
+      "sourceNumber": 264,
+      "sourcePage": 186,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q264-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q264-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "265",
+      "sourceNumber": 265,
+      "sourcePage": 187,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q265-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q265-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "266",
+      "sourceNumber": 266,
+      "sourcePage": 188,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the Azure Cosmos DB APIs to the appropriate data structures. To answer, drag the appropriate API from the column on the left to its data structure on the right. Each API may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q266-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q266-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "267",
+      "sourceNumber": 267,
+      "sourcePage": 189,
+      "topic": "DP-900 Source Bank",
+      "question": "Which Azure Cosmos DB API should you use for a graph database?",
+      "type": "single_choice",
+      "options": [
+        "Azure Cosmos DB for Table",
+        "Azure Cosmos DB for Apache Cassandra",
+        "Azure Cosmos DB for NoSQL",
+        "Azure Cosmos DB for Apache Gremlin"
+      ],
+      "correctAnswer": "Azure Cosmos DB for Apache Gremlin"
+    },
+    {
+      "id": "268",
+      "sourceNumber": 268,
+      "sourcePage": 189,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q268-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q268-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "269",
+      "sourceNumber": 269,
+      "sourcePage": 190,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the cloud service model to the appropriate Azure relational database service. To answer, drag the appropriate cloud service model from the column on the left to its service on the right. Each model may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q269-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q269-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "270",
+      "sourceNumber": 270,
+      "sourcePage": 190,
+      "topic": "DP-900 Source Bank",
+      "question": "A bank needs to ensure that a transaction involving debiting funds from a source account and crediting the same funds to a destination account must complete both actions. If either action falls to complete, the other action must fail. Of which ACID semantic is this an example?",
+      "type": "single_choice",
+      "options": [
+        "consistency",
+        "durability",
+        "atomicity",
+        "isolation"
+      ],
+      "correctAnswer": "atomicity"
+    },
+    {
+      "id": "271",
+      "sourceNumber": 271,
+      "sourcePage": 191,
+      "topic": "DP-900 Source Bank",
+      "question": "Blob rehydration occurs in Azure Blob storage when a blob moves between which access tiers?",
+      "type": "single_choice",
+      "options": [
+        "Hot to Cool",
+        "Hot to Archive",
+        "Cool to Archive",
+        "Archive to Cool"
+      ],
+      "correctAnswer": "Archive to Cool"
+    },
+    {
+      "id": "272",
+      "sourceNumber": 272,
+      "sourcePage": 191,
+      "topic": "DP-900 Source Bank",
+      "question": "Which activity is most common for transactional workloads?",
+      "type": "single_choice",
+      "options": [
+        "recording small units of work events in real time",
+        "aggregating massive amounts of data",
+        "producing complex reports",
+        "performing self-service data exploration"
+      ],
+      "correctAnswer": "recording small units of work events in real time"
+    },
+    {
+      "id": "273",
+      "sourceNumber": 273,
+      "sourcePage": 191,
+      "topic": "DP-900 Source Bank",
+      "question": "You have a banking application that transfers money in to and out of accounts. Of which type of solution is this is an example?",
+      "type": "single_choice",
+      "options": [
+        "online transaction processing (OLTP)",
+        "online analytical processing (OLAP)",
+        "extract, transform and load (ETL)",
+        "a data warehouse"
+      ],
+      "correctAnswer": "online transaction processing (OLTP)"
+    },
+    {
+      "id": "274",
+      "sourceNumber": 274,
+      "sourcePage": 191,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the job roles to the appropriate tasks. To answer, drag the appropriate job role from the column on the left to its task on the right. Each role may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q274-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q274-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "275",
+      "sourceNumber": 275,
+      "sourcePage": 192,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the job roles to the appropriate tasks. To answer, drag the appropriate role from the column on the left to its task on the right. Each role may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q275-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q275-answer-1.png"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "276A",
+      "sourceNumber": 276,
+      "sourcePage": 193,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the Azure Data Lake Storage Gen 2 terms to the appropriate levels in the hierarchy. To answer, drag the appropriate term from the column on the left to its level on the right. Each term may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q276A-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q276A-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "276B",
+      "sourceNumber": 276,
+      "sourcePage": 194,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to accept and store large quantities of IoT streaming data. Which database solution should you use?",
+      "type": "single_choice",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure Database for MariaDB",
+        "Azure Cache for Redis",
+        "Azure Cosmos DB"
+      ],
+      "correctAnswer": "Azure Cosmos DB"
+    },
+    {
+      "id": "277",
+      "sourceNumber": 277,
+      "sourcePage": 195,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the job roles to the appropriate tasks. To answer, drag the appropriate role from the column on the left to its task on the right. Each role may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q277-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q277-answer-1.png"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "278",
+      "sourceNumber": 278,
+      "sourcePage": 195,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q278-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q278-answer-1.png"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "279",
+      "sourceNumber": 279,
+      "sourcePage": 196,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q279-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q279-answer-1.png"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "280",
+      "sourceNumber": 280,
+      "sourcePage": 197,
+      "topic": "DP-900 Source Bank",
+      "question": "SELECT, INSERT, and UPDATE are examples of which type of SQL statement?",
+      "type": "single_choice",
+      "options": [
+        "Data Definition Language (DDL)",
+        "Data Control Language (DCL)",
+        "Data Manipulation Language (DML)"
+      ],
+      "correctAnswer": "Data Manipulation Language (DML)"
+    },
+    {
+      "id": "281",
+      "sourceNumber": 281,
+      "sourcePage": 197,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q281-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q281-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "282",
+      "sourceNumber": 282,
+      "sourcePage": 197,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q282-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q282-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "283",
+      "sourceNumber": 283,
+      "sourcePage": 198,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q283-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q283-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "284",
+      "sourceNumber": 284,
+      "sourcePage": 199,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q284-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q284-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "285",
+      "sourceNumber": 285,
+      "sourcePage": 199,
+      "topic": "DP-900 Source Bank",
+      "question": "How is raw data stored in a data lakehouse?",
+      "type": "single_choice",
+      "options": [
+        "as tables",
+        "as queues",
+        "as files",
+        "as disks"
+      ],
+      "correctAnswer": "as files"
+    },
+    {
+      "id": "286",
+      "sourceNumber": 286,
+      "sourcePage": 199,
+      "topic": "DP-900 Source Bank",
+      "question": "What is the typical latency for read operations against media files stored in the Cool access tier of Azure Blob Storage?",
+      "type": "single_choice",
+      "options": [
+        "a few milliseconds",
+        "a few seconds",
+        "a few minutes",
+        "a few hours"
+      ],
+      "correctAnswer": "a few milliseconds"
+    },
+    {
+      "id": "287",
+      "sourceNumber": 287,
+      "sourcePage": 200,
+      "topic": "DP-900 Source Bank",
+      "question": "Which three services support Apache Spark? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "type": "multiple_choice",
+      "options": [
+        "Azure Data Explorer",
+        "Azure Synapse Analytics",
+        "Azure Databricks",
+        "Azure Stream Analytics",
+        "Azure HDInsight"
+      ],
+      "correctAnswers": [
+        "Azure Synapse Analytics",
+        "Azure Databricks",
+        "Azure HDInsight"
+      ]
+    },
+    {
+      "id": "288",
+      "sourceNumber": 288,
+      "sourcePage": 200,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q288-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q288-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "289",
+      "sourceNumber": 289,
+      "sourcePage": 201,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q289-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q289-answer-1.png"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "290",
+      "sourceNumber": 290,
+      "sourcePage": 201,
+      "topic": "DP-900 Source Bank",
+      "question": "You have data in a tabular format as shown in the following table. Of which type of data is this an example?",
+      "promptImages": [
+        "/dp900/question-assets/q290-prompt-1.jpg"
+      ],
+      "type": "single_choice",
+      "options": [
+        "unstructured data",
+        "semi-structured data",
+        "document",
+        "structured data"
+      ],
+      "correctAnswer": "structured data"
+    },
+    {
+      "id": "291",
+      "sourceNumber": 291,
+      "sourcePage": 202,
+      "topic": "DP-900 Source Bank",
+      "question": "What can you use to create data ingestion pipelines?",
+      "type": "single_choice",
+      "options": [
+        "Azure HDInsight",
+        "Azure SQL Database",
+        "Azure Data Factory",
+        "Azure Cosmos DB"
+      ],
+      "correctAnswer": "Azure Data Factory"
+    },
+    {
+      "id": "292",
+      "sourceNumber": 292,
+      "sourcePage": 202,
+      "topic": "DP-900 Source Bank",
+      "question": "Which service is optimized for IoT scenarios that involve streaming time series data?",
+      "type": "single_choice",
+      "options": [
+        "SQL Server on Azure Virtual Machines",
+        "Azure SQL Managed Instance",
+        "Azure SQL Database",
+        "Azure SQL Edge"
+      ],
+      "correctAnswer": "Azure SQL Edge"
+    },
+    {
+      "id": "293",
+      "sourceNumber": 293,
+      "sourcePage": 202,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q293-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q293-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "294",
+      "sourceNumber": 294,
+      "sourcePage": 203,
+      "topic": "DP-900 Source Bank",
+      "question": "Which statement is an example of Data Definition Language (DDL)?",
+      "type": "single_choice",
+      "options": [
+        "SELECT",
+        "INSERT",
+        "CREATE",
+        "MERGE"
+      ],
+      "correctAnswer": "CREATE"
+    },
+    {
+      "id": "295",
+      "sourceNumber": 295,
+      "sourcePage": 203,
+      "topic": "DP-900 Source Bank",
+      "question": "What is the responsibility of a database administrator?",
+      "type": "single_choice",
+      "options": [
+        "applying data cleaning routines",
+        "creating data visualizations",
+        "managing data integration processes",
+        "storing backup copies of data"
+      ],
+      "correctAnswer": "storing backup copies of data"
+    },
+    {
+      "id": "296",
+      "sourceNumber": 296,
+      "sourcePage": 203,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q296-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q296-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "297",
+      "sourceNumber": 297,
+      "sourcePage": 204,
+      "topic": "DP-900 Source Bank",
+      "question": "You have the following T-SQL statement. SELECT o.OrderNo, o.OrderDate, c.Address, c.City FROM Order AS o JOIN Customer AS c ON o.Customer = c.ID; What is the function of the ON clause?",
+      "type": "single_choice",
+      "options": [
+        "to update data in the Customer table",
+        "to match data in the Customer table to data in the Order table",
+        "to define an alias for the Customer table",
+        "to update data in the Order table"
+      ],
+      "correctAnswer": "to match data in the Customer table to data in the Order table"
+    },
+    {
+      "id": "298",
+      "sourceNumber": 298,
+      "sourcePage": 204,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q298-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q298-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "299",
+      "sourceNumber": 299,
+      "sourcePage": 205,
+      "topic": "DP-900 Source Bank",
+      "question": "You have an Azure SQL database that contains tables for customers and orders. You need to create a query that will return the orders placed by each customer. Which two Transact-SOL statements should you include in the query? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+      "type": "multiple_choice",
+      "options": [
+        "INDEX",
+        "EXISTS",
+        "JOIN",
+        "ORDERBY",
+        "SELECT"
+      ],
+      "correctAnswers": [
+        "JOIN",
+        "SELECT"
+      ]
+    },
+    {
+      "id": "300",
+      "sourceNumber": 300,
+      "sourcePage": 205,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q300-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q300-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "301",
+      "sourceNumber": 301,
+      "sourcePage": 206,
+      "topic": "DP-900 Source Bank",
+      "question": "You have a database that stores data in the format shown in the following table. Of which type of database is this an example?",
+      "promptImages": [
+        "/dp900/question-assets/q301-prompt-1.jpg"
+      ],
+      "type": "single_choice",
+      "options": [
+        "column family",
+        "relational",
+        "key-value",
+        "document"
+      ],
+      "correctAnswer": "column family"
+    },
+    {
+      "id": "302",
+      "sourceNumber": 302,
+      "sourcePage": 206,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q302-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q302-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "303",
+      "sourceNumber": 303,
+      "sourcePage": 207,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q303-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q303-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "304",
+      "sourceNumber": 304,
+      "sourcePage": 208,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q304-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q304-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    }
+  ]
+}

@@ -1,0 +1,812 @@
+{
+  "source": "corrected200.pdf",
+  "range": "1-50",
+  "questions": [
+    {
+      "id": "1",
+      "sourceNumber": 1,
+      "sourcePage": 3,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q1-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q1-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "2",
+      "sourceNumber": 2,
+      "sourcePage": 3,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q2-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q2-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "3",
+      "sourceNumber": 3,
+      "sourcePage": 4,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q3-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q3-answer-1.jpg"
+      ],
+      "explanation": "Explanation: Extract, transform, and load (ETL) is a data pipeline used to collect data from various sources, transform the data according to business rules, and load it into a destination data store.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "4",
+      "sourceNumber": 4,
+      "sourcePage": 5,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q4-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q4-answer-1.jpg"
+      ],
+      "explanation": "Explanation: When to use batch processing. You might expect latencies when using batch processing. For many situations, however, this type of delay before the transfer of data begins is not a big issue - the processes that use this function are not mission critical at the exact moment.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "5",
+      "sourceNumber": 5,
+      "sourcePage": 6,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q5-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q5-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "6",
+      "sourceNumber": 6,
+      "sourcePage": 7,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the types of analytics that can be used to answer the business questions. To answer, drag the appropriate analytics type from the column on the left to its question on the right. Each analytics type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q6-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q6-answer-1.jpg",
+        "/dp900/question-assets/q6-answer-2.jpg"
+      ],
+      "explanation": "Box 1: Diagnostic Diagnostic Analytics: At this stage you can begin to answer some of those why questions. Historical data can begin to be measured against other data to answer the question of why something happened in the past. This is the process of gathering and interpreting different data sets to identify anomalies, detect patters, and determine relationships. Box 2: Prescriptive Prescriptive analytics is a combination of data, mathematical models, and various business rules to infer actions to influence future desired outcomes. Predictive analytics, broadly speaking, is a category of business intelligence that uses descriptive and predictive variables from the past to analyze and identify the likelihood of an unknown future outcome Box 3: Descriptive - Generally speaking, data analytics comes in four types: - Descriptive, to answer the question: What's happening? - Diagnostic, to answer the question: Why's happening? - Predictive, to answer the question: What will happen? - Prescriptive, to answer the question: What actions should we take?",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "7",
+      "sourceNumber": 7,
+      "sourcePage": 9,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) You have the following JSON document. Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the JSON document. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q7-prompt-1.jpg",
+        "/dp900/question-assets/q7-prompt-2.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q7-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "8",
+      "sourceNumber": 8,
+      "sourcePage": 12,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) You are reviewing the data model shown in the following exhibit. Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic. NOTE: Each correct selection is worth one point",
+      "promptImages": [
+        "/dp900/question-assets/q8-prompt-1.jpg",
+        "/dp900/question-assets/q8-prompt-2.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q8-answer-1.jpg",
+        "/dp900/question-assets/q8-answer-2.jpg",
+        "/dp900/question-assets/q8-answer-3.jpg"
+      ],
+      "explanation": "Box 1: star schema In computing, the star schema is the simplest style of data mart schema and is the approach most widely used to develop data warehouses and dimensional data marts. The star schema consists of one or more fact tables referencing any number of dimension tables. The star schema is an important special case of the snowflake schema, and is more effective for handling simpler queries. Example: Incorrect Answers: The data in the question is not normalized. The snowflake schema is a variation of the star schema, featuring normalization of dimension tables. Example: Note: A snowflake schema is a logical arrangement of tables in a multidimensional database such that the entity relationship diagram resembles a snowflake shape. The snowflake schema is represented by centralized fact tables which are connected to multiple dimensions.[citation needed]. \"Snowflaking\" is a method of normalizing the dimension tables in a star schema. When it is completely normalized along all the dimension tables, the resultant structure resembles a snowflake with the fact table in the middle. Box 2: dimension The star schema consists of one or more fact tables referencing any number of dimension tables.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "9",
+      "sourceNumber": 9,
+      "sourcePage": 15,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q9-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q9-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "10",
+      "sourceNumber": 10,
+      "sourcePage": 16,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q10-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q10-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "11",
+      "sourceNumber": 11,
+      "sourcePage": 17,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q11-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q11-answer-1.jpg"
+      ],
+      "explanation": "ג€\" non-relational Disadvantages of non-relational databases include: Data Consistency databases do not perform ACID transactions. Note: Relational databases are optimized for writes. They are optimized for consistency and availability. Advantages of relational databases include simplicity, ease of data retrieval, data integrity, and flexibility. Incorrect Answers: Use a relational database when data that you work with is structured, and the structure is not subject to frequent changes. Use Cloud storage (no relational database) for geographically distributed writes.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "12",
+      "sourceNumber": 12,
+      "sourcePage": 18,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q12-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q12-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Yes Big data solutions often use long-running batch jobs to filter, aggregate, and otherwise prepare the data for analysis. Usually these jobs involve reading source files from scalable storage (like HDFS, Azure Data Lake Store, and Azure Storage), processing them, and writing the output to new files in scalable storage. Box 2: No Box 3: No",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "13",
+      "sourceNumber": 13,
+      "sourcePage": 19,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Your company plans to load data from a customer relationship management (CRM) system to a data warehouse by using an extract, load, and transform (ELT) process. Where does data processing occur for each stage of the ELT process? To answer, drag the appropriate locations to the correct stages. Each location may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q13-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q13-answer-1.jpg",
+        "/dp900/question-assets/q13-answer-2.jpg"
+      ],
+      "explanation": "Box 1: The CRM system Data is extracted from the CRM system. Box 2: The data warehouse Data is loaded to the data warehouse. Box 3: An in-memory data integration tool The data transformation that takes place usually involves various operations, such as filtering, sorting, aggregating, joining data, cleaning data, deduplicating, and validating data.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "14",
+      "sourceNumber": 14,
+      "sourcePage": 20,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q14-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q14-answer-1.jpg"
+      ],
+      "explanation": "Generally speaking, data analytics comes in four types (Figure 1): Descriptive, to answer the question: What's happening? Diagnostic, to answer the question: Why's happening? Predictive, to answer the question: What will happen? Prescriptive, to answer the question: What actions should we take?",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "15",
+      "sourceNumber": 15,
+      "sourcePage": 21,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the types of visualizations to the appropriate descriptions. To answer, drag the appropriate visualization type from the column on the left to its description on the right. Each visualization type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q15-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q15-answer-1.jpg",
+        "/dp900/question-assets/q15-answer-2.jpg"
+      ],
+      "explanation": "Box 1: Tree map Treemaps are charts of colored rectangles, with size representing value. They can be hierarchical, with rectangles nested within the main rectangles. Box 2: Key influencer A key influencer chart displays the major contributors to a selected result or value. Box 3: Scatter Scatter and Bubble charts display relationships between 2 (scatter) or 3 (bubble) quantitative measures -- whether or not, in which order, etc.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "16",
+      "sourceNumber": 16,
+      "sourcePage": 23,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to create an Azure Storage account. Data in the account must replicate outside the Azure region automatically. Which two types of replication can you use for the storage account? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "explanation": "D: Azure Storage offers two options for copying your data to a secondary region: - Geo-redundant storage (GRS) - Geo-zone-redundant storage (GZRS) B: With GRS or GZRS, the data in the secondary region isn't available for read or write access unless there is a failover to the secondary region. For read access to the secondary region, configure your storage account to use read-access geo-redundant storage (RA-GRS) or read-access geo-zone-redundant storage (RA GZRS).",
+      "type": "multiple_choice",
+      "options": [
+        "zone-redundant storage (ZRS)",
+        "read-access geo-redundant storage (RA-GRS)",
+        "locally-redundant storage (LRS)",
+        "geo-redundant storage (GRS)"
+      ],
+      "correctAnswers": [
+        "read-access geo-redundant storage (RA-GRS)",
+        "geo-redundant storage (GRS)"
+      ]
+    },
+    {
+      "id": "17",
+      "sourceNumber": 17,
+      "sourcePage": 23,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q17-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q17-answer-1.jpg",
+        "/dp900/question-assets/q17-answer-2.jpg"
+      ],
+      "explanation": "Box 1: Yes ג€\" servers, storage, and networking ג€\" but also Like IaaS, PaaS includes infrastructure middleware, development tools, business intelligence (BI) services, database management systems, and more. PaaS is designed to support the complete web application lifecycle: building, testing, deploying, managing, and updating. PaaS allows you to avoid the expense and complexity of buying and managing software licenses, the underlying application infrastructure and middleware, container orchestrators such as Kubernetes, or the development tools and other resources Box 2: No You manage the applications and services you develop, and the cloud service provider typically manages everything else. Box 3: No There really is no way to pause / stop billing for your Azure SQL Database. Microsoft's official answer \"Yes, you can export your database. Delete the Azure SQL database and that will pause billing. Then when you need it you can create a new database and import your previously exported DB.\"",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "18",
+      "sourceNumber": 18,
+      "sourcePage": 25,
+      "topic": "DP-900 Source Bank",
+      "question": "Which statement is an example of Data Manipulation Language (DML)?",
+      "explanation": "Data Manipulation Language (DML) affect the information stored in the database. Use these statements to insert, update, and change the rows in the database. - BULK INSERT - DELETE - INSERT - SELECT - UPDATE - MERGE",
+      "type": "single_choice",
+      "options": [
+        "REVOKE",
+        "DISABLE",
+        "INSERT",
+        "GRANT"
+      ],
+      "correctAnswer": "INSERT"
+    },
+    {
+      "id": "19",
+      "sourceNumber": 19,
+      "sourcePage": 25,
+      "topic": "DP-900 Source Bank",
+      "question": "You have a SQL query that combines customer data and order data. The query includes calculated columns. You need to create a database object that would allow other users to rerun the same SQL query. What should you create?",
+      "explanation": "A view is a virtual table whose contents are defined by a query. A view acts as a filter on the underlying tables referenced in the view. The query that defines the view can be from one or more tables or from other views in the current or other databases.",
+      "type": "single_choice",
+      "options": [
+        "an index",
+        "a view",
+        "a scalar function",
+        "a table"
+      ],
+      "correctAnswer": "a view"
+    },
+    {
+      "id": "20",
+      "sourceNumber": 20,
+      "sourcePage": 26,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q20-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q20-answer-1.jpg"
+      ],
+      "explanation": "Box 1: simple lookups A key/value store associates each data value with a unique key. Most key/value stores only support simple query, insert, and delete operations. To modify a value (either partially or completely), an application must overwrite the existing data for the entire value. In most implementations, reading or writing a single value is an atomic operation. An application can store arbitrary data as a set of values. Any schema information must be provided by the application. The key/value store simply retrieves or stores the value by key.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "21",
+      "sourceNumber": 21,
+      "sourcePage": 27,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the types of data to the appropriate Azure data services. To answer, drag the appropriate data type from the column on the left to its service on the right. Each data type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q21-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q21-answer-1.png"
+      ],
+      "explanation": "Box 1: Image files Azure Blob storage is suitable for image files. Box 2:Key/value pairs Azure CosmosDB table API is a key-value storage hosted in the cloud. Box 3: Relationship between employees One-to-many relationships between business domain objects occur frequently: for example, one department has many employees. There are several ways to implement one-to-many relationships in the Azure Table service.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "22",
+      "sourceNumber": 22,
+      "sourcePage": 28,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the Azure Data Lake Storage Gen2 terms to the appropriate levels in the hierarchy. To answer, drag the appropriate term from the column on the left to its level on the right. Each term may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q22-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q22-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Azure Storage account Azure file shares are deployed into storage accounts, which are top-level objects that represent a shared pool of storage. Box 2: File share",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "23",
+      "sourceNumber": 23,
+      "sourcePage": 29,
+      "topic": "DP-900 Source Bank",
+      "question": "What are two characteristics of real-time data processing? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "explanation": "Real time processing deals with streams of data that are captured in real-time and processed with minimal latency to generate real-time (or near-real-time) reports or automated responses.",
+      "type": "multiple_choice",
+      "options": [
+        "Data is processed periodically",
+        "Low latency is expected",
+        "High latency is acceptable",
+        "Data is processed as it is created"
+      ],
+      "correctAnswers": [
+        "Low latency is expected",
+        "Data is processed as it is created"
+      ]
+    },
+    {
+      "id": "24",
+      "sourceNumber": 24,
+      "sourcePage": 29,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the Azure Data Factory components to the appropriate descriptions. To answer, drag the appropriate component from the column on the left to its description on the right. Each component may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q24-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q24-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Dataset Datasets must be created from paths in Azure datastores or public web URLs, for the data to be accessible by Azure Machine Learning. Box 2: Linked service Linked services are much like connection strings, which define the connection information needed for Data Factory to connect to external resources. Box 3: Pipeline A pipeline is a logical grouping of activities that together perform a task.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "25",
+      "sourceNumber": 25,
+      "sourcePage": 31,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the types of workloads to the appropriate scenarios. To answer, drag the appropriate workload type from the column on the left to its scenario on the right. Each workload type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q25-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q25-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Batch Batch processing refers to the processing of blocks of data that have already been stored over a period of time. Box 2: Streaming Stream processing is a big data technology that allows us to process data in real-time as they arrive and detect conditions within a small period of time from the point of receiving the data. It allows us to feed data into analytics tools as soon as they get generated and get instant analytics results. Box 3: Batch",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "26",
+      "sourceNumber": 26,
+      "sourcePage": 32,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Your company plans to load data from a customer relationship management (CRM) system to a data warehouse by using an extract, load, and transform (ELT) process. Where does data processing occur for each stage of the ELT process? To answer, drag the appropriate locations to the correct stages. Each location may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q26-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q26-answer-1.jpg",
+        "/dp900/question-assets/q26-answer-2.jpg"
+      ],
+      "explanation": "Box 1: The CRM system Data is extracted from the CRM system. Box 2: The data warehouse Data is loaded to the data warehouse. Box 3: A standalone data analysis tool The data transformation that takes place usually involves various operations, such as filtering, sorting, aggregating, joining data, cleaning data, deduplicating, and validating data.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "27",
+      "sourceNumber": 27,
+      "sourcePage": 33,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company recently reported sales from the third quarter. You have the chart shown in the following exhibit. Which type of analysis is shown in the fourth quarter?",
+      "promptImages": [
+        "/dp900/question-assets/q27-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q27-answer-1.jpg"
+      ],
+      "explanation": "Predictive, to answer the question: What will happen?",
+      "type": "single_choice",
+      "options": [
+        "predictive",
+        "prescriptive",
+        "descriptive",
+        "diagnostic"
+      ],
+      "correctAnswer": "predictive"
+    },
+    {
+      "id": "28",
+      "sourceNumber": 28,
+      "sourcePage": 34,
+      "topic": "DP-900 Source Bank",
+      "question": "Which statement is an example of Data Manipulation Language (DML)?",
+      "explanation": "Data Manipulation Language (DML) affect the information stored in the database. Use these statements to insert, update, and change the rows in the database. BULK INSERT DELETE INSERT SELECT UPDATE MERGE",
+      "type": "single_choice",
+      "options": [
+        "REVOKE",
+        "DISABLE",
+        "CREATE",
+        "UPDATE"
+      ],
+      "correctAnswer": "UPDATE"
+    },
+    {
+      "id": "29",
+      "sourceNumber": 29,
+      "sourcePage": 34,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q29-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q29-answer-1.jpg",
+        "/dp900/question-assets/q29-answer-2.jpg"
+      ],
+      "explanation": "Explanation: Descriptive, to answer the question: What's happening? Note: Azure Media Indexer enables you to make content of your media files searchable and to generate a full-text transcript for closed captioning and keywords. You can process one media file or multiple media files in a batch.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "30",
+      "sourceNumber": 30,
+      "sourcePage": 36,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q30-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q30-answer-1.jpg",
+        "/dp900/question-assets/q30-answer-2.jpg"
+      ],
+      "explanation": "Generally speaking, data analytics comes in four types: 1. Descriptive, to answer the question: What's happening? 2. Diagnostic, to answer the question: Why's happening? 3. Predictive, to answer the question: What will happen? 4. Prescriptive, to answer the question: What actions should we take?",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "31",
+      "sourceNumber": 31,
+      "sourcePage": 37,
+      "topic": "DP-900 Source Bank",
+      "question": "You have the following data. Which type of data is this?",
+      "promptImages": [
+        "/dp900/question-assets/q31-prompt-1.jpg"
+      ],
+      "type": "single_choice",
+      "options": [
+        "unstructured",
+        "semi-structured",
+        "structured"
+      ],
+      "correctAnswer": "semi-structured"
+    },
+    {
+      "id": "32",
+      "sourceNumber": 32,
+      "sourcePage": 38,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to create an Azure resource to store data in Azure Table storage. Which command should you run?",
+      "type": "single_choice",
+      "options": [
+        "az storage share create",
+        "az storage account create",
+        "az cosmosdb create",
+        "az storage container create"
+      ],
+      "correctAnswer": "az storage account create"
+    },
+    {
+      "id": "33",
+      "sourceNumber": 33,
+      "sourcePage": 39,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q33-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q33-answer-1.jpg"
+      ],
+      "explanation": "Explanation: Azure Cosmos DB SQL API accounts provide support for querying items using the Structured Query Language (SQL) syntax.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "34",
+      "sourceNumber": 34,
+      "sourcePage": 40,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to modify a view in a relational database by adding a new column. Which statement should you use?",
+      "type": "single_choice",
+      "options": [
+        "MERGE",
+        "ALTER",
+        "INSERT",
+        "UPDATE"
+      ],
+      "correctAnswer": "ALTER"
+    },
+    {
+      "id": "35",
+      "sourceNumber": 35,
+      "sourcePage": 40,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q35-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q35-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "36",
+      "sourceNumber": 36,
+      "sourcePage": 41,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) You plan to deploy a PostgreSQL database to Azure. Which hosting model corresponds to the available deployment options? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q36-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q36-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "37",
+      "sourceNumber": 37,
+      "sourcePage": 42,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to implement an Azure platform as a service (PaaS) service that will host a relational database. The solution must support built-in autoscaling. Which service should you implement?",
+      "type": "single_choice",
+      "options": [
+        "Azure SQL Database",
+        "SQL Server on Azure Virtual Machines",
+        "Azure SQL Managed Instance",
+        "Azure SQL Edge"
+      ],
+      "correctAnswer": "Azure SQL Database"
+    },
+    {
+      "id": "38",
+      "sourceNumber": 38,
+      "sourcePage": 42,
+      "topic": "DP-900 Source Bank",
+      "question": "Which Azure storage solution provides native support for POSIX-compliant access control lists (ACLs)?",
+      "type": "single_choice",
+      "options": [
+        "Azure Table storage",
+        "Azure Data Lake Storage",
+        "Azure Queue storage",
+        "Azure Files"
+      ],
+      "correctAnswer": "Azure Data Lake Storage"
+    },
+    {
+      "id": "39",
+      "sourceNumber": 39,
+      "sourcePage": 43,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q39-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q39-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "40",
+      "sourceNumber": 40,
+      "sourcePage": 43,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q40-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q40-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "41",
+      "sourceNumber": 41,
+      "sourcePage": 44,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q41-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q41-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "42",
+      "sourceNumber": 42,
+      "sourcePage": 45,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the types of analytics that can be used to answer the business questions. To answer, drag the appropriate analytics type from the column on the left to its question on the right. Each analytics type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q42-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q42-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Diagnostic Diagnostic Analytics: At this stage you can begin to answer some of those why questions. Historical data can begin to be measured against other data to answer the question of why something happened in the past. This is the process of gathering and interpreting different data sets to identify anomalies, detect patters, and determine relationships. Box 2: Prescriptive Prescriptive analytics is a combination of data, mathematical models, and various business rules to infer actions to influence future desired outcomes. Predictive analytics, broadly speaking, is a category of business intelligence that uses descriptive and predictive variables from the past to analyze and identify the likelihood of an unknown future outcome Box 3: Cognitive",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "43",
+      "sourceNumber": 43,
+      "sourcePage": 46,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q43-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q43-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "44",
+      "sourceNumber": 44,
+      "sourcePage": 47,
+      "topic": "DP-900 Source Bank",
+      "question": "Which type of database is Azure Database for PostgreSQL?",
+      "type": "single_choice",
+      "options": [
+        "Platform as a service (PaaS)",
+        "Infrastructure as a service (IaaS)",
+        "Microsoft SQL Server",
+        "on-premises"
+      ],
+      "correctAnswer": "Platform as a service (PaaS)"
+    },
+    {
+      "id": "45",
+      "sourceNumber": 45,
+      "sourcePage": 47,
+      "topic": "DP-900 Source Bank",
+      "question": "Which storage solution supports access control lists (ACLs) at the file and folder level?",
+      "explanation": "Azure Data Lake Storage Gen2 implements an access control model that supports both Azure role-based access control (Azure RBAC) and POSIX-like access control lists (ACLs).",
+      "type": "single_choice",
+      "options": [
+        "Azure Data Lake Storage",
+        "Azure Queue storage",
+        "Azure Blob storage",
+        "Azure Cosmos DB"
+      ],
+      "correctAnswer": "Azure Data Lake Storage"
+    },
+    {
+      "id": "46",
+      "sourceNumber": 46,
+      "sourcePage": 48,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q46-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q46-answer-1.jpg"
+      ],
+      "explanation": "A treemap chart divides the chart area into rectangles that represent the different levels and relative sizes of the data hierarchy.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "47",
+      "sourceNumber": 47,
+      "sourcePage": 48,
+      "topic": "DP-900 Source Bank",
+      "question": "What is a characteristic of batch processing?",
+      "type": "single_choice",
+      "options": [
+        "The data ingested during batch processing must be processed as soon as the data is received.",
+        "Large datasets must be split into batches of less than 1 GB before the data can be processed.",
+        "There is a noticeable time delay between ingesting data and obtaining the data processing results.",
+        "Batch processing can only process data that is structured."
+      ],
+      "correctAnswer": "There is a noticeable time delay between ingesting data and obtaining the data processing results."
+    },
+    {
+      "id": "48",
+      "sourceNumber": 48,
+      "sourcePage": 49,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q48-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q48-answer-1.jpg"
+      ],
+      "explanation": "An aggregate function performs a calculation on a set of values, and returns a single value. The following are aggregate functions: • APPROX_COUNT_DISTINCT • AVG • CHECKSUM_AGG • COUNT • COUNT_BIG GROUPING • GROUPING_ID • MAX • MIN • STDEV • STDEVP • STRING_AGG • SUM • VAR • VARP",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "49",
+      "sourceNumber": 49,
+      "sourcePage": 50,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q49-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q49-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Yes Batch processing refers to processing of high volume of data in batch within a specific time span. It processes large volume of data all at once. Batch processing is used when data size is known and finite. It takes little longer time to processes data. Box 2: Yes Stream processing refers to processing of continuous stream of data immediately as it is produced. It analyzes streaming data in real time. Stream processing is used when the data size is unknown and infinite and continuous. Box 3: No",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "50",
+      "sourceNumber": 50,
+      "sourcePage": 51,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q50-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q50-answer-1.jpg"
+      ],
+      "explanation": "Explanation: The same set of columns. In relational databases, a row is a data record within a table. Each row, which represents a complete record of specific item data, holds different data within the same structure. A row is occasionally referred to as a tuple. Incorrect: Not: a key value pair. Unlike relational databases, key-value databases do not have a specified structure. Relational databases store data in tables where each column has an assigned data type. Key-value databases are a collection of key-value pairs that are stored as individual records and do not have a predefined data structure.",
+      "type": "visual_review",
+      "answerText": "A"
+    }
+  ]
+}

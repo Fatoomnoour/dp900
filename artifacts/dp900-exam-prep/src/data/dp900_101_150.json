@@ -1,0 +1,803 @@
+{
+  "source": "corrected200.pdf",
+  "range": "101-150",
+  "questions": [
+    {
+      "id": "101",
+      "sourceNumber": 101,
+      "sourcePage": 90,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q101-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q101-answer-1.jpg"
+      ],
+      "explanation": "Azure Synapse Analytics is an platform as a service (PAAS) that combines data integration, warehousing, and analytics into one solution. Azure Synapse Analytics offers cloud-based, relational data warehousing services, massively parallel processing (MPP) scale-out technology, and enough computational power to efficiently manage petabytes and petabytes of data. Incorrect: * Azure Database for MariaDB is a relational database service based on the open- source MariaDB Server engine. It's a fully managed database as a service offering that can handle mission-critical workloads with predictable performance and dynamic scalability. * Azure SQL Database is a fully managed platform as a service (PaaS) database engine that handles most of the database management functions such as upgrading, patching, backups, and monitoring without user involvement. Azure SQL Database is always running on the latest stable version of the SQL Server database engine and patched OS with 99.99% availability. PaaS capabilities built into Azure SQL Database enable you to focus on the domain-specific database administration and optimization activities that are critical for your business.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "102",
+      "sourceNumber": 102,
+      "sourcePage": 91,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q102-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q102-answer-1.jpg"
+      ],
+      "explanation": "A clustered index defines the order in which data is physically stored in a table. Table data can be sorted in only way, therefore, there can be only one clustered index per table. In SQL Server, the primary key constraint automatically creates a clustered index on that particular column.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "103",
+      "sourceNumber": 103,
+      "sourcePage": 92,
+      "topic": "DP-900 Source Bank",
+      "question": "Structured data where each row represents a single data entity uses which type of schema?",
+      "type": "single_choice",
+      "options": [
+        "XML",
+        "tabular",
+        "blob",
+        "JSON"
+      ],
+      "correctAnswer": "tabular"
+    },
+    {
+      "id": "104",
+      "sourceNumber": 104,
+      "sourcePage": 92,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q104-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q104-answer-1.jpg"
+      ],
+      "explanation": "A primary key is a special relational database table column (or combination of columns) designated to uniquely identify each table record (row).",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "105",
+      "sourceNumber": 105,
+      "sourcePage": 93,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q105-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q105-answer-1.jpg"
+      ],
+      "explanation": "A database view is a subset of a database and is based on a query that runs on one or more database tables.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "106",
+      "sourceNumber": 106,
+      "sourcePage": 94,
+      "topic": "DP-900 Source Bank",
+      "question": "Which Azure service provides the highest compatibility for databases migrated from Microsoft SQL Server 2019 Enterprise edition?",
+      "explanation": "SQL Managed Instance has near 100% compatibility with the latest SQL Server (Enterprise Edition) database engine, providing a native virtual network (VNet) implementation that addresses common security concerns, and a business model favorable for existing SQL Server customers. Note: Azure SQL Managed Instance is the intelligent, scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.",
+      "type": "single_choice",
+      "options": [
+        "Azure SQL Database",
+        "Azure Database for MySQL",
+        "Azure SQL Managed Instance",
+        "an Azure SQL Database elastic pool"
+      ],
+      "correctAnswer": "Azure SQL Managed Instance"
+    },
+    {
+      "id": "107",
+      "sourceNumber": 107,
+      "sourcePage": 94,
+      "topic": "DP-900 Source Bank",
+      "question": "Which setting can only be configured during the creation of an Azure Cosmos DB account?",
+      "explanation": "You must create a separate account for each API.",
+      "type": "single_choice",
+      "options": [
+        "geo-redundancy",
+        "multi-region writes",
+        "production or non-production account type",
+        "API"
+      ],
+      "correctAnswer": "API"
+    },
+    {
+      "id": "108",
+      "sourceNumber": 108,
+      "sourcePage": 95,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the types of data stores to the appropriate scenarios. To answer, drag the appropriate data store type from the column on the left to its scenario on the right. Each data store type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q108-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q108-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Key/value A key/value store associates each data value with a unique key. Box 2: Object Object storage is optimized for storing and retrieving large binary objects (images, files, video and audio streams, large application data objects and documents, virtual machine disk images). Box 3: Graph A graph database stores two types of information, nodes and edges. Edges specify relationships between nodes. Nodes and edges can have properties that provide information about that node or edge, similar to columns in a table. Edges can also have a direction indicating the nature of the relationship.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "109",
+      "sourceNumber": 109,
+      "sourcePage": 96,
+      "topic": "DP-900 Source Bank",
+      "question": "You have an Azure Cosmos DB account that uses the Core (SQL) API. Which two settings can you configure at the container level? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "type": "multiple_choice",
+      "options": [
+        "the throughput",
+        "the read region",
+        "the partition key",
+        "the API"
+      ],
+      "correctAnswers": [
+        "the throughput",
+        "the partition key"
+      ]
+    },
+    {
+      "id": "110",
+      "sourceNumber": 110,
+      "sourcePage": 96,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company is designing a data store that will contain student data. The data has the following format. Which type of data store should you use?",
+      "promptImages": [
+        "/dp900/question-assets/q110-prompt-1.jpg"
+      ],
+      "type": "single_choice",
+      "options": [
+        "graph",
+        "key/value",
+        "object",
+        "columnar"
+      ],
+      "correctAnswer": "columnar"
+    },
+    {
+      "id": "111",
+      "sourceNumber": 111,
+      "sourcePage": 97,
+      "topic": "DP-900 Source Bank",
+      "question": "Which storage solution supports role-based access control (RBAC) at the file and folder level?",
+      "type": "single_choice",
+      "options": [
+        "Azure Disk Storage",
+        "Azure Data Lake Storage",
+        "Azure Blob storage",
+        "Azure Queue storage"
+      ],
+      "correctAnswer": "Azure Data Lake Storage"
+    },
+    {
+      "id": "112",
+      "sourceNumber": 112,
+      "sourcePage": 97,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to store data in Azure Blob storage for seven years to meet your company's compliance requirements. The retrieval time of the data is unimportant. The solution must minimize storage costs. Which storage tier should you use?",
+      "type": "single_choice",
+      "options": [
+        "Archive",
+        "Hot",
+        "Cool"
+      ],
+      "correctAnswer": "Archive"
+    },
+    {
+      "id": "113",
+      "sourceNumber": 113,
+      "sourcePage": 98,
+      "topic": "DP-900 Source Bank",
+      "question": "Which type of non-relational data store supports a flexible schema, stores data as JSON files, and stores the all the data for an entity in the same document?",
+      "type": "single_choice",
+      "options": [
+        "document",
+        "columnar",
+        "graph",
+        "time series"
+      ],
+      "correctAnswer": "document"
+    },
+    {
+      "id": "114",
+      "sourceNumber": 114,
+      "sourcePage": 98,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the Azure Cosmos DB APIs to the appropriate data structures. To answer, drag the appropriate API from the column on the left to its data structure on the right. Each API may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q114-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q114-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "115",
+      "sourceNumber": 115,
+      "sourcePage": 99,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q115-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q115-answer-1.jpg"
+      ],
+      "explanation": "A key mechanism that allows Azure Data Lake Storage Gen2 to provide file system performance at object storage scale and prices is the addition of a hierarchical namespace. This allows the collection of objects/files within an account to be organized into a hierarchy of directories and nested subdirectories in the same way that the file system on your computer is organized. With a hierarchical namespace enabled, a storage account becomes capable of providing the scalability and cost-effectiveness of object storage, with file system semantics that are familiar to analytics engines and frameworks. One advantage of hierarchical namespace is atomic directory manipulation: Object stores approximate a directory hierarchy by adopting a convention of embedding slashes (/) in the object name to denote path segments.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "116",
+      "sourceNumber": 116,
+      "sourcePage": 100,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q116-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q116-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "117",
+      "sourceNumber": 117,
+      "sourcePage": 100,
+      "topic": "DP-900 Source Bank",
+      "question": "When provisioning an Azure Cosmos DB account, which feature provides redundancy within an Azure region?",
+      "explanation": "With Availability Zone (AZ) support, Azure Cosmos DB will ensure replicas are placed across multiple zones within a given region to provide high availability and resiliency to zonal failures. Note: Azure Cosmos DB provides high availability in two primary ways. First, Azure Cosmos DB replicates data across regions configured within a Cosmos account. Second, Azure Cosmos DB maintains 4 replicas of data within a region.",
+      "type": "single_choice",
+      "options": [
+        "multi-master replication",
+        "Availability Zones",
+        "the strong consistency level",
+        "automatic failover"
+      ],
+      "correctAnswer": "Availability Zones"
+    },
+    {
+      "id": "118",
+      "sourceNumber": 118,
+      "sourcePage": 101,
+      "topic": "DP-900 Source Bank",
+      "question": "What is a benefit of the Azure Cosmos DB Table API as compared to Azure Table storage?",
+      "explanation": "Multi-master support for Azure Cosmos DB is now available in all public regions. Azure CosmosDB table API is a key-value storage hosted in the cloud. It's a part of Azure Cosmos DB, that is Microsoft's multi-model database.",
+      "type": "single_choice",
+      "options": [
+        "provides resiliency if an Azure region fails",
+        "supports partitioning",
+        "provides a higher storage capacity",
+        "supports a multi-master model"
+      ],
+      "correctAnswer": "supports a multi-master model"
+    },
+    {
+      "id": "119",
+      "sourceNumber": 119,
+      "sourcePage": 101,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company needs to design a database that shows how changes in network traffic in one area of a network affect network traffic in other areas of the network. Which type of data store should you use?",
+      "explanation": "Data as it appears in the real world is naturally connected. Traditional data modeling focuses on defining entities separately and computing their relationships at runtime. While this model has its advantages, highly connected data can be challenging to manage under its constraints. A graph database approach relies on persisting relationships in the storage layer instead, which leads to highly efficient graph retrieval operations. Azure Cosmos DB's Gremlin API supports the property graph model.",
+      "type": "single_choice",
+      "options": [
+        "graph",
+        "key/value",
+        "document",
+        "columnar"
+      ],
+      "correctAnswer": "graph"
+    },
+    {
+      "id": "120",
+      "sourceNumber": 120,
+      "sourcePage": 102,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q120-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q120-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Yes Azure Databricks can consume data from SQL Databases using JDBC and from SQL Databases using the Apache Spark connector. The Apache Spark connector for Azure SQL Database and SQL Server enables these databases to act as input data sources and output data sinks for Apache Spark jobs. Box 2: Yes You can stream data into Azure Databricks using Event Hubs. Box 3: Yes You can run Spark jobs with data stored in Azure Cosmos DB using the Cosmos DB Spark connector. Cosmos can be used for batch and stream processing, and as a serving layer for low latency access. You can use the connector with Azure Databricks or Azure HDInsight, which provide managed Spark clusters on Azure.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "121",
+      "sourceNumber": 121,
+      "sourcePage": 103,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the datastore services to the appropriate descriptions. To answer, drag the appropriate service from the column on the left to its description on the right. Each service may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q121-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q121-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Azure Cosmos DB In Azure Cosmos DB's SQL (Core) API, items are stored as JSON. The type system and expressions are restricted to deal only with JSON types. Box 2: Azure Files Azure Files offers native cloud file sharing services based on the SMB protocol.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "122",
+      "sourceNumber": 122,
+      "sourcePage": 104,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q122-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q122-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "123",
+      "sourceNumber": 123,
+      "sourcePage": 105,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to store data by using Azure Table storage. What should you create first?",
+      "explanation": "First create an Azure storage account, then use Table service in the Azure portal to create a table. Note: An Azure storage account contains all of your Azure Storage data objects: blobs, files, queues, and tables.",
+      "type": "single_choice",
+      "options": [
+        "an Azure Cosmos DB instance",
+        "a storage account",
+        "a blob container",
+        "a table"
+      ],
+      "correctAnswer": "a storage account"
+    },
+    {
+      "id": "124",
+      "sourceNumber": 124,
+      "sourcePage": 106,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to recommend a data store service that meets the following requirements: • Native SQL API access • Configurable indexes What should you recommend?",
+      "explanation": "Azure Cosmos DB comes with native Core (SQL) API support. In Azure Cosmos DB, data is indexed following indexing policies that are defined for each container. The default indexing policy for newly created containers enforces range indexes for any string or number. This policy can be overridden with your own custom indexing policy.",
+      "type": "single_choice",
+      "options": [
+        "Azure Files",
+        "Azure Blob storage",
+        "Azure Table storage",
+        "Azure Cosmos DB"
+      ],
+      "correctAnswer": "Azure Cosmos DB"
+    },
+    {
+      "id": "125",
+      "sourceNumber": 125,
+      "sourcePage": 106,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q125-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q125-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Yes For read access to the secondary region, configure your storage account to use read- access geo-redundant storage (RA-GRS) or read-access geo-zone- redundant storage (RA-GZRS). Box 2: No Box 3: Yes Box 4: Yes Azure Cosmos DB supports multi-region writes.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "126",
+      "sourceNumber": 126,
+      "sourcePage": 107,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q126-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q126-answer-1.jpg"
+      ],
+      "explanation": "A key mechanism that allows Azure Data Lake Storage Gen2 to provide file system performance at object storage scale and prices is the addition of a hierarchical namespace. This allows the collection of objects/files within an account to be organized into a hierarchy of directories and nested subdirectories in the same way that the file system on your computer is organized. With a hierarchical namespace enabled, a storage account becomes capable of providing the scalability and cost-effectiveness of object storage, with file system semantics that are familiar to analytics engines and frameworks.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "127",
+      "sourceNumber": 127,
+      "sourcePage": 108,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company needs to design a database that illustrates the relationships between utilization levels of individual network devices across a local area network. Which type of data store should you use?",
+      "explanation": "Data as it appears in the real world is naturally connected. Traditional data modeling focuses on defining entities separately and computing their relationships at runtime. While this model has its advantages, highly connected data can be challenging to manage under its constraints. A graph database approach relies on persisting relationships in the storage layer instead, which leads to highly efficient graph retrieval operations. Azure Cosmos DB's Gremlin API supports the property graph model.",
+      "type": "single_choice",
+      "options": [
+        "graph",
+        "key/value",
+        "document",
+        "columnar"
+      ],
+      "correctAnswer": "graph"
+    },
+    {
+      "id": "128",
+      "sourceNumber": 128,
+      "sourcePage": 109,
+      "topic": "DP-900 Source Bank",
+      "question": "You manage an application that stores data in a shared folder on a Windows server. You need to move the shared folder to Azure Storage. Which type of Azure Storage should you use?",
+      "explanation": "Azure file shares can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS. Azure file shares can also be cached on Windows Servers with Azure File Sync for fast access near where the data is being used.",
+      "type": "single_choice",
+      "options": [
+        "queue",
+        "blob",
+        "file",
+        "table"
+      ],
+      "correctAnswer": "file"
+    },
+    {
+      "id": "129",
+      "sourceNumber": 129,
+      "sourcePage": 109,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company is designing a database that will contain session data for a website. The data will include notifications, personalization attributes, and products that are added to a shopping cart. Which type of data store will provide the lowest latency to retrieve the data?",
+      "type": "single_choice",
+      "options": [
+        "key/value",
+        "graph",
+        "columnar",
+        "document"
+      ],
+      "correctAnswer": "columnar"
+    },
+    {
+      "id": "130",
+      "sourceNumber": 130,
+      "sourcePage": 110,
+      "topic": "DP-900 Source Bank",
+      "question": "You have an application that runs on Windows and requires access to a mapped drive. Which Azure service should you use?",
+      "explanation": "Azure Files is Microsoft's easy-to-use cloud file system. Azure file shares can be seamlessly used in Windows and Windows Server. To use an Azure file share with Windows, you must either mount it, which means assigning it a drive letter or mount point path, or access it via its UNC path.",
+      "type": "single_choice",
+      "options": [
+        "Azure Files",
+        "Azure Blob storage",
+        "Azure Cosmos DB",
+        "Azure Table storage"
+      ],
+      "correctAnswer": "Azure Files"
+    },
+    {
+      "id": "131",
+      "sourceNumber": 131,
+      "sourcePage": 110,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q131-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q131-answer-1.jpg"
+      ],
+      "explanation": "Box 1: No The API determines the type of account to create. Azure Cosmos DB provides five APIs: Core (SQL) and MongoDB for document data, Gremlin for graph data, Azure Table, and Cassandra. Currently, you must create a separate account for each API. Box 2: Yes Azure Cosmos DB uses partitioning to scale individual containers in a database to meet the performance needs of your application. In partitioning, the items in a container are divided into distinct subsets called logical partitions. Logical partitions are formed based on the value of a partition key that is associated with each item in a container. Box 3: No Logical partitions are formed based on the value of a partition key that is associated with each item in a container.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "132",
+      "sourceNumber": 132,
+      "sourcePage": 111,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company is designing an application that will write a high volume of JSON data and will have an application-defined schema. Which type of data store should you use?",
+      "explanation": "A key/value store associates each data value with a unique key. An application can store arbitrary data as a set of values. Any schema information must be provided by the application. The key/value store simply retrieves or stores the value by key.",
+      "type": "single_choice",
+      "options": [
+        "columnar",
+        "key/value",
+        "document",
+        "graph"
+      ],
+      "correctAnswer": "document"
+    },
+    {
+      "id": "133",
+      "sourceNumber": 133,
+      "sourcePage": 112,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to recommend a non-relational data store that is optimized for storing and retrieving text files, videos, audio streams, and virtual disk images. The data store must store data, some metadata, and a unique ID for each file. Which type of data store should you recommend?",
+      "explanation": "Object storage is optimized for storing and retrieving large binary objects (images, files, video and audio streams, large application data objects and documents, virtual machine disk images). Large data files are also popularly used in this model, for example, delimiter file (CSV), parquet, and ORC. Object stores can manage extremely large amounts of unstructured data.",
+      "type": "single_choice",
+      "options": [
+        "key/value",
+        "columnar",
+        "object",
+        "document"
+      ],
+      "correctAnswer": "object"
+    },
+    {
+      "id": "134",
+      "sourceNumber": 134,
+      "sourcePage": 112,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company is designing a data store for internet-connected temperature sensors. The collected data will be used to analyze temperature trends. Which type of data store should you use?",
+      "explanation": "Time series data is a set of values organized by time. Time series databases typically collect large amounts of data in real time from a large number of sources. Updates are rare, and deletes are often done as bulk operations. Although the records written to a time-series database are generally small, there are often a large number of records, and total data size can grow rapidly.",
+      "type": "single_choice",
+      "options": [
+        "relational",
+        "time series",
+        "graph",
+        "columnar"
+      ],
+      "correctAnswer": "time series"
+    },
+    {
+      "id": "135",
+      "sourceNumber": 135,
+      "sourcePage": 113,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q135-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q135-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "136",
+      "sourceNumber": 136,
+      "sourcePage": 114,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q136-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q136-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "137",
+      "sourceNumber": 137,
+      "sourcePage": 115,
+      "topic": "DP-900 Source Bank",
+      "question": "At which two levels can you set the throughput for an Azure Cosmos DB account? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "type": "multiple_choice",
+      "options": [
+        "database",
+        "item",
+        "container",
+        "partition"
+      ],
+      "correctAnswers": [
+        "database",
+        "container"
+      ]
+    },
+    {
+      "id": "138",
+      "sourceNumber": 138,
+      "sourcePage": 115,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q138-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q138-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "139",
+      "sourceNumber": 139,
+      "sourcePage": 116,
+      "topic": "DP-900 Source Bank",
+      "question": "What is a characteristic of non-relational data?",
+      "explanation": "A relational database works by linking information from multiple tables through the use of The non-relational database, or NoSQL database, stores data. However, unlike the relational database, there are no tables, rows, primary keys or foreign keys. Instead, the non-relational database uses a storage model optimized for specific requirements of the type of data being stored.",
+      "type": "single_choice",
+      "options": [
+        "no indexes",
+        "self-describing entities",
+        "a well-defined schema",
+        "no unique key values"
+      ],
+      "correctAnswer": "self-describing entities"
+    },
+    {
+      "id": "140",
+      "sourceNumber": 140,
+      "sourcePage": 116,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q140-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q140-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "141",
+      "sourceNumber": 141,
+      "sourcePage": 117,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to gather real-time telemetry data from a mobile application. Which type of workload describes this scenario?",
+      "type": "single_choice",
+      "options": [
+        "Online Transaction Processing (OLTP)",
+        "batch",
+        "massively parallel processing (MPP)",
+        "streaming"
+      ],
+      "correctAnswer": "streaming"
+    },
+    {
+      "id": "142",
+      "sourceNumber": 142,
+      "sourcePage": 117,
+      "topic": "DP-900 Source Bank",
+      "question": "You have a dedicated SQL pool in Azure Synapse Analytics that is only used actively every night for eight hours. You need to minimize the cost of the dedicated SQL pool as much as possible during idle times. The solution must ensure that the data remains intact. What should you do on the dedicated SQL pool?",
+      "type": "single_choice",
+      "options": [
+        "Scale down the data warehouse units (DWUs).",
+        "Pause the pool.",
+        "Create a user-defined restore point.",
+        "Delete the pool"
+      ],
+      "correctAnswer": "Pause the pool."
+    },
+    {
+      "id": "143",
+      "sourceNumber": 143,
+      "sourcePage": 118,
+      "topic": "DP-900 Source Bank",
+      "question": "Which Azure Data Factory component initiates the execution of a pipeline?",
+      "type": "single_choice",
+      "options": [
+        "a control flow",
+        "a trigger",
+        "a parameter",
+        "an activity"
+      ],
+      "correctAnswer": "a trigger"
+    },
+    {
+      "id": "144",
+      "sourceNumber": 144,
+      "sourcePage": 118,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company has a reporting solution that has paginated reports. The reports query a dimensional model in a data warehouse. Which type of processing does the reporting solution use?",
+      "type": "single_choice",
+      "options": [
+        "stream processing",
+        "batch processing",
+        "Online Analytical Processing (OLAP)",
+        "Online Transaction Processing (OLTP)"
+      ],
+      "correctAnswer": "Online Analytical Processing (OLAP)"
+    },
+    {
+      "id": "145",
+      "sourceNumber": 145,
+      "sourcePage": 118,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the types of activities to the appropriate Azure Data Factory activities. To answer, drag the appropriate activity type from the column on the left to its Data Factory activity on the right. Each activity type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q145-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q145-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Data movement Box 2: Data transformation A pipeline could contain a set of activities that ingest and clean log data, and then kick off a mapping data flow to analyze the log data. Box 3: Control Lookup Activity is a control flow activity. Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "146",
+      "sourceNumber": 146,
+      "sourcePage": 120,
+      "topic": "DP-900 Source Bank",
+      "question": "What are three characteristics of an Online Transaction Processing (OLTP) workload? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "explanation": "B: Transactional data tends to be heavy writes, moderate reads. D: Typical traits of transactional data include: schema on write, strongly enforced F: Transactional data tends to be highly normalized.",
+      "type": "multiple_choice",
+      "options": [
+        "denormalized data",
+        "heavy writes and moderate reads",
+        "light writes and heavy reads",
+        "schema on write",
+        "schema on read",
+        "normalized data"
+      ],
+      "correctAnswers": [
+        "heavy writes and moderate reads",
+        "schema on write",
+        "normalized data"
+      ]
+    },
+    {
+      "id": "147",
+      "sourceNumber": 147,
+      "sourcePage": 120,
+      "topic": "DP-900 Source Bank",
+      "question": "Which two activities can be performed entirely by using the Microsoft Power BI service without relying on Power BI Desktop? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "type": "multiple_choice",
+      "options": [
+        "report and dashboard creation",
+        "report sharing and distribution",
+        "data modeling",
+        "data acquisition and preparation"
+      ],
+      "correctAnswers": [
+        "report and dashboard creation",
+        "report sharing and distribution"
+      ]
+    },
+    {
+      "id": "148",
+      "sourceNumber": 148,
+      "sourcePage": 120,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q148-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q148-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "149",
+      "sourceNumber": 149,
+      "sourcePage": 121,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to develop a solution to provide data to executives. The solution must provide an interactive graphical interface, depict various key performance indicators, and support data exploration by using drill down. What should you use in Microsoft Power BI?",
+      "type": "single_choice",
+      "options": [
+        "a view",
+        "a report",
+        "a dataflow",
+        "Microsoft Power Apps"
+      ],
+      "correctAnswer": "a report"
+    },
+    {
+      "id": "150",
+      "sourceNumber": 150,
+      "sourcePage": 122,
+      "topic": "DP-900 Source Bank",
+      "question": "Which two Azure services can be used to provision Apache Spark clusters? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "type": "multiple_choice",
+      "options": [
+        "Azure Time Series Insights",
+        "Azure HDInsight",
+        "Azure Databricks",
+        "Azure Log Analytics"
+      ],
+      "correctAnswers": [
+        "Azure HDInsight",
+        "Azure Databricks"
+      ]
+    }
+  ]
+}

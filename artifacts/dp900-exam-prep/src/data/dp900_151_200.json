@@ -1,0 +1,800 @@
+{
+  "source": "corrected200.pdf",
+  "range": "151-200",
+  "questions": [
+    {
+      "id": "151",
+      "sourceNumber": 151,
+      "sourcePage": 122,
+      "topic": "DP-900 Source Bank",
+      "question": "You have a quality assurance application that reads data from a data warehouse. Which type of processing does the application use?",
+      "type": "single_choice",
+      "options": [
+        "Online Transaction Processing (OLTP)",
+        "batch processing",
+        "Online Analytical Processing (OLAP)",
+        "stream processing"
+      ],
+      "correctAnswer": "Online Analytical Processing (OLAP)"
+    },
+    {
+      "id": "152",
+      "sourceNumber": 152,
+      "sourcePage": 122,
+      "topic": "DP-900 Source Bank",
+      "question": "Which three objects can be added to a Microsoft Power BI dashboard? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "type": "multiple_choice",
+      "options": [
+        "a report page",
+        "a Microsoft PowerPoint slide",
+        "a visualization from a report",
+        "a dataflow",
+        "a text box"
+      ],
+      "correctAnswers": [
+        "a report page",
+        "a visualization from a report",
+        "a text box"
+      ]
+    },
+    {
+      "id": "153",
+      "sourceNumber": 153,
+      "sourcePage": 123,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q153-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q153-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "154",
+      "sourceNumber": 154,
+      "sourcePage": 124,
+      "topic": "DP-900 Source Bank",
+      "question": "Which Azure Data Factory component provides the compute environment for activities?",
+      "explanation": "The Integration Runtime (IR) is the compute infrastructure used by Azure Data Factory to provide the following data integration capabilities across different network environments: - Data Flow - Data movement - Activity dispatch - SSIS package execution",
+      "type": "single_choice",
+      "options": [
+        "SSIS packages",
+        "an integration runtime",
+        "a control flow",
+        "a pipeline"
+      ],
+      "correctAnswer": "an integration runtime"
+    },
+    {
+      "id": "155",
+      "sourceNumber": 155,
+      "sourcePage": 124,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q155-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q155-answer-1.jpg"
+      ],
+      "explanation": "Paginated Reports in Power BI now allows users to generate these fixed-layout documents optimized for printing and archiving, such as PDF and Word files. These document-style reports with visualizations that provide additional control, like which tables expand horizontally and vertically to display all their data and continue from page to page as needed.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "156",
+      "sourceNumber": 156,
+      "sourcePage": 125,
+      "topic": "DP-900 Source Bank",
+      "question": "What are two uses of data visualization? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "explanation": "Data visualization is a key component in being able to gain insight into your data. It helps make big and small data easier for humans to understand. It also makes it easier to detect patterns, trends, and outliers in groups of data. Data visualization brings data to help you find key business insights quickly and effectively.",
+      "type": "multiple_choice",
+      "options": [
+        "Represent trends and patterns over time",
+        "Implement machine learning to predict future values",
+        "Communicate the significance of data",
+        "Enforce business logic across reports"
+      ],
+      "correctAnswers": [
+        "Represent trends and patterns over time",
+        "Communicate the significance of data"
+      ]
+    },
+    {
+      "id": "157",
+      "sourceNumber": 157,
+      "sourcePage": 126,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to use Transact-SQL to query files in Azure Data Lake Storage Gen 2 from an Azure Synapse Analytics data warehouse. What should you use to query the files?",
+      "type": "single_choice",
+      "options": [
+        "Azure Functions",
+        "Microsoft SQL Server Integration Services (SSIS)",
+        "PolyBase",
+        "Azure Data Factory"
+      ],
+      "correctAnswer": "PolyBase"
+    },
+    {
+      "id": "158",
+      "sourceNumber": 158,
+      "sourcePage": 126,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q158-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q158-answer-1.jpg"
+      ],
+      "explanation": "Box 1: No You can duplicate a dashboard. The duplicate ends up in the same Power BI workspace. There is no current functionality that allows you to move reports from one workspace to another. Box 2: No Box 3: Yes",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "159",
+      "sourceNumber": 159,
+      "sourcePage": 127,
+      "topic": "DP-900 Source Bank",
+      "question": "What are three characteristics of an Online Transaction Processing (OLTP) workload? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "explanation": "B: Transactional data tends to be heavy writes, moderate reads. D: Typical traits of transactional data include: schema on write, strongly enforced. The schema is defined in a database. F: Transactional data tends to be highly normalized.",
+      "type": "multiple_choice",
+      "options": [
+        "denormalized data",
+        "heavy writes and moderate reads",
+        "light writes and heavy reads",
+        "schema defined in a database",
+        "schema defined when reading unstructured data from a database",
+        "normalized data"
+      ],
+      "correctAnswers": [
+        "heavy writes and moderate reads",
+        "schema defined in a database",
+        "normalized data"
+      ]
+    },
+    {
+      "id": "160",
+      "sourceNumber": 160,
+      "sourcePage": 128,
+      "topic": "DP-900 Source Bank",
+      "question": "What is the primary purpose of a data warehouse?",
+      "explanation": "Consider using a data warehouse when you need to keep historical data separate from the source transaction systems for performance reasons. Data warehouses make it easy to access historical data from multiple locations, by providing a centralized location using common formats, keys, and data models. Query both relational and nonrelational data. Incorrect Answers: D: Data warehouses don't need to follow the same terse data structure you may be using in your OLTP databases.",
+      "type": "single_choice",
+      "options": [
+        "to provide answers to complex queries that rely on data from multiple sources",
+        "to provide transformation services between source and target data stores",
+        "to provide read-only storage of relational and non-relational historical data",
+        "to provide storage for transactional line-of-business (LOB) applications"
+      ],
+      "correctAnswer": "to provide answers to complex queries that rely on data from multiple sources"
+    },
+    {
+      "id": "161",
+      "sourceNumber": 161,
+      "sourcePage": 128,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the Azure services to the appropriate locations in the architecture. To answer, drag the appropriate service from the column on the left to its location on the right. Each service may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q161-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q161-answer-1.jpg"
+      ],
+      "explanation": "Box Ingest: Azure Data Factory You can build a data ingestion pipeline with Azure Data Factory (ADF). Box Preprocess & model: Azure Synapse Analytics Use Azure Synapse Analytics to preprocess data and deploy machine learning models.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "162",
+      "sourceNumber": 162,
+      "sourcePage": 129,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the types of workloads to the appropriate scenarios. To answer, drag the appropriate workload type from the column on the left to its scenario on the right. Each workload type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q162-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q162-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Batch The batch processing model requires a set of data that is collected over time while the stream processing model requires data to be fed into an analytics tool, often in micro- batches, and in real-time. The batch Processing model handles a large batch of data while the Stream processing model handles individual records or micro-batches of few records. In Batch Processing, it processes over all or most of the data but in Stream Processing, it processes over data on a rolling window or most recent record. Box 2: Batch Box 3: Streaming",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "163",
+      "sourceNumber": 163,
+      "sourcePage": 130,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q163-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q163-answer-1.jpg"
+      ],
+      "explanation": "Note: The data warehouse workload encompasses: - The entire process of loading data into the warehouse - Performing data warehouse analysis and reporting - Managing data in the data warehouse - Exporting data from the data warehouse",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "164",
+      "sourceNumber": 164,
+      "sourcePage": 131,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q164-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q164-answer-1.jpg"
+      ],
+      "explanation": "Box 1: No A pipeline is a logical grouping of activities that together perform a task. Box 2: Yes You can construct pipeline hierarchies with data factory. Box 3: Yes A pipeline is a logical grouping of activities that together perform a task.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "165",
+      "sourceNumber": 165,
+      "sourcePage": 132,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the Azure services to the appropriate requirements. To answer, drag the appropriate service from the column on the left to its requirement on the right. Each service may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q165-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q165-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Azure Data Factory Box 2: Azure Data Lake Storage Azure Data Lake Storage (ADLA) now natively supports Parquet files. ADLA adds a public preview of the native extractor and outputter for the popular Parquet file format Box 3: Azure Synapse Analytics Use Azure Synapse Analytics Workspaces.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "166",
+      "sourceNumber": 166,
+      "sourcePage": 133,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q166-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q166-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Yes Compute is separate from storage, which enables you to scale compute independently of the data in your system. Box 2: Yes You can use the Azure portal to pause and resume the dedicated SQL pool compute resources. Pausing the data warehouse pauses compute. If your data warehouse was paused for the entire hour, you will not be charged compute during that hour. Box 3: No Storage is sold in 1 TB allocations. If you grow beyond 1 TB of storage, your storage account will automatically grow to 2 TBs.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "167",
+      "sourceNumber": 167,
+      "sourcePage": 134,
+      "topic": "DP-900 Source Bank",
+      "question": "What should you use to build a Microsoft Power BI paginated report?",
+      "explanation": "Power BI Report Builder is the standalone tool for authoring paginated reports for the Power BI service.",
+      "type": "single_choice",
+      "options": [
+        "Charticulator",
+        "Power BI Desktop",
+        "the Power BI service",
+        "Power BI Report Builder"
+      ],
+      "correctAnswer": "Power BI Report Builder"
+    },
+    {
+      "id": "168",
+      "sourceNumber": 168,
+      "sourcePage": 134,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the Azure services to the appropriate locations in the architecture. To answer, drag the appropriate service from the column on the left to its location on the right. Each service may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q168-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q168-answer-1.png"
+      ],
+      "explanation": "Box 1: Azure Data factory Relevant Azure service for the three ETL phases are Azure Data Factory and SQL Server Integration Services (SSIS). Box 2: Azure Synapse Analytics You can copy and transform data in Azure Synapse Analytics by using Azure Data Factory Note: Azure Synapse Analytics connector is supported for the following activities: - Copy activity with supported source/sink matrix table - Mapping data flow - Lookup activity - GetMetadata activity",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "169",
+      "sourceNumber": 169,
+      "sourcePage": 136,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q169-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q169-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "170",
+      "sourceNumber": 170,
+      "sourcePage": 137,
+      "topic": "DP-900 Source Bank",
+      "question": "Which scenario is an example of a streaming workload?",
+      "type": "single_choice",
+      "options": [
+        "sending transactions that are older than a month to an archive",
+        "sending transactions daily from point of sale (POS) devices",
+        "sending telemetry data from edge devices",
+        "sending cloud infrastructure metadata every 30 minutes"
+      ],
+      "correctAnswer": "sending telemetry data from edge devices"
+    },
+    {
+      "id": "171",
+      "sourceNumber": 171,
+      "sourcePage": 137,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q171-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q171-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "172",
+      "sourceNumber": 172,
+      "sourcePage": 138,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q172-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q172-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "173",
+      "sourceNumber": 173,
+      "sourcePage": 139,
+      "topic": "DP-900 Source Bank",
+      "question": "A bar chart showing year-to-date sales by region is an example of which type of analytics?",
+      "type": "single_choice",
+      "options": [
+        "predictive",
+        "prescriptive",
+        "descriptive",
+        "diagnostic"
+      ],
+      "correctAnswer": "descriptive"
+    },
+    {
+      "id": "174",
+      "sourceNumber": 174,
+      "sourcePage": 139,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q174-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q174-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "175",
+      "sourceNumber": 175,
+      "sourcePage": 140,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to perform hybrid transactional and analytical processing (HTAP) queries against Azure Cosmos DB data sources by using Azure Synapse Analytics. What should you use?",
+      "type": "single_choice",
+      "options": [
+        "Synapse pipelines",
+        "a Synapse SQL pool",
+        "Synapse Link",
+        "Synapse Studio"
+      ],
+      "correctAnswer": "Synapse Link"
+    },
+    {
+      "id": "176",
+      "sourceNumber": 176,
+      "sourcePage": 140,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to create a visualization of running sales totals per quarter as shown in the following exhibit. What should you create in Power BI Desktop?",
+      "promptImages": [
+        "/dp900/question-assets/q176-prompt-1.jpg"
+      ],
+      "type": "single_choice",
+      "options": [
+        "a waterfall chart",
+        "a ribbon chart",
+        "a bar chart",
+        "a decomposition tree"
+      ],
+      "correctAnswer": "a waterfall chart"
+    },
+    {
+      "id": "177",
+      "sourceNumber": 177,
+      "sourcePage": 141,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q177-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q177-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "178",
+      "sourceNumber": 178,
+      "sourcePage": 142,
+      "topic": "DP-900 Source Bank",
+      "question": "You have the following two tables of customer data. Which type of data do the tables contain?",
+      "promptImages": [
+        "/dp900/question-assets/q178-prompt-1.jpg",
+        "/dp900/question-assets/q178-prompt-2.jpg"
+      ],
+      "type": "single_choice",
+      "options": [
+        "structured",
+        "non-relational",
+        "semi-structured",
+        "unstructured"
+      ],
+      "correctAnswer": "structured"
+    },
+    {
+      "id": "179",
+      "sourceNumber": 179,
+      "sourcePage": 142,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q179-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q179-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "180",
+      "sourceNumber": 180,
+      "sourcePage": 143,
+      "topic": "DP-900 Source Bank",
+      "question": "Which Azure Blob Storage feature enables you to sync a Blob Storage account to an external cache?",
+      "type": "single_choice",
+      "options": [
+        "the Hot access tier",
+        "change feed",
+        "snapshots",
+        "versioning"
+      ],
+      "correctAnswer": "change feed"
+    },
+    {
+      "id": "181",
+      "sourceNumber": 181,
+      "sourcePage": 143,
+      "topic": "DP-900 Source Bank",
+      "question": "You have an on-premises Microsoft SQL Server database. You need to migrate the database to the cloud. The solution must meet the following requirements: * Minimize maintenance effort. * Support the Database Mail and Service Broker features. What should you include in the solution?",
+      "type": "single_choice",
+      "options": [
+        "Azure SQL Database single database",
+        "an Azure SQL Database elastic pool",
+        "Azure SQL Managed instance",
+        "SQL Server on Azure virtual machines"
+      ],
+      "correctAnswer": "Azure SQL Managed instance"
+    },
+    {
+      "id": "182",
+      "sourceNumber": 182,
+      "sourcePage": 144,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q182-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q182-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "183",
+      "sourceNumber": 183,
+      "sourcePage": 144,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the database normalization terms to the appropriate descriptions. To answer, drag the appropriate term from the column on the left to its description on the right. Each term may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q183-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q183-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "184",
+      "sourceNumber": 184,
+      "sourcePage": 145,
+      "topic": "DP-900 Source Bank",
+      "question": "Which two features distinguish Delta Lake from Azure Data Lake Storage? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "type": "multiple_choice",
+      "options": [
+        "support for batch data",
+        "schema enforcement",
+        "support for an Apache Spark runtime",
+        "transactional consistency",
+        "support for streaming data"
+      ],
+      "correctAnswers": [
+        "schema enforcement",
+        "transactional consistency"
+      ]
+    },
+    {
+      "id": "185",
+      "sourceNumber": 185,
+      "sourcePage": 145,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the ACID terms to the appropriate descriptions. To answer, drag the appropriate term from the column on the left to its description on the right. Each term may be used once, more than once or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q185-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q185-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "186",
+      "sourceNumber": 186,
+      "sourcePage": 146,
+      "topic": "DP-900 Source Bank",
+      "question": "What is a function of a modern data warehouse?",
+      "explanation": "A data warehouse is a centralized repository of integrated data from one or more disparate sources. Data warehouses store current and historical data and are used for reporting and analysis of the data. The purpose of the analytical data store layer is to satisfy queries issued by analytics and reporting tools against the data warehouse.",
+      "type": "single_choice",
+      "options": [
+        "supports batch processing only",
+        "supports real-time and batch processing",
+        "provides built-in or native online analytical processing",
+        "stores raw data only"
+      ],
+      "correctAnswer": "supports real-time and batch processing"
+    },
+    {
+      "id": "187",
+      "sourceNumber": 187,
+      "sourcePage": 147,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q187-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q187-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "188",
+      "sourceNumber": 188,
+      "sourcePage": 148,
+      "topic": "DP-900 Source Bank",
+      "question": "What can be used with native notebook support to query and visualize data by using a web-based interface?",
+      "type": "single_choice",
+      "options": [
+        "Azure Databricks",
+        "pgAdmin",
+        "Microsoft Power BI"
+      ],
+      "correctAnswer": "Azure Databricks"
+    },
+    {
+      "id": "189",
+      "sourceNumber": 189,
+      "sourcePage": 148,
+      "topic": "DP-900 Source Bank",
+      "question": "You have data saved in the following format. Which format was used?",
+      "promptImages": [
+        "/dp900/question-assets/q189-prompt-1.jpg"
+      ],
+      "type": "single_choice",
+      "options": [
+        "XML",
+        "HTML",
+        "YAML",
+        "JSON"
+      ],
+      "correctAnswer": "JSON"
+    },
+    {
+      "id": "190",
+      "sourceNumber": 190,
+      "sourcePage": 148,
+      "topic": "DP-900 Source Bank",
+      "question": "You have data saved in the following format. Which format was used?",
+      "promptImages": [
+        "/dp900/question-assets/q190-prompt-1.jpg"
+      ],
+      "type": "single_choice",
+      "options": [
+        "JSON",
+        "YAML",
+        "HTML",
+        "XML"
+      ],
+      "correctAnswer": "XML"
+    },
+    {
+      "id": "191",
+      "sourceNumber": 191,
+      "sourcePage": 149,
+      "topic": "DP-900 Source Bank",
+      "question": "Which database transaction property ensures that transactional changes to a database are preserved during unexpected operating system restarts?",
+      "type": "single_choice",
+      "options": [
+        "consistency",
+        "atomicity",
+        "durability",
+        "isolation"
+      ],
+      "correctAnswer": "durability"
+    },
+    {
+      "id": "192",
+      "sourceNumber": 192,
+      "sourcePage": 149,
+      "topic": "DP-900 Source Bank",
+      "question": "GRANT, REVOKE, and DENY are examples of which type of SQL statement?",
+      "type": "single_choice",
+      "options": [
+        "Data Definition language (DDL)",
+        "Data Control Language (DCL)",
+        "Data Manipulation Language (DML)"
+      ],
+      "correctAnswer": "Data Control Language (DCL)"
+    },
+    {
+      "id": "193",
+      "sourceNumber": 193,
+      "sourcePage": 149,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q193-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q193-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "194",
+      "sourceNumber": 194,
+      "sourcePage": 150,
+      "topic": "DP-900 Source Bank",
+      "question": "Which database transaction property ensures that individual transactions are executed only once and either succeed in their entirety or roll back?",
+      "type": "single_choice",
+      "options": [
+        "atomicity",
+        "durability",
+        "isolation",
+        "consistency"
+      ],
+      "correctAnswer": "atomicity"
+    },
+    {
+      "id": "195",
+      "sourceNumber": 195,
+      "sourcePage": 150,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q195-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q195-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "196",
+      "sourceNumber": 196,
+      "sourcePage": 151,
+      "topic": "DP-900 Source Bank",
+      "question": "Which Azure Storage service implements the key/value model?",
+      "type": "single_choice",
+      "options": [
+        "Azure Queue",
+        "Azure Files",
+        "Azure Table",
+        "Azure Blob"
+      ],
+      "correctAnswer": "Azure Table"
+    },
+    {
+      "id": "197",
+      "sourceNumber": 197,
+      "sourcePage": 151,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q197-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q197-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "198",
+      "sourceNumber": 198,
+      "sourcePage": 152,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q198-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q198-answer-1.png"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "199",
+      "sourceNumber": 199,
+      "sourcePage": 153,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q199-prompt-1.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q199-answer-1.png"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "200",
+      "sourceNumber": 200,
+      "sourcePage": 153,
+      "topic": "DP-900 Source Bank",
+      "question": "You plan to deploy an app. The app requires a nonrelational data service that will provide latency guarantees of less than 10-ms for reads and writes. What should you include in the solution?",
+      "type": "single_choice",
+      "options": [
+        "Azure Blob storage",
+        "Azure Files",
+        "Azure Table storage",
+        "Azure Cosmos DB"
+      ],
+      "correctAnswer": "Azure Cosmos DB"
+    }
+  ]
+}

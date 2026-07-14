@@ -1,0 +1,715 @@
+[
+  {
+    "id": "data-types",
+    "moduleId": "core-data-concepts",
+    "moduleName": "Core Data Concepts",
+    "title": "Structured vs Semi-structured vs Unstructured",
+    "titleAr": "أنواع البيانات",
+    "difficulty": "easy",
+    "estimatedMinutes": 10,
+    "concept": "البيانات تنقسم لثلاث أنواع حسب مدى وجود هيكل (Schema) ثابت لها. البيانات المنظمة (Structured) لها جدول وأعمدة ثابتة. البيانات شبه المنظمة (Semi-structured) لها بعض الهيكل لكنه مرن. البيانات غير المنظمة (Unstructured) ليس لها هيكل محدد.",
+    "keywords": ["table", "row", "column", "schema", "JSON", "XML", "image", "video", "audio", "binary", "file", "object", "relational"],
+    "examRule": "Tables/rows/columns → Structured | JSON/XML/nested → Semi-structured | Images/Videos/Audio/Files → Unstructured",
+    "comparison": {
+      "headers": ["النوع", "المعنى", "أمثلة", "Azure Service"],
+      "rows": [
+        ["Structured", "هيكل ثابت - جداول وأعمدة", "SQL tables, Excel", "Azure SQL Database"],
+        ["Semi-structured", "هيكل مرن - JSON وXML", "JSON, XML, YAML", "Azure Cosmos DB"],
+        ["Unstructured", "بدون هيكل محدد", "Images, Videos, Audio, PDFs", "Azure Blob Storage"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "JSON ليست Unstructured!",
+        "explanation": "JSON لها هيكل من خلال الـ keys والحقول المتداخلة، لذا هي Semi-structured وليست Unstructured."
+      },
+      {
+        "title": "XML أيضاً Semi-structured",
+        "explanation": "XML كـ JSON - لها tags وهيكل، لكن الهيكل مرن وغير ثابت تماماً."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A company stores customer data in tables with fixed columns and a defined schema. What type of data is this?",
+        "options": ["Structured", "Semi-structured", "Unstructured"],
+        "correctAnswer": "Structured",
+        "explanation": "Fixed tables and columns = Structured data."
+      },
+      {
+        "question": "A system stores product data as JSON with different fields per product. What type of data is this?",
+        "options": ["Structured", "Semi-structured", "Unstructured"],
+        "correctAnswer": "Semi-structured",
+        "explanation": "JSON with flexible schema = Semi-structured."
+      },
+      {
+        "question": "A company stores customer photos and video recordings. What type of data is this?",
+        "options": ["Structured", "Semi-structured", "Unstructured"],
+        "correctAnswer": "Unstructured",
+        "explanation": "Photos and videos without schema = Unstructured."
+      }
+    ],
+    "relatedTopics": ["Data Types", "Azure SQL", "Azure Cosmos DB", "Azure Blob Storage"]
+  },
+  {
+    "id": "oltp-vs-olap",
+    "moduleId": "core-data-concepts",
+    "moduleName": "Core Data Concepts",
+    "title": "OLTP vs OLAP",
+    "titleAr": "الفرق بين OLTP وOLAP",
+    "difficulty": "easy",
+    "estimatedMinutes": 12,
+    "concept": "OLTP (Online Transaction Processing) هو نظام معالجة المعاملات اليومية - كل عملية بنكية أو طلب شراء. OLAP (Online Analytical Processing) هو نظام التحليل والتقارير - يعمل على البيانات التاريخية لاستخراج الأنماط والإحصاءات.",
+    "keywords": ["transaction", "order", "payment", "bank transfer", "POS", "report", "trend", "aggregation", "warehouse", "historical", "dashboard", "analytics"],
+    "examRule": "Order/payment/transfer/POS → OLTP | Reports/trends/warehouse/aggregation → OLAP",
+    "comparison": {
+      "headers": ["", "OLTP", "OLAP"],
+      "rows": [
+        ["الهدف", "معاملات سريعة", "تحليل وتقارير"],
+        ["العمليات", "INSERT/UPDATE/DELETE كثيرة", "SELECT وAggregations"],
+        ["البيانات", "حالية وتشغيلية", "تاريخية"],
+        ["الهيكل", "Normalized (3NF)", "Denormalized (Star Schema)"],
+        ["أمثلة", "بنك، POS، طلبات", "Dashboard، Sales Reports"],
+        ["Azure Service", "Azure SQL DB", "Azure Synapse Analytics"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "المتجر الإلكتروني ≠ OLAP دائماً",
+        "explanation": "عملية إضافة منتج للسلة أو الدفع = OLTP. لكن تقرير المبيعات الشهري = OLAP."
+      },
+      {
+        "title": "Data Warehouse = OLAP",
+        "explanation": "أي ذكر لـ Data Warehouse في السؤال يعني OLAP."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A bank records money transfers and withdrawals in real-time as they happen. What type of system is this?",
+        "options": ["OLTP", "OLAP", "ETL"],
+        "correctAnswer": "OLTP",
+        "explanation": "Real-time financial transactions = OLTP."
+      },
+      {
+        "question": "A company wants to analyze its sales trends over the past five years. What type of solution is most appropriate?",
+        "options": ["OLTP", "OLAP", "Streaming"],
+        "correctAnswer": "OLAP",
+        "explanation": "Analyzing historical data = OLAP."
+      }
+    ],
+    "relatedTopics": ["OLTP", "OLAP", "Azure Synapse Analytics", "Data Warehouse"]
+  },
+  {
+    "id": "batch-vs-streaming",
+    "moduleId": "core-data-concepts",
+    "moduleName": "Core Data Concepts",
+    "title": "Batch vs Streaming",
+    "titleAr": "الفرق بين Batch وStreaming",
+    "difficulty": "easy",
+    "estimatedMinutes": 10,
+    "concept": "Batch Processing: جمع البيانات أولاً ثم معالجتها دفعة واحدة في وقت محدد. Streaming Processing: معالجة البيانات فوراً لحظة وصولها.",
+    "keywords": ["daily", "monthly", "scheduled", "batch", "real-time", "sensor", "telemetry", "rolling average", "events", "stream", "threshold", "every 12 hours", "after one million records"],
+    "examRule": "Daily/monthly/scheduled/threshold → Batch | Real-time/sensors/rolling average/events → Streaming",
+    "comparison": {
+      "headers": ["", "Batch", "Streaming"],
+      "rows": [
+        ["التوقيت", "جدول زمني أو عتبة", "فوري لحظي"],
+        ["التأخير", "مقبول (دقائق/ساعات)", "منخفض جداً (ثوانٍ/ms)"],
+        ["أمثلة", "تقرير يومي، كل مليون سجل", "بيانات المستشعرات، IoT"],
+        ["Azure Service", "Azure Data Factory", "Azure Stream Analytics"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Rolling average = Streaming",
+        "explanation": "المتوسط المتحرك يحتاج بيانات مستمرة في الوقت الفعلي، وهذا Streaming."
+      },
+      {
+        "title": "After threshold = Batch",
+        "explanation": "معالجة البيانات بعد وصول مليون سجل = Batch (يجمع أولاً ثم يعالج)."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A system processes sales data every night at 2 AM on a fixed schedule. What type of processing is this?",
+        "options": ["Batch", "Streaming", "OLAP"],
+        "correctAnswer": "Batch",
+        "explanation": "Fixed time schedule = Batch processing."
+      },
+      {
+        "question": "A system monitors industrial machine temperatures and sends an alert immediately when they exceed a threshold. What type of processing is this?",
+        "options": ["Batch", "Streaming", "ETL"],
+        "correctAnswer": "Streaming",
+        "explanation": "Real-time continuous monitoring = Streaming."
+      }
+    ],
+    "relatedTopics": ["Batch", "Streaming", "Azure Stream Analytics", "Azure Data Factory"]
+  },
+  {
+    "id": "etl-vs-elt",
+    "moduleId": "core-data-concepts",
+    "moduleName": "Core Data Concepts",
+    "title": "ETL vs ELT",
+    "titleAr": "الفرق بين ETL وELT",
+    "difficulty": "medium",
+    "estimatedMinutes": 10,
+    "concept": "ETL (Extract → Transform → Load): نستخرج البيانات، نحولها خارج الـ destination، ثم نحملها. ELT (Extract → Load → Transform): نستخرج البيانات، نحملها مباشرة، ثم نحولها داخل الـ destination.",
+    "keywords": ["extract", "transform", "load", "pipeline", "staging", "clean", "filter", "destination", "data warehouse"],
+    "examRule": "Transform BEFORE load → ETL | Load THEN transform → ELT",
+    "comparison": {
+      "headers": ["", "ETL", "ELT"],
+      "rows": [
+        ["الترتيب", "Extract → Transform → Load", "Extract → Load → Transform"],
+        ["مكان التحويل", "خارج الـ destination", "داخل الـ destination"],
+        ["متى يُستخدم", "عندما نحتاج تنظيف/فلترة أولاً", "عندما الـ destination قوي (Data Warehouse)"],
+        ["الـ tool", "Azure Data Factory (ETL mode)", "Azure Synapse / Databricks"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "ELT لا تعني إنك بتحول الـ Load والـ Transform",
+        "explanation": "الحروف هي ترتيب العمليات: E ثم L ثم T. مش L في الآخر."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "An engineer extracts data, cleans and transforms it, then loads it into the data warehouse. What is this process called?",
+        "options": ["ETL", "ELT", "Streaming"],
+        "correctAnswer": "ETL",
+        "explanation": "Transform BEFORE Load = ETL."
+      },
+      {
+        "question": "An engineer loads raw data directly into Azure Synapse Analytics, then transforms it inside. What is this process called?",
+        "options": ["ETL", "ELT", "Batch"],
+        "correctAnswer": "ELT",
+        "explanation": "Load first THEN Transform = ELT."
+      }
+    ],
+    "relatedTopics": ["ETL", "ELT", "Azure Data Factory", "Azure Synapse Analytics"]
+  },
+  {
+    "id": "analytics-types",
+    "moduleId": "core-data-concepts",
+    "moduleName": "Core Data Concepts",
+    "title": "Analytics Types",
+    "titleAr": "أنواع التحليل",
+    "difficulty": "easy",
+    "estimatedMinutes": 10,
+    "concept": "خمسة أنواع من التحليل: Descriptive (ماذا حدث؟)، Diagnostic (لماذا حدث؟)، Predictive (ماذا سيحدث؟)، Prescriptive (ما الإجراء المطلوب؟)، Cognitive (تحليل AI للنص والصوت والصور).",
+    "keywords": ["what happened", "why", "why did", "what will", "forecast", "action", "recommend", "speech", "image", "text", "AI", "pattern", "historical", "predict"],
+    "examRule": "What happened → Descriptive | Why → Diagnostic | Forecast → Predictive | Recommend action → Prescriptive | AI/speech/image → Cognitive",
+    "comparison": {
+      "headers": ["النوع", "السؤال", "مثال"],
+      "rows": [
+        ["Descriptive", "ماذا حدث؟", "تقرير مبيعات الشهر الماضي"],
+        ["Diagnostic", "لماذا حدث؟", "لماذا انخفضت المبيعات في مارس؟"],
+        ["Predictive", "ماذا سيحدث؟", "توقع مبيعات الربع القادم"],
+        ["Prescriptive", "ما الإجراء الأفضل؟", "اعرض خصم 20% للعملاء X"],
+        ["Cognitive", "فهم بالذكاء الاصطناعي", "تحليل مشاعر تقييمات العملاء"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Predictive ≠ Prescriptive",
+        "explanation": "Predictive يتوقع المستقبل فقط. Prescriptive يتوقع ويوصي بإجراء محدد."
+      },
+      {
+        "title": "الرسوم البيانية العادية = Descriptive",
+        "explanation": "أي تقرير أو chart يعرض بيانات تاريخية هو Descriptive."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A report displays total sales per region during Q1. What type of analytics is this?",
+        "options": ["Descriptive", "Diagnostic", "Predictive", "Prescriptive"],
+        "correctAnswer": "Descriptive",
+        "explanation": "Showing what happened = Descriptive analytics."
+      },
+      {
+        "question": "A system recommends offering discounts to specific customers to increase sales. What type of analytics is this?",
+        "options": ["Descriptive", "Diagnostic", "Predictive", "Prescriptive"],
+        "correctAnswer": "Prescriptive",
+        "explanation": "Recommending an action = Prescriptive analytics."
+      },
+      {
+        "question": "An ML model predicts the probability that a customer will churn. What type of analytics is this?",
+        "options": ["Descriptive", "Diagnostic", "Predictive", "Cognitive"],
+        "correctAnswer": "Predictive",
+        "explanation": "Predicting future outcomes = Predictive analytics."
+      }
+    ],
+    "relatedTopics": ["Analytics Types", "Power BI", "Azure Synapse Analytics"]
+  },
+  {
+    "id": "data-roles",
+    "moduleId": "core-data-concepts",
+    "moduleName": "Core Data Concepts",
+    "title": "Data Roles",
+    "titleAr": "أدوار البيانات",
+    "difficulty": "easy",
+    "estimatedMinutes": 8,
+    "concept": "أربعة أدوار رئيسية: DBA (يحمي ويصون قاعدة البيانات)، Data Engineer (يبني الـ pipelines وينقل البيانات)، Data Analyst (يحلل ويصنع التقارير)، Data Scientist (يبني نماذج ML ويكتشف الأنماط).",
+    "keywords": ["backup", "restore", "security", "performance", "availability", "pipeline", "ingestion", "transformation", "report", "dashboard", "chart", "machine learning", "ML", "hidden patterns", "prediction"],
+    "examRule": "Backup/security/performance → DBA | Pipelines/ingestion → Data Engineer | Charts/reports/dashboards → Data Analyst | ML/patterns → Data Scientist",
+    "comparison": {
+      "headers": ["الدور", "المسؤوليات", "الكلمات المفتاحية"],
+      "rows": [
+        ["DBA", "Backup, Restore, Security, Performance, Availability", "backup, restore, permissions, security"],
+        ["Data Engineer", "Pipelines, Ingestion, Transformation, Analytical Stores", "pipeline, ingestion, ETL, ELT, data lake"],
+        ["Data Analyst", "Reports, Dashboards, Charts, Business Insights", "report, dashboard, chart, Power BI, KPI"],
+        ["Data Scientist", "ML Models, Hidden Patterns, Predictions", "machine learning, model, predict, pattern"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Data Engineer ≠ Data Analyst",
+        "explanation": "Data Engineer ينقل البيانات ويبني الـ pipelines. Data Analyst يحلل البيانات الجاهزة ويصنع التقارير."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "An employee performs daily database backups and manages user access permissions. What is their role?",
+        "options": ["DBA", "Data Engineer", "Data Analyst", "Data Scientist"],
+        "correctAnswer": "DBA",
+        "explanation": "Backup and permissions management = DBA."
+      },
+      {
+        "question": "An employee builds a pipeline to move data from an ERP system into Azure Synapse Analytics. What is their role?",
+        "options": ["DBA", "Data Engineer", "Data Analyst", "Data Scientist"],
+        "correctAnswer": "Data Engineer",
+        "explanation": "Building pipelines and moving data = Data Engineer."
+      }
+    ],
+    "relatedTopics": ["Data Roles", "Azure Data Factory", "Power BI"]
+  },
+  {
+    "id": "acid",
+    "moduleId": "core-data-concepts",
+    "moduleName": "Core Data Concepts",
+    "title": "ACID Properties",
+    "titleAr": "خصائص ACID",
+    "difficulty": "medium",
+    "estimatedMinutes": 12,
+    "concept": "ACID هي أربع خصائص تضمن موثوقية المعاملات في قاعدة البيانات: Atomicity (كل شيء أو لا شيء)، Consistency (البيانات دائماً في حالة صالحة)، Isolation (المعاملات المتزامنة لا تتداخل)، Durability (البيانات المحفوظة لا تضيع بعد Crash).",
+    "keywords": ["all or nothing", "atomic", "consistent", "valid", "isolated", "durable", "commit", "rollback", "crash", "concurrent", "transaction"],
+    "examRule": "All-or-nothing → Atomicity | Valid state → Consistency | Concurrent separation → Isolation | Survives crash → Durability",
+    "comparison": {
+      "headers": ["الخاصية", "المعنى", "مثال"],
+      "rows": [
+        ["Atomicity", "كل شيء أو لا شيء", "تحويل بنكي: إما ينجح كاملاً أو لا يحدث"],
+        ["Consistency", "البيانات دائماً في حالة صالحة", "الرصيد لا يصبح سالباً بعد عملية"],
+        ["Isolation", "المعاملات المتزامنة لا تتداخل", "مستخدمان يحجزان نفس المقعد في نفس الوقت"],
+        ["Durability", "البيانات المحفوظة تبقى بعد Crash", "البيانات المؤكدة لا تضيع حتى لو انقطع الكهرباء"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Atomicity vs Consistency",
+        "explanation": "Atomicity = العملية كاملة أو لا. Consistency = قواعد البيانات مطبقة دائماً."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "The server crashed immediately after a Commit. Upon restart, the committed data is still present. Which ACID property guarantees this?",
+        "options": ["Atomicity", "Consistency", "Isolation", "Durability"],
+        "correctAnswer": "Durability",
+        "explanation": "Data persists after crashes = Durability."
+      },
+      {
+        "question": "A financial transfer partially failed and the entire transaction was rolled back. Which ACID property guarantees this all-or-nothing behavior?",
+        "options": ["Atomicity", "Consistency", "Isolation", "Durability"],
+        "correctAnswer": "Atomicity",
+        "explanation": "All or nothing = Atomicity."
+      }
+    ],
+    "relatedTopics": ["ACID", "OLTP", "Azure SQL Database"]
+  },
+  {
+    "id": "sql-categories",
+    "moduleId": "relational-data",
+    "moduleName": "Relational Data on Azure",
+    "title": "SQL Language Categories",
+    "titleAr": "تصنيفات SQL",
+    "difficulty": "easy",
+    "estimatedMinutes": 8,
+    "concept": "SQL ينقسم لثلاث فئات رئيسية: DDL (Data Definition Language) لتعريف الهيكل، DML (Data Manipulation Language) للتعامل مع البيانات، DCL (Data Control Language) للتحكم في الصلاحيات.",
+    "keywords": ["CREATE", "ALTER", "DROP", "SELECT", "INSERT", "UPDATE", "DELETE", "GRANT", "REVOKE", "DENY", "table", "schema", "permission"],
+    "examRule": "CREATE/ALTER/DROP → DDL | SELECT/INSERT/UPDATE/DELETE → DML | GRANT/REVOKE/DENY → DCL",
+    "comparison": {
+      "headers": ["الفئة", "الاسم الكامل", "الأوامر", "الهدف"],
+      "rows": [
+        ["DDL", "Data Definition Language", "CREATE, ALTER, DROP, TRUNCATE", "تعريف وتعديل هيكل الجداول"],
+        ["DML", "Data Manipulation Language", "SELECT, INSERT, UPDATE, DELETE", "قراءة وتعديل البيانات"],
+        ["DCL", "Data Control Language", "GRANT, REVOKE, DENY", "إدارة الصلاحيات"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "TRUNCATE هو DDL مش DML",
+        "explanation": "رغم أن TRUNCATE يمسح بيانات، إلا أنه يُصنف DDL لأنه يعمل على هيكل الجدول."
+      },
+      {
+        "title": "SELECT هو DML",
+        "explanation": "SELECT جزء من DML رغم أنه يقرأ فقط ولا يعدل."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A DBA gave a user read permission on a specific table. Which SQL command was used?",
+        "options": ["CREATE", "SELECT", "GRANT", "INSERT"],
+        "correctAnswer": "GRANT",
+        "explanation": "Granting permissions = GRANT = DCL."
+      },
+      {
+        "question": "A developer created a new table in the database. Which SQL category was used?",
+        "options": ["DML", "DCL", "DDL", "TCL"],
+        "correctAnswer": "DDL",
+        "explanation": "CREATE table = DDL (Data Definition Language)."
+      }
+    ],
+    "relatedTopics": ["SQL", "DDL", "DML", "DCL", "Azure SQL Database"]
+  },
+  {
+    "id": "azure-sql-options",
+    "moduleId": "relational-data",
+    "moduleName": "Relational Data on Azure",
+    "title": "Azure SQL Options",
+    "titleAr": "خيارات Azure SQL",
+    "difficulty": "medium",
+    "estimatedMinutes": 12,
+    "concept": "Azure تقدم ثلاث خيارات لقواعد SQL: Azure SQL Database (PaaS مُدار بالكامل)، Azure SQL Managed Instance (PaaS بتوافق أعلى مع SQL Server)، SQL Server on Azure VM (IaaS بتحكم كامل في OS وSQL Server).",
+    "keywords": ["PaaS", "IaaS", "managed", "lift and shift", "compatibility", "SQL Server", "OS control", "cloud native", "SaaS", "migration"],
+    "examRule": "Cloud-native managed single DB → Azure SQL Database | High SQL Server compatibility managed → Managed Instance | Full OS control / lift-and-shift → SQL Server on Azure VM",
+    "comparison": {
+      "headers": ["الخيار", "النوع", "التحكم", "الأفضل لـ"],
+      "rows": [
+        ["Azure SQL Database", "PaaS", "DB فقط", "تطبيقات Cloud-native وSaaS"],
+        ["Azure SQL Managed Instance", "PaaS", "DB + بعض مزايا SQL Server", "Migration مع الحفاظ على compatibility"],
+        ["SQL Server on Azure VM", "IaaS", "OS + SQL Server كامل", "Lift-and-shift بأقل تغييرات"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Managed Instance ≠ Azure SQL Database",
+        "explanation": "Azure SQL Managed Instance تدعم مزايا أكثر من SQL Server مثل CLR وSQL Agent وCross-database queries."
+      },
+      {
+        "title": "IaaS = أنت مسؤول عن OS والـ patches",
+        "explanation": "SQL Server on Azure VM يعني إنت بتدير OS وSQL Server وكل الـ patches."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A company wants to migrate an on-premises SQL Server to Azure with minimal changes while keeping full OS and SQL Server control. What is the best option?",
+        "options": ["Azure SQL Database", "Azure SQL Managed Instance", "SQL Server on Azure VM"],
+        "correctAnswer": "SQL Server on Azure VM",
+        "explanation": "Full control lift-and-shift = SQL Server on Azure VM (IaaS)."
+      },
+      {
+        "question": "A developer needs a fully managed cloud-native database for a new SaaS application with no OS management. What is the best option?",
+        "options": ["Azure SQL Database", "Azure SQL Managed Instance", "SQL Server on Azure VM"],
+        "correctAnswer": "Azure SQL Database",
+        "explanation": "Fully managed cloud-native PaaS = Azure SQL Database."
+      }
+    ],
+    "relatedTopics": ["Azure SQL Database", "Azure SQL Managed Instance", "SQL Server on Azure VM", "PaaS", "IaaS"]
+  },
+  {
+    "id": "azure-storage",
+    "moduleId": "non-relational-data",
+    "moduleName": "Non-Relational Data on Azure",
+    "title": "Azure Storage Services",
+    "titleAr": "خدمات التخزين في Azure",
+    "difficulty": "medium",
+    "estimatedMinutes": 12,
+    "concept": "Azure تقدم أربع خدمات تخزين رئيسية: Blob Storage للملفات والصور والفيديوهات، Azure Files للمجلدات المشتركة عبر SMB، Azure Table Storage لـ NoSQL key/value، ADLS Gen2 لـ Data Lakes مع مجلدات وصلاحيات.",
+    "keywords": ["blob", "files", "SMB", "PartitionKey", "RowKey", "table storage", "ADLS", "data lake", "hierarchical namespace", "ACL", "object storage", "unstructured", "shared folder"],
+    "examRule": "Images/audio/video/files → Blob | SMB/shared folder → Azure Files | PartitionKey+RowKey → Azure Table | Data lake+folders+ACLs → ADLS Gen2",
+    "comparison": {
+      "headers": ["الخدمة", "النوع", "الاستخدام الأساسي", "الكلمات المفتاحية"],
+      "rows": [
+        ["Azure Blob Storage", "Object Storage", "ملفات، صور، فيديوهات، objects", "blob, unstructured, hot/cool/archive"],
+        ["Azure Files", "File Shares", "مجلدات مشتركة عبر SMB/NFS", "SMB, file share, replace shared folder"],
+        ["Azure Table Storage", "NoSQL Key/Value", "بيانات بسيطة بـ key/value", "PartitionKey, RowKey, NoSQL, key-value"],
+        ["ADLS Gen2", "Data Lake", "Big data analytics مع مجلدات وACLs", "data lake, hierarchical namespace, ACL, big data"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Azure Table Storage ≠ ADLS Gen2",
+        "explanation": "Azure Table Storage = NoSQL بسيط. ADLS Gen2 = Data Lake لـ Big Data مع مجلدات حقيقية."
+      },
+      {
+        "title": "ADLS Gen2 مبني فوق Azure Blob Storage",
+        "explanation": "ADLS Gen2 هو Blob Storage مع Hierarchical Namespace مُفعّل."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A company wants to store video files and images for its website. Which Azure service is most appropriate?",
+        "options": ["Azure Table Storage", "Azure Files", "Azure Blob Storage", "ADLS Gen2"],
+        "correctAnswer": "Azure Blob Storage",
+        "explanation": "Storing unstructured files and images = Azure Blob Storage."
+      },
+      {
+        "question": "A team needs a shared folder accessible via SMB protocol to replace their on-premises file server. Which Azure service is most appropriate?",
+        "options": ["Azure Table Storage", "Azure Files", "Azure Blob Storage", "ADLS Gen2"],
+        "correctAnswer": "Azure Files",
+        "explanation": "SMB shared folder replacement = Azure Files."
+      },
+      {
+        "question": "A data engineer is building a Data Lake for Big Data analytics with folder-level ACL permissions. Which Azure service is most appropriate?",
+        "options": ["Azure Table Storage", "Azure Files", "Azure Blob Storage", "ADLS Gen2"],
+        "correctAnswer": "ADLS Gen2",
+        "explanation": "Data Lake + hierarchical namespace + ACLs = ADLS Gen2."
+      }
+    ],
+    "relatedTopics": ["Azure Blob Storage", "Azure Files", "Azure Table Storage", "ADLS Gen2", "Data Lake"]
+  },
+  {
+    "id": "cosmos-db",
+    "moduleId": "non-relational-data",
+    "moduleName": "Non-Relational Data on Azure",
+    "title": "Azure Cosmos DB",
+    "titleAr": "Azure Cosmos DB",
+    "difficulty": "medium",
+    "estimatedMinutes": 15,
+    "concept": "Azure Cosmos DB هي قاعدة بيانات NoSQL عالمية سريعة ومرنة تدعم عدة APIs. مثالية لـ JSON documents، Global distribution، Low latency. تدعم عدة APIs: NoSQL (JSON)، Gremlin (Graph)، Table (key/value)، MongoDB (documents).",
+    "keywords": ["NoSQL", "global", "low latency", "JSON", "document", "graph", "Gremlin", "key-value", "flexible schema", "multi-region", "cosmos"],
+    "examRule": "JSON/global/NoSQL → Cosmos DB | Graph relationships → Cosmos DB for Gremlin | Key-value style → Cosmos DB for Table",
+    "comparison": {
+      "headers": ["API", "الاستخدام", "نوع البيانات"],
+      "rows": [
+        ["Cosmos DB for NoSQL", "JSON documents + SQL-style queries", "Documents (JSON)"],
+        ["Cosmos DB for Apache Gremlin", "Graph databases", "Nodes وEdges"],
+        ["Cosmos DB for Table", "Key/value style", "PartitionKey + RowKey"],
+        ["Cosmos DB for MongoDB", "MongoDB-compatible workloads", "Documents (BSON)"],
+        ["Cosmos DB for Apache Cassandra", "Wide-column databases", "Column families"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Cosmos DB for Table ≠ Azure Table Storage",
+        "explanation": "Cosmos DB for Table يقدم performance أعلى ومرونة أكبر من Azure Table Storage العادي."
+      },
+      {
+        "title": "Graph = Gremlin",
+        "explanation": "أي سؤال عن علاقات Graph في Cosmos DB → Cosmos DB for Apache Gremlin."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "An application stores user data as JSON documents and requires global distribution with low latency. What is the best option?",
+        "options": ["Azure SQL Database", "Azure Blob Storage", "Azure Cosmos DB", "Azure Table Storage"],
+        "correctAnswer": "Azure Cosmos DB",
+        "explanation": "JSON + global distribution + low latency = Azure Cosmos DB."
+      },
+      {
+        "question": "A system stores friendship relationships in a social network using nodes and edges. Which Cosmos DB API is most appropriate?",
+        "options": ["Cosmos DB for NoSQL", "Cosmos DB for Gremlin", "Cosmos DB for Table", "Cosmos DB for MongoDB"],
+        "correctAnswer": "Cosmos DB for Gremlin",
+        "explanation": "Graph database (nodes & edges) = Cosmos DB for Apache Gremlin."
+      }
+    ],
+    "relatedTopics": ["Azure Cosmos DB", "NoSQL", "Graph Database", "Document Database"]
+  },
+  {
+    "id": "power-bi",
+    "moduleId": "analytics-azure",
+    "moduleName": "Analytics on Azure",
+    "title": "Power BI",
+    "titleAr": "Power BI",
+    "difficulty": "easy",
+    "estimatedMinutes": 10,
+    "concept": "Power BI هي أداة Microsoft لإنشاء التقارير والـ Dashboards التفاعلية. Power BI Desktop لإنشاء التقارير. Power BI Service لنشرها ومشاركتها. Report = متعدد الصفحات. Dashboard = صفحة واحدة في Service.",
+    "keywords": ["report", "dashboard", "paginated", "desktop", "service", "publish", "share", "workspace", "dataflow", "Power BI"],
+    "examRule": "Create/model reports → Power BI Desktop | Publish/share/dashboard → Power BI Service | One page → Dashboard | Multiple pages → Report",
+    "comparison": {
+      "headers": ["المكون", "الاستخدام", "الميزة الرئيسية"],
+      "rows": [
+        ["Power BI Desktop", "إنشاء التقارير والـ Models", "تطبيق مجاني للتصميم"],
+        ["Power BI Service", "نشر ومشاركة التقارير", "Cloud-based، Dashboards، Collaboration"],
+        ["Report", "عرض متعدد الصفحات", "يمكن نشره في Desktop أو Service"],
+        ["Dashboard", "صفحة واحدة من Tiles", "متاح في Service فقط"],
+        ["Paginated Report", "تقارير مطبوعة بتنسيق ثابت", "مثالي للفواتير والتقارير الرسمية"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Dashboard موجود في Service فقط",
+        "explanation": "لا يمكن إنشاء Dashboard في Power BI Desktop. فقط في Power BI Service."
+      },
+      {
+        "title": "Paginated Report ≠ Report عادي",
+        "explanation": "Paginated Reports مصممة للطباعة وتصدير PDF وتستخدم Report Builder."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "An analyst wants to create an interactive multi-page sales report. Which tool is appropriate for authoring the report?",
+        "options": ["Power BI Service", "Power BI Desktop", "Power BI Mobile", "Report Builder"],
+        "correctAnswer": "Power BI Desktop",
+        "explanation": "Authoring/creating reports = Power BI Desktop."
+      },
+      {
+        "question": "A manager wants to view the most important KPIs on a single interactive page. Which Power BI component is most appropriate?",
+        "options": ["Report", "Dashboard", "Paginated Report", "Dataflow"],
+        "correctAnswer": "Dashboard",
+        "explanation": "Single page of KPI tiles = Dashboard (available in Power BI Service only)."
+      }
+    ],
+    "relatedTopics": ["Power BI", "Analytics", "Dashboard", "Report"]
+  },
+  {
+    "id": "azure-data-factory",
+    "moduleId": "analytics-azure",
+    "moduleName": "Analytics on Azure",
+    "title": "Azure Data Factory",
+    "titleAr": "Azure Data Factory",
+    "difficulty": "medium",
+    "estimatedMinutes": 12,
+    "concept": "Azure Data Factory (ADF) هي خدمة لتكامل البيانات وبناء الـ pipelines. تستخدم لنقل وتحويل البيانات بين مصادر مختلفة. مكوناتها: Pipeline (مجموعة Activities)، Activity (خطوة معالجة)، Dataset (تمثيل البيانات)، Linked Service (معلومات الاتصال)، Trigger (يشغّل الـ Pipeline).",
+    "keywords": ["pipeline", "activity", "dataset", "linked service", "trigger", "integration runtime", "orchestration", "data movement", "ETL", "ELT", "ADF"],
+    "examRule": "Orchestration/pipeline/data movement/integration → Azure Data Factory",
+    "comparison": {
+      "headers": ["المكون", "الوصف"],
+      "rows": [
+        ["Pipeline", "مجموعة من الـ Activities مترابطة"],
+        ["Activity", "خطوة معالجة واحدة (Copy, Transform, etc.)"],
+        ["Dataset", "يمثل البيانات في مصدر أو وجهة"],
+        ["Linked Service", "معلومات الاتصال بالمصادر"],
+        ["Trigger", "يحدد متى يُشغَّل الـ Pipeline"],
+        ["Integration Runtime", "البنية التحتية الحسابية لتشغيل الـ Activities"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "ADF ≠ Azure Synapse Analytics",
+        "explanation": "ADF للـ orchestration ونقل البيانات. Azure Synapse للتحليل والـ Data Warehouse."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "An engineer wants to automate moving data from an on-premises SQL Server to Azure Blob Storage on a daily schedule. Which service is appropriate?",
+        "options": ["Azure Stream Analytics", "Azure Data Factory", "Azure Databricks", "Power BI"],
+        "correctAnswer": "Azure Data Factory",
+        "explanation": "Orchestration and scheduled data movement = Azure Data Factory."
+      }
+    ],
+    "relatedTopics": ["Azure Data Factory", "ETL", "ELT", "Pipeline", "Data Integration"]
+  },
+  {
+    "id": "azure-synapse",
+    "moduleId": "analytics-azure",
+    "moduleName": "Analytics on Azure",
+    "title": "Azure Synapse Analytics",
+    "titleAr": "Azure Synapse Analytics",
+    "difficulty": "medium",
+    "estimatedMinutes": 12,
+    "concept": "Azure Synapse Analytics هي منصة تحليل بيانات متكاملة تجمع بين Data Warehouse وBig Data Analytics. تدعم Dedicated SQL Pools للـ Data Warehouse وServerless SQL Pools للاستعلام المباشر وSynapse Pipelines للـ ETL.",
+    "keywords": ["enterprise analytics", "data warehouse", "MPP", "dedicated SQL pool", "serverless SQL", "Synapse pipelines", "lake database", "large scale"],
+    "examRule": "Large-scale analytics/data warehouse/MPP/enterprise → Azure Synapse Analytics",
+    "comparison": {
+      "headers": ["المكون", "الاستخدام"],
+      "rows": [
+        ["Dedicated SQL Pool", "Data Warehouse عالي الأداء - MPP"],
+        ["Serverless SQL Pool", "استعلام مباشر على Data Lake"],
+        ["Apache Spark Pool", "Big Data Processing وML"],
+        ["Synapse Pipelines", "ETL/ELT مثل Azure Data Factory"],
+        ["Synapse Link", "HTAP - تحليل بيانات OLTP مباشرة"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Synapse يشمل ADF functionality",
+        "explanation": "Synapse Pipelines مشابه لـ Azure Data Factory. لكن Synapse أشمل ومتكامل مع Data Warehouse."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A company needs a large-scale enterprise Data Warehouse supporting MPP to analyze petabytes of data. What is the best option?",
+        "options": ["Azure Data Factory", "Azure Synapse Analytics", "Azure Databricks", "Azure Stream Analytics"],
+        "correctAnswer": "Azure Synapse Analytics",
+        "explanation": "Enterprise Data Warehouse + MPP + large-scale analytics = Azure Synapse Analytics."
+      }
+    ],
+    "relatedTopics": ["Azure Synapse Analytics", "Data Warehouse", "MPP", "Big Data"]
+  },
+  {
+    "id": "databricks-spark",
+    "moduleId": "analytics-azure",
+    "moduleName": "Analytics on Azure",
+    "title": "Azure Databricks & Apache Spark",
+    "titleAr": "Azure Databricks وApache Spark",
+    "difficulty": "medium",
+    "estimatedMinutes": 10,
+    "concept": "Azure Databricks منصة تحليل بيانات مبنية على Apache Spark. مثالية لـ Big Data Processing وMachine Learning والـ Collaborative Notebooks. Apache Spark يعالج البيانات في الذاكرة (In-memory) مما يجعله أسرع بكثير من MapReduce.",
+    "keywords": ["Spark", "Databricks", "notebook", "ML", "machine learning", "big data", "in-memory", "collaborative", "Spark Structured Streaming", "DataFrame"],
+    "examRule": "Spark notebooks/ML/big data/collaborative → Azure Databricks",
+    "comparison": {
+      "headers": ["", "Azure Databricks", "Azure Synapse Spark"],
+      "rows": [
+        ["الاستخدام الرئيسي", "ML وData Science وBig Data", "Data Engineering وSQL Analytics"],
+        ["Notebooks", "Collaborative متقدمة", "متاحة لكن أقل تقدماً"],
+        ["ML", "MLflow متكامل", "أقل تكاملاً"],
+        ["التكامل", "مستقل ومتكامل مع Azure", "جزء من Synapse ecosystem"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Databricks ≠ Synapse",
+        "explanation": "Databricks أفضل للـ ML والـ Data Science. Synapse أفضل للـ Data Warehouse والـ SQL Analytics."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A Data Science team wants a collaborative notebook environment for building ML models on Big Data. What is the best option?",
+        "options": ["Azure Data Factory", "Azure Synapse Analytics", "Azure Databricks", "Azure Stream Analytics"],
+        "correctAnswer": "Azure Databricks",
+        "explanation": "ML + Big Data + collaborative notebooks = Azure Databricks."
+      }
+    ],
+    "relatedTopics": ["Azure Databricks", "Apache Spark", "Machine Learning", "Big Data"]
+  },
+  {
+    "id": "star-schema",
+    "moduleId": "analytics-azure",
+    "moduleName": "Analytics on Azure",
+    "title": "Star Schema - Fact vs Dimension",
+    "titleAr": "Star Schema - الحقائق والأبعاد",
+    "difficulty": "medium",
+    "estimatedMinutes": 10,
+    "concept": "Star Schema هو نموذج بيانات للـ Data Warehouse. Fact Table تحتوي على المقاييس الرقمية (SalesAmount, Quantity). Dimension Tables تحتوي على الوصف والتصنيفات (Customer, Product, Date, Region).",
+    "keywords": ["fact table", "dimension table", "star schema", "measure", "SalesAmount", "Quantity", "Revenue", "Customer", "Product", "Date", "Region", "data warehouse"],
+    "examRule": "Numbers/measures/amounts → Fact Table | Describe/filter/group/categorize → Dimension Table",
+    "comparison": {
+      "headers": ["", "Fact Table", "Dimension Table"],
+      "rows": [
+        ["المحتوى", "أرقام وقياسات", "وصف وتصنيفات"],
+        ["أمثلة", "SalesAmount, Quantity, Revenue", "Customer, Product, Date, Region"],
+        ["الحجم", "كبير جداً - ملايين صفوف", "صغير نسبياً"],
+        ["العلاقة", "Foreign Keys لـ Dimension Tables", "Primary Key"]
+      ]
+    },
+    "traps": [
+      {
+        "title": "Date هي Dimension وليست Fact",
+        "explanation": "رغم أن Date تبدو رقمية، إلا أنها Dimension لأنها وصفية (Month, Quarter, Year)."
+      }
+    ],
+    "miniQuiz": [
+      {
+        "question": "A table contains SalesAmount, Quantity, and Profit columns for each transaction. What type of table is this in a Star Schema?",
+        "options": ["Fact Table", "Dimension Table", "Bridge Table", "Staging Table"],
+        "correctAnswer": "Fact Table",
+        "explanation": "Numeric measures and quantities = Fact Table."
+      },
+      {
+        "question": "A table contains CustomerName, CustomerAge, and CustomerCity columns. What type of table is this in a Star Schema?",
+        "options": ["Fact Table", "Dimension Table", "Bridge Table", "Index Table"],
+        "correctAnswer": "Dimension Table",
+        "explanation": "Descriptive and categorical attributes = Dimension Table."
+      }
+    ],
+    "relatedTopics": ["Star Schema", "Data Warehouse", "Azure Synapse Analytics", "OLAP"]
+  }
+]

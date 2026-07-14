@@ -1,0 +1,803 @@
+{
+  "source": "corrected200.pdf",
+  "range": "51-100",
+  "questions": [
+    {
+      "id": "51",
+      "sourceNumber": 51,
+      "sourcePage": 52,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q51-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q51-answer-1.jpg"
+      ],
+      "explanation": "Box 1: No Database normalization is the process of restructuring a relational database in accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity. Full normalisation will generally not improve performance, in fact it can often make it worse but it will keep your data duplicate free. Box 2: No Analytics systems are deformalized to increase performance. Transactional database systems are normalized to increase data consistency. Box 3: Yes Transactional database systems are more normalized and requires more joins.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "52",
+      "sourceNumber": 52,
+      "sourcePage": 53,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q52-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q52-answer-1.jpg"
+      ],
+      "explanation": "A graph database stores two types of information, nodes and edges. Edges specify relationships between nodes. Nodes and edges can have properties that provide information about that node or edge, similar to columns in a table. Edges can also have a direction indicating the nature of the relationship.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "53",
+      "sourceNumber": 53,
+      "sourcePage": 54,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q53-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q53-answer-1.jpg"
+      ],
+      "explanation": "A key/value store associates each data value with a unique key. Key/value stores are highly optimized for applications performing simple lookups, but are less suitable if you need to query data across different key/value stores. Key/value stores are also not optimized for querying by value. A single key/value store can be extremely scalable, as the data store can easily distribute data across multiple nodes on separate machines.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "54",
+      "sourceNumber": 54,
+      "sourcePage": 55,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q54-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q54-answer-1.jpg"
+      ],
+      "explanation": "Explanation: SQL Server on Azure VM SQL Server on Azure VM falls into the industry category Infrastructure-as-a-Service (IaaS) and allows you to run SQL Server inside a fully managed virtual machine (VM) in Azure. The most significant difference from SQL Database and SQL Managed Instance is that SQL Server on Azure Virtual Machines allows full control over the database engine. You can choose when to start maintenance/patching, change the recovery model to simple or bulk-logged, pause or start the service when needed, and you can fully customize the SQL Server database engine. With this additional control comes the added responsibility to manage the virtual machine.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "55",
+      "sourceNumber": 55,
+      "sourcePage": 56,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q55-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q55-answer-1.jpg"
+      ],
+      "explanation": "For some semi-structured data formats (e.g. JSON), data sets are frequently a simple concatenation of multiple documents.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "56",
+      "sourceNumber": 56,
+      "sourcePage": 57,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q56-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q56-answer-1.jpg"
+      ],
+      "explanation": "Semi-structured data ג€bridgeג€ between structured and Semi-structured data (e.g., JSON, CSV, XML) is the unstructured data. It does not have a predefined data model and is more complex than structured data, yet easier to store than unstructured data.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "57",
+      "sourceNumber": 57,
+      "sourcePage": 58,
+      "topic": "DP-900 Source Bank",
+      "question": "Which property of a transactional workload guarantees that each transaction is treated as a single unit that either succeeds completely or fails completely?",
+      "explanation": "The purpose of making transactions atomic is to prevent different transactions from interfering with one another. This can only happen if more than one user process is trying to access the database at the same time, as when a server allows several clients to use it concurrently. The simplest way to enforce atomicity is for the DBMS to refuse to start any transaction until the previous one has committed.",
+      "type": "single_choice",
+      "options": [
+        "atomicity",
+        "isolation",
+        "durability",
+        "consistency"
+      ],
+      "correctAnswer": "atomicity"
+    },
+    {
+      "id": "58",
+      "sourceNumber": 58,
+      "sourcePage": 58,
+      "topic": "DP-900 Source Bank",
+      "question": "You have a data store that has the structure shown in the following exhibit. Which type of data store is this?",
+      "promptImages": [
+        "/dp900/question-assets/q58-prompt-1.jpg"
+      ],
+      "explanation": "A graph database stores two types of information, nodes and edges. Edges specify relationships between nodes. Nodes and edges can have properties that provide information about that node or edge, similar to columns in a table. Edges can also have a direction indicating the nature of the relationship.",
+      "type": "single_choice",
+      "options": [
+        "key/value",
+        "object data",
+        "graph",
+        "time series"
+      ],
+      "correctAnswer": "graph"
+    },
+    {
+      "id": "59",
+      "sourceNumber": 59,
+      "sourcePage": 59,
+      "topic": "DP-900 Source Bank",
+      "question": "Which type of database contains nodes and edges?",
+      "explanation": "A graph database stores two types of information, nodes and edges. Edges specify relationships between nodes. Nodes and edges can have properties that provide information about that node or edge, similar to columns in a table. Edges can also have a direction indicating the nature of the relationship.",
+      "type": "single_choice",
+      "options": [
+        "graph",
+        "key/value",
+        "columnar",
+        "time series"
+      ],
+      "correctAnswer": "graph"
+    },
+    {
+      "id": "60",
+      "sourceNumber": 60,
+      "sourcePage": 60,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q60-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q60-answer-1.jpg"
+      ],
+      "explanation": "A data analyst's primary skill set revolves around data acquisition, handling, and processing. Incorrect: * A data engineer requires an intermediate level understanding of programming to build thorough algorithms along with a mastery of statistics and math. * A data scientist needs to be a master of both worlds. Data, stats, and math along with in-depth programming knowledge for Machine Learning and Deep Learning.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "61",
+      "sourceNumber": 61,
+      "sourcePage": 61,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) Select the answer that correctly completes the sentence.",
+      "promptImages": [
+        "/dp900/question-assets/q61-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q61-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "62",
+      "sourceNumber": 62,
+      "sourcePage": 61,
+      "topic": "DP-900 Source Bank",
+      "question": "You have an inventory management database that contains the following table. Which statement should you use in a SQL query to change the inventory quantity of Product1 to 270?",
+      "promptImages": [
+        "/dp900/question-assets/q62-prompt-1.png"
+      ],
+      "type": "single_choice",
+      "options": [
+        "INSERT",
+        "MERGE",
+        "UPDATE",
+        "CREATE"
+      ],
+      "correctAnswer": "UPDATE"
+    },
+    {
+      "id": "63",
+      "sourceNumber": 63,
+      "sourcePage": 62,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company needs to implement a relational database in Azure. The solution must minimize ongoing maintenance. Which Azure service should you use?",
+      "type": "single_choice",
+      "options": [
+        "Azure HDInsight",
+        "Azure SQL Database",
+        "Azure Cosmos DB",
+        "SQL Server on Azure Virtual Machines"
+      ],
+      "correctAnswer": "Azure SQL Database"
+    },
+    {
+      "id": "64",
+      "sourceNumber": 64,
+      "sourcePage": 62,
+      "topic": "DP-900 Source Bank",
+      "question": "You are writing a set of SQL queries that administrators will use to troubleshoot an Azure SQL database. You need to embed documents and query results into a SQL notebook. What should you use?",
+      "type": "single_choice",
+      "options": [
+        "Microsoft SQL Server Management Studio (SSMS)",
+        "Azure Data Studio",
+        "Azure CLI",
+        "Azure PowerShell"
+      ],
+      "correctAnswer": "Azure Data Studio"
+    },
+    {
+      "id": "65",
+      "sourceNumber": 65,
+      "sourcePage": 63,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the terms to the appropriate descriptions. To answer, drag the appropriate term from the column on the left to its description on the right. Each term may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q65-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q65-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "66",
+      "sourceNumber": 66,
+      "sourcePage": 63,
+      "topic": "DP-900 Source Bank",
+      "question": "You have an e-commerce application that reads and writes data to an Azure SQL database. Which type of processing does the application use?",
+      "explanation": "OLTP is designed to serve as a persistent data store for business or front-end applications. OLTP administers day to day transaction of an organization.",
+      "type": "single_choice",
+      "options": [
+        "stream processing",
+        "batch processing",
+        "Online Analytical Processing (OLAP)",
+        "Online Transaction Processing (OLTP)"
+      ],
+      "correctAnswer": "Online Transaction Processing (OLTP)"
+    },
+    {
+      "id": "67",
+      "sourceNumber": 67,
+      "sourcePage": 64,
+      "topic": "DP-900 Source Bank",
+      "question": "When can you use an Azure Resource Manager template?",
+      "explanation": "You can automate deployments and use the practice of infrastructure as code. In code, you define the infrastructure that needs to be deployed To implement infrastructure as code for your Azure solutions, use Azure Resource Manager templates (ARM templates). The template is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project. The template uses declarative syntax, which lets you state what you intend to deploy without having to write the sequence of programming commands to create it. In the template, you specify the resources to deploy and the properties for those resources.",
+      "type": "single_choice",
+      "options": [
+        "to automate the creation of an interdependent group of Azure resources in a repeatable way",
+        "to apply Azure policies for multi-tenant deployments",
+        "to provision Azure subscriptions",
+        "to control which services and feature administrators and developers can deploy from the Azure portal"
+      ],
+      "correctAnswer": "to automate the creation of an interdependent group of Azure resources in a repeatable way"
+    },
+    {
+      "id": "68",
+      "sourceNumber": 68,
+      "sourcePage": 64,
+      "topic": "DP-900 Source Bank",
+      "question": "You have an Azure SQL database that you access directly from the Internet. You recently changed the public IP address of your computer. After changing the IP address, you can no longer access the database. You can connect to other resources in Azure. What is a possible cause of the issue?",
+      "explanation": "The Azure SQL Database firewall lets you decide which IP addresses may or may not have access to either your Azure SQL Server or your Azure SQL database. When creating an Azure SQL Database, the firewall needs to be configured before anyone will be able to access the database. By default, no external access to your SQL Database will be allowed until you explicitly assign permission by creating a firewall rule.",
+      "type": "single_choice",
+      "options": [
+        "role-based access control (RBAC)",
+        "Dynamic Host Configuration Protocol (DHCP)",
+        "Domain Name Service (DNS)",
+        "a database-level firewall"
+      ],
+      "correctAnswer": "a database-level firewall"
+    },
+    {
+      "id": "69",
+      "sourceNumber": 69,
+      "sourcePage": 65,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the tools to the appropriate descriptions. To answer, drag the appropriate tool from the column on the left to its description on the right. Each tool may be used once, more than once, or not at all.",
+      "promptImages": [
+        "/dp900/question-assets/q69-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q69-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Microsoft SQL Server Management Studio (SSMS) SQL Server Management Studio (SSMS) is an integrated environment for managing any SQL infrastructure, from SQL Server to Azure SQL Database. Box 2: Azure Data Studio Azure Data Studio offers a modern, keyboard-focused SQL coding experience that makes your everyday tasks easier with built-in features, such as multiple tab windows, a rich SQL editor, IntelliSense, keyword completion, code snippets, code navigation, and source control integration (Git). Run on-demand SQL queries, view and save results as text, JSON, or Excel. Edit data, organize your favorite database connections, and browse database objects in a familiar object browsing experience. Box 3: Microsoft SQL Server Data Tools (SSDT) SQL Server Data Tools (SSDT) is a modern development tool for building SQL Server relational databases, databases in Azure SQL, Analysis Services (AS) data models, Integration Services (IS) packages, and Reporting Services (RS) reports. With SSDT, you can design and deploy any SQL Server content type with the same ease as you would develop an application in Visual Studio.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "70",
+      "sourceNumber": 70,
+      "sourcePage": 66,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q70-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q70-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Yes Tables are database objects that contain all the data in a database. In tables, data is logically organized in a row-and-column format similar to a spreadsheet. Each row represents a unique record, and each column represents a field in the record. Box 2: No An index is an on-disk structure associated with a table or view that speeds retrieval of rows from the table or view. Box 3: Yes A view is a virtual table whose contents are defined by a query. Like a table, a view consists of a set of named columns and rows of data.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "71",
+      "sourceNumber": 71,
+      "sourcePage": 67,
+      "topic": "DP-900 Source Bank",
+      "question": "Which command-line tool can you use to query Azure SQL databases?",
+      "explanation": "The sqlcmd utility lets you enter Transact-SQL statements, system procedures, and script files at the command prompt. Incorrect Answers: B: The bulk copy program utility (bcp) bulk copies data between an instance of Microsoft SQL Server and a data file in a user-specified format. D: The Azure CLI is the defacto tool for cross-platform and command-line tools for building and managing Azure resources.",
+      "type": "single_choice",
+      "options": [
+        "sqlcmd",
+        "bcp",
+        "azdata",
+        "Azure CLI"
+      ],
+      "correctAnswer": "sqlcmd"
+    },
+    {
+      "id": "72",
+      "sourceNumber": 72,
+      "sourcePage": 68,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q72-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q72-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Yes Box 2: Yes Box 3: Yes Azure Defender provides security alerts and advanced threat protection for virtual machines, SQL databases, containers, web applications, your network, and more. Azure Defender provides security alerts and advanced threat protection for virtual machines, SQL databases, containers, web applications, your network, and more.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "73",
+      "sourceNumber": 73,
+      "sourcePage": 69,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q73-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q73-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "74",
+      "sourceNumber": 74,
+      "sourcePage": 70,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q74-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q74-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "75",
+      "sourceNumber": 75,
+      "sourcePage": 71,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) You have the following SQL query. What are dbo.Products and ProductName? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q75-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q75-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "76",
+      "sourceNumber": 76,
+      "sourcePage": 72,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q76-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q76-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "77",
+      "sourceNumber": 77,
+      "sourcePage": 73,
+      "topic": "DP-900 Source Bank",
+      "question": "Which statement is an example of Data Definition Language (DDL)?",
+      "explanation": "Data Definition Language (DDL) statements defines data structures. Use these statements to create, alter, or drop data structures in a database. These statements include: - ALTER - Collations - CREATE - DROP - DISABLE TRIGGER - ENABLE TRIGGER - RENAME - UPDATE STATISTICS - TRUNCATE TABLE - INSERT",
+      "type": "single_choice",
+      "options": [
+        "SELECT",
+        "JOIN",
+        "UPDATE",
+        "CREATE"
+      ],
+      "correctAnswer": "CREATE"
+    },
+    {
+      "id": "78",
+      "sourceNumber": 78,
+      "sourcePage": 74,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q78-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q78-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Yes Azure Data Studio is a cross-platform database tool for data professionals using on- premises and cloud data platforms on Windows, macOS, and Linux. You can use Azure Data Studio to connect to an Azure SQL Database server. You'll then run Transact-SQL (T-SQL) statements to create and query Azure SQL databases. Box 2: No SQL Server Management Studio is for configuring, managing, and administering all components within Microsoft SQL Server, not to create SQL notebooks. Instead use Azure Data Studio to create SQL notebook. Box 3: Yes You can use the Azure Data Studio to restore databases.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "79",
+      "sourceNumber": 79,
+      "sourcePage": 75,
+      "topic": "DP-900 Source Bank",
+      "question": "You are deploying a software as a service (SaaS) application that requires a relational database for Online Transaction Processing (OLTP). Which Azure service should you use to support the application?",
+      "explanation": "Azure SQL Database is relational database and a managed service. Incorrect Answers: A, B: Cosmos DB, HDInsight are non-relational databases. D: Azure Synapse Analytics is for data warehousing, not for Online Transaction Processing",
+      "type": "single_choice",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure HDInsight",
+        "Azure SQL Database",
+        "Azure Synapse Analytics"
+      ],
+      "correctAnswer": "Azure SQL Database"
+    },
+    {
+      "id": "80",
+      "sourceNumber": 80,
+      "sourcePage": 76,
+      "topic": "DP-900 Source Bank",
+      "question": "What are two benefits of platform as a service (PaaS) relational database offerings in Azure, such as Azure SQL Database? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+      "explanation": "A: Azure SQL Database is a fully managed platform as a service (PaaS) database engine that handles most of the database management functions such as upgrading, patching, backups, and monitoring without user involvement. D: SQL Database delivers predictable performance with multiple resource types, service tiers, and compute sizes. It provides dynamic scalability with no downtime, built-in intelligent optimization, global scalability and availability, and advanced security options. These capabilities allow you to focus on rapid app development and accelerating your time-to-market, rather than on managing virtual machines and infrastructure.",
+      "type": "multiple_choice",
+      "options": [
+        "access to the latest features",
+        "complete control over backup and restore processes",
+        "in-database machine learning services",
+        "reduced administrative effort for managing the server infrastructure"
+      ],
+      "correctAnswers": [
+        "access to the latest features",
+        "reduced administrative effort for managing the server infrastructure"
+      ]
+    },
+    {
+      "id": "81",
+      "sourceNumber": 81,
+      "sourcePage": 76,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q81-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q81-answer-1.jpg"
+      ],
+      "explanation": "Box 1: No Microsoft handles all patching and updating of the SQL and operating system code. You don't have to manage the underlying infrastructure. Box 2: Yes SQL Database is a fully managed service that has built-in high availability, backups, and other common maintenance operations. Box 3: No",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "82",
+      "sourceNumber": 82,
+      "sourcePage": 77,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) You have a table named Sales that contains the following data. You need to query the table to return the average sales amount per day. The output must produce the following results. How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content. NOTE: Each correct selection is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q82-prompt-1.png",
+        "/dp900/question-assets/q82-prompt-2.png",
+        "/dp900/question-assets/q82-prompt-3.png"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q82-answer-1.png"
+      ],
+      "explanation": "Box 1: SELECT Box 2: GROUP BY Example: When used with a GROUP BY clause, each aggregate function produces a single value covering each group, instead of a single value covering the whole table. The following example produces summary values for each sales territory in the AdventureWorks2012 database. The summary lists the average bonus received by the sales people in each territory, and the sum of year-to-date sales for each territory. SELECT TerritoryID, AVG(Bonus)as 'Average bonus', SUM(SalesYTD) as 'YTD sales' FROM Sales.SalesPerson GROUP BY TerritoryID;",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "83",
+      "sourceNumber": 83,
+      "sourcePage": 79,
+      "topic": "DP-900 Source Bank",
+      "question": "When you create an Azure SQL database, which account can always connect to the database?",
+      "explanation": "When you first deploy Azure SQL, you specify an admin login and an associated password for that login. This administrative account is called Server admin.",
+      "type": "single_choice",
+      "options": [
+        "the Azure Active Directory (Azure AD) account that created the database",
+        "the server admin login account of the logical server",
+        "the Azure Active Directory (Azure AD) administrator account",
+        "the sa account"
+      ],
+      "correctAnswer": "the server admin login account of the logical server"
+    },
+    {
+      "id": "84",
+      "sourceNumber": 84,
+      "sourcePage": 79,
+      "topic": "DP-900 Source Bank",
+      "question": "Which statement is an example of Data Definition Language (DDL)?",
+      "explanation": "Data Definition Language (DDL) statements defines data structures. Use these statements to create, alter, or drop data structures in a database. These statements include: - ALTER - Collations - CREATE - DROP - DISABLE TRIGGER - ENABLE TRIGGER - RENAME - UPDATE STATISTICS - TRUNCATE TABLE - UPDATE",
+      "type": "single_choice",
+      "options": [
+        "SELECT",
+        "INSERT",
+        "DELETE",
+        "DROP"
+      ],
+      "correctAnswer": "DROP"
+    },
+    {
+      "id": "85",
+      "sourceNumber": 85,
+      "sourcePage": 80,
+      "topic": "DP-900 Source Bank",
+      "question": "A team of developers has computers that run Windows 10 and Ubuntu Desktop. The developers need to connect to and query an Azure SQL database from each of their computers. The developers require code assistance features such as IntelliSense. What should the developers use?",
+      "explanation": "Azure Data Studio is a cross-platform database tool for data professionals who use on- premises and cloud data platforms on Windows, macOS, and Linux. Azure Data Studio offers a modern editor experience with IntelliSense, code snippets, source control integration, and an integrated terminal.",
+      "type": "single_choice",
+      "options": [
+        "sqlcmd",
+        "Microsoft SQL Server Management Studio (SSMS)",
+        "Azure Data Studio",
+        "Azure Data Explorer"
+      ],
+      "correctAnswer": "Azure Data Studio"
+    },
+    {
+      "id": "86",
+      "sourceNumber": 86,
+      "sourcePage": 81,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q86-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q86-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "87",
+      "sourceNumber": 87,
+      "sourcePage": 81,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to ensure that users use multi-factor authentication (MFA) when connecting to an Azure SQL database. Which type of authentication should you use?",
+      "type": "single_choice",
+      "options": [
+        "service principal authentication",
+        "Azure Active Directory (Azure AD) authentication",
+        "SQL authentication",
+        "certificate authentication"
+      ],
+      "correctAnswer": "Azure Active Directory (Azure AD) authentication"
+    },
+    {
+      "id": "88",
+      "sourceNumber": 88,
+      "sourcePage": 82,
+      "topic": "DP-900 Source Bank",
+      "question": "What is a benefit of hosting a database on Azure SQL managed instance as compared to an Azure SQL database?",
+      "type": "single_choice",
+      "options": [
+        "built-in high availability",
+        "native support for cross-database queries and transactions",
+        "system-initiated automatic backups",
+        "support for encryption at rest"
+      ],
+      "correctAnswer": "native support for cross-database queries and transactions"
+    },
+    {
+      "id": "89",
+      "sourceNumber": 89,
+      "sourcePage": 82,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q89-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q89-answer-1.jpg"
+      ],
+      "explanation": "Explanation: When you create a new server in Azure SQL Database or Azure Synapse Analytics named mysqlserver, for example, a server-level firewall blocks all access to the public endpoint for the server",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "90",
+      "sourceNumber": 90,
+      "sourcePage": 83,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to design and model a database by using a graphical tool that supports project-oriented offline database development. What should you use?",
+      "type": "single_choice",
+      "options": [
+        "Microsoft SQL Server Data Tools (SSDT)",
+        "Microsoft SQL Server Management Studio (SSMS)",
+        "Azure Databricks",
+        "Azure Data Studio"
+      ],
+      "correctAnswer": "Microsoft SQL Server Data Tools (SSDT)"
+    },
+    {
+      "id": "91",
+      "sourceNumber": 91,
+      "sourcePage": 83,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the security components to the appropriate scenarios. To answer, drag the appropriate component from the column on the left to its scenario on the right. Each component may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q91-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q91-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "92",
+      "sourceNumber": 92,
+      "sourcePage": 84,
+      "topic": "DP-900 Source Bank",
+      "question": "You have a transactional application that stores data in an Azure SQL managed instance. When should you implement a read-only database replica?",
+      "explanation": "Use read-only replicas to offload read-only query workloads.",
+      "type": "single_choice",
+      "options": [
+        "You need to generate reports without affecting the transactional workload.",
+        "You need to audit the transactional application.",
+        "You need to implement high availability in the event of a regional outage.",
+        "You need to improve the recovery point objective (RPO)."
+      ],
+      "correctAnswer": "You need to generate reports without affecting the transactional workload."
+    },
+    {
+      "id": "93",
+      "sourceNumber": 93,
+      "sourcePage": 84,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q93-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q93-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "94",
+      "sourceNumber": 94,
+      "sourcePage": 85,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q94-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q94-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "95",
+      "sourceNumber": 95,
+      "sourcePage": 85,
+      "topic": "DP-900 Source Bank",
+      "question": "HOTSPOT (Drag and Drop is not supported) To complete the sentence, select the appropriate option in the answer area.",
+      "promptImages": [
+        "/dp900/question-assets/q95-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q95-answer-1.jpg"
+      ],
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "96",
+      "sourceNumber": 96,
+      "sourcePage": 86,
+      "topic": "DP-900 Source Bank",
+      "question": "You need to query a table named Products in an Azure SQL database. Which three requirements must be met to query the table from the internet? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+      "explanation": "Incorrect Answers: A, D: Resource group permissions is not required to query an Azure SQL database table.",
+      "type": "multiple_choice",
+      "options": [
+        "You must be assigned the Reader role for the resource group that contains the database.",
+        "You must have SELECT access to the Products table.",
+        "You must have a user in the database.",
+        "You must be assigned the Contributor role for the resource group that contains the database.",
+        "Your IP address must be allowed to connect to the database."
+      ],
+      "correctAnswers": [
+        "You must have SELECT access to the Products table.",
+        "You must have a user in the database.",
+        "Your IP address must be allowed to connect to the database."
+      ]
+    },
+    {
+      "id": "97",
+      "sourceNumber": 97,
+      "sourcePage": 87,
+      "topic": "DP-900 Source Bank",
+      "question": "Which clause should you use in a SELECT statement to combine rows in one table with rows in another table?",
+      "type": "single_choice",
+      "options": [
+        "SET",
+        "VALUES",
+        "KEY",
+        "JOIN"
+      ],
+      "correctAnswer": "JOIN"
+    },
+    {
+      "id": "98",
+      "sourceNumber": 98,
+      "sourcePage": 87,
+      "topic": "DP-900 Source Bank",
+      "question": "Your company needs to ensure that an Azure virtual machine can connect to Azure SQL databases without exposing the databases to the internet. What should you use?",
+      "explanation": "Azure Private Link enables you to access Azure PaaS Services (for example, Azure Storage and SQL Database) and Azure hosted customer-owned/partner services over a private endpoint in your virtual network. Traffic between your virtual network and the service travels the Microsoft backbone network. Exposing your service to the public internet is no longer necessary",
+      "type": "single_choice",
+      "options": [
+        "Azure Application Gateway",
+        "Azure Traffic Manager",
+        "Azure DNS",
+        "Azure Private Link"
+      ],
+      "correctAnswer": "Azure Private Link"
+    },
+    {
+      "id": "99",
+      "sourceNumber": 99,
+      "sourcePage": 87,
+      "topic": "DP-900 Source Bank",
+      "question": "DRAG DROP (Drag and Drop is not supported) Match the Azure SQL services to the appropriate use cases. To answer, drag the appropriate service from the column on the left to its use case on the right. Each service may be used once, more than once, or not at all. NOTE: Each correct match its worth one point.",
+      "promptImages": [
+        "/dp900/question-assets/q99-prompt-1.jpg"
+      ],
+      "answerImages": [
+        "/dp900/question-assets/q99-answer-1.jpg"
+      ],
+      "explanation": "Box 1: Azure SQL Database single database Serverless is a compute tier for single databases in Azure SQL Database that automatically scales compute based on workload demand and bills for the amount of compute used per second. The serverless compute tier also automatically pauses databases during inactive periods when only storage is billed and automatically resumes databases when activity returns. Scenarios well suited for serverless compute Single databases with intermittent, unpredictable usage patterns interspersed with periods of inactivity, and lower average compute utilization over time. Single databases in the provisioned compute tier that are frequently rescaled and customers who prefer to delegate compute rescaling to the service. New single databases without usage history where compute sizing is difficult or not possible to estimate prior to deployment in SQL Database. Box 2: Azure SQL Managed Instance Azure SQL Managed Instance is the intelligent, scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service. Box 3: Azure SQL Database elastic pool Azure SQL Database elastic pools are a simple, cost-effective solution for managing and scaling multiple databases that have varying and unpredictable usage demands. The databases in an elastic pool are on a single server and share a set number of resources at a set price. Elastic pools in SQL Database enable software as a service (SaaS) developers to optimize the price performance for a group of databases within a prescribed budget while delivering performance elasticity for each database.",
+      "type": "visual_review",
+      "answerText": "A"
+    },
+    {
+      "id": "100",
+      "sourceNumber": 100,
+      "sourcePage": 89,
+      "topic": "DP-900 Source Bank",
+      "question": "Which T-SQL statement should be used to instruct a database management system to use an index instead of performing a full table scan?",
+      "explanation": "Table hints override the default behavior of the Query Optimizer for the duration of the data manipulation language (DML) statement by specifying a locking method, one or more indexes, a query-processing operation such as a table scan or index seek, or other options. Table hints are specified in the FROM clause of the DML statement and affect only the table or view referenced in that clause. This applies to the following commands: DELETE INSERT SELECT UPDATE MERGE",
+      "type": "single_choice",
+      "options": [
+        "SELECT",
+        "WHERE",
+        "JOIN"
+      ],
+      "correctAnswer": "WHERE"
+    }
+  ]
+}

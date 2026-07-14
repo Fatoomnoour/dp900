@@ -1,0 +1,210 @@
+[
+  {
+    "id": "tree-data-types",
+    "title": "ما نوع البيانات؟",
+    "titleEn": "What Type of Data?",
+    "icon": "Database",
+    "question": "كيف تبدو البيانات؟",
+    "branches": [
+      {
+        "condition": "جداول وأعمدة وهيكل ثابت",
+        "keywords": ["tables", "rows", "columns", "fixed schema", "relational"],
+        "answer": "Structured Data",
+        "service": "Azure SQL Database",
+        "color": "blue"
+      },
+      {
+        "condition": "JSON أو XML أو حقول مرنة",
+        "keywords": ["JSON", "XML", "flexible", "nested fields", "different properties"],
+        "answer": "Semi-structured Data",
+        "service": "Azure Cosmos DB",
+        "color": "purple"
+      },
+      {
+        "condition": "صور أو فيديو أو صوت أو ملفات",
+        "keywords": ["image", "video", "audio", "binary", "files", "PDF"],
+        "answer": "Unstructured Data",
+        "service": "Azure Blob Storage",
+        "color": "orange"
+      }
+    ]
+  },
+  {
+    "id": "tree-workload",
+    "title": "ما نوع الـ Workload؟",
+    "titleEn": "Which Workload?",
+    "icon": "Cpu",
+    "question": "ما الهدف من النظام؟",
+    "branches": [
+      {
+        "condition": "طلبات، مدفوعات، تحويلات بنكية، POS",
+        "keywords": ["orders", "payments", "bank transfer", "POS", "transaction", "operational"],
+        "answer": "OLTP",
+        "service": "Azure SQL Database",
+        "color": "green"
+      },
+      {
+        "condition": "تقارير، اتجاهات، تجميعات، data warehouse",
+        "keywords": ["reports", "trends", "aggregations", "warehouse", "analytics", "historical"],
+        "answer": "OLAP",
+        "service": "Azure Synapse Analytics",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": "tree-batch-stream",
+    "title": "Batch أم Streaming؟",
+    "titleEn": "Batch or Streaming?",
+    "icon": "Zap",
+    "question": "متى تُعالج البيانات؟",
+    "branches": [
+      {
+        "condition": "يومي / شهري / جدول زمني / بعد عتبة",
+        "keywords": ["daily", "monthly", "scheduled", "threshold", "after million records", "every 12 hours"],
+        "answer": "Batch Processing",
+        "service": "Azure Data Factory",
+        "color": "amber"
+      },
+      {
+        "condition": "فوري / مستشعرات / telemetry / rolling average",
+        "keywords": ["real-time", "sensor", "telemetry", "rolling average", "events", "stream"],
+        "answer": "Streaming Processing",
+        "service": "Azure Stream Analytics",
+        "color": "cyan"
+      }
+    ]
+  },
+  {
+    "id": "tree-storage",
+    "title": "أي خدمة تخزين Azure؟",
+    "titleEn": "Which Azure Storage?",
+    "icon": "HardDrive",
+    "question": "ما نوع البيانات التي تريد تخزينها؟",
+    "branches": [
+      {
+        "condition": "ملفات، صور، صوت، فيديو، objects",
+        "keywords": ["files", "images", "audio", "video", "binary", "object", "unstructured"],
+        "answer": "Azure Blob Storage",
+        "service": "Azure Blob Storage",
+        "color": "blue"
+      },
+      {
+        "condition": "مجلد مشترك SMB، بديل File Server",
+        "keywords": ["SMB", "shared folder", "file share", "replace file server", "NFS"],
+        "answer": "Azure Files",
+        "service": "Azure Files",
+        "color": "green"
+      },
+      {
+        "condition": "PartitionKey + RowKey، NoSQL بسيط",
+        "keywords": ["PartitionKey", "RowKey", "key-value", "NoSQL", "simple", "table storage"],
+        "answer": "Azure Table Storage",
+        "service": "Azure Table Storage",
+        "color": "purple"
+      },
+      {
+        "condition": "Data lake، مجلدات حقيقية، ACLs، Big Data",
+        "keywords": ["data lake", "hierarchical namespace", "ACL", "big data", "folders", "ADLS"],
+        "answer": "ADLS Gen2",
+        "service": "Azure Data Lake Storage Gen2",
+        "color": "teal"
+      }
+    ]
+  },
+  {
+    "id": "tree-database",
+    "title": "أي قاعدة بيانات؟",
+    "titleEn": "Which Database?",
+    "icon": "Server",
+    "question": "ما نوع البيانات واحتياجاتك؟",
+    "branches": [
+      {
+        "condition": "جداول علائقية، SQL، Cloud-native",
+        "keywords": ["relational", "tables", "SQL", "cloud-native", "SaaS", "managed"],
+        "answer": "Azure SQL Database",
+        "service": "Azure SQL Database (PaaS)",
+        "color": "blue"
+      },
+      {
+        "condition": "JSON، NoSQL عالمي، low latency، مرونة",
+        "keywords": ["JSON", "NoSQL", "global", "low latency", "flexible", "document"],
+        "answer": "Azure Cosmos DB",
+        "service": "Azure Cosmos DB",
+        "color": "purple"
+      },
+      {
+        "condition": "علاقات Graph، nodes وedges",
+        "keywords": ["graph", "nodes", "edges", "relationships", "Gremlin", "social network"],
+        "answer": "Cosmos DB for Gremlin",
+        "service": "Cosmos DB for Apache Gremlin",
+        "color": "orange"
+      },
+      {
+        "condition": "Lift-and-shift، تحكم كامل في OS",
+        "keywords": ["lift-and-shift", "OS control", "full control", "IaaS", "minimal changes"],
+        "answer": "SQL Server on Azure VM",
+        "service": "SQL Server on Azure VM (IaaS)",
+        "color": "amber"
+      },
+      {
+        "condition": "توافق عالي مع SQL Server، managed",
+        "keywords": ["compatibility", "managed instance", "SQL Server features", "CLR", "SQL Agent"],
+        "answer": "Azure SQL Managed Instance",
+        "service": "Azure SQL Managed Instance (PaaS)",
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": "tree-analytics-service",
+    "title": "أي خدمة Analytics؟",
+    "titleEn": "Which Analytics Service?",
+    "icon": "BarChart3",
+    "question": "ما نوع عمل التحليل المطلوب؟",
+    "branches": [
+      {
+        "condition": "Pipelines، orchestration، نقل بيانات",
+        "keywords": ["pipeline", "orchestration", "data movement", "integration", "ETL", "ELT", "ADF"],
+        "answer": "Azure Data Factory",
+        "service": "Azure Data Factory",
+        "color": "blue"
+      },
+      {
+        "condition": "Data warehouse، MPP، enterprise analytics",
+        "keywords": ["data warehouse", "MPP", "enterprise", "dedicated SQL pool", "large-scale"],
+        "answer": "Azure Synapse Analytics",
+        "service": "Azure Synapse Analytics",
+        "color": "purple"
+      },
+      {
+        "condition": "Spark، ML، Big Data، collaborative notebooks",
+        "keywords": ["Spark", "ML", "machine learning", "big data", "notebooks", "Databricks"],
+        "answer": "Azure Databricks",
+        "service": "Azure Databricks",
+        "color": "orange"
+      },
+      {
+        "condition": "Real-time events، stream processing، SQL",
+        "keywords": ["real-time", "stream", "events", "telemetry", "IoT", "stream analytics"],
+        "answer": "Azure Stream Analytics",
+        "service": "Azure Stream Analytics",
+        "color": "cyan"
+      },
+      {
+        "condition": "KQL، log analytics، time-series",
+        "keywords": ["KQL", "log", "time-series", "telemetry", "explorer", "ADX"],
+        "answer": "Azure Data Explorer",
+        "service": "Azure Data Explorer (ADX)",
+        "color": "teal"
+      },
+      {
+        "condition": "تقارير، dashboards، visualizations",
+        "keywords": ["reports", "dashboards", "charts", "visualize", "KPI", "Power BI"],
+        "answer": "Power BI",
+        "service": "Power BI Desktop / Service",
+        "color": "yellow"
+      }
+    ]
+  }
+]

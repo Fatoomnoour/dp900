@@ -1,0 +1,4407 @@
+You are an expert React frontend developer.
+Build an interactive exam preparation website similar in structure and user experience to this existing style:
+https://fatoomnoour.github.io/DE_Exam_Prep/
+Project name:
+DP-900 Exam Prep
+Main goal:
+Create a modern Arabic/English interactive quiz website for Microsoft DP-900 preparation using local JSON question files.
+Design direction:
+- Clean modern dashboard style.
+- Dark professional UI.
+- Arabic interface with some English technical terms.
+- Responsive design for mobile, tablet, and desktop.
+- Same idea as the reference website:
+  - Home page
+  - Quiz page
+  - Results page
+  - Mistakes / notes page
+  - Resume stopped quiz modal
+  - Exit and save progress modal
+  - Clear mistakes confirmation modal
+Tech stack:
+- React + Vite
+- Tailwind CSS
+- React Router
+- LocalStorage for progress, score, saved mistakes, and notes
+- No backend
+- Must work on GitHub Pages
+Data:
+Use local JSON files inside:
+src/data/
+  dp900_001_050.json
+  dp900_051_100.json
+  dp900_101_150.json
+  dp900_151_200.json
+  dp900_201_250.json
+  dp900_251_304.json
+Each JSON file contains:
+{
+  "exam": "DP-900",
+  "range": "001-050",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Analytics",
+      "type": "single_choice",
+      "question": "...",
+      "options": ["...", "..."],
+      "correctAnswer": "...",
+      "explanation": "..."
+    }
+  ]
+}
+Also support these question types:
+1. single_choice
+2. multiple_choice
+3. true_false_table
+4. matching
+Home page requirements:
+- Header title: DP-900 Exam Prep
+- Subtitle Arabic: اختار الموديول اللي عايز تذاكره
+- Stats cards:
+  - إجمالي الأسئلة
+  - إجابات صح
+  - إجابات غلط
+  - دقة إجمالية
+- Module cards:
+  - Core Data Concepts: questions 1–50
+  - Relational Data: questions 51–100
+  - Non-Relational Data: questions 101–150
+  - Analytics on Azure: questions 151–200
+  - Azure Services Review: questions 201–250
+  - Final Review: questions 251–304
+  - Full Mock Exam: all questions
+- Each card should show:
+  - module name
+  - question count
+  - progress percent
+  - start / continue button
+Quiz page requirements:
+- Show current question number like: سؤال 1 من 50
+- Show score counter: ✓ correct and ✗ wrong
+- Progress bar
+- Render question based on type:
+  - single_choice: radio buttons
+  - multiple_choice: checkboxes
+  - true_false_table: rows with Yes / No buttons
+  - matching: dropdown for each prompt or clickable matching cards
+- User must select an answer before checking.
+- Add button: تحقق من الإجابة
+- After answer:
+  - show correct/wrong feedback
+  - show explanation
+  - if wrong, save automatically to mistakes
+  - show next button
+- Add buttons:
+  - خروج
+  - التالي
+  - إنهاء الامتحان
+Progress:
+- Save progress automatically in localStorage:
+  - selected module
+  - current question index
+  - answers
+  - correct count
+  - wrong count
+- If user exits, show confirmation modal:
+  title: خروج من الامتحان؟
+  text: تقدمك هيتسجل وهتقدر تكمل من هنا في أي وقت
+  buttons: استمر / خروج وحفظ
+- If user returns to a module with saved progress:
+  show modal:
+  title: عندك كويز متوقف!
+  text: عايز تكمل من حيث وقفت ولا تبدأ من الأول؟
+  buttons: كمل من حيث وقفت / ابدأ من الأول / إلغاء
+Results page requirements:
+- Show result percentage
+- Show label:
+  - ممتاز if >= 85%
+  - جيد if >= 65%
+  - محتاج مراجعة if below 65%
+- Show:
+  - صح
+  - غلط
+  - إجمالي
+- Buttons:
+  - تاني
+  - شوف الأخطاء
+  - الرئيسية
+Mistakes page requirements:
+- Title: نوت الأخطاء
+- Show all wrong questions saved from quizzes
+- For each mistake show:
+  - question
+  - user answer
+  - correct answer
+  - explanation
+  - topic
+  - module
+- Add filter by topic
+- Add search input
+- Add button to delete one mistake
+- Add button: مسح الكل
+- Confirmation modal:
+  title: مسح كل الأخطاء؟
+  text: الـ notes هتتمسح نهائياً وهتبدأ من الأول
+  buttons: لأ / امسح
+UI details:
+- Use RTL direction for Arabic text.
+- Use professional cards with rounded corners and shadows.
+- Use clear colors for correct/wrong:
+  - green for correct
+  - red for wrong
+  - yellow/orange for warnings
+- Smooth transitions.
+- Mobile-first layout.
+- Sticky top navigation:
+  - الرئيسية
+  - الأخطاء
+Data handling:
+- Create a file:
+src/lib/loadQuestions.js
+that imports all JSON files and exports:
+  getModules()
+  getQuestionsByModule(moduleId)
+  getAllQuestions()
+  getQuestionStats()
+LocalStorage keys:
+- dp900_progress
+- dp900_mistakes
+- dp900_stats
+GitHub Pages:
+- Configure vite.config.js with:
+  base: "/DP900_Exam_Prep/"
+- Add package.json scripts:
+  "dev": "vite"
+  "build": "vite build"
+  "preview": "vite preview"
+  "deploy": "gh-pages -d dist"
+Output required:
+- Create complete working React project.
+- Include all components:
+  src/components/Navbar.jsx
+  src/components/StatsCard.jsx
+  src/components/ModuleCard.jsx
+  src/components/QuestionRenderer.jsx
+  src/components/ConfirmModal.jsx
+  src/pages/Home.jsx
+  src/pages/Quiz.jsx
+  src/pages/Results.jsx
+  src/pages/Mistakes.jsx
+- Make code clean, modular, and easy to edit.
+- Make sure the app works fully offline using local JSON files.
+ 
+data/dp900_001_050.json
+{
+  "exam": "DP-900",
+  "range": "001-050",
+  "note": "Training questions based on the reviewed DP-900 concepts with corrected answers and explanations.",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Analytics",
+      "type": "single_choice",
+      "question": "Descriptive analytics tells you what?",
+      "options": [
+        "What happened in the past",
+        "What will happen in the future",
+        "What action should be taken",
+        "Why something happened"
+      ],
+      "correctAnswer": "What happened in the past",
+      "explanation": "Descriptive analytics describes historical or current data. It answers the question: what happened?"
+    },
+    {
+      "id": 2,
+      "topic": "Relational Data",
+      "type": "true_false_table",
+      "question": "For each statement about normalization, select Yes or No.",
+      "statements": [
+        {
+          "text": "Normalization eliminates all relationships between tables.",
+          "correctAnswer": "No",
+          "explanation": "Normalization does not remove relationships. It organizes data into related tables."
+        },
+        {
+          "text": "Normalization can reduce duplicate data.",
+          "correctAnswer": "Yes",
+          "explanation": "Normalization reduces redundancy."
+        },
+        {
+          "text": "Normalization can improve data integrity.",
+          "correctAnswer": "Yes",
+          "explanation": "Reducing duplicates and organizing data improves consistency and integrity."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "Data Processing",
+      "type": "single_choice",
+      "question": "In an ETL process, when is data transformed?",
+      "options": [
+        "Before it is loaded into the destination",
+        "After it is loaded into the destination",
+        "Only after it is visualized",
+        "Only when the source system is deleted"
+      ],
+      "correctAnswer": "Before it is loaded into the destination",
+      "explanation": "ETL means Extract, Transform, Load. Transformation happens before loading into the target store."
+    },
+    {
+      "id": 4,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "Which statement best describes batch processing?",
+      "options": [
+        "Latency in delivering results is acceptable",
+        "Data must be processed instantly",
+        "Data is processed one event at a time only",
+        "It is used only for video streaming"
+      ],
+      "correctAnswer": "Latency in delivering results is acceptable",
+      "explanation": "Batch processing handles groups of data after collection, so delay is acceptable."
+    },
+    {
+      "id": 5,
+      "topic": "Analytics",
+      "type": "single_choice",
+      "question": "Transcribing audio files is an example of which type of analytics?",
+      "options": [
+        "Descriptive analytics",
+        "Diagnostic analytics",
+        "Predictive analytics",
+        "Cognitive analytics"
+      ],
+      "correctAnswer": "Cognitive analytics",
+      "explanation": "Audio transcription uses AI capabilities such as speech recognition, so it is cognitive analytics."
+    },
+    {
+      "id": 6,
+      "topic": "Analytics",
+      "type": "matching",
+      "question": "Match each scenario to the correct type of analytics.",
+      "pairs": [
+        {
+          "prompt": "Determine why sales increased last month.",
+          "correctAnswer": "Diagnostic analytics",
+          "explanation": "Diagnostic analytics explains why something happened."
+        },
+        {
+          "prompt": "Recommend how to allocate next month's budget.",
+          "correctAnswer": "Prescriptive analytics",
+          "explanation": "Prescriptive analytics recommends actions to take."
+        },
+        {
+          "prompt": "Identify which people are mentioned in documents.",
+          "correctAnswer": "Cognitive analytics",
+          "explanation": "Recognizing people in text uses AI and natural language processing."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "Non-Relational Data",
+      "type": "matching",
+      "question": "Identify the JSON components.",
+      "pairs": [
+        {
+          "prompt": "Customer",
+          "correctAnswer": "Root object",
+          "explanation": "Customer is the top-level JSON object."
+        },
+        {
+          "prompt": "Address",
+          "correctAnswer": "Nested object",
+          "explanation": "Address is an object inside the customer object."
+        },
+        {
+          "prompt": "Social media accounts",
+          "correctAnswer": "Nested array",
+          "explanation": "A list of social media accounts is represented as an array."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "Analytics Data Modeling",
+      "type": "true_false_table",
+      "question": "A model contains a central Sales table connected to Customer, Product, and Date tables. Select Yes or No.",
+      "statements": [
+        {
+          "text": "The model is a star schema.",
+          "correctAnswer": "Yes",
+          "explanation": "A star schema has a central fact table connected to dimension tables."
+        },
+        {
+          "text": "The Customer table is a dimension table.",
+          "correctAnswer": "Yes",
+          "explanation": "Customer describes sales transactions, so it is a dimension table."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "Azure Synapse Analytics",
+      "type": "single_choice",
+      "question": "What does a Massively Parallel Processing engine do in Azure Synapse Analytics?",
+      "options": [
+        "Distributes processing across compute nodes",
+        "Stores data only in JSON format",
+        "Runs only on a single server",
+        "Prevents queries from using indexes"
+      ],
+      "correctAnswer": "Distributes processing across compute nodes",
+      "explanation": "MPP systems split large analytical workloads across multiple compute nodes."
+    },
+    {
+      "id": 10,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which database object sorts and stores table rows based on key values?",
+      "options": [
+        "Stored procedure",
+        "View",
+        "Clustered index",
+        "Foreign key"
+      ],
+      "correctAnswer": "Clustered index",
+      "explanation": "A clustered index determines how table rows are stored based on key values."
+    },
+    {
+      "id": 11,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "A relational database is appropriate for a high volume of which operation?",
+      "options": [
+        "Transactional writes",
+        "Image rendering",
+        "Video encoding",
+        "Object storage only"
+      ],
+      "correctAnswer": "Transactional writes",
+      "explanation": "Relational databases are suitable for OLTP workloads that require consistency."
+    },
+    {
+      "id": 12,
+      "topic": "Data Workloads",
+      "type": "true_false_table",
+      "question": "Batch processing can output data to which destinations?",
+      "statements": [
+        {
+          "text": "A file store",
+          "correctAnswer": "Yes",
+          "explanation": "Batch jobs can write output as files."
+        },
+        {
+          "text": "A relational database",
+          "correctAnswer": "Yes",
+          "explanation": "Batch results can be loaded into relational databases or warehouses."
+        },
+        {
+          "text": "A NoSQL database",
+          "correctAnswer": "Yes",
+          "explanation": "Batch output can also be written to NoSQL stores."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "Data Processing",
+      "type": "matching",
+      "question": "In an ELT process, match each stage to the correct location.",
+      "pairs": [
+        {
+          "prompt": "Extract",
+          "correctAnswer": "Source system",
+          "explanation": "Data is extracted from the original source."
+        },
+        {
+          "prompt": "Load",
+          "correctAnswer": "Target data warehouse",
+          "explanation": "In ELT, data is loaded before transformation."
+        },
+        {
+          "prompt": "Transform",
+          "correctAnswer": "Target data warehouse",
+          "explanation": "In ELT, transformation happens inside the target store."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "Analytics",
+      "type": "single_choice",
+      "question": "A university shows current enrollment compared with maximum capacity. What type of analytics is this?",
+      "options": [
+        "Descriptive analytics",
+        "Predictive analytics",
+        "Prescriptive analytics",
+        "Cognitive analytics"
+      ],
+      "correctAnswer": "Descriptive analytics",
+      "explanation": "Showing current or historical values is descriptive analytics."
+    },
+    {
+      "id": 15,
+      "topic": "Data Visualization",
+      "type": "matching",
+      "question": "Match each visualization to its purpose.",
+      "pairs": [
+        {
+          "prompt": "Show hierarchical data using rectangles sized by value.",
+          "correctAnswer": "Treemap",
+          "explanation": "Treemaps show hierarchy using nested rectangles."
+        },
+        {
+          "prompt": "Show which factors influence a selected metric.",
+          "correctAnswer": "Key influencers visual",
+          "explanation": "Key influencers identify contributors to an outcome."
+        },
+        {
+          "prompt": "Show a relationship between two numeric values.",
+          "correctAnswer": "Scatter chart",
+          "explanation": "Scatter charts show relationships between numerical measures."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "topic": "Azure Storage",
+      "type": "multiple_choice",
+      "question": "Which Azure Storage redundancy options replicate data to a secondary region?",
+      "options": [
+        "Locally-redundant storage LRS",
+        "Zone-redundant storage ZRS",
+        "Geo-redundant storage GRS",
+        "Read-access geo-redundant storage RA-GRS"
+      ],
+      "correctAnswers": [
+        "Geo-redundant storage GRS",
+        "Read-access geo-redundant storage RA-GRS"
+      ],
+      "explanation": "GRS and RA-GRS replicate data to a secondary region."
+    },
+    {
+      "id": 17,
+      "topic": "Azure Services",
+      "type": "true_false_table",
+      "question": "For each statement about PaaS database offerings in Azure, select Yes or No.",
+      "statements": [
+        {
+          "text": "They require less setup and maintenance than IaaS databases.",
+          "correctAnswer": "Yes",
+          "explanation": "PaaS reduces infrastructure management."
+        },
+        {
+          "text": "You are responsible for updating the operating system.",
+          "correctAnswer": "No",
+          "explanation": "The cloud provider manages operating system patching."
+        },
+        {
+          "text": "All PaaS database offerings can be paused to reduce costs.",
+          "correctAnswer": "No",
+          "explanation": "Not every PaaS database service supports pause."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which SQL statement is an example of Data Manipulation Language?",
+      "options": [
+        "GRANT",
+        "REVOKE",
+        "INSERT",
+        "CREATE"
+      ],
+      "correctAnswer": "INSERT",
+      "explanation": "INSERT adds data to a table, so it is DML."
+    },
+    {
+      "id": 19,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which database object stores a reusable SQL query that can include calculated columns?",
+      "options": [
+        "View",
+        "Index",
+        "Primary key",
+        "Transaction log"
+      ],
+      "correctAnswer": "View",
+      "explanation": "A view is a virtual table based on a query."
+    },
+    {
+      "id": 20,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "A key/value store is optimized for which operation?",
+      "options": [
+        "Simple lookups by key",
+        "Complex joins",
+        "Full relational constraints",
+        "OLAP cube processing"
+      ],
+      "correctAnswer": "Simple lookups by key",
+      "explanation": "Key/value stores are optimized for fast lookup using a key."
+    },
+    {
+      "id": 21,
+      "topic": "Azure Data Services",
+      "type": "matching",
+      "question": "Match each data type to the most suitable Azure service.",
+      "pairs": [
+        {
+          "prompt": "Image files",
+          "correctAnswer": "Azure Blob Storage",
+          "explanation": "Blob Storage is suitable for file and object storage."
+        },
+        {
+          "prompt": "Relationships between employees",
+          "correctAnswer": "Azure Cosmos DB for Apache Gremlin",
+          "explanation": "Gremlin is used for graph relationships."
+        },
+        {
+          "prompt": "Key/value pairs",
+          "correctAnswer": "Azure Table Storage",
+          "explanation": "Azure Table Storage supports key/value-style NoSQL data."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "Azure Data Lake Storage",
+      "type": "matching",
+      "question": "Order the Azure Data Lake Storage Gen2 hierarchy.",
+      "pairs": [
+        {
+          "prompt": "Level 1",
+          "correctAnswer": "Azure Storage account",
+          "explanation": "The storage account is the top-level Azure storage resource."
+        },
+        {
+          "prompt": "Level 2",
+          "correctAnswer": "Container or file system",
+          "explanation": "ADLS Gen2 uses containers/file systems, not Azure Files file shares."
+        },
+        {
+          "prompt": "Level 3",
+          "correctAnswer": "Directories or folders",
+          "explanation": "Directories exist when hierarchical namespace is enabled."
+        },
+        {
+          "prompt": "Level 4",
+          "correctAnswer": "Files",
+          "explanation": "Files are stored inside directories."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "topic": "Data Workloads",
+      "type": "multiple_choice",
+      "question": "Which two characteristics describe real-time processing?",
+      "options": [
+        "High latency is acceptable",
+        "Low latency is required",
+        "Data is processed as it is created",
+        "Data is processed only once per month"
+      ],
+      "correctAnswers": [
+        "Low latency is required",
+        "Data is processed as it is created"
+      ],
+      "explanation": "Real-time processing handles data as it arrives with low latency."
+    },
+    {
+      "id": 24,
+      "topic": "Azure Data Factory",
+      "type": "matching",
+      "question": "Match each Azure Data Factory component to its meaning.",
+      "pairs": [
+        {
+          "prompt": "Dataset",
+          "correctAnswer": "Represents the data used by activities",
+          "explanation": "A dataset describes data that an activity reads or writes."
+        },
+        {
+          "prompt": "Linked service",
+          "correctAnswer": "Defines connection information",
+          "explanation": "A linked service defines how to connect to a data source or compute."
+        },
+        {
+          "prompt": "Pipeline",
+          "correctAnswer": "A logical group of activities",
+          "explanation": "A pipeline organizes activities into a workflow."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "topic": "Data Workloads",
+      "type": "matching",
+      "question": "Match each scenario to the correct workload type.",
+      "pairs": [
+        {
+          "prompt": "Load data every 12 hours.",
+          "correctAnswer": "Batch",
+          "explanation": "Scheduled periodic loading is batch processing."
+        },
+        {
+          "prompt": "Process purchase events as they happen.",
+          "correctAnswer": "Streaming",
+          "explanation": "Immediate event processing is streaming."
+        },
+        {
+          "prompt": "Load data after every one million transactions.",
+          "correctAnswer": "Batch",
+          "explanation": "Processing after accumulated transactions is batch processing."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "topic": "Data Processing",
+      "type": "matching",
+      "question": "For ELT, match each step to where it occurs.",
+      "pairs": [
+        {
+          "prompt": "Extract",
+          "correctAnswer": "Source system",
+          "explanation": "Data is extracted from the source."
+        },
+        {
+          "prompt": "Load",
+          "correctAnswer": "Target data warehouse",
+          "explanation": "In ELT, data is loaded before transformation."
+        },
+        {
+          "prompt": "Transform",
+          "correctAnswer": "Target data warehouse",
+          "explanation": "In ELT, transformation happens in the target."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "Analytics",
+      "type": "single_choice",
+      "question": "A company uses previous sales data to forecast fourth-quarter sales. What type of analytics is this?",
+      "options": [
+        "Descriptive",
+        "Diagnostic",
+        "Predictive",
+        "Cognitive"
+      ],
+      "correctAnswer": "Predictive",
+      "explanation": "Forecasting future results is predictive analytics."
+    },
+    {
+      "id": 28,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which SQL statement is DML?",
+      "options": [
+        "CREATE",
+        "DROP",
+        "UPDATE",
+        "GRANT"
+      ],
+      "correctAnswer": "UPDATE",
+      "explanation": "UPDATE modifies existing table data, so it is DML."
+    },
+    {
+      "id": 29,
+      "topic": "Analytics",
+      "type": "single_choice",
+      "question": "Creating closed captions from audio files is an example of which analytics type?",
+      "options": [
+        "Descriptive analytics",
+        "Diagnostic analytics",
+        "Prescriptive analytics",
+        "Cognitive analytics"
+      ],
+      "correctAnswer": "Cognitive analytics",
+      "explanation": "Closed captioning from audio uses speech-to-text AI."
+    },
+    {
+      "id": 30,
+      "topic": "Analytics",
+      "type": "single_choice",
+      "question": "A chart shows current student enrollment by department. What type of analytics is this?",
+      "options": [
+        "Descriptive",
+        "Predictive",
+        "Prescriptive",
+        "Cognitive"
+      ],
+      "correctAnswer": "Descriptive",
+      "explanation": "Showing current values is descriptive analytics."
+    },
+    {
+      "id": 31,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "A JSON document is usually classified as what type of data?",
+      "options": [
+        "Structured data",
+        "Semi-structured data",
+        "Unstructured data",
+        "Relational data only"
+      ],
+      "correctAnswer": "Semi-structured data",
+      "explanation": "JSON has structure but does not require a fixed relational schema."
+    },
+    {
+      "id": 32,
+      "topic": "Azure Storage",
+      "type": "single_choice",
+      "question": "Which Azure CLI command is required first before using Azure Table Storage?",
+      "options": [
+        "az storage account create",
+        "az sql db create",
+        "az cosmosdb gremlin graph create",
+        "az group deployment cancel"
+      ],
+      "correctAnswer": "az storage account create",
+      "explanation": "Azure Table Storage is created inside an Azure Storage account."
+    },
+    {
+      "id": 33,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "Which Cosmos DB API supports SQL-style SELECT queries over JSON documents?",
+      "options": [
+        "Azure Cosmos DB for NoSQL",
+        "Azure Cosmos DB for Apache Gremlin",
+        "Azure Cosmos DB for Cassandra",
+        "Azure Cosmos DB for PostgreSQL"
+      ],
+      "correctAnswer": "Azure Cosmos DB for NoSQL",
+      "explanation": "Azure Cosmos DB for NoSQL supports SQL-style queries over JSON items."
+    },
+    {
+      "id": 34,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which SQL statement is used to modify an existing database view?",
+      "options": [
+        "ALTER",
+        "INSERT",
+        "SELECT",
+        "GRANT"
+      ],
+      "correctAnswer": "ALTER",
+      "explanation": "ALTER modifies existing database objects such as views."
+    },
+    {
+      "id": 35,
+      "topic": "Data Processing",
+      "type": "true_false_table",
+      "question": "For each ETL or ELT statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "ETL can reduce transfer of sensitive data to destination systems.",
+          "correctAnswer": "Yes",
+          "explanation": "Sensitive data can be filtered or masked before loading."
+        },
+        {
+          "text": "ELT transformations are performed independently from source and destination systems.",
+          "correctAnswer": "No",
+          "explanation": "ELT transformations occur in the destination system."
+        },
+        {
+          "text": "ELT can reduce the time needed to copy large data volumes before transformation.",
+          "correctAnswer": "Yes",
+          "explanation": "ELT loads data first and transforms it later in the target system."
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "topic": "Cloud Deployment Models",
+      "type": "matching",
+      "question": "Match each PostgreSQL deployment to its cloud model.",
+      "pairs": [
+        {
+          "prompt": "PostgreSQL installed on an Azure virtual machine",
+          "correctAnswer": "IaaS",
+          "explanation": "You manage the virtual machine and database engine."
+        },
+        {
+          "prompt": "Azure Database for PostgreSQL",
+          "correctAnswer": "PaaS",
+          "explanation": "It is a managed platform database service."
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure relational database service has built-in compute scaling options such as serverless?",
+      "options": [
+        "Azure SQL Database",
+        "SQL Server on Azure Virtual Machines",
+        "Azure Table Storage",
+        "Azure Blob Storage"
+      ],
+      "correctAnswer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is a managed PaaS relational database with scalable compute options."
+    },
+    {
+      "id": 38,
+      "topic": "Azure Storage",
+      "type": "single_choice",
+      "question": "Which Azure service supports POSIX-like ACLs at file and directory level?",
+      "options": [
+        "Azure Data Lake Storage Gen2",
+        "Azure Queue Storage",
+        "Azure Table Storage",
+        "Azure Files without configuration"
+      ],
+      "correctAnswer": "Azure Data Lake Storage Gen2",
+      "explanation": "ADLS Gen2 supports file and directory ACLs when hierarchical namespace is enabled."
+    },
+    {
+      "id": 39,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Relational data is stored in which form?",
+      "options": [
+        "Tables with rows and columns",
+        "Only JSON documents",
+        "Only image files",
+        "Vertices and edges only"
+      ],
+      "correctAnswer": "Tables with rows and columns",
+      "explanation": "Relational databases organize data into tables, rows, and columns."
+    },
+    {
+      "id": 40,
+      "topic": "Azure SQL",
+      "type": "true_false_table",
+      "question": "For each Azure SQL statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Azure SQL Managed Instance supports cross-database queries.",
+          "correctAnswer": "Yes",
+          "explanation": "Managed Instance provides broader SQL Server compatibility."
+        },
+        {
+          "text": "Elastic pools apply to SQL Server databases running on Azure virtual machines.",
+          "correctAnswer": "No",
+          "explanation": "Elastic pools are used with Azure SQL Database."
+        },
+        {
+          "text": "Azure SQL Database is fully compatible with every SQL Server feature.",
+          "correctAnswer": "No",
+          "explanation": "Managed Instance or SQL Server on Azure VM provides higher compatibility."
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "What database object is a saved block of code that runs in a database?",
+      "options": [
+        "Stored procedure",
+        "Foreign key",
+        "Column",
+        "Index statistics"
+      ],
+      "correctAnswer": "Stored procedure",
+      "explanation": "A stored procedure is saved SQL code that can be executed in the database."
+    },
+    {
+      "id": 42,
+      "topic": "Analytics",
+      "type": "matching",
+      "question": "Match each scenario to the correct analytics type.",
+      "pairs": [
+        {
+          "prompt": "Find why sales increased.",
+          "correctAnswer": "Diagnostic analytics",
+          "explanation": "Diagnostic analytics explains why something happened."
+        },
+        {
+          "prompt": "Recommend how to allocate a budget.",
+          "correctAnswer": "Prescriptive analytics",
+          "explanation": "Prescriptive analytics recommends actions."
+        },
+        {
+          "prompt": "Detect images of a company logo inside PDF documents.",
+          "correctAnswer": "Cognitive analytics",
+          "explanation": "Logo detection uses image recognition and AI."
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "topic": "Non-Relational Data",
+      "type": "true_false_table",
+      "question": "For each statement about non-relational data, select Yes or No.",
+      "statements": [
+        {
+          "text": "Non-relational data is always stored in tables.",
+          "correctAnswer": "No",
+          "explanation": "It can be stored as documents, key/value pairs, graphs, objects, and more."
+        },
+        {
+          "text": "Non-relational data always requires a fixed schema.",
+          "correctAnswer": "No",
+          "explanation": "Many non-relational databases support flexible schemas."
+        },
+        {
+          "text": "Two entities in the same collection can have different fields.",
+          "correctAnswer": "Yes",
+          "explanation": "This is common in document and key/value stores."
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "topic": "Azure Services",
+      "type": "single_choice",
+      "question": "Azure Database for PostgreSQL is an example of which cloud service model?",
+      "options": [
+        "IaaS",
+        "PaaS",
+        "SaaS",
+        "On-premises only"
+      ],
+      "correctAnswer": "PaaS",
+      "explanation": "Azure Database for PostgreSQL is a managed database platform service."
+    },
+    {
+      "id": 45,
+      "topic": "Azure Storage",
+      "type": "single_choice",
+      "question": "Which Azure storage solution supports access control lists at file and folder level?",
+      "options": [
+        "Azure Data Lake Storage Gen2",
+        "Azure Queue Storage",
+        "Azure Table Storage",
+        "Azure App Configuration"
+      ],
+      "correctAnswer": "Azure Data Lake Storage Gen2",
+      "explanation": "ADLS Gen2 supports ACLs for directories and files."
+    },
+    {
+      "id": 46,
+      "topic": "Data Visualization",
+      "type": "single_choice",
+      "question": "Which visualization uses rectangles to show hierarchy and relative size?",
+      "options": [
+        "Pie chart",
+        "Treemap",
+        "Line chart",
+        "Gauge"
+      ],
+      "correctAnswer": "Treemap",
+      "explanation": "A treemap uses nested rectangles to represent hierarchical data."
+    },
+    {
+      "id": 47,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "Which characteristic is typical of batch processing?",
+      "options": [
+        "Noticeable delay between ingesting data and getting results",
+        "Data is always processed in milliseconds",
+        "It can process only one event at a time",
+        "It requires a graph database"
+      ],
+      "correctAnswer": "Noticeable delay between ingesting data and getting results",
+      "explanation": "Batch processing handles accumulated data, so latency is expected."
+    },
+    {
+      "id": 48,
+      "topic": "Relational Data",
+      "type": "multiple_choice",
+      "question": "Which SQL functions are aggregate functions?",
+      "options": [
+        "MAX",
+        "MIN",
+        "WHERE",
+        "JOIN"
+      ],
+      "correctAnswers": [
+        "MAX",
+        "MIN"
+      ],
+      "explanation": "MAX and MIN return values calculated from a set of rows."
+    },
+    {
+      "id": 49,
+      "topic": "Data Workloads",
+      "type": "true_false_table",
+      "question": "For each workload statement, select Yes or No for whether it is streaming.",
+      "statements": [
+        {
+          "text": "A daily sales summary job.",
+          "correctAnswer": "No",
+          "explanation": "A daily scheduled job is batch processing."
+        },
+        {
+          "text": "A rolling average temperature calculation from live sensor readings.",
+          "correctAnswer": "Yes",
+          "explanation": "Rolling calculations over live sensor events are streaming workloads."
+        },
+        {
+          "text": "Last month's average revenue per product.",
+          "correctAnswer": "No",
+          "explanation": "Historical monthly aggregation is batch or analytical processing."
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "In a relational table, what do all rows have in common?",
+      "options": [
+        "The same set of columns",
+        "A different schema for every row",
+        "Only binary file values",
+        "Only graph edges"
+      ],
+      "correctAnswer": "The same set of columns",
+      "explanation": "Every row in a relational table follows the same schema and has the same defined columns."
+    }
+  ]
+}
+ 
+data/dp900_051_100.json
+{
+  "exam": "DP-900",
+  "range": "051-100",
+  "questions": [
+    {
+      "id": 51,
+      "topic": "Relational Data",
+      "type": "true_false_table",
+      "question": "For each statement about database normalization, select Yes or No.",
+      "statements": [
+        {
+          "text": "Normalization usually improves analytical query performance by reducing joins.",
+          "correctAnswer": "No",
+          "explanation": "Analytics models are often denormalized to reduce joins."
+        },
+        {
+          "text": "A normalized database is usually ideal for star-schema analytical reporting.",
+          "correctAnswer": "No",
+          "explanation": "Star schemas are usually denormalized for analytical queries."
+        },
+        {
+          "text": "Normalization can require queries to read from multiple related tables.",
+          "correctAnswer": "Yes",
+          "explanation": "Normalized data is split into related tables, so joins are often required."
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which database type is optimized for storing and querying relationships between entities?",
+      "options": ["Key/value database", "Graph database", "Object storage", "Columnar file store"],
+      "correctAnswer": "Graph database",
+      "explanation": "Graph databases store entities as nodes and relationships as edges."
+    },
+    {
+      "id": 53,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "A key/value store is most suitable for which workload?",
+      "options": ["Simple lookups by key", "Complex joins", "OLAP cube processing", "Relational constraints"],
+      "correctAnswer": "Simple lookups by key",
+      "explanation": "Key/value stores are optimized for fast retrieval using a unique key."
+    },
+    {
+      "id": 54,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "You need to run SQL Server on Azure while managing the operating system yourself. Which option should you use?",
+      "options": ["Azure SQL Database", "SQL Server on Azure Virtual Machines", "Azure SQL Managed Instance", "Azure Table Storage"],
+      "correctAnswer": "SQL Server on Azure Virtual Machines",
+      "explanation": "SQL Server on Azure Virtual Machines is IaaS, so you manage the VM and operating system."
+    },
+    {
+      "id": 55,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "A JSON document with nested fields and flexible properties is classified as what type of data?",
+      "options": ["Structured data", "Semi-structured data", "Unstructured data", "Only relational data"],
+      "correctAnswer": "Semi-structured data",
+      "explanation": "JSON has structure but does not require a fixed relational schema."
+    },
+    {
+      "id": 56,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "Which data type best describes JSON data stored in a document database?",
+      "options": ["Semi-structured data", "Unstructured video data", "Fully normalized relational data", "Binary-only data"],
+      "correctAnswer": "Semi-structured data",
+      "explanation": "Document databases commonly store semi-structured JSON documents."
+    },
+    {
+      "id": 57,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which ACID property ensures that a transaction is completed fully or not completed at all?",
+      "options": ["Atomicity", "Consistency", "Isolation", "Durability"],
+      "correctAnswer": "Atomicity",
+      "explanation": "Atomicity means a transaction is all-or-nothing."
+    },
+    {
+      "id": 58,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "A model shows people as nodes and friendships as links. What database model is this?",
+      "options": ["Graph", "Key/value", "Column family", "Object storage"],
+      "correctAnswer": "Graph",
+      "explanation": "Nodes and edges are graph database concepts."
+    },
+    {
+      "id": 59,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which database type stores data as nodes and edges?",
+      "options": ["Graph database", "Relational database", "Queue storage", "Blob storage"],
+      "correctAnswer": "Graph database",
+      "explanation": "Graph databases represent entities as nodes and relationships as edges."
+    },
+    {
+      "id": 60,
+      "topic": "Data Roles",
+      "type": "single_choice",
+      "question": "Which data role commonly creates reports and visualizations for decision-making?",
+      "options": ["Data analyst", "Database administrator", "Network engineer", "Security administrator"],
+      "correctAnswer": "Data analyst",
+      "explanation": "A data analyst interprets data and communicates insights using reports and visuals."
+    },
+    {
+      "id": 61,
+      "topic": "Power BI",
+      "type": "single_choice",
+      "question": "Which Microsoft tool is commonly used to connect to data, model it, and create interactive reports?",
+      "options": ["Power BI Desktop", "Azure Blob Storage", "Azure Queue Storage", "SQL Server Agent"],
+      "correctAnswer": "Power BI Desktop",
+      "explanation": "Power BI Desktop is used for report authoring, data modeling, and visual creation."
+    },
+    {
+      "id": 62,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which SQL statement changes existing values in a table?",
+      "options": ["UPDATE", "CREATE", "GRANT", "DROP"],
+      "correctAnswer": "UPDATE",
+      "explanation": "UPDATE is a DML statement used to modify existing rows."
+    },
+    {
+      "id": 63,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure service is a managed PaaS relational database?",
+      "options": ["Azure SQL Database", "Azure Blob Storage", "Azure Files", "Azure Queue Storage"],
+      "correctAnswer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is a managed relational PaaS service."
+    },
+    {
+      "id": 64,
+      "topic": "SQL Tools",
+      "type": "single_choice",
+      "question": "Which tool is currently recommended for cross-platform SQL editing after Azure Data Studio retirement?",
+      "options": ["Visual Studio Code with SQL extensions", "Azure Data Studio", "Microsoft Paint", "Azure Queue Explorer"],
+      "correctAnswer": "Visual Studio Code with SQL extensions",
+      "explanation": "Azure Data Studio was historically used, but it is retired. Visual Studio Code with SQL extensions is the safer current answer.",
+      "statusNote": "Updated from older exam wording."
+    },
+    {
+      "id": 65,
+      "topic": "Relational Data",
+      "type": "matching",
+      "question": "Match each database object to its purpose.",
+      "pairs": [
+        {
+          "prompt": "Table",
+          "correctAnswer": "Stores rows and columns",
+          "explanation": "A table is the main relational storage object."
+        },
+        {
+          "prompt": "View",
+          "correctAnswer": "Represents a saved query",
+          "explanation": "A view is a virtual table based on a query."
+        },
+        {
+          "prompt": "Index",
+          "correctAnswer": "Improves retrieval speed",
+          "explanation": "Indexes help queries find rows faster."
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "An e-commerce application records orders and payments in real time. What workload is this?",
+      "options": ["OLTP", "OLAP", "Batch analytics only", "Static archive"],
+      "correctAnswer": "OLTP",
+      "explanation": "OLTP systems handle transactional reads and writes."
+    },
+    {
+      "id": 67,
+      "topic": "Azure Management",
+      "type": "single_choice",
+      "question": "Which Azure feature automates repeatable deployments of interdependent Azure resources?",
+      "options": ["Azure Resource Manager templates", "Power BI dashboards", "Blob lifecycle only", "SQL SELECT statements"],
+      "correctAnswer": "Azure Resource Manager templates",
+      "explanation": "ARM templates define Azure infrastructure as code."
+    },
+    {
+      "id": 68,
+      "topic": "Azure SQL Security",
+      "type": "single_choice",
+      "question": "A user cannot connect to Azure SQL Database after their public IP changes. What is the likely issue?",
+      "options": ["Firewall rule", "Table schema", "Column name", "Power BI theme"],
+      "correctAnswer": "Firewall rule",
+      "explanation": "Azure SQL firewall rules control which client IP addresses can connect."
+    },
+    {
+      "id": 69,
+      "topic": "SQL Tools",
+      "type": "matching",
+      "question": "Match each SQL development task to a suitable tool.",
+      "pairs": [
+        {
+          "prompt": "Manage SQL Server databases using a Windows desktop tool",
+          "correctAnswer": "SQL Server Management Studio",
+          "explanation": "SSMS is commonly used to manage SQL Server."
+        },
+        {
+          "prompt": "Develop SQL database projects offline",
+          "correctAnswer": "SQL Server Data Tools",
+          "explanation": "SSDT supports database project development."
+        },
+        {
+          "prompt": "Cross-platform SQL editing and notebooks",
+          "correctAnswer": "Visual Studio Code with SQL extensions",
+          "explanation": "Azure Data Studio was the old answer, but it is retired."
+        }
+      ],
+      "statusNote": "Updated from older exam wording."
+    },
+    {
+      "id": 70,
+      "topic": "Relational Data",
+      "type": "true_false_table",
+      "question": "For each relational database statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Tables contain rows and columns.",
+          "correctAnswer": "Yes",
+          "explanation": "Relational tables organize data into rows and columns."
+        },
+        {
+          "text": "Indexes describe the data type of each column.",
+          "correctAnswer": "No",
+          "explanation": "Indexes improve retrieval speed. Column data types are defined in the schema."
+        },
+        {
+          "text": "Views are virtual tables based on queries.",
+          "correctAnswer": "Yes",
+          "explanation": "A view returns results from a saved query definition."
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "topic": "SQL Tools",
+      "type": "single_choice",
+      "question": "Which command-line tool can run Transact-SQL commands?",
+      "options": ["sqlcmd", "PowerPoint", "Azure Monitor only", "Blob Explorer only"],
+      "correctAnswer": "sqlcmd",
+      "explanation": "sqlcmd is a command-line utility for running T-SQL commands."
+    },
+    {
+      "id": 72,
+      "topic": "Azure SQL Security",
+      "type": "true_false_table",
+      "question": "For each Azure SQL Database feature statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Azure SQL Database provides managed service capabilities.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure SQL Database is a managed PaaS database service."
+        },
+        {
+          "text": "Azure SQL Database supports security monitoring features.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure SQL includes security and threat-protection capabilities."
+        },
+        {
+          "text": "Azure SQL Database supports encryption and access control.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure SQL supports encryption, authentication, authorization, and firewall controls."
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "topic": "Azure Services",
+      "type": "true_false_table",
+      "question": "For each current Azure data service statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "SQL Server Big Data Clusters are a current recommended DP-900 service.",
+          "correctAnswer": "No",
+          "explanation": "This is outdated and no longer aligns with current Azure data platform guidance."
+        },
+        {
+          "text": "Azure Synapse Analytics can be queried using SQL tools.",
+          "correctAnswer": "Yes",
+          "explanation": "Synapse SQL endpoints can be queried using SQL-compatible tools."
+        },
+        {
+          "text": "Azure Database for MariaDB is a current recommended service for new DP-900 scenarios.",
+          "correctAnswer": "No",
+          "explanation": "Azure Database for MariaDB is retired, so this is outdated."
+        }
+      ],
+      "statusNote": "Corrected for current service availability."
+    },
+    {
+      "id": 74,
+      "topic": "Azure Database Services",
+      "type": "true_false_table",
+      "question": "For each PaaS database benefit, select Yes or No.",
+      "statements": [
+        {
+          "text": "PaaS databases can reduce hardware administration.",
+          "correctAnswer": "Yes",
+          "explanation": "The cloud provider manages the underlying infrastructure."
+        },
+        {
+          "text": "PaaS databases can provide managed high availability options.",
+          "correctAnswer": "Yes",
+          "explanation": "Managed database services include availability features."
+        },
+        {
+          "text": "PaaS databases can reduce patching and maintenance work.",
+          "correctAnswer": "Yes",
+          "explanation": "OS and platform patching are handled by the service provider."
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "topic": "SQL",
+      "type": "matching",
+      "question": "In the query SELECT ProductID, ProductName FROM dbo.Products, identify the objects.",
+      "pairs": [
+        {
+          "prompt": "dbo.Products",
+          "correctAnswer": "Table",
+          "explanation": "dbo.Products is the table being queried."
+        },
+        {
+          "prompt": "ProductName",
+          "correctAnswer": "Column",
+          "explanation": "ProductName is a column selected from the table."
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "topic": "Azure SQL",
+      "type": "true_false_table",
+      "question": "For each Azure SQL Database statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "You must regularly patch the operating system yourself.",
+          "correctAnswer": "No",
+          "explanation": "Azure manages operating system patching."
+        },
+        {
+          "text": "A Microsoft 365 subscription is required.",
+          "correctAnswer": "No",
+          "explanation": "Microsoft 365 is not required to use Azure SQL Database."
+        },
+        {
+          "text": "Existing SQL Server licenses may reduce cost through Azure Hybrid Benefit.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure Hybrid Benefit can reduce costs when licensing requirements are met."
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which SQL statement is Data Definition Language?",
+      "options": ["CREATE", "INSERT", "UPDATE", "SELECT"],
+      "correctAnswer": "CREATE",
+      "explanation": "CREATE defines a database object, so it is DDL."
+    },
+    {
+      "id": 78,
+      "topic": "SQL Tools",
+      "type": "true_false_table",
+      "question": "For each SQL tooling statement, select Yes or No using current guidance.",
+      "statements": [
+        {
+          "text": "Azure Data Studio is the current recommended tool for new SQL notebook workflows.",
+          "correctAnswer": "No",
+          "explanation": "Azure Data Studio is retired."
+        },
+        {
+          "text": "SQL Server Management Studio is primarily Windows-focused.",
+          "correctAnswer": "Yes",
+          "explanation": "SSMS is a Windows desktop tool."
+        },
+        {
+          "text": "SQL Server Data Tools supports database project development.",
+          "correctAnswer": "Yes",
+          "explanation": "SSDT is used for SQL Server database projects."
+        }
+      ],
+      "statusNote": "Updated from older exam wording."
+    },
+    {
+      "id": 79,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure service is best for a managed OLTP relational database for a SaaS application?",
+      "options": ["Azure SQL Database", "Azure Blob Storage", "Azure Data Lake Storage", "Azure Queue Storage"],
+      "correctAnswer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is a managed relational PaaS database suitable for OLTP applications."
+    },
+    {
+      "id": 80,
+      "topic": "Cloud Models",
+      "type": "multiple_choice",
+      "question": "Which are common benefits of using a PaaS database service?",
+      "options": [
+        "Reduced infrastructure administration",
+        "Full responsibility for physical servers",
+        "Manual operating system patching required",
+        "Access to managed database capabilities"
+      ],
+      "correctAnswers": ["Reduced infrastructure administration", "Access to managed database capabilities"],
+      "explanation": "PaaS reduces infrastructure work and provides managed service capabilities."
+    },
+    {
+      "id": 81,
+      "topic": "Azure SQL",
+      "type": "true_false_table",
+      "question": "For each responsibility in Azure SQL Database, select Yes or No.",
+      "statements": [
+        {
+          "text": "You are responsible for operating system updates.",
+          "correctAnswer": "No",
+          "explanation": "Azure manages OS updates for the PaaS service."
+        },
+        {
+          "text": "Automatic backups are provided by the service.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure SQL Database includes automated backups."
+        },
+        {
+          "text": "You must install the SQL Server database engine manually.",
+          "correctAnswer": "No",
+          "explanation": "The database engine is provided as part of the managed service."
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "topic": "SQL",
+      "type": "multiple_choice",
+      "question": "Which SQL clauses are needed to calculate average sales per day?",
+      "options": ["SELECT", "GROUP BY", "DROP", "GRANT"],
+      "correctAnswers": ["SELECT", "GROUP BY"],
+      "explanation": "SELECT returns the result, and GROUP BY groups rows by date."
+    },
+    {
+      "id": 83,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which account can initially connect to a newly created Azure SQL logical server?",
+      "options": ["Server admin login account", "Anonymous user", "Power BI dashboard owner only", "Storage account key"],
+      "correctAnswer": "Server admin login account",
+      "explanation": "The server admin login is created with the logical server and can connect initially."
+    },
+    {
+      "id": 84,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which SQL statement removes an existing database object?",
+      "options": ["DROP", "UPDATE", "INSERT", "SELECT"],
+      "correctAnswer": "DROP",
+      "explanation": "DROP is a DDL statement used to remove database objects."
+    },
+    {
+      "id": 85,
+      "topic": "SQL Tools",
+      "type": "single_choice",
+      "question": "Which tool should replace Azure Data Studio for current cross-platform SQL editing scenarios?",
+      "options": ["Visual Studio Code with SQL extensions", "Azure Data Studio", "Azure Files", "Power BI mobile app"],
+      "correctAnswer": "Visual Studio Code with SQL extensions",
+      "explanation": "Azure Data Studio was historically correct, but it is now retired.",
+      "statusNote": "Updated because the old answer is outdated."
+    },
+    {
+      "id": 86,
+      "topic": "Azure SQL Security",
+      "type": "single_choice",
+      "question": "Transparent Data Encryption protects which database assets?",
+      "options": ["Database, backups, and transaction log files", "Only Power BI reports", "Only source code files", "Only public IP addresses"],
+      "correctAnswer": "Database, backups, and transaction log files",
+      "explanation": "TDE encrypts database files, backups, and transaction logs at rest."
+    },
+    {
+      "id": 87,
+      "topic": "Azure SQL Security",
+      "type": "single_choice",
+      "question": "Which identity provider supports MFA authentication for Azure SQL access?",
+      "options": ["Microsoft Entra ID", "Azure Blob container name", "CSV file", "PowerPoint theme"],
+      "correctAnswer": "Microsoft Entra ID",
+      "explanation": "Microsoft Entra ID, formerly Azure Active Directory, supports identity-based authentication and MFA."
+    },
+    {
+      "id": 88,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure SQL option provides native support for cross-database queries and transactions with high SQL Server compatibility?",
+      "options": ["Azure SQL Managed Instance", "Azure Table Storage", "Azure Blob Storage", "Azure Queue Storage"],
+      "correctAnswer": "Azure SQL Managed Instance",
+      "explanation": "Managed Instance provides broader SQL Server compatibility."
+    },
+    {
+      "id": 89,
+      "topic": "Azure SQL Security",
+      "type": "single_choice",
+      "question": "Which Azure SQL feature controls client access at the logical server level?",
+      "options": ["Server-level firewall", "Scatter chart", "Blob archive tier", "JSON array"],
+      "correctAnswer": "Server-level firewall",
+      "explanation": "Server-level firewall rules define which client IP addresses can access Azure SQL."
+    },
+    {
+      "id": 90,
+      "topic": "SQL Tools",
+      "type": "single_choice",
+      "question": "Which tool is used for project-oriented offline database development?",
+      "options": ["SQL Server Data Tools", "Azure Blob Storage", "Power BI dashboard", "Azure Queue Storage"],
+      "correctAnswer": "SQL Server Data Tools",
+      "explanation": "SQL Server Data Tools supports database projects and offline schema development."
+    },
+    {
+      "id": 91,
+      "topic": "Azure SQL Security",
+      "type": "matching",
+      "question": "Match each security component to its purpose.",
+      "pairs": [
+        {
+          "prompt": "Firewall",
+          "correctAnswer": "Controls network access",
+          "explanation": "Firewalls allow or block network connections."
+        },
+        {
+          "prompt": "Authentication",
+          "correctAnswer": "Verifies identity",
+          "explanation": "Authentication confirms who a user or service is."
+        },
+        {
+          "prompt": "Encryption",
+          "correctAnswer": "Protects data",
+          "explanation": "Encryption protects data from unauthorized reading."
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Why might you use a read-only replica of a transactional database?",
+      "options": [
+        "Generate reports without affecting the primary transactional workload",
+        "Delete the primary database",
+        "Replace all backups",
+        "Convert JSON to images"
+      ],
+      "correctAnswer": "Generate reports without affecting the primary transactional workload",
+      "explanation": "Read-only replicas can offload reporting and read workloads."
+    },
+    {
+      "id": 93,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "When are relational databases especially appropriate?",
+      "options": [
+        "When strong consistency guarantees are required",
+        "When only anonymous images are stored",
+        "When no schema is ever needed",
+        "When relationships must never exist"
+      ],
+      "correctAnswer": "When strong consistency guarantees are required",
+      "explanation": "Relational databases are commonly used for ACID transactional workloads."
+    },
+    {
+      "id": 94,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which database objects enforce relationships between relational tables?",
+      "options": ["Keys", "Dashboards", "Blob containers", "CSV delimiters"],
+      "correctAnswer": "Keys",
+      "explanation": "Primary and foreign keys define and enforce relationships between tables."
+    },
+    {
+      "id": 95,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which database object is a virtual table based on a query?",
+      "options": ["View", "Index", "Firewall rule", "Blob container"],
+      "correctAnswer": "View",
+      "explanation": "A view returns data from a saved query definition."
+    },
+    {
+      "id": 96,
+      "topic": "Azure SQL Security",
+      "type": "multiple_choice",
+      "question": "What is needed to query a table in Azure SQL Database from the internet?",
+      "options": [
+        "Permission to read the table",
+        "A database user or login",
+        "Allowed network or firewall access",
+        "A Power BI mobile app installation",
+        "A Blob Archive rehydration request"
+      ],
+      "correctAnswers": [
+        "Permission to read the table",
+        "A database user or login",
+        "Allowed network or firewall access"
+      ],
+      "explanation": "The user needs database permissions, identity/authentication, and permitted network access."
+    },
+    {
+      "id": 97,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which SQL clause combines rows from two or more related tables?",
+      "options": ["JOIN", "DROP", "DENY", "BACKUP"],
+      "correctAnswer": "JOIN",
+      "explanation": "JOIN combines rows from multiple tables using a relationship condition."
+    },
+    {
+      "id": 98,
+      "topic": "Azure Networking",
+      "type": "single_choice",
+      "question": "Which Azure feature provides private connectivity to Azure SQL without exposing it publicly?",
+      "options": ["Azure Private Link", "Power BI report page", "CSV delimiter", "SQL GROUP BY"],
+      "correctAnswer": "Azure Private Link",
+      "explanation": "Private Link enables private endpoint access to Azure services such as Azure SQL."
+    },
+    {
+      "id": 99,
+      "topic": "Azure SQL",
+      "type": "matching",
+      "question": "Match each Azure SQL deployment option to the scenario.",
+      "pairs": [
+        {
+          "prompt": "A single database with serverless compute",
+          "correctAnswer": "Azure SQL Database single database",
+          "explanation": "Serverless is supported for Azure SQL Database single databases."
+        },
+        {
+          "prompt": "High SQL Server compatibility",
+          "correctAnswer": "Azure SQL Managed Instance",
+          "explanation": "Managed Instance provides broad SQL Server compatibility."
+        },
+        {
+          "prompt": "Multiple databases sharing compute resources",
+          "correctAnswer": "Elastic pool",
+          "explanation": "Elastic pools share resources across multiple Azure SQL databases."
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which T-SQL feature can explicitly force SQL Server to use a specific index?",
+      "options": ["Table hint with INDEX", "WHERE only", "SELECT only", "CREATE LOGIN only"],
+      "correctAnswer": "Table hint with INDEX",
+      "explanation": "A WHERE clause may help the optimizer choose an index, but an INDEX table hint explicitly instructs SQL Server to use a specific index.",
+      "statusNote": "Corrected because older wording that used WHERE was misleading."
+    }
+  ]
+}
+ 
+data/dp900_101_150.json
+ 
+{
+  "exam": "DP-900",
+  "range": "101-150",
+  "questions": [
+    {
+      "id": 101,
+      "topic": "Azure Synapse Analytics",
+      "type": "single_choice",
+      "question": "Which Azure service is used for large-scale analytical data warehousing with massively parallel processing?",
+      "options": ["Azure Synapse Analytics", "Azure Table Storage", "Azure Queue Storage", "Azure Files"],
+      "correctAnswer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics supports enterprise data warehousing and large-scale analytics."
+    },
+    {
+      "id": 102,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which database object stores table rows in order based on key values?",
+      "options": ["Clustered index", "View", "Stored procedure", "Foreign key"],
+      "correctAnswer": "Clustered index",
+      "explanation": "A clustered index determines the order in which rows are stored based on key values."
+    },
+    {
+      "id": 103,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "Data organized into rows and columns is commonly described as what?",
+      "options": ["Tabular", "Graph", "Binary", "Unstructured"],
+      "correctAnswer": "Tabular",
+      "explanation": "Tabular data is arranged in rows and columns."
+    },
+    {
+      "id": 104,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which database key uniquely identifies each row in a table?",
+      "options": ["Primary key", "Foreign key", "Index hint", "View"],
+      "correctAnswer": "Primary key",
+      "explanation": "A primary key uniquely identifies each record in a relational table."
+    },
+    {
+      "id": 105,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which database object presents data returned by a saved query?",
+      "options": ["View", "Primary key", "Blob container", "Queue message"],
+      "correctAnswer": "View",
+      "explanation": "A view is a virtual table based on a query."
+    },
+    {
+      "id": 106,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure SQL option provides high compatibility with on-premises SQL Server while remaining managed?",
+      "options": ["Azure SQL Managed Instance", "Azure SQL Database serverless", "Azure Table Storage", "Azure Blob Storage"],
+      "correctAnswer": "Azure SQL Managed Instance",
+      "explanation": "Azure SQL Managed Instance provides broad SQL Server compatibility with managed service benefits."
+    },
+    {
+      "id": 107,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "When creating an Azure Cosmos DB account, which setting determines the data model and query interface?",
+      "options": ["API", "Firewall rule", "Power BI theme", "Blob tier"],
+      "correctAnswer": "API",
+      "explanation": "The Cosmos DB API determines whether the account uses NoSQL, MongoDB, Gremlin, Table, or Cassandra-style access."
+    },
+    {
+      "id": 108,
+      "topic": "Non-Relational Data",
+      "type": "matching",
+      "question": "Match each scenario to the most suitable non-relational data model.",
+      "pairs": [
+        {
+          "prompt": "Store translations by language code for fast lookup.",
+          "correctAnswer": "Key/value",
+          "explanation": "Key/value stores are optimized for simple lookups by key."
+        },
+        {
+          "prompt": "Store medical images and related metadata.",
+          "correctAnswer": "Object storage",
+          "explanation": "Object storage is suitable for files such as images with metadata."
+        },
+        {
+          "prompt": "Store employee reporting relationships.",
+          "correctAnswer": "Graph",
+          "explanation": "Graph databases model relationships using nodes and edges."
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "topic": "Azure Cosmos DB",
+      "type": "multiple_choice",
+      "question": "Which two settings are commonly configured at the Azure Cosmos DB container level?",
+      "options": ["Throughput", "Partition key", "Power BI dashboard", "Virtual machine size"],
+      "correctAnswers": ["Throughput", "Partition key"],
+      "explanation": "Cosmos DB throughput can be configured at the container level, and containers require a partition key."
+    },
+    {
+      "id": 110,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "A database stores rows with flexible groups of related columns. What type of NoSQL model is this?",
+      "options": ["Column family", "Relational", "Queue", "Blob archive"],
+      "correctAnswer": "Column family",
+      "explanation": "Column-family databases store data in rows with flexible groups of columns."
+    },
+    {
+      "id": 111,
+      "topic": "Azure Data Lake Storage",
+      "type": "single_choice",
+      "question": "Which Azure storage service supports file and folder level ACLs when hierarchical namespace is enabled?",
+      "options": ["Azure Data Lake Storage Gen2", "Azure Queue Storage", "Azure Table Storage", "Azure App Configuration"],
+      "correctAnswer": "Azure Data Lake Storage Gen2",
+      "explanation": "ADLS Gen2 supports POSIX-like ACLs for directories and files when hierarchical namespace is enabled."
+    },
+    {
+      "id": 112,
+      "topic": "Azure Blob Storage",
+      "type": "single_choice",
+      "question": "Which Blob Storage tier is best for rarely accessed data that can tolerate long retrieval time?",
+      "options": ["Archive", "Hot", "Premium", "Transaction log"],
+      "correctAnswer": "Archive",
+      "explanation": "Archive is used for rarely accessed data where retrieval latency is acceptable."
+    },
+    {
+      "id": 113,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which NoSQL model stores entities as JSON-like documents with flexible schema?",
+      "options": ["Document", "Graph", "Queue", "Relational"],
+      "correctAnswer": "Document",
+      "explanation": "Document databases commonly store JSON documents and support flexible schemas."
+    },
+    {
+      "id": 114,
+      "topic": "Azure Cosmos DB",
+      "type": "matching",
+      "question": "Match each Cosmos DB API to the data model it supports.",
+      "pairs": [
+        {
+          "prompt": "Azure Cosmos DB for Apache Gremlin",
+          "correctAnswer": "Graph",
+          "explanation": "Gremlin is used for graph data."
+        },
+        {
+          "prompt": "Azure Cosmos DB for MongoDB",
+          "correctAnswer": "JSON documents",
+          "explanation": "MongoDB-style workloads use document data."
+        },
+        {
+          "prompt": "Azure Cosmos DB for Table",
+          "correctAnswer": "Key/value or table-style NoSQL",
+          "explanation": "The Table API supports key/value-style entities."
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "topic": "Azure Data Lake Storage",
+      "type": "single_choice",
+      "question": "Which storage account setting must be enabled to use Azure Data Lake Storage Gen2 hierarchical directories?",
+      "options": ["Hierarchical namespace", "Serverless compute", "Geo-pairing", "Power BI workspace"],
+      "correctAnswer": "Hierarchical namespace",
+      "explanation": "Hierarchical namespace enables directory semantics for ADLS Gen2."
+    },
+    {
+      "id": 116,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "How should graph data in Azure Cosmos DB be queried?",
+      "options": ["As nodes and edges using Gremlin", "As only CSV files", "As relational rows only", "As page blobs"],
+      "correctAnswer": "As nodes and edges using Gremlin",
+      "explanation": "Cosmos DB graph data uses vertices, edges, and the Gremlin query language."
+    },
+    {
+      "id": 117,
+      "topic": "Azure Availability",
+      "type": "single_choice",
+      "question": "Which Azure feature provides redundancy across separate physical locations within the same region?",
+      "options": ["Availability Zones", "Power BI workspaces", "SQL SELECT", "Blob metadata"],
+      "correctAnswer": "Availability Zones",
+      "explanation": "Availability Zones are separate datacenter locations within an Azure region."
+    },
+    {
+      "id": 118,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "Which feature makes Azure Cosmos DB for Table more globally scalable than Azure Table Storage?",
+      "options": ["Multi-region writes", "Only local storage", "Manual CSV export only", "No partitioning"],
+      "correctAnswer": "Multi-region writes",
+      "explanation": "Cosmos DB can support multi-region write scenarios for globally distributed applications."
+    },
+    {
+      "id": 119,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which database model is best for analyzing network device relationships and dependencies?",
+      "options": ["Graph", "Blob", "Queue", "CSV file"],
+      "correctAnswer": "Graph",
+      "explanation": "Graph databases are ideal when relationships and dependencies are important."
+    },
+    {
+      "id": 120,
+      "topic": "Azure Databricks",
+      "type": "true_false_table",
+      "question": "Can Azure Databricks consume data from these services?",
+      "statements": [
+        {
+          "text": "Azure SQL Database",
+          "correctAnswer": "Yes",
+          "explanation": "Databricks can connect to relational data sources such as Azure SQL."
+        },
+        {
+          "text": "Azure Event Hubs",
+          "correctAnswer": "Yes",
+          "explanation": "Databricks can process streaming data from Event Hubs."
+        },
+        {
+          "text": "Azure Cosmos DB",
+          "correctAnswer": "Yes",
+          "explanation": "Databricks can integrate with Cosmos DB for analytics scenarios."
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "topic": "Azure Data Services",
+      "type": "matching",
+      "question": "Match each requirement to the correct Azure service.",
+      "pairs": [
+        {
+          "prompt": "Run SQL-style queries over JSON items.",
+          "correctAnswer": "Azure Cosmos DB for NoSQL",
+          "explanation": "Cosmos DB for NoSQL supports SQL-style queries over JSON items."
+        },
+        {
+          "prompt": "Create SMB file shares that can be mounted by Windows clients.",
+          "correctAnswer": "Azure Files",
+          "explanation": "Azure Files provides managed file shares."
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "At which level do you choose the API type when provisioning Azure Cosmos DB?",
+      "options": ["Account", "Power BI report", "Blob folder", "SQL view"],
+      "correctAnswer": "Account",
+      "explanation": "The Cosmos DB API is selected when creating the account."
+    },
+    {
+      "id": 123,
+      "topic": "Azure Storage",
+      "type": "single_choice",
+      "question": "Which Azure resource must exist before creating Azure Table Storage tables?",
+      "options": ["Storage account", "Power BI dashboard", "Azure SQL view", "Event Hub consumer group only"],
+      "correctAnswer": "Storage account",
+      "explanation": "Azure Table Storage is part of an Azure Storage account."
+    },
+    {
+      "id": 124,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "Which Azure service supports native NoSQL data with indexing and SQL-style querying over JSON documents?",
+      "options": ["Azure Cosmos DB", "Azure Files", "Azure Queue Storage", "Azure Backup only"],
+      "correctAnswer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB for NoSQL supports indexed JSON items and SQL-style queries."
+    },
+    {
+      "id": 125,
+      "topic": "Azure Table Storage and Cosmos DB",
+      "type": "true_false_table",
+      "question": "For each statement about table-style storage, select Yes or No.",
+      "statements": [
+        {
+          "text": "Azure Table Storage can provide read access to replicated data depending on redundancy configuration.",
+          "correctAnswer": "Yes",
+          "explanation": "Some redundancy options allow read access to secondary replicas."
+        },
+        {
+          "text": "Azure Table Storage supports multi-region writes.",
+          "correctAnswer": "No",
+          "explanation": "Azure Table Storage does not support multi-region writes like Cosmos DB."
+        },
+        {
+          "text": "Azure Cosmos DB for Table can support multi-region reads.",
+          "correctAnswer": "Yes",
+          "explanation": "Cosmos DB can be globally distributed."
+        },
+        {
+          "text": "Azure Cosmos DB for Table can support multi-region writes.",
+          "correctAnswer": "Yes",
+          "explanation": "Cosmos DB supports multi-region write scenarios."
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "topic": "Azure Data Lake Storage",
+      "type": "single_choice",
+      "question": "Which feature must be enabled to use Data Lake Storage Gen2 file and folder permissions?",
+      "options": ["Hierarchical namespace", "Power BI service", "Azure SQL elastic pool", "CSV delimiter"],
+      "correctAnswer": "Hierarchical namespace",
+      "explanation": "File and directory permissions in ADLS Gen2 rely on hierarchical namespace."
+    },
+    {
+      "id": 127,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which data model is best for analyzing relationships between network devices and utilization levels?",
+      "options": ["Graph", "Key/value only", "Blob archive", "Queue message"],
+      "correctAnswer": "Graph",
+      "explanation": "Graph databases are useful when relationships between entities are important."
+    },
+    {
+      "id": 128,
+      "topic": "Azure Storage",
+      "type": "single_choice",
+      "question": "Which Azure Storage service can replace a Windows shared folder?",
+      "options": ["Azure Files", "Azure Queue Storage", "Azure Table Storage", "Azure Cosmos DB"],
+      "correctAnswer": "Azure Files",
+      "explanation": "Azure Files provides SMB file shares that Windows clients can mount."
+    },
+    {
+      "id": 129,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which NoSQL model is best for low-latency session data and shopping cart state retrieval?",
+      "options": ["Key/value", "Columnar", "Graph", "Object storage"],
+      "correctAnswer": "Key/value",
+      "explanation": "Session and shopping cart data are commonly retrieved by a key such as session ID or user ID."
+    },
+    {
+      "id": 130,
+      "topic": "Azure Storage",
+      "type": "single_choice",
+      "question": "Which Azure service can be mapped as a drive in Windows?",
+      "options": ["Azure Files", "Azure Queue Storage", "Azure Table Storage", "Azure Monitor"],
+      "correctAnswer": "Azure Files",
+      "explanation": "Azure Files supports SMB file shares that can be mounted as drives."
+    },
+    {
+      "id": 131,
+      "topic": "Azure Cosmos DB",
+      "type": "true_false_table",
+      "question": "For each Azure Cosmos DB statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "The API is configured separately for each database in the same account.",
+          "correctAnswer": "No",
+          "explanation": "The API is chosen at the Cosmos DB account level."
+        },
+        {
+          "text": "A good partition key can improve scalability and query efficiency.",
+          "correctAnswer": "Yes",
+          "explanation": "Partition keys help distribute data and workload."
+        },
+        {
+          "text": "Items in the same logical partition can have different partition key values.",
+          "correctAnswer": "No",
+          "explanation": "Items in the same logical partition share the same partition key value."
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which NoSQL model is suitable for high-volume JSON data with application-defined schema?",
+      "options": ["Document", "Queue", "Relational", "File share"],
+      "correctAnswer": "Document",
+      "explanation": "Document databases are suitable for storing JSON documents with flexible schema."
+    },
+    {
+      "id": 133,
+      "topic": "Azure Storage",
+      "type": "single_choice",
+      "question": "Which storage model is optimized for files such as videos, audio streams, images, and virtual disks?",
+      "options": ["Object storage", "Relational rows", "Graph edges", "SQL indexes only"],
+      "correctAnswer": "Object storage",
+      "explanation": "Object storage is designed for large unstructured files and associated metadata."
+    },
+    {
+      "id": 134,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "Sensor readings analyzed over time are best described as which type of data?",
+      "options": ["Time series", "Graph only", "DCL", "DDL"],
+      "correctAnswer": "Time series",
+      "explanation": "Time-series data consists of values captured over time, such as sensor readings."
+    },
+    {
+      "id": 135,
+      "topic": "Azure Storage",
+      "type": "true_false_table",
+      "question": "For each Azure Storage statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Copying data between regions can incur data transfer costs.",
+          "correctAnswer": "Yes",
+          "explanation": "Cross-region data movement can generate bandwidth charges."
+        },
+        {
+          "text": "One storage account can support multiple storage services.",
+          "correctAnswer": "Yes",
+          "explanation": "A storage account can support several Azure Storage services depending on configuration."
+        },
+        {
+          "text": "Azure Data Lake Storage Gen2 is enabled on an Azure Storage account.",
+          "correctAnswer": "Yes",
+          "explanation": "ADLS Gen2 capabilities are enabled through hierarchical namespace on a storage account."
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "In Azure Cosmos DB for Apache Gremlin, how is the container commonly represented?",
+      "options": ["Graph", "CSV file", "Power BI dashboard", "SQL stored procedure only"],
+      "correctAnswer": "Graph",
+      "explanation": "Gremlin containers store graph data as vertices and edges."
+    },
+    {
+      "id": 137,
+      "topic": "Azure Cosmos DB",
+      "type": "multiple_choice",
+      "question": "At which levels can Azure Cosmos DB throughput be provisioned?",
+      "options": ["Database", "Container", "Power BI report", "Blob folder"],
+      "correctAnswers": ["Database", "Container"],
+      "explanation": "Cosmos DB throughput can be provisioned at the database or container level."
+    },
+    {
+      "id": 138,
+      "topic": "Azure Table Storage and Cosmos DB",
+      "type": "true_false_table",
+      "question": "For each table-style NoSQL capability, select Yes or No.",
+      "statements": [
+        {
+          "text": "Azure Table Storage can support replicated reads depending on redundancy.",
+          "correctAnswer": "Yes",
+          "explanation": "Some storage redundancy options support read access to a secondary region."
+        },
+        {
+          "text": "Azure Table Storage supports multi-region writes.",
+          "correctAnswer": "No",
+          "explanation": "Azure Table Storage does not support multi-region writes."
+        },
+        {
+          "text": "Azure Cosmos DB for Table can support multi-region reads.",
+          "correctAnswer": "Yes",
+          "explanation": "Cosmos DB supports global distribution."
+        },
+        {
+          "text": "Azure Cosmos DB for Table can support multi-region writes.",
+          "correctAnswer": "Yes",
+          "explanation": "Cosmos DB supports multi-region write scenarios."
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which phrase best describes many non-relational data entities?",
+      "options": ["Self-describing entities", "Always fully normalized rows", "Only fixed-schema tables", "Only transaction logs"],
+      "correctAnswer": "Self-describing entities",
+      "explanation": "Non-relational data often stores schema or structure with the entity itself."
+    },
+    {
+      "id": 140,
+      "topic": "Azure Synapse Analytics",
+      "type": "single_choice",
+      "question": "Which technology can query external data in files such as Azure Blob Storage using T-SQL in analytical scenarios?",
+      "options": ["PolyBase", "PowerPoint", "Firewall rule", "Azure Queue only"],
+      "correctAnswer": "PolyBase",
+      "explanation": "PolyBase enables SQL engines to query external data sources such as files in storage."
+    },
+    {
+      "id": 141,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "Telemetry arriving continuously from a mobile app is which workload type?",
+      "options": ["Streaming", "Batch only", "Manual archive only", "Static report only"],
+      "correctAnswer": "Streaming",
+      "explanation": "Continuous event data that is processed as it arrives is streaming data."
+    },
+    {
+      "id": 142,
+      "topic": "Azure Synapse Analytics",
+      "type": "single_choice",
+      "question": "How can you reduce compute charges for an unused Synapse dedicated SQL pool while keeping the data?",
+      "options": ["Pause the pool", "Delete all storage", "Convert it to a dashboard", "Disable SQL syntax"],
+      "correctAnswer": "Pause the pool",
+      "explanation": "Pausing a dedicated SQL pool stops compute charges while keeping the stored data."
+    },
+    {
+      "id": 143,
+      "topic": "Azure Data Factory",
+      "type": "single_choice",
+      "question": "Which Azure Data Factory object starts pipeline execution based on a schedule or event?",
+      "options": ["Trigger", "Dataset", "Index", "Foreign key"],
+      "correctAnswer": "Trigger",
+      "explanation": "Triggers initiate pipeline runs in Azure Data Factory."
+    },
+    {
+      "id": 144,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "Paginated reports over a dimensional warehouse model are usually associated with which workload type?",
+      "options": ["OLAP", "OLTP", "Key/value lookup only", "Queue messaging"],
+      "correctAnswer": "OLAP",
+      "explanation": "Dimensional models and reports are analytical workloads, so they are OLAP."
+    },
+    {
+      "id": 145,
+      "topic": "Azure Data Factory",
+      "type": "matching",
+      "question": "Match each Azure Data Factory activity type to its purpose.",
+      "pairs": [
+        {
+          "prompt": "Copy activity",
+          "correctAnswer": "Data movement",
+          "explanation": "Copy activity moves data from a source to a destination."
+        },
+        {
+          "prompt": "Mapping data flow",
+          "correctAnswer": "Data transformation",
+          "explanation": "Mapping data flows transform data visually at scale."
+        },
+        {
+          "prompt": "Lookup activity",
+          "correctAnswer": "Control flow",
+          "explanation": "Lookup can retrieve values used to control later activities."
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "topic": "Data Workloads",
+      "type": "multiple_choice",
+      "question": "Which characteristics are commonly associated with OLTP workloads?",
+      "options": [
+        "Heavy writes and moderate reads",
+        "Schema-on-write",
+        "Normalized data",
+        "Primarily historical aggregation only",
+        "Mostly read-only multidimensional reporting"
+      ],
+      "correctAnswers": ["Heavy writes and moderate reads", "Schema-on-write", "Normalized data"],
+      "explanation": "OLTP systems process transactions, usually use defined schemas, and are commonly normalized."
+    },
+    {
+      "id": 147,
+      "topic": "Power BI",
+      "type": "multiple_choice",
+      "question": "Which tasks are commonly performed in the Power BI service?",
+      "options": [
+        "Create and view dashboards or reports",
+        "Share and distribute content",
+        "Replace all data engineering pipelines",
+        "Manage SQL Server operating system patches"
+      ],
+      "correctAnswers": ["Create and view dashboards or reports", "Share and distribute content"],
+      "explanation": "The Power BI service is used for publishing, viewing, dashboards, sharing, collaboration, and distribution."
+    },
+    {
+      "id": 148,
+      "topic": "Azure Data Factory",
+      "type": "single_choice",
+      "question": "Which pipeline concept controls activity order based on dependencies and outputs?",
+      "options": ["Control flow", "Blob tier", "Primary key", "Azure file share"],
+      "correctAnswer": "Control flow",
+      "explanation": "Control flow orchestrates activities and their dependencies in a pipeline."
+    },
+    {
+      "id": 149,
+      "topic": "Power BI",
+      "type": "single_choice",
+      "question": "Which Power BI artifact supports multiple visuals, KPIs, and drill-down exploration?",
+      "options": ["Report", "Storage account key", "Firewall rule", "Queue message"],
+      "correctAnswer": "Report",
+      "explanation": "Power BI reports contain interactive pages and visuals for exploring data."
+    },
+    {
+      "id": 150,
+      "topic": "Apache Spark on Azure",
+      "type": "multiple_choice",
+      "question": "Which Azure services can be used for Apache Spark workloads?",
+      "options": ["Azure HDInsight", "Azure Databricks", "Azure Files only", "Azure Queue Storage only"],
+      "correctAnswers": ["Azure HDInsight", "Azure Databricks"],
+      "explanation": "Azure HDInsight and Azure Databricks can run Apache Spark workloads."
+    }
+  ]
+}
+ 
+data/dp900_151_200.json
+{
+  "exam": "DP-900",
+  "range": "151-200",
+  "questions": [
+    {
+      "id": 151,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "Reading data from a data warehouse to analyze business performance is usually which workload type?",
+      "options": ["OLAP", "OLTP", "Queue processing", "Key/value lookup"],
+      "correctAnswer": "OLAP",
+      "explanation": "Data warehouses are designed for analytical processing, which is OLAP."
+    },
+    {
+      "id": 152,
+      "topic": "Power BI",
+      "type": "multiple_choice",
+      "question": "Which items can be added to a Power BI dashboard?",
+      "options": [
+        "A pinned report page",
+        "A firewall rule",
+        "A report visualization",
+        "A SQL transaction log",
+        "A text box"
+      ],
+      "correctAnswers": [
+        "A pinned report page",
+        "A report visualization",
+        "A text box"
+      ],
+      "explanation": "Power BI dashboards can include tiles pinned from reports and other tile content such as text."
+    },
+    {
+      "id": 153,
+      "topic": "Power BI",
+      "type": "true_false_table",
+      "question": "For each Power BI dashboard statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "A Power BI dashboard belongs to a workspace.",
+          "correctAnswer": "Yes",
+          "explanation": "Dashboards are created and stored in Power BI workspaces."
+        },
+        {
+          "text": "A dashboard can only display visualizations from one dataset.",
+          "correctAnswer": "No",
+          "explanation": "A dashboard can include tiles from different reports and datasets."
+        },
+        {
+          "text": "A dashboard can display visualizations from an Excel workbook.",
+          "correctAnswer": "Yes",
+          "explanation": "Power BI can pin or display content originating from Excel workbooks."
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "topic": "Azure Data Factory",
+      "type": "single_choice",
+      "question": "Which Azure Data Factory component provides the compute infrastructure used for data movement and activity execution?",
+      "options": ["Integration runtime", "Dataset", "Dashboard", "Primary key"],
+      "correctAnswer": "Integration runtime",
+      "explanation": "Integration runtime provides compute infrastructure for data movement, dispatch, and transformations."
+    },
+    {
+      "id": 155,
+      "topic": "Power BI",
+      "type": "single_choice",
+      "question": "Which Power BI report type is optimized for fixed-layout, highly formatted printed documents?",
+      "options": ["Paginated report", "Dashboard", "Scatter chart", "Dataflow only"],
+      "correctAnswer": "Paginated report",
+      "explanation": "Paginated reports are designed for precise page layout and printing or exporting."
+    },
+    {
+      "id": 156,
+      "topic": "Data Visualization",
+      "type": "multiple_choice",
+      "question": "What are common purposes of data visualization?",
+      "options": [
+        "Show trends and patterns",
+        "Delete database backups",
+        "Communicate meaning from data",
+        "Replace all source systems"
+      ],
+      "correctAnswers": [
+        "Show trends and patterns",
+        "Communicate meaning from data"
+      ],
+      "explanation": "Visualizations help users understand patterns, trends, outliers, and business meaning."
+    },
+    {
+      "id": 157,
+      "topic": "Azure Synapse Analytics",
+      "type": "single_choice",
+      "question": "Which technology can query external files in Azure Data Lake Storage by using T-SQL in analytical scenarios?",
+      "options": ["PolyBase", "Azure Queue Storage", "Power BI mobile app", "Azure Files SMB"],
+      "correctAnswer": "PolyBase",
+      "explanation": "PolyBase enables SQL engines to query external data stored in files."
+    },
+    {
+      "id": 158,
+      "topic": "Power BI",
+      "type": "true_false_table",
+      "question": "For each Power BI dashboard statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "A dashboard belongs to a Power BI workspace.",
+          "correctAnswer": "Yes",
+          "explanation": "Power BI content such as dashboards is organized in workspaces."
+        },
+        {
+          "text": "A dashboard can only contain tiles from a single dataset.",
+          "correctAnswer": "No",
+          "explanation": "Dashboard tiles can come from multiple reports and datasets."
+        },
+        {
+          "text": "A dashboard can include tiles created from Excel content.",
+          "correctAnswer": "Yes",
+          "explanation": "Power BI dashboards can include content from Excel workbooks."
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "topic": "Data Workloads",
+      "type": "multiple_choice",
+      "question": "Which characteristics are commonly associated with OLTP workloads?",
+      "options": [
+        "Heavy writes and moderate reads",
+        "Schema-on-write",
+        "Normalized data",
+        "Mostly historical aggregation",
+        "Only read-only cube queries"
+      ],
+      "correctAnswers": [
+        "Heavy writes and moderate reads",
+        "Schema-on-write",
+        "Normalized data"
+      ],
+      "explanation": "OLTP systems process transactions, use defined schemas, and often store normalized data."
+    },
+    {
+      "id": 160,
+      "topic": "Data Warehousing",
+      "type": "single_choice",
+      "question": "What is a main purpose of a data warehouse?",
+      "options": [
+        "Provide a central store for complex analytical queries",
+        "Store only queue messages",
+        "Replace all dashboards with text files",
+        "Store only binary images"
+      ],
+      "correctAnswer": "Provide a central store for complex analytical queries",
+      "explanation": "A data warehouse integrates data from multiple sources for reporting and analytics."
+    },
+    {
+      "id": 161,
+      "topic": "Azure Analytics Architecture",
+      "type": "matching",
+      "question": "Match each requirement to the most suitable Azure service.",
+      "pairs": [
+        {
+          "prompt": "Orchestrate data ingestion from multiple sources.",
+          "correctAnswer": "Azure Data Factory",
+          "explanation": "Azure Data Factory is used for data integration and pipeline orchestration."
+        },
+        {
+          "prompt": "Store and process analytical data in a data warehouse.",
+          "correctAnswer": "Azure Synapse Analytics",
+          "explanation": "Azure Synapse Analytics supports enterprise analytics and data warehousing."
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "topic": "Data Workloads",
+      "type": "matching",
+      "question": "Match each scenario to the correct workload type.",
+      "pairs": [
+        {
+          "prompt": "Analyze historical web traffic after it is collected.",
+          "correctAnswer": "Batch",
+          "explanation": "Historical data processed later is batch processing."
+        },
+        {
+          "prompt": "Process uploaded images from last month.",
+          "correctAnswer": "Batch",
+          "explanation": "Processing a stored collection of files is a batch workload."
+        },
+        {
+          "prompt": "Track website users in real time.",
+          "correctAnswer": "Streaming",
+          "explanation": "Real-time event tracking is streaming."
+        }
+      ]
+    },
+    {
+      "id": 163,
+      "topic": "Data Warehousing",
+      "type": "single_choice",
+      "question": "Which statement describes a data warehousing workload?",
+      "options": [
+        "Data from multiple sources is combined in one analytical location",
+        "Only one row can be stored",
+        "All data must be stored as queue messages",
+        "Data cannot be queried"
+      ],
+      "correctAnswer": "Data from multiple sources is combined in one analytical location",
+      "explanation": "A data warehouse consolidates data from different sources for analytics."
+    },
+    {
+      "id": 164,
+      "topic": "Azure Data Factory",
+      "type": "true_false_table",
+      "question": "For each Azure Data Factory pipeline statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "A pipeline is a representation of a data structure.",
+          "correctAnswer": "No",
+          "explanation": "A dataset represents data structure. A pipeline is a workflow of activities."
+        },
+        {
+          "text": "A pipeline can execute another pipeline.",
+          "correctAnswer": "Yes",
+          "explanation": "Pipelines can call or execute other pipelines."
+        },
+        {
+          "text": "A processing step within a pipeline is called an activity.",
+          "correctAnswer": "Yes",
+          "explanation": "Activities are the processing steps inside a pipeline."
+        }
+      ]
+    },
+    {
+      "id": 165,
+      "topic": "Azure Analytics Services",
+      "type": "matching",
+      "question": "Match each requirement to the correct Azure service.",
+      "pairs": [
+        {
+          "prompt": "Output transformed data in Parquet format.",
+          "correctAnswer": "Azure Data Factory",
+          "explanation": "Azure Data Factory can copy and transform data into file formats such as Parquet."
+        },
+        {
+          "prompt": "Store Parquet files in a data lake.",
+          "correctAnswer": "Azure Data Lake Storage",
+          "explanation": "Azure Data Lake Storage is suitable for storing analytics files such as Parquet."
+        },
+        {
+          "prompt": "Query or expose analytical data in tabular form.",
+          "correctAnswer": "Azure Synapse Analytics",
+          "explanation": "Synapse can query analytical data and expose it through SQL-based structures."
+        }
+      ],
+      "statusNote": "Corrected because older answer wording mixed Azure SQL Database with Parquet output."
+    },
+    {
+      "id": 166,
+      "topic": "Azure Synapse Analytics",
+      "type": "true_false_table",
+      "question": "For each Synapse dedicated SQL pool statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Compute and storage are separate.",
+          "correctAnswer": "Yes",
+          "explanation": "Dedicated SQL pools separate compute from storage."
+        },
+        {
+          "text": "You can pause compute to reduce compute charges.",
+          "correctAnswer": "Yes",
+          "explanation": "Pausing a dedicated SQL pool stops compute billing."
+        },
+        {
+          "text": "The storage capacity must be fixed when the pool is created.",
+          "correctAnswer": "No",
+          "explanation": "Storage and compute are managed separately."
+        }
+      ]
+    },
+    {
+      "id": 167,
+      "topic": "Power BI",
+      "type": "single_choice",
+      "question": "Which tool is used to author Power BI paginated reports?",
+      "options": [
+        "Power BI Report Builder",
+        "Azure Queue Storage",
+        "SQL Server Agent",
+        "Azure Blob lifecycle management"
+      ],
+      "correctAnswer": "Power BI Report Builder",
+      "explanation": "Power BI Report Builder is used to create paginated reports."
+    },
+    {
+      "id": 168,
+      "topic": "Azure Analytics Architecture",
+      "type": "matching",
+      "question": "Match each task to the correct Azure service.",
+      "pairs": [
+        {
+          "prompt": "Perform ETL orchestration and data movement.",
+          "correctAnswer": "Azure Data Factory",
+          "explanation": "Azure Data Factory is used for data integration, movement, and pipeline orchestration."
+        },
+        {
+          "prompt": "Provide a cloud analytical data warehouse.",
+          "correctAnswer": "Azure Synapse Analytics",
+          "explanation": "Synapse provides data warehousing and analytics capabilities."
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "topic": "Azure Analytics Services",
+      "type": "true_false_table",
+      "question": "For each Azure analytics statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Azure Databricks is based on Apache Spark.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure Databricks is an Apache Spark-based analytics platform."
+        },
+        {
+          "text": "Azure Analysis Services is primarily used for transactional workloads.",
+          "correctAnswer": "No",
+          "explanation": "Azure Analysis Services is used for analytical semantic models, not OLTP."
+        },
+        {
+          "text": "Azure Data Factory can orchestrate data integration workflows.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure Data Factory orchestrates pipelines and data movement activities."
+        }
+      ]
+    },
+    {
+      "id": 170,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "Telemetry events generated continuously by edge devices are usually processed as which workload type?",
+      "options": ["Streaming", "Monthly batch", "DDL", "DCL"],
+      "correctAnswer": "Streaming",
+      "explanation": "Continuous telemetry events are processed as streaming data."
+    },
+    {
+      "id": 171,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "Which statement best describes batch processing?",
+      "options": [
+        "Collect data and process it later when a schedule or condition is met",
+        "Always process every event in under one millisecond",
+        "Only process graph edges",
+        "Only store data in Power BI dashboards"
+      ],
+      "correctAnswer": "Collect data and process it later when a schedule or condition is met",
+      "explanation": "Batch processing works on accumulated data at scheduled times or after a threshold."
+    },
+    {
+      "id": 172,
+      "topic": "Data Workloads",
+      "type": "true_false_table",
+      "question": "For each scenario, select Yes or No for whether it is streaming.",
+      "statements": [
+        {
+          "text": "Monthly salary processing.",
+          "correctAnswer": "No",
+          "explanation": "Monthly payroll is batch processing."
+        },
+        {
+          "text": "Wind turbine sensors sending 50 readings per second.",
+          "correctAnswer": "Yes",
+          "explanation": "Continuous sensor events are streaming data."
+        },
+        {
+          "text": "Electricity meter readings collected once per day.",
+          "correctAnswer": "No",
+          "explanation": "Once-daily collection is more like batch processing."
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "topic": "Analytics",
+      "type": "single_choice",
+      "question": "A bar chart showing year-to-date sales by region is which type of analytics?",
+      "options": ["Descriptive", "Predictive", "Prescriptive", "Cognitive"],
+      "correctAnswer": "Descriptive",
+      "explanation": "The chart describes existing or historical sales data."
+    },
+    {
+      "id": 174,
+      "topic": "Stream Processing",
+      "type": "true_false_table",
+      "question": "For each stream processing statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Stream processing can use recent event data.",
+          "correctAnswer": "Yes",
+          "explanation": "Streaming systems process recent incoming events."
+        },
+        {
+          "text": "Stream processing is the same as batch processing with very low latency.",
+          "correctAnswer": "No",
+          "explanation": "Streaming processes data continuously, while batch processes accumulated datasets."
+        },
+        {
+          "text": "Stream processing can calculate rolling averages.",
+          "correctAnswer": "Yes",
+          "explanation": "Rolling or windowed aggregates are common streaming calculations."
+        }
+      ]
+    },
+    {
+      "id": 175,
+      "topic": "Azure Cosmos DB and Synapse",
+      "type": "single_choice",
+      "question": "Which feature historically enabled HTAP-style analytics between Azure Cosmos DB and Azure Synapse Analytics?",
+      "options": ["Synapse Link", "Azure Files SMB", "SQL Server Agent", "Power BI theme"],
+      "correctAnswer": "Synapse Link",
+      "explanation": "Synapse Link was used to connect Cosmos DB operational data with analytical workloads in Synapse.",
+      "statusNote": "Current Microsoft guidance has shifted for new projects, but Synapse Link is the intended answer for older DP-900-style wording."
+    },
+    {
+      "id": 176,
+      "topic": "Data Visualization",
+      "type": "single_choice",
+      "question": "Which chart is best for showing a running total with increases and decreases?",
+      "options": ["Waterfall chart", "Scatter chart", "Pie chart", "Treemap"],
+      "correctAnswer": "Waterfall chart",
+      "explanation": "A waterfall chart shows how positive and negative changes affect a running total."
+    },
+    {
+      "id": 177,
+      "topic": "Data Workloads",
+      "type": "true_false_table",
+      "question": "For each batch or stream processing statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Batch processing is suitable for large datasets.",
+          "correctAnswer": "Yes",
+          "explanation": "Batch processing is commonly used for large accumulated datasets."
+        },
+        {
+          "text": "Stream processing is mainly for complex long-running historical analysis.",
+          "correctAnswer": "No",
+          "explanation": "Streaming is usually for low-latency event processing."
+        },
+        {
+          "text": "Batch processing typically has latency of only seconds or milliseconds.",
+          "correctAnswer": "No",
+          "explanation": "Batch processing often has higher latency than stream processing."
+        }
+      ]
+    },
+    {
+      "id": 178,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "Data stored in two tables with rows and columns is usually classified as what?",
+      "options": ["Structured", "Unstructured", "Only image data", "Only graph data"],
+      "correctAnswer": "Structured",
+      "explanation": "Tabular data with defined rows and columns is structured data."
+    },
+    {
+      "id": 179,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "How is graph data represented and queried in Azure Cosmos DB for Apache Gremlin?",
+      "options": [
+        "Nodes and edges using Gremlin",
+        "Only CSV rows",
+        "Only page blobs",
+        "Only Power BI dashboards"
+      ],
+      "correctAnswer": "Nodes and edges using Gremlin",
+      "explanation": "Graph data uses vertices/nodes and edges, queried with Gremlin."
+    },
+    {
+      "id": 180,
+      "topic": "Azure Blob Storage",
+      "type": "single_choice",
+      "question": "Which Azure Blob Storage feature records changes to blobs over time and can support downstream synchronization?",
+      "options": ["Change feed", "Foreign key", "Stored procedure", "Power BI slicer"],
+      "correctAnswer": "Change feed",
+      "explanation": "Blob change feed records create, update, and delete events for blobs."
+    },
+    {
+      "id": 181,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure SQL option minimizes maintenance while supporting features such as Database Mail and Service Broker?",
+      "options": ["Azure SQL Managed Instance", "Azure Table Storage", "Azure Blob Storage", "Azure Queue Storage"],
+      "correctAnswer": "Azure SQL Managed Instance",
+      "explanation": "Managed Instance provides high SQL Server compatibility with managed service benefits."
+    },
+    {
+      "id": 182,
+      "topic": "Power BI",
+      "type": "single_choice",
+      "question": "Where are Power BI dashboards created?",
+      "options": ["Power BI service", "Power BI Desktop only", "Azure Blob Storage only", "SQL Server Management Studio"],
+      "correctAnswer": "Power BI service",
+      "explanation": "Dashboards are created in the Power BI service."
+    },
+    {
+      "id": 183,
+      "topic": "Relational Modeling",
+      "type": "matching",
+      "question": "Match each conceptual modeling term to its relational database implementation.",
+      "pairs": [
+        {
+          "prompt": "Attributes",
+          "correctAnswer": "Columns",
+          "explanation": "Attributes of an entity become columns in a table."
+        },
+        {
+          "prompt": "Entities",
+          "correctAnswer": "Tables",
+          "explanation": "Entities are commonly implemented as tables."
+        },
+        {
+          "prompt": "Relationships",
+          "correctAnswer": "Foreign keys",
+          "explanation": "Foreign keys link related tables."
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "topic": "Delta Lake",
+      "type": "multiple_choice",
+      "question": "Which capabilities are associated with Delta Lake?",
+      "options": ["Schema enforcement", "Transactional consistency", "Only queue messaging", "No file storage support"],
+      "correctAnswers": ["Schema enforcement", "Transactional consistency"],
+      "explanation": "Delta Lake adds reliability features such as ACID transactions and schema enforcement to data lake storage."
+    },
+    {
+      "id": 185,
+      "topic": "Relational Data",
+      "type": "matching",
+      "question": "Match each ACID property to its meaning.",
+      "pairs": [
+        {
+          "prompt": "Isolation",
+          "correctAnswer": "Transactions do not expose intermediate states to each other",
+          "explanation": "Isolation keeps concurrent transactions separate."
+        },
+        {
+          "prompt": "Atomicity",
+          "correctAnswer": "A transaction completes fully or not at all",
+          "explanation": "Atomicity is all-or-nothing behavior."
+        },
+        {
+          "prompt": "Consistency",
+          "correctAnswer": "A transaction leaves data in a valid state",
+          "explanation": "Consistency preserves database rules and constraints."
+        },
+        {
+          "prompt": "Durability",
+          "correctAnswer": "Committed changes persist after failure",
+          "explanation": "Durability means committed data remains saved."
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "topic": "Data Warehousing",
+      "type": "single_choice",
+      "question": "Which statement describes many modern data warehouse solutions?",
+      "options": [
+        "They can support both batch and near-real-time analytical patterns",
+        "They can only store queue messages",
+        "They cannot query structured data",
+        "They replace all transactional databases"
+      ],
+      "correctAnswer": "They can support both batch and near-real-time analytical patterns",
+      "explanation": "Modern analytics platforms can combine batch ingestion with near-real-time analytics."
+    },
+    {
+      "id": 187,
+      "topic": "Azure Data Lake Storage",
+      "type": "single_choice",
+      "question": "Which storage account feature enables Azure Data Lake Storage Gen2 capabilities?",
+      "options": ["Hierarchical namespace", "Versioning only", "SQL collation", "Power BI theme"],
+      "correctAnswer": "Hierarchical namespace",
+      "explanation": "ADLS Gen2 capabilities such as directories and ACLs require hierarchical namespace."
+    },
+    {
+      "id": 188,
+      "topic": "Azure Databricks",
+      "type": "single_choice",
+      "question": "Which Azure service provides web-based notebooks for Apache Spark analytics?",
+      "options": ["Azure Databricks", "Azure Files", "Azure Queue Storage", "Azure Table Storage"],
+      "correctAnswer": "Azure Databricks",
+      "explanation": "Azure Databricks provides collaborative notebooks for Spark-based analytics."
+    },
+    {
+      "id": 189,
+      "topic": "Data Formats",
+      "type": "single_choice",
+      "question": "Which data format uses braces, key/value pairs, arrays, and nested objects?",
+      "options": ["JSON", "CSV only", "Plain bitmap", "SQL index"],
+      "correctAnswer": "JSON",
+      "explanation": "JSON represents data with key/value pairs, arrays, and nested objects."
+    },
+    {
+      "id": 190,
+      "topic": "Data Formats",
+      "type": "single_choice",
+      "question": "Which data format uses opening and closing tags such as <Person> and </Person>?",
+      "options": ["XML", "CSV", "Parquet only", "Bitmap"],
+      "correctAnswer": "XML",
+      "explanation": "XML represents data using nested opening and closing tags."
+    },
+    {
+      "id": 191,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which ACID property ensures that committed changes remain saved after a database restart or failure?",
+      "options": ["Durability", "Atomicity", "Isolation", "Normalization"],
+      "correctAnswer": "Durability",
+      "explanation": "Durability ensures committed data persists after failures."
+    },
+    {
+      "id": 192,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "GRANT, REVOKE, and DENY are examples of which SQL language category?",
+      "options": ["DCL", "DDL", "DML", "CSV"],
+      "correctAnswer": "DCL",
+      "explanation": "DCL means Data Control Language and is used for permissions."
+    },
+    {
+      "id": 193,
+      "topic": "Azure Blob Storage",
+      "type": "single_choice",
+      "question": "Azure page blobs are optimized for which type of operation?",
+      "options": ["Random read and write operations", "Only dashboard sharing", "Only graph traversal", "Only SQL joins"],
+      "correctAnswer": "Random read and write operations",
+      "explanation": "Page blobs are designed for random read/write workloads such as virtual hard disks."
+    },
+    {
+      "id": 194,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which ACID property means a transaction succeeds completely or rolls back completely?",
+      "options": ["Atomicity", "Durability", "DCL", "Visualization"],
+      "correctAnswer": "Atomicity",
+      "explanation": "Atomicity is the all-or-nothing property of transactions."
+    },
+    {
+      "id": 195,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which index type sorts and stores rows according to key values?",
+      "options": ["Clustered index", "Foreign key", "View", "DCL statement"],
+      "correctAnswer": "Clustered index",
+      "explanation": "A clustered index determines how rows are ordered in storage."
+    },
+    {
+      "id": 196,
+      "topic": "Azure Storage",
+      "type": "single_choice",
+      "question": "Which Azure service provides a key/value-style NoSQL table model?",
+      "options": ["Azure Table Storage", "Azure Files", "Power BI", "SQL Server Agent"],
+      "correctAnswer": "Azure Table Storage",
+      "explanation": "Azure Table Storage stores entities using partition and row keys in a NoSQL table model."
+    },
+    {
+      "id": 197,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "A graph database that stores users and follower relationships has which kind of defined structure?",
+      "options": ["Structured data", "No data structure at all", "Only binary files", "Only CSV text"],
+      "correctAnswer": "Structured data",
+      "explanation": "Graph data has a defined structure of nodes and edges."
+    },
+    {
+      "id": 198,
+      "topic": "Azure Synapse Analytics",
+      "type": "single_choice",
+      "question": "Which Azure service combines enterprise data warehousing and big data analytics?",
+      "options": ["Azure Synapse Analytics", "Azure Queue Storage", "Azure Files", "Microsoft Word"],
+      "correctAnswer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics combines data warehousing, SQL analytics, and big data analytics."
+    },
+    {
+      "id": 199,
+      "topic": "Analytical Modeling",
+      "type": "single_choice",
+      "question": "In a multidimensional analytical model, what does a cell commonly represent?",
+      "options": ["An aggregated measure", "A firewall rule", "A blob container", "A queue message"],
+      "correctAnswer": "An aggregated measure",
+      "explanation": "The intersection of dimensions usually contains a measure value, often aggregated."
+    },
+    {
+      "id": 200,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "Which Azure non-relational database service is designed for globally distributed, low-latency applications?",
+      "options": ["Azure Cosmos DB", "Azure Files", "Azure SQL Server on VM", "Power BI Report Builder"],
+      "correctAnswer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is designed for globally distributed NoSQL applications with low-latency reads and writes."
+    }
+  ]
+}
+ 
+data/dp900_201_250.json
+{
+  "exam": "DP-900",
+  "range": "201-250",
+  "note": "Training questions based on reviewed DP-900 concepts. Question 217 is duplicated in the source, so it is represented as 217A and 217B.",
+  "questions": [
+    {
+      "id": 201,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which statement best describes a non-relational database?",
+      "options": [
+        "It stores data without requiring a fixed relational schema",
+        "It always stores data in relational tables",
+        "It can only store CSV files",
+        "It must use primary and foreign keys"
+      ],
+      "correctAnswer": "It stores data without requiring a fixed relational schema",
+      "explanation": "Non-relational databases commonly support flexible schemas such as documents, key/value pairs, graphs, or column families."
+    },
+    {
+      "id": 202,
+      "topic": "Relational Data",
+      "type": "true_false_table",
+      "question": "For each ACID statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Atomicity means a transaction completes fully or not at all.",
+          "correctAnswer": "Yes",
+          "explanation": "Atomicity is the all-or-nothing property of a transaction."
+        },
+        {
+          "text": "Consistency means all transaction changes are logged permanently.",
+          "correctAnswer": "No",
+          "explanation": "Consistency means transactions leave the database in a valid state. Logging and persistence relate more to durability."
+        },
+        {
+          "text": "Isolation prevents transactions from exposing intermediate states to each other.",
+          "correctAnswer": "Yes",
+          "explanation": "Isolation keeps concurrent transactions separated from incomplete changes."
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "topic": "Data Formats",
+      "type": "single_choice",
+      "question": "Which file format stores values separated by commas?",
+      "options": ["CSV", "JSON", "XML", "Parquet"],
+      "correctAnswer": "CSV",
+      "explanation": "CSV means comma-separated values."
+    },
+    {
+      "id": 204,
+      "topic": "Data Roles",
+      "type": "single_choice",
+      "question": "Which role is commonly responsible for managing database security and access?",
+      "options": ["Database administrator", "Data analyst", "Graphic designer", "Network technician"],
+      "correctAnswer": "Database administrator",
+      "explanation": "A database administrator manages database availability, security, permissions, and maintenance."
+    },
+    {
+      "id": 205,
+      "topic": "Data Roles",
+      "type": "single_choice",
+      "question": "Which role is commonly responsible for backup and restore operations for databases?",
+      "options": ["Database administrator", "Data engineer", "Data analyst", "Business user"],
+      "correctAnswer": "Database administrator",
+      "explanation": "Backup and restore operations are typical database administration responsibilities."
+    },
+    {
+      "id": 206,
+      "topic": "Azure Data Lake Storage",
+      "type": "single_choice",
+      "question": "Which feature must be enabled to use Azure Data Lake Storage Gen2 capabilities?",
+      "options": ["Hierarchical namespace", "Power BI workspace", "Azure SQL elastic pool", "Server-level firewall"],
+      "correctAnswer": "Hierarchical namespace",
+      "explanation": "Hierarchical namespace enables directory and file semantics used by ADLS Gen2."
+    },
+    {
+      "id": 207,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Data stored in Microsoft SQL Server database tables is usually what type of data?",
+      "options": ["Relational data", "Graph data", "Image data", "Queue messages"],
+      "correctAnswer": "Relational data",
+      "explanation": "SQL Server stores structured relational data in tables."
+    },
+    {
+      "id": 208,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "You need to migrate an on-premises SQL Server application to Azure with minimal application changes and full server control. Which option is best?",
+      "options": ["SQL Server on Azure Virtual Machines", "Azure Table Storage", "Azure Blob Archive", "Power BI service"],
+      "correctAnswer": "SQL Server on Azure Virtual Machines",
+      "explanation": "SQL Server on Azure VM is a lift-and-shift IaaS option that gives high compatibility and VM-level control."
+    },
+    {
+      "id": 209,
+      "topic": "Power BI",
+      "type": "single_choice",
+      "question": "Which Power BI artifact can contain one or more pages of visualizations?",
+      "options": ["Report", "Dashboard", "Dataset only", "Gateway only"],
+      "correctAnswer": "Report",
+      "explanation": "A Power BI report can contain multiple pages. A dashboard is a single-page canvas in the Power BI service."
+    },
+    {
+      "id": 210,
+      "topic": "Data Processing",
+      "type": "matching",
+      "question": "Match each data processing description to the correct process.",
+      "pairs": [
+        {
+          "prompt": "Data is extracted, transformed, then loaded into the destination.",
+          "correctAnswer": "ETL",
+          "explanation": "ETL transforms data before loading it into the target system."
+        },
+        {
+          "prompt": "Data is extracted, loaded into the destination, then transformed there.",
+          "correctAnswer": "ELT",
+          "explanation": "ELT loads data first and uses the target system for transformation."
+        },
+        {
+          "prompt": "Data is extracted from a source and saved into a destination.",
+          "correctAnswer": "Data ingestion",
+          "explanation": "Ingestion is the process of collecting and moving data into a target store."
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "topic": "Azure Stream Analytics",
+      "type": "single_choice",
+      "question": "Which query language style is used by Azure Stream Analytics?",
+      "options": ["SQL-like language", "Python only", "Gremlin only", "DAX only"],
+      "correctAnswer": "SQL-like language",
+      "explanation": "Azure Stream Analytics uses a SQL-like query language for stream processing."
+    },
+    {
+      "id": 212,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure SQL feature allows multiple databases to share compute resources?",
+      "options": ["Elastic pool", "Blob container", "Queue message", "Power BI dashboard"],
+      "correctAnswer": "Elastic pool",
+      "explanation": "Elastic pools let multiple Azure SQL databases share a pool of resources."
+    },
+    {
+      "id": 213,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "XML files are usually classified as which type of data?",
+      "options": ["Semi-structured data", "Relational data", "Unstructured video data", "Binary data only"],
+      "correctAnswer": "Semi-structured data",
+      "explanation": "XML has tags and hierarchy, but it is not a fixed relational table schema."
+    },
+    {
+      "id": 214,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "In a fully normalized database, what is a common effect on queries and writes?",
+      "options": [
+        "Data may be read from and written to multiple related tables",
+        "All data must be stored in one table",
+        "Relationships are removed completely",
+        "Only graph queries are allowed"
+      ],
+      "correctAnswer": "Data may be read from and written to multiple related tables",
+      "explanation": "Normalization splits data into related tables, so joins and multi-table operations are common."
+    },
+    {
+      "id": 215,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which language is commonly used to query and manipulate relational databases?",
+      "options": ["SQL", "HTML only", "CSS only", "PNG"],
+      "correctAnswer": "SQL",
+      "explanation": "SQL is the common language used for relational database queries and data manipulation."
+    },
+    {
+      "id": 216,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which SQL clause filters rows based on a condition?",
+      "options": ["WHERE", "JOIN", "DROP", "CREATE"],
+      "correctAnswer": "WHERE",
+      "explanation": "WHERE defines criteria that rows must meet to be returned or affected."
+    },
+    {
+      "id": "217A",
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which SQL statement is an example of Data Manipulation Language?",
+      "options": ["INSERT", "CREATE", "DROP", "GRANT"],
+      "correctAnswer": "INSERT",
+      "explanation": "INSERT adds rows to a table, so it is DML."
+    },
+    {
+      "id": "217B",
+      "topic": "Stream Processing",
+      "type": "single_choice",
+      "question": "Stream processing is best suited for which type of analytics scenario?",
+      "options": [
+        "Simple analytics with short latency",
+        "Complex historical analysis with long latency",
+        "Monthly archive processing only",
+        "Manual spreadsheet formatting only"
+      ],
+      "correctAnswer": "Simple analytics with short latency",
+      "explanation": "Stream processing handles incoming data continuously and is commonly used for low-latency calculations."
+    },
+    {
+      "id": 218,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "Which phrase best describes many non-relational data records?",
+      "options": ["Self-describing entities", "Always fully normalized rows", "Only fixed-schema tables", "Only transaction logs"],
+      "correctAnswer": "Self-describing entities",
+      "explanation": "Many non-relational stores keep structure or properties with each entity."
+    },
+    {
+      "id": 219,
+      "topic": "Azure Blob Storage",
+      "type": "single_choice",
+      "question": "Which Azure Blob Storage feature can automatically move or delete blobs based on rules?",
+      "options": ["Lifecycle management policy", "Primary key", "Stored procedure", "Power BI report"],
+      "correctAnswer": "Lifecycle management policy",
+      "explanation": "Lifecycle management can move blobs between tiers or delete them based on age and rules."
+    },
+    {
+      "id": 220,
+      "topic": "Azure Table Storage",
+      "type": "multiple_choice",
+      "question": "Which two properties uniquely identify an entity in Azure Table Storage?",
+      "options": ["PartitionKey", "RowKey", "DashboardName", "BlobTier"],
+      "correctAnswers": ["PartitionKey", "RowKey"],
+      "explanation": "An Azure Table entity is uniquely identified by the combination of PartitionKey and RowKey."
+    },
+    {
+      "id": 221,
+      "topic": "Data Roles",
+      "type": "single_choice",
+      "question": "Which role commonly creates charts and visual reports to support business decisions?",
+      "options": ["Data analyst", "Database administrator", "Security guard", "Network switch"],
+      "correctAnswer": "Data analyst",
+      "explanation": "Data analysts create reports and visualizations to communicate insights."
+    },
+    {
+      "id": 222,
+      "topic": "Azure Storage",
+      "type": "single_choice",
+      "question": "Which Azure service can store semi-structured log or event entities using a NoSQL table model?",
+      "options": ["Azure Table Storage", "Azure Files", "Azure SQL Managed Instance only", "Power BI Desktop"],
+      "correctAnswer": "Azure Table Storage",
+      "explanation": "Azure Table Storage stores NoSQL entities with flexible properties."
+    },
+    {
+      "id": 223,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "Which query language/API is used for graph data in Azure Cosmos DB?",
+      "options": ["Gremlin", "DAX", "M language only", "T-SQL only"],
+      "correctAnswer": "Gremlin",
+      "explanation": "Azure Cosmos DB graph workloads use the Gremlin API."
+    },
+    {
+      "id": 224,
+      "topic": "Azure Analytics Services",
+      "type": "true_false_table",
+      "question": "For each Azure analytics statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Azure Data Lake Storage can be used as a staging area for ingested data.",
+          "correctAnswer": "Yes",
+          "explanation": "Data lakes are commonly used to stage or store ingested data."
+        },
+        {
+          "text": "Azure Data Factory is an MPP analytics engine.",
+          "correctAnswer": "No",
+          "explanation": "Azure Data Factory is for data integration and orchestration, not MPP query processing."
+        },
+        {
+          "text": "Azure HDInsight is used to build OLAP tabular models.",
+          "correctAnswer": "No",
+          "explanation": "OLAP tabular modeling is associated with semantic modeling services, not HDInsight."
+        }
+      ]
+    },
+    {
+      "id": 225,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure SQL option lets multiple databases share resources in a cost-efficient way?",
+      "options": ["Elastic pool", "Archive tier", "Azure Files share", "Power BI mobile app"],
+      "correctAnswer": "Elastic pool",
+      "explanation": "Elastic pools are designed for multiple databases with varying resource usage."
+    },
+    {
+      "id": 226,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which ACID property prevents transactions from seeing incomplete changes made by other transactions?",
+      "options": ["Isolation", "Atomicity", "Durability", "Visualization"],
+      "correctAnswer": "Isolation",
+      "explanation": "Isolation keeps transactions separated until changes are complete and committed."
+    },
+    {
+      "id": 227,
+      "topic": "Analytics Data Modeling",
+      "type": "matching",
+      "question": "Match each analytics term to its description.",
+      "pairs": [
+        {
+          "prompt": "Copies and transforms data into an analytical system.",
+          "correctAnswer": "ETL",
+          "explanation": "ETL extracts, transforms, and loads data."
+        },
+        {
+          "prompt": "Contains numeric measures for analysis.",
+          "correctAnswer": "Fact table",
+          "explanation": "Fact tables store measurable numeric values such as sales amount."
+        },
+        {
+          "prompt": "Stores analytical data in a relational schema.",
+          "correctAnswer": "Data warehouse",
+          "explanation": "Data warehouses store structured analytical data for reporting and analysis."
+        }
+      ]
+    },
+    {
+      "id": 228,
+      "topic": "Azure Synapse Analytics",
+      "type": "single_choice",
+      "question": "Which Azure service includes pipeline capabilities similar to Azure Data Factory for analytics solutions?",
+      "options": ["Azure Synapse Analytics", "Azure Table Storage", "Azure Files", "Microsoft Word"],
+      "correctAnswer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse includes data integration pipeline capabilities."
+    },
+    {
+      "id": 229,
+      "topic": "Data Roles",
+      "type": "single_choice",
+      "question": "Which task is commonly performed by a data engineer?",
+      "options": [
+        "Design and implement data stores for analytical workloads",
+        "Create company logos",
+        "Manage office printers only",
+        "Write only presentation slides"
+      ],
+      "correctAnswer": "Design and implement data stores for analytical workloads",
+      "explanation": "Data engineers build data stores, pipelines, and analytical data solutions."
+    },
+    {
+      "id": 230,
+      "topic": "Azure Synapse Analytics",
+      "type": "single_choice",
+      "question": "Which Azure analytics service can be used as a pipeline engine for data integration?",
+      "options": ["Azure Synapse Analytics", "Azure Files", "Azure Queue Storage only", "Power BI mobile"],
+      "correctAnswer": "Azure Synapse Analytics",
+      "explanation": "Synapse pipelines support orchestration and data integration in Synapse workspaces."
+    },
+    {
+      "id": 231,
+      "topic": "OLAP",
+      "type": "single_choice",
+      "question": "Which structure is commonly associated with multidimensional OLAP analysis?",
+      "options": ["Cube", "Queue", "Blob block", "Firewall"],
+      "correctAnswer": "Cube",
+      "explanation": "OLAP systems often organize measures and dimensions in cube-like structures."
+    },
+    {
+      "id": 232,
+      "topic": "Data Visualization",
+      "type": "single_choice",
+      "question": "Which chart type is best for showing relationships between two numeric measures?",
+      "options": ["Scatter chart", "Pie chart only", "Card visual only", "Waterfall chart only"],
+      "correctAnswer": "Scatter chart",
+      "explanation": "Scatter charts show relationships and correlation between numeric values."
+    },
+    {
+      "id": 233,
+      "topic": "Analytical Modeling",
+      "type": "single_choice",
+      "question": "Which model feature allows drill-down and drill-up through levels such as Year, Quarter, Month, and Day?",
+      "options": ["Attribute hierarchy", "Firewall rule", "Blob tier", "Queue message"],
+      "correctAnswer": "Attribute hierarchy",
+      "explanation": "Hierarchies allow users to navigate through levels of detail."
+    },
+    {
+      "id": 234,
+      "topic": "Data Formats",
+      "type": "single_choice",
+      "question": "Which file format is columnar and commonly used for analytical workloads?",
+      "options": ["Apache Parquet", "Plain text only", "Bitmap", "Queue message"],
+      "correctAnswer": "Apache Parquet",
+      "explanation": "Apache Parquet is a compressed columnar file format used in analytics."
+    },
+    {
+      "id": 235,
+      "topic": "Data Modeling",
+      "type": "matching",
+      "question": "In a denormalized design, where might related data be stored?",
+      "pairs": [
+        {
+          "prompt": "Customer and order data for faster reads",
+          "correctAnswer": "Single table or single entity",
+          "explanation": "Denormalization can store related data together to reduce joins."
+        },
+        {
+          "prompt": "Product and category data for simplified analytical queries",
+          "correctAnswer": "Single table or single entity",
+          "explanation": "Analytical models often denormalize data to improve read performance."
+        }
+      ]
+    },
+    {
+      "id": 236,
+      "topic": "Azure Blob Storage",
+      "type": "true_false_table",
+      "question": "For each Blob Storage access tier statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "The Hot access tier means data is stored on high-performance media.",
+          "correctAnswer": "No",
+          "explanation": "Hot is an access tier, not a guarantee of premium high-performance storage media."
+        },
+        {
+          "text": "Cool storage has higher storage cost than Hot storage.",
+          "correctAnswer": "No",
+          "explanation": "Cool storage generally has lower storage cost than Hot, but higher access costs."
+        },
+        {
+          "text": "Archive has the highest retrieval latency among Hot, Cool, and Archive.",
+          "correctAnswer": "Yes",
+          "explanation": "Archive data must be rehydrated before online access."
+        }
+      ]
+    },
+    {
+      "id": 237,
+      "topic": "Data Workloads",
+      "type": "true_false_table",
+      "question": "For each OLTP or OLAP statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "OLTP systems are optimized for transactional reads and writes.",
+          "correctAnswer": "Yes",
+          "explanation": "OLTP systems are designed to process transactions quickly."
+        },
+        {
+          "text": "OLAP systems are primarily optimized for frequent small writes.",
+          "correctAnswer": "No",
+          "explanation": "OLAP systems are optimized for analytical queries and aggregations."
+        },
+        {
+          "text": "Data warehouses are commonly optimized for read-heavy analytical workloads.",
+          "correctAnswer": "Yes",
+          "explanation": "Data warehouses are built for analysis and reporting."
+        }
+      ]
+    },
+    {
+      "id": 238,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "A retail point-of-sale system that records purchases is which workload type?",
+      "options": ["OLTP", "OLAP", "Batch archive only", "Object storage only"],
+      "correctAnswer": "OLTP",
+      "explanation": "Point-of-sale systems process transactions, so they are OLTP workloads."
+    },
+    {
+      "id": 239,
+      "topic": "Graph Databases",
+      "type": "single_choice",
+      "question": "In a graph database, edges define relationships between what?",
+      "options": ["Vertices", "Blob tiers", "Dashboards", "SQL logins"],
+      "correctAnswer": "Vertices",
+      "explanation": "Graph edges connect vertices, also called nodes."
+    },
+    {
+      "id": 240,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "In tabular data, what represents one instance of an entity?",
+      "options": ["Row", "Column name only", "Dashboard tile", "Storage account"],
+      "correctAnswer": "Row",
+      "explanation": "A row represents one record or instance of an entity."
+    },
+    {
+      "id": 241,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Relational databases usually store and query which type of data?",
+      "options": ["Structured data", "Only unstructured audio", "Only images", "Only graph edges"],
+      "correctAnswer": "Structured data",
+      "explanation": "Relational databases store structured data in tables."
+    },
+    {
+      "id": 242,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure SQL option provides near-full SQL Server compatibility with managed service benefits?",
+      "options": ["Azure SQL Managed Instance", "Azure Files", "Azure Table Storage", "Azure Queue Storage"],
+      "correctAnswer": "Azure SQL Managed Instance",
+      "explanation": "Azure SQL Managed Instance is designed for high SQL Server compatibility."
+    },
+    {
+      "id": 243,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which objects are used to enforce relationships between relational tables?",
+      "options": ["Keys", "Dashboards", "Blob tiers", "Power BI themes"],
+      "correctAnswer": "Keys",
+      "explanation": "Primary keys and foreign keys are used to identify rows and enforce relationships."
+    },
+    {
+      "id": 244,
+      "topic": "Data Processing",
+      "type": "single_choice",
+      "question": "For ELT, what capability is especially important in the target data store?",
+      "options": [
+        "It must be powerful enough to transform data after loading",
+        "It must only store images",
+        "It must never run queries",
+        "It must be a queue"
+      ],
+      "correctAnswer": "It must be powerful enough to transform data after loading",
+      "explanation": "In ELT, transformation happens after loading inside the target system."
+    },
+    {
+      "id": 245,
+      "topic": "Star Schema",
+      "type": "single_choice",
+      "question": "In a star schema, what is used to slice, filter, and aggregate measures?",
+      "options": ["Dimensions", "Only transaction logs", "Queue messages", "Firewall rules"],
+      "correctAnswer": "Dimensions",
+      "explanation": "Dimensions describe business entities such as product, customer, and date."
+    },
+    {
+      "id": 246,
+      "topic": "Azure Data Services",
+      "type": "matching",
+      "question": "Match each data requirement to the correct Azure service.",
+      "pairs": [
+        {
+          "prompt": "Store audio files.",
+          "correctAnswer": "Azure Blob Storage",
+          "explanation": "Blob Storage is suitable for unstructured files such as audio."
+        },
+        {
+          "prompt": "Store JSON documents with NoSQL access.",
+          "correctAnswer": "Azure Cosmos DB",
+          "explanation": "Cosmos DB stores JSON documents for NoSQL workloads."
+        },
+        {
+          "prompt": "Store tabular relational datasets.",
+          "correctAnswer": "Azure SQL Database",
+          "explanation": "Azure SQL Database stores relational data in tables."
+        }
+      ]
+    },
+    {
+      "id": 247,
+      "topic": "Azure Blob Storage",
+      "type": "true_false_table",
+      "question": "For each Blob Storage statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Cool is the default access tier for most new general-purpose storage accounts.",
+          "correctAnswer": "No",
+          "explanation": "Hot is commonly the default online access tier."
+        },
+        {
+          "text": "Append blobs are optimized for random read and write operations.",
+          "correctAnswer": "No",
+          "explanation": "Append blobs are optimized for append operations."
+        },
+        {
+          "text": "Archive blobs can take hours to retrieve.",
+          "correctAnswer": "Yes",
+          "explanation": "Archive data must be rehydrated before it can be accessed online."
+        }
+      ]
+    },
+    {
+      "id": 248,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "Which Cosmos DB API supports SQL-style SELECT queries over JSON documents?",
+      "options": ["Azure Cosmos DB for NoSQL", "Azure Cosmos DB for Apache Gremlin", "Azure Files", "Azure Queue Storage"],
+      "correctAnswer": "Azure Cosmos DB for NoSQL",
+      "explanation": "Azure Cosmos DB for NoSQL supports SQL-style queries over JSON items."
+    },
+    {
+      "id": 249,
+      "topic": "Azure Files",
+      "type": "true_false_table",
+      "question": "For each Azure Files statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Azure file shares are created in storage accounts.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure Files is an Azure Storage service."
+        },
+        {
+          "text": "Premium Azure Files uses HDD-based storage.",
+          "correctAnswer": "No",
+          "explanation": "Premium Azure Files uses SSD-based storage."
+        },
+        {
+          "text": "Standard Azure Files uses SSD-based storage.",
+          "correctAnswer": "No",
+          "explanation": "Standard Azure Files uses HDD-based storage."
+        }
+      ]
+    },
+    {
+      "id": 250,
+      "topic": "Power BI",
+      "type": "single_choice",
+      "question": "Which tool provides full Power BI data modeling and report editing features on a desktop computer?",
+      "options": ["Microsoft Power BI Desktop", "Power BI mobile app", "Azure Queue Storage", "Azure Files"],
+      "correctAnswer": "Microsoft Power BI Desktop",
+      "explanation": "Power BI Desktop is the main authoring tool for data modeling and report creation."
+    }
+  ]
+}
+ 
+data/dp900_251_304.json
+{
+  "exam": "DP-900",
+  "range": "251-304",
+  "note": "Final training batch based on reviewed DP-900 concepts. Question 276 is duplicated in the source, so it is represented as 276A and 276B.",
+  "questions": [
+    {
+      "id": 251,
+      "topic": "Power BI",
+      "type": "single_choice",
+      "question": "Where do you publish Power BI reports and semantic models so they can be shared and consumed online?",
+      "options": ["Power BI service", "Power BI mobile app only", "Azure Blob Storage", "SQL Server Management Studio"],
+      "correctAnswer": "Power BI service",
+      "explanation": "Power BI Desktop is used for authoring, while the Power BI service is used to publish, share, and consume reports and dashboards."
+    },
+    {
+      "id": 252,
+      "topic": "Azure SQL",
+      "type": "single_choice",
+      "question": "Which Azure SQL deployment option supports the serverless compute tier?",
+      "options": ["Azure SQL Database single database", "SQL Server on Azure Virtual Machines", "Azure Files", "Azure Table Storage"],
+      "correctAnswer": "Azure SQL Database single database",
+      "explanation": "The serverless compute tier is available for Azure SQL Database single databases."
+    },
+    {
+      "id": 253,
+      "topic": "OLAP",
+      "type": "single_choice",
+      "question": "Why is OLAP commonly suitable for analytical reporting?",
+      "options": ["Data is often prepared or pre-aggregated for analysis", "It only processes one transaction at a time", "It cannot use dimensions", "It is optimized mainly for small writes"],
+      "correctAnswer": "Data is often prepared or pre-aggregated for analysis",
+      "explanation": "OLAP systems are optimized for analytical queries, aggregations, and reporting."
+    },
+    {
+      "id": 254,
+      "topic": "Azure Analytics Languages",
+      "type": "matching",
+      "question": "Match each language or query style to the Azure analytics service.",
+      "pairs": [
+        {
+          "prompt": "KQL",
+          "correctAnswer": "Azure Data Explorer",
+          "explanation": "Azure Data Explorer uses Kusto Query Language."
+        },
+        {
+          "prompt": "SQL-like streaming queries",
+          "correctAnswer": "Azure Stream Analytics",
+          "explanation": "Azure Stream Analytics uses a SQL-like language for stream processing."
+        },
+        {
+          "prompt": "Python for Spark analytics",
+          "correctAnswer": "Azure Synapse Analytics",
+          "explanation": "Azure Synapse supports Spark analytics using languages such as Python."
+        }
+      ]
+    },
+    {
+      "id": 255,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "Which Azure Cosmos DB API is used for graph databases?",
+      "options": ["Azure Cosmos DB for Apache Gremlin", "Azure Cosmos DB for NoSQL", "Azure Files", "Azure Queue Storage"],
+      "correctAnswer": "Azure Cosmos DB for Apache Gremlin",
+      "explanation": "Graph data in Cosmos DB is represented by vertices and edges and queried using Gremlin."
+    },
+    {
+      "id": 256,
+      "topic": "Star Schema",
+      "type": "single_choice",
+      "question": "In a star schema, which table type is used to group, filter, or aggregate numeric measures?",
+      "options": ["Dimension table", "Transaction log", "Queue table", "Firewall table"],
+      "correctAnswer": "Dimension table",
+      "explanation": "Fact tables store numeric measures. Dimension tables contain descriptive attributes used to slice, filter, and aggregate those measures.",
+      "statusNote": "Corrected from fact table."
+    },
+    {
+      "id": 257,
+      "topic": "Data Types",
+      "type": "matching",
+      "question": "Match each data description to the correct data type.",
+      "pairs": [
+        {
+          "prompt": "Data with a fixed schema such as tables with rows and columns.",
+          "correctAnswer": "Structured data",
+          "explanation": "Structured data follows a fixed schema."
+        },
+        {
+          "prompt": "Data with flexible fields such as JSON or XML.",
+          "correctAnswer": "Semi-structured data",
+          "explanation": "Semi-structured data has some organization but does not require a fixed relational schema."
+        }
+      ]
+    },
+    {
+      "id": 258,
+      "topic": "Data Roles",
+      "type": "true_false_table",
+      "question": "For each data role statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Database backup and restore is mainly a data analyst responsibility.",
+          "correctAnswer": "No",
+          "explanation": "Backup and restore are usually database administrator responsibilities."
+        },
+        {
+          "text": "Database cleansing is mainly a database administrator responsibility.",
+          "correctAnswer": "No",
+          "explanation": "Data cleansing is more commonly part of data preparation or data engineering/analytics work."
+        },
+        {
+          "text": "Creating charts and visualizations is commonly a data analyst responsibility.",
+          "correctAnswer": "Yes",
+          "explanation": "Data analysts create reports and visualizations to communicate insights."
+        }
+      ]
+    },
+    {
+      "id": 259,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which ACID property ensures that committed data remains saved after a failure?",
+      "options": ["Durability", "Atomicity", "Isolation", "Normalization"],
+      "correctAnswer": "Durability",
+      "explanation": "Durability means committed changes persist even if a system failure occurs."
+    },
+    {
+      "id": 260,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which SQL statement is an example of Data Manipulation Language?",
+      "options": ["INSERT", "CREATE", "DROP", "GRANT"],
+      "correctAnswer": "INSERT",
+      "explanation": "INSERT adds rows to a table, so it is a DML statement."
+    },
+    {
+      "id": 261,
+      "topic": "Azure Data Explorer",
+      "type": "single_choice",
+      "question": "Which query language is used with Azure Data Explorer?",
+      "options": ["KQL", "DAX only", "Gremlin only", "HTML"],
+      "correctAnswer": "KQL",
+      "explanation": "Azure Data Explorer uses Kusto Query Language, also known as KQL."
+    },
+    {
+      "id": 262,
+      "topic": "IoT Data Services",
+      "type": "single_choice",
+      "question": "Which Azure SQL product was historically positioned for IoT and edge scenarios?",
+      "options": ["Azure SQL Edge", "Azure Files", "Azure Queue Storage", "Power BI Report Builder"],
+      "correctAnswer": "Azure SQL Edge",
+      "explanation": "Azure SQL Edge was historically used for SQL workloads at the edge and IoT scenarios.",
+      "statusNote": "Outdated service warning: Azure SQL Edge has been retired, so treat this as an old-exam wording item."
+    },
+    {
+      "id": 263,
+      "topic": "Relational and NoSQL Data",
+      "type": "true_false_table",
+      "question": "For each data storage statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "A relational database schema is usually defined before data is written.",
+          "correctAnswer": "Yes",
+          "explanation": "Relational databases commonly use schema-on-write."
+        },
+        {
+          "text": "Key/value stores are optimized for complex queries with many joins.",
+          "correctAnswer": "No",
+          "explanation": "Key/value stores are optimized for simple lookups by key, not complex joins."
+        },
+        {
+          "text": "Relational databases store structured data.",
+          "correctAnswer": "Yes",
+          "explanation": "Relational databases store structured data in tables."
+        }
+      ]
+    },
+    {
+      "id": 264,
+      "topic": "Data Formats",
+      "type": "single_choice",
+      "question": "Which format is commonly used for delimited data with comma-separated fields?",
+      "options": ["CSV", "JSON", "XML", "AVRO"],
+      "correctAnswer": "CSV",
+      "explanation": "CSV stands for comma-separated values."
+    },
+    {
+      "id": 265,
+      "topic": "Data Formats",
+      "type": "single_choice",
+      "question": "Which format can represent hierarchical objects with nested properties?",
+      "options": ["JSON", "CSV only", "Plain text only", "Bitmap"],
+      "correctAnswer": "JSON",
+      "explanation": "JSON supports nested objects and arrays, making it suitable for hierarchical data."
+    },
+    {
+      "id": 266,
+      "topic": "Azure Cosmos DB",
+      "type": "matching",
+      "question": "Match each Cosmos DB API to the data structure it supports.",
+      "pairs": [
+        {
+          "prompt": "Azure Cosmos DB for Apache Gremlin",
+          "correctAnswer": "Graph data",
+          "explanation": "Gremlin supports vertices and edges for graph workloads."
+        },
+        {
+          "prompt": "Azure Cosmos DB for NoSQL",
+          "correctAnswer": "JSON documents",
+          "explanation": "The NoSQL API stores JSON items and supports SQL-style queries."
+        },
+        {
+          "prompt": "Azure Cosmos DB for Table",
+          "correctAnswer": "Key/value-style entities",
+          "explanation": "The Table API supports table-style NoSQL entities."
+        }
+      ]
+    },
+    {
+      "id": 267,
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "Which Cosmos DB API should you choose for a graph database?",
+      "options": ["Azure Cosmos DB for Apache Gremlin", "Azure Cosmos DB for Table", "Azure Files", "Azure Blob Archive"],
+      "correctAnswer": "Azure Cosmos DB for Apache Gremlin",
+      "explanation": "Apache Gremlin is used for graph workloads in Azure Cosmos DB."
+    },
+    {
+      "id": 268,
+      "topic": "Data Roles",
+      "type": "single_choice",
+      "question": "Which role is responsible for database availability, performance, security, and optimization?",
+      "options": ["Database administrator", "Data analyst", "Report consumer", "Graphic designer"],
+      "correctAnswer": "Database administrator",
+      "explanation": "Database administrators manage operational database health, security, backups, and performance."
+    },
+    {
+      "id": 269,
+      "topic": "Azure SQL",
+      "type": "matching",
+      "question": "Match each Azure SQL option to the correct cloud model.",
+      "pairs": [
+        {
+          "prompt": "Azure SQL Database",
+          "correctAnswer": "PaaS",
+          "explanation": "Azure SQL Database is a managed platform database service."
+        },
+        {
+          "prompt": "Azure SQL Managed Instance",
+          "correctAnswer": "PaaS",
+          "explanation": "Azure SQL Managed Instance is also a managed PaaS database service."
+        },
+        {
+          "prompt": "SQL Server on Azure Virtual Machines",
+          "correctAnswer": "IaaS",
+          "explanation": "SQL Server on Azure VM is infrastructure as a service because you manage the VM."
+        }
+      ],
+      "statusNote": "Corrected because Managed Instance is PaaS, not SaaS."
+    },
+    {
+      "id": 270,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "A bank transfer must debit one account and credit another account, or roll back both actions. Which ACID property is this?",
+      "options": ["Atomicity", "Durability", "Isolation", "DCL"],
+      "correctAnswer": "Atomicity",
+      "explanation": "Atomicity ensures a transaction is completed fully or not completed at all."
+    },
+    {
+      "id": 271,
+      "topic": "Azure Blob Storage",
+      "type": "single_choice",
+      "question": "Which action describes rehydrating an archived blob?",
+      "options": [
+        "Moving it from Archive to an online tier such as Cool or Hot",
+        "Moving it from Hot to Archive",
+        "Creating a SQL index",
+        "Creating a Power BI dashboard"
+      ],
+      "correctAnswer": "Moving it from Archive to an online tier such as Cool or Hot",
+      "explanation": "Archived blobs must be rehydrated to an online tier before normal access."
+    },
+    {
+      "id": 272,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "Which activity is typical of a transactional workload?",
+      "options": [
+        "Recording small units of work in real time",
+        "Only reading historical aggregates",
+        "Only storing archived images",
+        "Only creating dashboards"
+      ],
+      "correctAnswer": "Recording small units of work in real time",
+      "explanation": "Transactional systems process individual business transactions such as orders or payments."
+    },
+    {
+      "id": 273,
+      "topic": "Data Workloads",
+      "type": "single_choice",
+      "question": "A banking system that transfers money between accounts is usually which workload type?",
+      "options": ["OLTP", "OLAP", "Batch archive only", "Static object storage"],
+      "correctAnswer": "OLTP",
+      "explanation": "Money transfers are transactional operations, so the workload is OLTP."
+    },
+    {
+      "id": 274,
+      "topic": "Data Roles",
+      "type": "matching",
+      "question": "Match each task to the most suitable data role.",
+      "pairs": [
+        {
+          "prompt": "Build data pipelines.",
+          "correctAnswer": "Data engineer",
+          "explanation": "Data engineers build ingestion and transformation pipelines."
+        },
+        {
+          "prompt": "Design or create a transactional database model.",
+          "correctAnswer": "Data architect",
+          "explanation": "Data architects design data structures and database solutions."
+        },
+        {
+          "prompt": "Create charts for business users.",
+          "correctAnswer": "Data analyst",
+          "explanation": "Data analysts create reports and visualizations."
+        }
+      ]
+    },
+    {
+      "id": 275,
+      "topic": "Data Roles",
+      "type": "matching",
+      "question": "Match each task to the most suitable role.",
+      "pairs": [
+        {
+          "prompt": "Plan backup and recovery for a database.",
+          "correctAnswer": "Database administrator",
+          "explanation": "DBAs manage backup and recovery."
+        },
+        {
+          "prompt": "Create reports and analyze business trends.",
+          "correctAnswer": "Data analyst",
+          "explanation": "Data analysts transform data into business insights."
+        },
+        {
+          "prompt": "Monitor and maintain data pipelines.",
+          "correctAnswer": "Data engineer",
+          "explanation": "Data engineers manage pipelines and data movement."
+        }
+      ]
+    },
+    {
+      "id": "276A",
+      "topic": "Azure Data Lake Storage",
+      "type": "matching",
+      "question": "Order the Azure Data Lake Storage Gen2 hierarchy.",
+      "pairs": [
+        {
+          "prompt": "Level 1",
+          "correctAnswer": "Storage account",
+          "explanation": "The storage account is the top-level storage resource."
+        },
+        {
+          "prompt": "Level 2",
+          "correctAnswer": "Container or file system",
+          "explanation": "ADLS Gen2 uses containers/file systems, not Azure Files file shares."
+        },
+        {
+          "prompt": "Level 3",
+          "correctAnswer": "Directories or folders",
+          "explanation": "Hierarchical namespace enables directory structure."
+        },
+        {
+          "prompt": "Level 4",
+          "correctAnswer": "Files",
+          "explanation": "Files are stored inside directories."
+        }
+      ],
+      "statusNote": "Corrected because file share belongs to Azure Files, not ADLS Gen2."
+    },
+    {
+      "id": "276B",
+      "topic": "Azure Cosmos DB",
+      "type": "single_choice",
+      "question": "Which Azure database service is suitable for storing large quantities of IoT-style NoSQL data with scalable low-latency access?",
+      "options": ["Azure Cosmos DB", "Azure Files", "Azure SQL Managed Instance only", "Power BI service"],
+      "correctAnswer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a globally distributed NoSQL database suitable for scalable high-volume application data."
+    },
+    {
+      "id": 277,
+      "topic": "Data Roles",
+      "type": "matching",
+      "question": "Match each task to the correct role.",
+      "pairs": [
+        {
+          "prompt": "Assign database permissions.",
+          "correctAnswer": "Database administrator",
+          "explanation": "DBAs commonly manage database permissions and access."
+        },
+        {
+          "prompt": "Create visualizations to explain data.",
+          "correctAnswer": "Data analyst",
+          "explanation": "Data analysts create visualizations and reports."
+        },
+        {
+          "prompt": "Create data movement and transformation pipelines.",
+          "correctAnswer": "Data engineer",
+          "explanation": "Data engineers build and manage data pipelines."
+        }
+      ]
+    },
+    {
+      "id": 278,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "A JSON document with a variable number of properties is usually classified as what?",
+      "options": ["Semi-structured data", "Fully normalized relational data", "Only binary data", "Only graph data"],
+      "correctAnswer": "Semi-structured data",
+      "explanation": "JSON documents can have flexible properties, which makes them semi-structured."
+    },
+    {
+      "id": 279,
+      "topic": "Data Roles",
+      "type": "matching",
+      "question": "Match each task to the most suitable role.",
+      "pairs": [
+        {
+          "prompt": "Find hidden patterns using statistical or machine learning techniques.",
+          "correctAnswer": "Data scientist",
+          "explanation": "Data scientists commonly use statistics and machine learning to discover patterns."
+        },
+        {
+          "prompt": "Create graphical reports for business decisions.",
+          "correctAnswer": "Data analyst",
+          "explanation": "Data analysts commonly create reports and visualizations."
+        }
+      ],
+      "statusNote": "Original wording was ambiguous because it mixed data scientist and data analyst responsibilities."
+    },
+    {
+      "id": 280,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "SELECT, INSERT, and UPDATE are commonly associated with which SQL language category?",
+      "options": ["DML", "DDL", "DCL", "CSV"],
+      "correctAnswer": "DML",
+      "explanation": "Data Manipulation Language is used to query and modify data."
+    },
+    {
+      "id": 281,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which SQL statement modifies existing data in a table?",
+      "options": ["UPDATE", "CREATE", "DROP", "GRANT"],
+      "correctAnswer": "UPDATE",
+      "explanation": "UPDATE changes existing rows in a table."
+    },
+    {
+      "id": 282,
+      "topic": "Azure Open-Source Databases",
+      "type": "true_false_table",
+      "question": "For each historical Azure open-source database statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Azure Database for PostgreSQL is a managed PaaS database service.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure Database for PostgreSQL is a managed database service."
+        },
+        {
+          "text": "Azure Database for MariaDB is recommended for new Azure database deployments.",
+          "correctAnswer": "No",
+          "explanation": "Azure Database for MariaDB has been retired, so it should not be treated as a current recommended service."
+        },
+        {
+          "text": "Azure Database for MySQL requires you to manage the virtual machine operating system.",
+          "correctAnswer": "No",
+          "explanation": "Azure Database for MySQL is a managed PaaS service, not an IaaS VM deployment."
+        }
+      ],
+      "statusNote": "Updated because Azure Database for MariaDB is retired."
+    },
+    {
+      "id": 283,
+      "topic": "Azure Data Explorer",
+      "type": "single_choice",
+      "question": "Which language is used to query Azure Data Explorer?",
+      "options": ["KQL", "DAX only", "Gremlin only", "M language only"],
+      "correctAnswer": "KQL",
+      "explanation": "Azure Data Explorer uses Kusto Query Language."
+    },
+    {
+      "id": 284,
+      "topic": "OLAP",
+      "type": "single_choice",
+      "question": "OLAP systems are commonly optimized for which kind of data?",
+      "options": ["Aggregated analytical data", "Only individual queue messages", "Only raw audio files", "Only firewall logs"],
+      "correctAnswer": "Aggregated analytical data",
+      "explanation": "OLAP workloads commonly use aggregated data for analysis and reporting."
+    },
+    {
+      "id": 285,
+      "topic": "Lakehouse",
+      "type": "single_choice",
+      "question": "In a lakehouse or data lake, raw data is commonly stored as what?",
+      "options": ["Files", "Only SQL views", "Only dashboard tiles", "Only DCL statements"],
+      "correctAnswer": "Files",
+      "explanation": "Data lakes and lakehouses commonly store raw data as files in formats such as CSV, JSON, Parquet, or Delta."
+    },
+    {
+      "id": 286,
+      "topic": "Azure Blob Storage",
+      "type": "single_choice",
+      "question": "What is the typical read latency for data in the Cool Blob Storage tier?",
+      "options": ["A few milliseconds", "Several hours", "Several days", "Unavailable until a database index is created"],
+      "correctAnswer": "A few milliseconds",
+      "explanation": "Cool is an online access tier. Archive is the tier that requires rehydration and can take hours."
+    },
+    {
+      "id": 287,
+      "topic": "Apache Spark on Azure",
+      "type": "multiple_choice",
+      "question": "Which Azure services support Apache Spark workloads?",
+      "options": ["Azure Synapse Analytics", "Azure Databricks", "Azure HDInsight", "Azure Files only"],
+      "correctAnswers": ["Azure Synapse Analytics", "Azure Databricks", "Azure HDInsight"],
+      "explanation": "Synapse, Databricks, and HDInsight can all support Spark-based analytics workloads."
+    },
+    {
+      "id": 288,
+      "topic": "Azure Blob Storage",
+      "type": "true_false_table",
+      "question": "For each Blob Storage statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Block blob block sizes must all be fixed and identical.",
+          "correctAnswer": "No",
+          "explanation": "Block blobs are made of blocks, but block sizes do not have to be identical."
+        },
+        {
+          "text": "Blobs are stored in containers.",
+          "correctAnswer": "Yes",
+          "explanation": "Azure Blob Storage organizes blobs inside containers."
+        },
+        {
+          "text": "Folder-level ACLs are available in a standard Blob account without hierarchical namespace.",
+          "correctAnswer": "No",
+          "explanation": "Fine-grained directory ACL behavior is associated with ADLS Gen2 and hierarchical namespace."
+        }
+      ]
+    },
+    {
+      "id": 289,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "How do you add a new attribute to a structured relational entity?",
+      "options": ["Alter the table schema to add a new column", "Create only a Power BI dashboard", "Move all data to a queue", "Delete the primary key"],
+      "correctAnswer": "Alter the table schema to add a new column",
+      "explanation": "In a relational table, adding a new attribute normally means altering the schema to add a column."
+    },
+    {
+      "id": 290,
+      "topic": "Data Types",
+      "type": "single_choice",
+      "question": "Tabular data with fixed columns is usually classified as what?",
+      "options": ["Structured data", "Unstructured data", "Only image data", "Only audio data"],
+      "correctAnswer": "Structured data",
+      "explanation": "Rows and columns with fixed fields are structured data."
+    },
+    {
+      "id": 291,
+      "topic": "Azure Data Factory",
+      "type": "single_choice",
+      "question": "Which Azure service is commonly used to create data ingestion pipelines?",
+      "options": ["Azure Data Factory", "Azure Files", "Azure Queue Storage only", "Power BI mobile app"],
+      "correctAnswer": "Azure Data Factory",
+      "explanation": "Azure Data Factory is used to create and orchestrate ingestion and data integration pipelines."
+    },
+    {
+      "id": 292,
+      "topic": "IoT Data Services",
+      "type": "single_choice",
+      "question": "Which Azure SQL product was historically used for IoT streaming and time-series scenarios at the edge?",
+      "options": ["Azure SQL Edge", "Azure Table Storage", "Power BI Report Builder", "Azure Files"],
+      "correctAnswer": "Azure SQL Edge",
+      "explanation": "Azure SQL Edge was historically used for SQL workloads at the edge and IoT data scenarios.",
+      "statusNote": "Outdated service warning: Azure SQL Edge has been retired, so this is old-exam wording."
+    },
+    {
+      "id": 293,
+      "topic": "Apache Spark",
+      "type": "single_choice",
+      "question": "Spark Structured Streaming is built around which programming abstraction?",
+      "options": ["DataFrame", "Power BI dashboard", "Azure file share", "SQL firewall rule"],
+      "correctAnswer": "DataFrame",
+      "explanation": "Spark Structured Streaming uses DataFrame/Dataset-style APIs to process streaming data."
+    },
+    {
+      "id": 294,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "Which SQL statement is an example of Data Definition Language?",
+      "options": ["CREATE", "INSERT", "UPDATE", "SELECT"],
+      "correctAnswer": "CREATE",
+      "explanation": "CREATE defines database objects, so it is DDL."
+    },
+    {
+      "id": 295,
+      "topic": "Data Roles",
+      "type": "single_choice",
+      "question": "Which task is commonly a database administrator responsibility?",
+      "options": ["Storing and managing backup copies of data", "Designing company logos", "Creating only marketing slogans", "Editing video files"],
+      "correctAnswer": "Storing and managing backup copies of data",
+      "explanation": "Backup and recovery are core database administration responsibilities."
+    },
+    {
+      "id": 296,
+      "topic": "Power BI",
+      "type": "single_choice",
+      "question": "Which Microsoft service can be used to embed data analysis results into webpages or applications?",
+      "options": ["Microsoft Power BI", "Azure Queue Storage", "SQL Server transaction log", "CSV only"],
+      "correctAnswer": "Microsoft Power BI",
+      "explanation": "Power BI supports publishing and embedding reports and analytical results."
+    },
+    {
+      "id": 297,
+      "topic": "SQL",
+      "type": "single_choice",
+      "question": "In a SQL JOIN, what does the ON clause define?",
+      "options": ["How rows from the joined tables are matched", "The storage account access tier", "The dashboard theme", "The blob rehydration priority"],
+      "correctAnswer": "How rows from the joined tables are matched",
+      "explanation": "The ON clause defines the join condition between tables."
+    },
+    {
+      "id": 298,
+      "topic": "Data Roles",
+      "type": "true_false_table",
+      "question": "For each data engineer responsibility statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Data engineers identify and define enterprise data governance rules.",
+          "correctAnswer": "No",
+          "explanation": "Governance rules are usually defined by governance, architecture, or business leadership roles."
+        },
+        {
+          "text": "Data engineers create data ingestion pipelines.",
+          "correctAnswer": "Yes",
+          "explanation": "Creating ingestion and transformation pipelines is a common data engineer responsibility."
+        },
+        {
+          "text": "Data engineers are primarily responsible for database backup and recovery.",
+          "correctAnswer": "No",
+          "explanation": "Backup and recovery are usually database administrator responsibilities."
+        }
+      ],
+      "statusNote": "Corrected."
+    },
+    {
+      "id": 299,
+      "topic": "SQL",
+      "type": "multiple_choice",
+      "question": "Which SQL clauses are needed to return order data together with related customer data?",
+      "options": ["SELECT", "JOIN", "DROP", "DENY"],
+      "correctAnswers": ["SELECT", "JOIN"],
+      "explanation": "SELECT returns data, and JOIN combines related rows from different tables."
+    },
+    {
+      "id": 300,
+      "topic": "Relational Data",
+      "type": "single_choice",
+      "question": "Which database type stores structured data in tables with rows and columns?",
+      "options": ["Relational database", "Graph only", "Blob archive only", "Queue only"],
+      "correctAnswer": "Relational database",
+      "explanation": "Relational databases store structured data in tables."
+    },
+    {
+      "id": 301,
+      "topic": "Non-Relational Data",
+      "type": "single_choice",
+      "question": "A NoSQL database that groups related columns together is which model?",
+      "options": ["Column family", "Graph", "Object storage", "Queue"],
+      "correctAnswer": "Column family",
+      "explanation": "Column-family databases organize data into rows and groups of related columns."
+    },
+    {
+      "id": 302,
+      "topic": "Data Formats",
+      "type": "single_choice",
+      "question": "Which row-based file format uses a JSON schema/header and stores data in binary format?",
+      "options": ["AVRO", "CSV", "PNG", "Power BI dashboard"],
+      "correctAnswer": "AVRO",
+      "explanation": "Avro is a row-based format that uses schema information and stores data in compact binary form."
+    },
+    {
+      "id": 303,
+      "topic": "Data Workloads",
+      "type": "true_false_table",
+      "question": "For each stream or batch processing statement, select Yes or No.",
+      "statements": [
+        {
+          "text": "Stream processing waits until all data for the day is collected before processing.",
+          "correctAnswer": "No",
+          "explanation": "That describes batch processing, not streaming."
+        },
+        {
+          "text": "Batch processing continuously processes each event as soon as it arrives.",
+          "correctAnswer": "No",
+          "explanation": "Streaming processes events continuously as they arrive."
+        },
+        {
+          "text": "Stream processing can calculate rolling averages over recent data.",
+          "correctAnswer": "Yes",
+          "explanation": "Rolling or windowed calculations are common streaming analytics patterns."
+        }
+      ]
+    },
+    {
+      "id": 304,
+      "topic": "Azure Databricks",
+      "type": "single_choice",
+      "question": "Which Azure service is a Spark-based analytics platform used for big data processing and machine learning?",
+      "options": ["Azure Databricks", "Azure Files", "Azure Queue Storage", "Azure Table Storage only"],
+      "correctAnswer": "Azure Databricks",
+      "explanation": "Azure Databricks is built on Apache Spark and is used for big data analytics and machine learning."
+    }
+  ]
+}

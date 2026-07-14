@@ -1,0 +1,9 @@
+DP-900 GitHub Pages upload
+
+Repository: dp900
+Expected site URL: https://fatoomnoour.github.io/dp900/
+
+Upload the CONTENTS of this extracted folder to the root of the dp900 repository.
+Do not upload this ZIP file itself.
+After upload, set Settings > Pages > Source to GitHub Actions.
+The workflow in .github/workflows/deploy-pages.yml will build and deploy automatically.

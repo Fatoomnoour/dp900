@@ -1,0 +1,803 @@
+You are an expert React + Vite frontend developer and learning experience designer.
+
+I already have an interactive DP-900 quiz website with local JSON question files. 
+Now I want to upgrade it into a professional DP-900 study platform, not only a quiz app.
+
+Goal:
+Build a complete interactive DP-900 Exam Prep website that helps the learner understand concepts deeply and prepare for any exam question, aiming for 100% score.
+
+Important:
+Do not remove the existing quiz system.
+Add a professional "Study Mode" section beside the quiz mode.
+
+Website language:
+- Main interface should be Arabic RTL.
+- Keep technical terms in English when needed, such as OLTP, OLAP, ETL, ELT, Cosmos DB, Power BI.
+- Use clear Arabic explanations.
+
+Design:
+- Modern dark dashboard UI.
+- Professional, clean, mobile-first.
+- Same style as the existing DE_Exam_Prep website.
+- Use cards, icons, progress bars, badges, tabs, accordions, and smooth animations.
+- Make it feel like a premium exam prep platform.
+
+Tech stack:
+- React + Vite
+- Tailwind CSS
+- React Router
+- LocalStorage
+- No backend
+- Must work on GitHub Pages
+
+Current data files:
+src/data/
+  dp900_001_050.json
+  dp900_051_100.json
+  dp900_101_150.json
+  dp900_151_200.json
+  dp900_201_250.json
+  dp900_251_304.json
+
+Keep these files for quiz mode.
+
+Now add new study data files:
+src/data/dp900_lessons.json
+src/data/dp900_flashcards.json
+src/data/dp900_cheatsheets.json
+src/data/dp900_decision_trees.json
+src/data/dp900_study_plan.json
+
+Required pages:
+1. Home
+2. Quiz
+3. Results
+4. Mistakes
+5. Study Hub
+6. Lesson Details
+7. Flashcards
+8. Cheat Sheet
+9. Decision Trees
+10. Study Plan
+11. Final Review
+
+Navigation:
+Add navbar links:
+- الرئيسية
+- المذاكرة
+- الكويز
+- الفلاش كاردز
+- شجرة القرار
+- نوت الأخطاء
+- الخطة
+
+Home page:
+Add two main tracks:
+1. ابدأ مذاكرة المفاهيم
+2. ابدأ تدريب الأسئلة
+
+Show stats:
+- إجمالي الأسئلة
+- عدد الدروس
+- عدد الفلاش كاردز
+- عدد الأخطاء
+- نسبة التقدم
+- آخر Module تمت مراجعته
+
+Study Hub page:
+Create modules as cards:
+
+Module 1:
+Core Data Concepts
+Topics:
+- Structured / Semi-structured / Unstructured
+- OLTP vs OLAP
+- Batch vs Streaming
+- ETL vs ELT
+- Analytics Types
+- Data Roles
+- ACID
+
+Module 2:
+Relational Data on Azure
+Topics:
+- Tables / Rows / Columns
+- Primary Key / Foreign Key
+- Normalization
+- DDL / DML / DCL
+- Views / Stored Procedures / Indexes
+- Azure SQL Database
+- Azure SQL Managed Instance
+- SQL Server on Azure VM
+- PaaS vs IaaS
+
+Module 3:
+Non-Relational Data on Azure
+Topics:
+- Key/value
+- Document
+- Graph
+- Column family
+- Object storage
+- Azure Blob Storage
+- Azure Files
+- Azure Table Storage
+- Azure Cosmos DB
+- ADLS Gen2
+
+Module 4:
+Analytics on Azure
+Topics:
+- Azure Data Factory
+- Azure Synapse Analytics
+- Azure Databricks
+- Apache Spark
+- Azure Stream Analytics
+- Azure Data Explorer / KQL
+- Power BI
+- Star schema
+- Fact vs Dimension
+- Data Warehouse
+- Lakehouse
+
+Lesson page structure:
+Each lesson must include these sections:
+
+1. Concept
+Title: الفكرة ببساطة
+Explain the concept clearly in Arabic.
+
+2. Keywords
+Title: كلمات مفتاحية في الامتحان
+Show keyword chips. 
+When learner sees these words in a question, they know the answer.
+
+3. Compare
+Title: مقارنة مهمة
+Use comparison tables for similar concepts.
+
+4. Exam Traps
+Title: فخاخ الامتحان
+Show red/orange trap cards explaining common mistakes.
+
+5. Decision Rule
+Title: قاعدة الحل
+Show a short memorable exam rule.
+
+6. Mini Quiz
+Title: اختبر نفسك
+Add 3 to 5 quick questions after every lesson.
+
+7. Related Questions
+Show links to related quiz questions from the JSON question bank by topic.
+
+8. Mark as Studied
+Button:
+تمت المراجعة
+Save progress in localStorage.
+
+Create this lesson data schema:
+
+{
+  "id": "structured-vs-semi-vs-unstructured",
+  "moduleId": "core-data-concepts",
+  "moduleName": "Core Data Concepts",
+  "title": "Structured vs Semi-structured vs Unstructured",
+  "titleAr": "الفرق بين أنواع البيانات",
+  "difficulty": "easy",
+  "estimatedMinutes": 10,
+  "concept": "...",
+  "keywords": ["table", "row", "column", "JSON", "XML", "image", "video"],
+  "examRule": "Tables → Structured | JSON/XML → Semi-structured | Images/Videos/Audio → Unstructured",
+  "comparison": {
+    "headers": ["Type", "Meaning", "Examples", "Azure Service"],
+    "rows": [
+      ["Structured", "Fixed schema", "SQL tables", "Azure SQL Database"],
+      ["Semi-structured", "Flexible schema", "JSON/XML", "Azure Cosmos DB"],
+      ["Unstructured", "No fixed schema", "Images/Videos/Audio", "Azure Blob Storage"]
+    ]
+  },
+  "traps": [
+    {
+      "title": "JSON is not unstructured",
+      "explanation": "JSON has structure through keys and nested fields, so it is semi-structured."
+    }
+  ],
+  "miniQuiz": [
+    {
+      "question": "A company stores customer records in tables with rows and columns. What type of data is this?",
+      "options": ["Structured", "Semi-structured", "Unstructured"],
+      "correctAnswer": "Structured",
+      "explanation": "Rows and columns with fixed schema mean structured data."
+    }
+  ],
+  "relatedTopics": ["Data Types", "Azure SQL", "Azure Cosmos DB"]
+}
+
+Add these lessons with professional content:
+
+Lesson 1:
+Structured vs Semi-structured vs Unstructured
+
+Content:
+Structured:
+- Fixed schema
+- Rows and columns
+- Tables
+- SQL
+Keywords:
+table, row, column, schema, relational, SQL
+Answer:
+Structured data / Relational database / Azure SQL Database
+
+Semi-structured:
+- Some structure but flexible schema
+- JSON, XML
+Keywords:
+JSON, XML, nested fields, flexible schema, different properties
+Answer:
+Semi-structured data / Document database / Azure Cosmos DB
+
+Unstructured:
+- No fixed schema
+- Files, images, videos, audio, PDFs
+Keywords:
+image, audio, video, binary, file, object
+Answer:
+Unstructured data / Azure Blob Storage
+
+Rule:
+Tables → Structured
+JSON/XML → Semi-structured
+Images/Videos/Audio → Unstructured
+
+Lesson 2:
+OLTP vs OLAP
+
+OLTP:
+- Transactional workload
+- Frequent small reads/writes
+- Normalized data
+- Current operational data
+Examples:
+bank transfer, order, payment, POS system
+
+OLAP:
+- Analytical workload
+- Read-heavy queries
+- Aggregations
+- Historical data
+- Data warehouse
+Examples:
+sales dashboard, trends, reports, analytics
+
+Rule:
+Order, payment, transfer, POS → OLTP
+Reports, trends, warehouse, aggregation → OLAP
+
+Lesson 3:
+Batch vs Streaming
+
+Batch:
+- Data collected first then processed later
+- Schedule or threshold
+- Higher latency acceptable
+Keywords:
+daily, monthly, every 12 hours, after one million records
+
+Streaming:
+- Data processed as it arrives
+- Low latency
+- Real-time events
+Keywords:
+real-time, sensors, telemetry, rolling average, events as they happen
+
+Rule:
+Daily/monthly/scheduled → Batch
+Real-time/sensors/rolling average → Streaming
+
+Lesson 4:
+ETL vs ELT
+
+ETL:
+Extract → Transform → Load
+Transform before loading.
+Good when cleaning/filtering before destination.
+
+ELT:
+Extract → Load → Transform
+Transform inside the target system.
+Good when the target is powerful like a data warehouse.
+
+Rule:
+Transform before load → ETL
+Load before transform → ELT
+
+Lesson 5:
+Analytics Types
+
+Descriptive:
+What happened?
+
+Diagnostic:
+Why did it happen?
+
+Predictive:
+What will happen?
+
+Prescriptive:
+What action should we take?
+
+Cognitive:
+AI-based understanding such as speech, text, image recognition.
+
+Rules:
+Current or historical chart → Descriptive
+Why sales changed → Diagnostic
+Forecast future → Predictive
+Recommend action → Prescriptive
+Recognize speech/image/text entities → Cognitive
+
+Lesson 6:
+Data Roles
+
+DBA:
+backup, restore, permissions, security, performance, availability
+
+Data Engineer:
+pipelines, ingestion, transformation, analytical stores
+
+Data Analyst:
+reports, dashboards, charts, business insights
+
+Data Scientist:
+machine learning, hidden patterns, prediction models
+
+Rule:
+Backup/security/performance → DBA
+Pipelines/ingestion/transformation → Data Engineer
+Charts/reports/dashboards → Data Analyst
+ML/hidden patterns → Data Scientist
+
+Lesson 7:
+ACID
+
+Atomicity:
+All or nothing.
+
+Consistency:
+Valid state before and after transaction.
+
+Isolation:
+Transactions do not expose intermediate states.
+
+Durability:
+Committed data persists after failure.
+
+Rule:
+All-or-nothing → Atomicity
+Valid rules → Consistency
+Concurrent transaction separation → Isolation
+Saved after crash → Durability
+
+Lesson 8:
+SQL Language Categories
+
+DDL:
+CREATE, ALTER, DROP
+Defines structure.
+
+DML:
+SELECT, INSERT, UPDATE, DELETE
+Works with data.
+
+DCL:
+GRANT, REVOKE, DENY
+Controls permissions.
+
+Rule:
+CREATE table → DDL
+INSERT row → DML
+GRANT permission → DCL
+
+Lesson 9:
+Azure SQL Options
+
+Azure SQL Database:
+PaaS
+Managed database
+Good for cloud apps and SaaS apps.
+
+Azure SQL Managed Instance:
+PaaS
+Higher SQL Server compatibility
+Supports more SQL Server features.
+
+SQL Server on Azure VM:
+IaaS
+Full control over OS and SQL Server
+Best for lift-and-shift with minimal changes.
+
+Rule:
+Managed single DB → Azure SQL Database
+High compatibility managed → Managed Instance
+Full OS control → SQL Server on Azure VM
+
+Lesson 10:
+Azure Storage Services
+
+Azure Blob Storage:
+Files, images, audio, video, objects
+
+Azure Files:
+SMB file shares
+Replace shared folders
+
+Azure Table Storage:
+NoSQL key/value style
+PartitionKey + RowKey
+
+ADLS Gen2:
+Big data lake
+Hierarchical namespace
+Folders/directories
+ACLs
+
+Rule:
+Images/audio/video → Blob
+SMB shared folder → Azure Files
+PartitionKey + RowKey → Azure Table
+Big data lake + folders + ACLs → ADLS Gen2
+
+Lesson 11:
+Azure Cosmos DB
+
+Use Cosmos DB for:
+- JSON documents
+- Global NoSQL
+- Low-latency apps
+- Flexible schema
+
+APIs:
+Cosmos DB for NoSQL → JSON documents + SQL-style queries
+Cosmos DB for Apache Gremlin → Graph
+Cosmos DB for Table → Key/value style
+Cosmos DB for MongoDB → Document workloads
+
+Rule:
+JSON + global + NoSQL → Cosmos DB
+Graph relationships → Cosmos DB for Apache Gremlin
+
+Lesson 12:
+Power BI
+
+Power BI Desktop:
+Authoring, modeling, creating reports
+
+Power BI Service:
+Publish, share, dashboards, collaboration
+
+Report:
+Can have multiple pages and visuals.
+
+Dashboard:
+Single page canvas in Power BI Service.
+
+Paginated Report:
+Fixed layout, printable, report builder.
+
+Rule:
+Create/model reports → Power BI Desktop
+Publish/share/dashboard → Power BI Service
+One page → Dashboard
+Multiple pages → Report
+
+Lesson 13:
+Azure Data Factory
+
+Used for:
+- Data integration
+- Data movement
+- ETL/ELT pipelines
+- Orchestration
+
+Components:
+Pipeline → group of activities
+Activity → processing step
+Dataset → represents data
+Linked service → connection info
+Trigger → starts pipeline
+Integration runtime → compute infrastructure
+
+Rule:
+Orchestration / pipeline / data movement → Azure Data Factory
+
+Lesson 14:
+Azure Synapse Analytics
+
+Used for:
+- Enterprise analytics
+- Data warehouse
+- SQL analytics
+- Big data analytics
+- Synapse pipelines
+- Dedicated SQL pools
+
+Rule:
+Large-scale analytics / data warehouse / MPP → Azure Synapse Analytics
+
+Lesson 15:
+Azure Databricks and Spark
+
+Azure Databricks:
+Spark-based analytics platform
+Big data processing
+Machine learning
+Collaborative notebooks
+
+Spark Structured Streaming:
+Uses DataFrame/Dataset-style APIs.
+
+Rule:
+Spark notebooks / big data ML → Azure Databricks
+
+Lesson 16:
+Star Schema
+
+Fact table:
+Numeric measures
+Examples:
+SalesAmount, Quantity, Revenue
+
+Dimension table:
+Descriptive attributes
+Examples:
+Customer, Product, Date, Region
+
+Rule:
+Numbers/measures → Fact
+Describe/filter/group → Dimension
+
+Lesson 17:
+Decision Trees
+
+Create a dedicated Decision Trees page with these trees:
+
+Tree 1:
+What type of data?
+- Tables / rows / columns / fixed schema → Structured
+- JSON / XML / flexible fields → Semi-structured
+- Images / video / audio / files → Unstructured
+
+Tree 2:
+Which workload?
+- Orders / payments / bank transfer / POS → OLTP
+- Reports / trends / aggregations / warehouse → OLAP
+
+Tree 3:
+Batch or Streaming?
+- Daily / monthly / scheduled / after threshold → Batch
+- Real-time / sensor / telemetry / rolling average → Streaming
+
+Tree 4:
+Which Azure storage?
+- Files/images/audio/video → Blob Storage
+- SMB/shared folder → Azure Files
+- PartitionKey + RowKey → Azure Table Storage
+- Data lake/folders/ACLs → ADLS Gen2
+
+Tree 5:
+Which database?
+- Relational tables → Azure SQL Database
+- JSON NoSQL global low-latency → Azure Cosmos DB
+- Graph relationships → Cosmos DB for Apache Gremlin
+- Full SQL Server control → SQL Server on Azure VM
+- High SQL Server compatibility managed → Azure SQL Managed Instance
+
+Tree 6:
+Which analytics service?
+- Pipelines/integration/movement → Azure Data Factory
+- Data warehouse/MPP/enterprise analytics → Azure Synapse Analytics
+- Spark notebooks/ML/big data → Azure Databricks
+- Real-time event query → Azure Stream Analytics
+- KQL/log/time-series analytics → Azure Data Explorer
+- Reports/dashboards → Power BI
+
+Cheat Sheet page:
+Create a searchable cheat sheet grouped by topic.
+
+Add these cheat sheet cards:
+
+Card:
+Tables → Structured
+JSON/XML → Semi-structured
+Images/Videos/Audio → Unstructured
+
+Card:
+Order/payment/transfer/POS → OLTP
+Reports/trends/warehouse/aggregation → OLAP
+
+Card:
+Transform before load → ETL
+Load before transform → ELT
+
+Card:
+Daily/monthly/scheduled → Batch
+Real-time/sensors/rolling average → Streaming
+
+Card:
+CREATE/ALTER/DROP → DDL
+SELECT/INSERT/UPDATE/DELETE → DML
+GRANT/REVOKE/DENY → DCL
+
+Card:
+Backup/security/performance → DBA
+Pipelines/ingestion/transformation → Data Engineer
+Reports/dashboards/charts → Data Analyst
+ML/hidden patterns → Data Scientist
+
+Card:
+Azure SQL Database → PaaS
+Azure SQL Managed Instance → PaaS
+SQL Server on Azure VM → IaaS
+
+Card:
+Blob → files/images/audio/video
+Files → SMB shared folder
+Table → PartitionKey + RowKey
+ADLS Gen2 → data lake + folders + ACLs
+Cosmos DB → JSON/global NoSQL
+
+Card:
+Power BI Desktop → author/model reports
+Power BI Service → publish/share/dashboards
+Dashboard → one page
+Report → multiple pages
+
+Flashcards:
+Create flashcards from all rules and traps.
+Each flashcard has:
+front:
+"What means all-or-nothing transaction?"
+back:
+"Atomicity"
+
+Add buttons:
+- أعرفها
+- مش عارفها
+- راجعها لاحقاً
+
+Save flashcard progress in localStorage.
+
+Mistakes integration:
+When user answers a quiz incorrectly:
+- Save mistake with question, user answer, correct answer, explanation, topic, module.
+- Add a button in Mistakes page: "ذاكر المفهوم المرتبط"
+- This opens the related lesson based on topic.
+
+Progress:
+Use localStorage keys:
+dp900_study_progress
+dp900_flashcard_progress
+dp900_lesson_completed
+dp900_mistakes
+dp900_quiz_progress
+dp900_stats
+
+Add progress dashboard:
+- Completed lessons
+- Completed quizzes
+- Accuracy
+- Weak topics
+- Most repeated mistakes
+- Recommended next lesson
+
+Recommended Study Engine:
+Create a helper function:
+getRecommendedStudyPath()
+
+Logic:
+- If mistakes in topic > 3, recommend that topic lesson.
+- If quiz accuracy in module < 70%, recommend reviewing its lessons.
+- If no mistakes, recommend next uncompleted lesson.
+- If all lessons complete, recommend full mock exam.
+
+Components required:
+src/components/
+  Navbar.jsx
+  StatsCard.jsx
+  ModuleCard.jsx
+  LessonCard.jsx
+  ConceptCard.jsx
+  KeywordChips.jsx
+  ComparisonTable.jsx
+  TrapCard.jsx
+  ExamRuleBox.jsx
+  MiniQuiz.jsx
+  Flashcard.jsx
+  DecisionTreeCard.jsx
+  ProgressDashboard.jsx
+  QuestionRenderer.jsx
+  ConfirmModal.jsx
+  SearchBar.jsx
+
+Pages required:
+src/pages/
+  Home.jsx
+  StudyHub.jsx
+  LessonDetails.jsx
+  Flashcards.jsx
+  CheatSheet.jsx
+  DecisionTrees.jsx
+  StudyPlan.jsx
+  Quiz.jsx
+  Results.jsx
+  Mistakes.jsx
+
+Routing:
+/
+/study
+/study/:lessonId
+/flashcards
+/cheatsheet
+/decision-trees
+/study-plan
+/quiz/:moduleId
+/results
+/mistakes
+
+Important UI behavior:
+- Arabic RTL everywhere.
+- Technical terms can stay English.
+- Every lesson should have:
+  concept explanation
+  keywords
+  comparison table
+  traps
+  exam rule
+  mini quiz
+  related quiz questions
+- User can mark lesson as completed.
+- User can search lessons by keyword.
+- User can filter lessons by module.
+- User can review only weak topics.
+- User can start full mock exam after completing all lessons.
+
+Add a "100 Score Mode":
+This page should guide the learner through:
+1. Study all concepts
+2. Practice each module
+3. Review mistakes
+4. Repeat weak topics
+5. Take full mock exam
+6. Review final cheat sheet
+
+Show a checklist:
+- فهمت أنواع البيانات
+- فرقت بين OLTP و OLAP
+- فرقت بين Batch و Streaming
+- فرقت بين ETL و ELT
+- حفظت DDL/DML/DCL
+- فهمت Azure SQL options
+- فهمت Storage services
+- فهمت Cosmos DB APIs
+- فهمت Power BI
+- فهمت ADF/Synapse/Databricks
+- خلصت Full Mock Exam
+
+Add final readiness score:
+readinessScore =
+  40% quiz accuracy
+  25% lesson completion
+  20% mistakes reviewed
+  15% flashcards mastered
+
+Display:
+- جاهز جدًا
+- محتاج مراجعة بسيطة
+- محتاج مذاكرة أكتر
+
+Do not use backend.
+Do not require login.
+Everything should work offline from local JSON files.
+Make the code clean, modular, and easy to extend.

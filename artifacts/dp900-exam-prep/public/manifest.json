@@ -1,0 +1,35 @@
+{
+  "name": "DP-900 Exam Prep",
+  "short_name": "DP-900",
+  "description": "حضّر لاختبار DP-900 Azure Data Fundamentals بثقة وتفوق",
+  "start_url": "/dp900/",
+  "display": "standalone",
+  "background_color": "#131b26",
+  "theme_color": "#3b82f6",
+  "lang": "ar",
+  "dir": "rtl",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/dp900/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "shortcuts": [
+    {
+      "name": "الكويز السريع",
+      "short_name": "سريع",
+      "description": "10 أسئلة في 5 دقائق",
+      "url": "/dp900/quick-quiz"
+    },
+    {
+      "name": "محاكي الامتحان",
+      "short_name": "محاكي",
+      "description": "40 سؤال في 45 دقيقة",
+      "url": "/dp900/exam-sim"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+- [DP-900 RTL bidi fix](dp900-rtl-bidi.md) — mixed Arabic+number strings need `dir="ltr"` spans; pure Arabic text is fine
+- [DP-900 Tailwind v4 utilities](dp900-tailwind-v4.md) — scrollbar-hide and .num-ltr must be added manually in `@layer` block in index.css

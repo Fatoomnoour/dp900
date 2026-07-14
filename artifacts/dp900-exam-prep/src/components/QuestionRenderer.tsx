@@ -46,7 +46,7 @@ export default function QuestionRenderer({ question, submitted, onAnswer, userAn
         question={question}
         submitted={submitted}
         onAnswer={onAnswer}
-        userAnswer={userAnswer as Extract<UserAnswer, { type: "matching" }> | undefined}
+        userAnswer={userAnswer?.type === "matching" ? userAnswer : undefined}
       />
     );
   }
@@ -384,6 +384,13 @@ function MatchingQuestion({ question, submitted, onAnswer, userAnswer }: {
           </div>
         );
       })}
+      {submitted && question.explanation && (
+        <ExplanationBox
+          text={question.explanation}
+          isCorrect={question.pairs.every((pair, i) => selected[i] === pair.correctAnswer)}
+        />
+      )}
+      {submitted && <SourceImages sources={question.answerImages} alt={`Question ${question.id} corrected answer graphic`} />}
     </div>
   );
 }

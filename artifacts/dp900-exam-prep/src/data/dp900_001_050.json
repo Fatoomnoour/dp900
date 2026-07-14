@@ -332,16 +332,32 @@
       "sourceNumber": 21,
       "sourcePage": 27,
       "topic": "DP-900 Source Bank",
-      "question": "DRAG DROP (Drag and Drop is not supported) Match the types of data to the appropriate Azure data services. To answer, drag the appropriate data type from the column on the left to its service on the right. Each data type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.",
+      "question": "Match each data type to the most appropriate Azure data service.",
       "promptImages": [
         "/dp900/question-assets/q21-prompt-1.png"
       ],
       "answerImages": [
         "/dp900/question-assets/q21-answer-1.png"
       ],
-      "explanation": "Box 1: Image files Azure Blob storage is suitable for image files. Box 2:Key/value pairs Azure CosmosDB table API is a key-value storage hosted in the cloud. Box 3: Relationship between employees One-to-many relationships between business domain objects occur frequently: for example, one department has many employees. There are several ways to implement one-to-many relationships in the Azure Table service.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "تصحيح خبير: ملف الـPDF بدّل الإجابتين الثانية والثالثة. كما أن شرحه ذكر Azure Cosmos DB Table API، بينما الاختيار المعروض في السؤال هو Gremlin API. Table API/Storage يناسب key-value، أما Gremlin فيناسب العلاقات والـgraph data.",
+      "type": "matching",
+      "pairs": [
+        {
+          "prompt": "Image files",
+          "correctAnswer": "Azure Blob storage",
+          "explanation": "Azure Blob Storage هو Object Storage مناسب للبيانات غير المهيكلة مثل الصور والفيديو والملفات الثنائية."
+        },
+        {
+          "prompt": "Key/value pairs",
+          "correctAnswer": "Azure Table storage",
+          "explanation": "Azure Table Storage هو مخزن NoSQL من نوع key/attribute بدون مخطط ثابت، وتُعرَّف كل entity باستخدام PartitionKey وRowKey."
+        },
+        {
+          "prompt": "Relationships between employees",
+          "correctAnswer": "Azure Cosmos DB Gremlin API",
+          "explanation": "Gremlin API هو Graph Database؛ يمثّل الموظفين كعُقد (vertices) والعلاقات بينهم كحواف (edges)، لذلك هو الأنسب للبيانات شديدة الترابط."
+        }
+      ]
     },
     {
       "id": "22",

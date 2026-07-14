@@ -7,6 +7,7 @@ import {
 } from "@/lib/loadQuestions";
 import { playCorrect, playWrong } from "@/lib/sounds";
 import QuestionRenderer from "@/components/QuestionRenderer";
+import { repairSavedProgress } from "@/lib/grading";
 import type { Question, UserAnswer, QuizProgress, MistakeEntry, GlobalStats, SingleChoiceQuestion } from "@/types/quiz";
 
 export default function Quiz() {
@@ -43,24 +44,18 @@ export default function Quiz() {
     return `${Math.floor(s / 60).toString().padStart(2, "0")}:${(s % 60).toString().padStart(2, "0")}`;
   }
 
-  // Load saved progress
+  // Load saved progress and re-grade it against the current answer key.
   useEffect(() => {
     if (!moduleId || questions.length === 0) return;
-    try {
-      const raw = localStorage.getItem(STORAGE_KEYS.PROGRESS);
-      if (raw) {
-        const allProgress: Record<string, QuizProgress> = JSON.parse(raw);
-        const saved = allProgress[moduleId];
-        if (saved) {
-          setCurrentIndex(saved.currentIndex);
-          setAnswers(saved.answers);
-          const submittedIds = new Set(Object.keys(saved.answers) as unknown as (string | number)[]);
-          setSubmitted(submittedIds as Set<string | number>);
-          const savedQ = questions[saved.currentIndex];
-          if (savedQ) setCurrentAnswer(saved.answers[savedQ.id]);
-        }
-      }
-    } catch {}
+    const saved = repairSavedProgress(moduleId, questions);
+    if (saved) {
+      setCurrentIndex(saved.currentIndex);
+      setAnswers(saved.answers);
+      const submittedIds = new Set(Object.keys(saved.answers) as unknown as (string | number)[]);
+      setSubmitted(submittedIds as Set<string | number>);
+      const savedQ = questions[saved.currentIndex];
+      if (savedQ) setCurrentAnswer(saved.answers[savedQ.id]);
+    }
     setBookmarkedKeys(new Set(loadBookmarks().filter((b) => b.moduleId === moduleId).map((b) => String(b.questionId))));
   }, [moduleId]); // eslint-disable-line react-hooks/exhaustive-deps
 

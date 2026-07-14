@@ -983,7 +983,7 @@
         "Ribbon charts",
         "Scatter plots"
       ],
-      "correctAnswer": "pie charts"
+      "correctAnswer": "Pie charts"
     },
     {
       "id": "dump-57",
@@ -1157,7 +1157,7 @@
         "process data as new data is received in near real-time",
         "collect data and then process the data when a condition is met"
       ],
-      "correctAnswer": "collect and process data when scheduled or when a batch condition is met"
+      "correctAnswer": "collect data and then process the data when a condition is met"
     },
     {
       "id": "dump-68",
@@ -1355,7 +1355,7 @@
         "structured",
         "unstructured"
       ],
-      "correctAnswer": "semi-structured data"
+      "correctAnswer": "semi-structured"
     },
     {
       "id": "dump-80",

@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { Trophy, Play, RotateCcw, CheckCircle, XCircle, Bookmark, Star, AlertCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { STORAGE_KEYS, loadStats, saveStats, loadBookmarks, getDumpQuestions } from "@/lib/loadQuestions";
+import { repairSavedProgress } from "@/lib/grading";
 import type { QuizProgress } from "@/types/quiz";
 
 const DUMP_MODULE = "module-dump";
@@ -16,15 +17,20 @@ export default function Dump() {
   const totalQ = questions.length;
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEYS.PROGRESS);
-      if (raw) {
-        const all: Record<string, QuizProgress> = JSON.parse(raw);
-        setProgress(all[DUMP_MODULE] ?? null);
-      }
-    } catch {}
+    const repaired = repairSavedProgress(DUMP_MODULE, questions);
+    if (repaired) {
+      setProgress(repaired);
+    } else {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.PROGRESS);
+        if (raw) {
+          const all: Record<string, QuizProgress> = JSON.parse(raw);
+          setProgress(all[DUMP_MODULE] ?? null);
+        }
+      } catch {}
+    }
     setBookmarkCount(loadBookmarks().filter((b) => b.moduleId === DUMP_MODULE).length);
-  }, []);
+  }, []); // answer-key repair runs once on page load
 
   const answers = progress?.answers ?? {};
   const answered = Object.keys(answers).length;

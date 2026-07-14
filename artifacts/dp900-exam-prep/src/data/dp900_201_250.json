@@ -11,11 +11,15 @@
       "promptImages": [
         "/dp900/question-assets/q201-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q201-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Non-relational databases commonly support flexible schemas rather than fixed relational table definitions.",
+      "options": [
+        "imposes a fixed schema on data",
+        "stores entities without a unique key value",
+        "stores data in relational tables",
+        "stores data without a fixed schema"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "stores data without a fixed schema"
     },
     {
       "id": "202",
@@ -26,11 +30,25 @@
       "promptImages": [
         "/dp900/question-assets/q202-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q202-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "All-or-nothing is atomicity. Logging persistence relates to durability, while isolation hides intermediate states.",
+      "statements": [
+        {
+          "text": "Atomicity requires all statements in a transaction to complete or roll back.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Consistency means that every data change is logged and accounted for.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Isolation prevents processes from observing intermediate inconsistent transaction states.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "203",
@@ -59,11 +77,15 @@
       "promptImages": [
         "/dp900/question-assets/q204-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q204-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Database administrators manage database security, access, availability, and operation.",
+      "options": [
+        "A data analyst",
+        "A data engineer",
+        "A data scientist",
+        "A database administrator"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "A database administrator"
     },
     {
       "id": "205",
@@ -74,11 +96,15 @@
       "promptImages": [
         "/dp900/question-assets/q205-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q205-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Backup and restore are core database-administrator responsibilities.",
+      "options": [
+        "data analyst",
+        "data engineer",
+        "data scientist",
+        "database administrator"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "database administrator"
     },
     {
       "id": "206",
@@ -104,11 +130,14 @@
       "promptImages": [
         "/dp900/question-assets/q207-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q207-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "SQL Server tables store relational data.",
+      "options": [
+        "non-relational data.",
+        "relational data.",
+        "semi-structured data."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "relational data."
     },
     {
       "id": "208",
@@ -119,11 +148,14 @@
       "promptImages": [
         "/dp900/question-assets/q208-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q208-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "SQL Server on an Azure VM offers the closest lift-and-shift environment with minimal application changes.",
+      "options": [
+        "An Azure SQL Database elastic pool",
+        "An instance of SQL Server on Azure Virtual Machines",
+        "A single database in Azure SQL Database"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "An instance of SQL Server on Azure Virtual Machines"
     },
     {
       "id": "209",
@@ -134,12 +166,15 @@
       "promptImages": [
         "/dp900/question-assets/q209-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q209-answer-1.jpg"
+      "explanation": "A Power BI report can contain visualizations across one or more pages; a dashboard is a single page.",
+      "type": "single_choice",
+      "options": [
+        "dashboard",
+        "dataset",
+        "report",
+        "tile"
       ],
-      "explanation": "A Power BI dashboard is a single page, often called a canvas, that tells a story through visualizations. Because it's limited to one page, a well-designed dashboard contains only the highlights of that story. Readers can view related reports for the details.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "report"
     },
     {
       "id": "210",
@@ -150,11 +185,30 @@
       "promptImages": [
         "/dp900/question-assets/q210-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q210-answer-1.jpg"
+      "type": "matching",
+      "explanation": "ETL transforms before loading, ELT transforms after loading, and ingestion moves data into the target.",
+      "options": [
+        "Data ingestion",
+        "ELT",
+        "ETL"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Data is processed before it is saved to the target",
+          "correctAnswer": "ETL",
+          "explanation": "Correct match: ETL."
+        },
+        {
+          "prompt": "Data is saved to the target and then processed",
+          "correctAnswer": "ELT",
+          "explanation": "Correct match: ELT."
+        },
+        {
+          "prompt": "Data is extracted and saved to a target without the transformation distinction",
+          "correctAnswer": "Data ingestion",
+          "explanation": "Correct match: Data ingestion."
+        }
+      ]
     },
     {
       "id": "211",
@@ -180,11 +234,15 @@
       "promptImages": [
         "/dp900/question-assets/q212-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q212-answer-1.png"
+      "type": "single_choice",
+      "explanation": "An elastic pool lets multiple Azure SQL databases share compute and storage resources.",
+      "options": [
+        "An Azure SQL server",
+        "An elastic pool",
+        "The Data Migration Assistant (DMA)",
+        "A virtual network"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "An elastic pool"
     },
     {
       "id": "213",
@@ -195,11 +253,15 @@
       "promptImages": [
         "/dp900/question-assets/q213-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q213-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "XML uses tags and hierarchy, so it is semi-structured rather than relational or unstructured.",
+      "options": [
+        "relational data.",
+        "semi-structured data.",
+        "structured data.",
+        "unstructured data."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "semi-structured data."
     },
     {
       "id": "214",
@@ -240,11 +302,15 @@
       "promptImages": [
         "/dp900/question-assets/q216-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q216-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "The WHERE clause filters rows according to criteria in DML statements.",
+      "options": [
+        "ALTER",
+        "JOIN",
+        "SELECT",
+        "WHERE"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "WHERE"
     },
     {
       "id": "217A",
@@ -270,11 +336,14 @@
       "promptImages": [
         "/dp900/question-assets/q217B-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q217B-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Stream processing is designed for simple, continuously evaluated analytics with short latency.",
+      "options": [
+        "complex analytics with short",
+        "simple analytics with long",
+        "simple analytics with short"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "simple analytics with short"
     },
     {
       "id": "218",
@@ -332,11 +401,13 @@
       "promptImages": [
         "/dp900/question-assets/q221-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q221-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Data analysts create visualizations and charts to support informed decisions.",
+      "options": [
+        "A data analyst",
+        "A database administrator"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "A data analyst"
     },
     {
       "id": "222",
@@ -376,11 +447,25 @@
       "promptImages": [
         "/dp900/question-assets/q224-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q224-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Data Lake can stage data. Data Factory orchestrates integration rather than MPP queries, and tabular semantic models are not an HDInsight role.",
+      "statements": [
+        {
+          "text": "Azure Data Lake Storage can be a staging area for ingested data.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure Data Factory is an MPP analytical query engine.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Azure HDInsight is the service used to build tabular OLAP models from multiple sources.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "225",
@@ -391,11 +476,15 @@
       "promptImages": [
         "/dp900/question-assets/q225-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q225-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Elastic pools share resources among multiple Azure SQL databases.",
+      "options": [
+        "An Azure SQL server",
+        "An elastic pool",
+        "The Data Migration Assistant (DMA)",
+        "A virtual network"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "An elastic pool"
     },
     {
       "id": "226",
@@ -421,11 +510,31 @@
       "promptImages": [
         "/dp900/question-assets/q227-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q227-answer-1.png"
+      "type": "matching",
+      "explanation": "ETL loads analytical data, fact tables contain measures, and warehouses organize data for read-heavy analytics.",
+      "options": [
+        "Data warehouses",
+        "Extract, transform, and load (ETL)",
+        "Fact tables",
+        "Online analytical processing (OLAP)"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Copies and transforms source data into an analytical system",
+          "correctAnswer": "Extract, transform, and load (ETL)",
+          "explanation": "Correct match: Extract, transform, and load (ETL)."
+        },
+        {
+          "prompt": "Contains numeric values that can be analyzed",
+          "correctAnswer": "Fact tables",
+          "explanation": "Correct match: Fact tables."
+        },
+        {
+          "prompt": "Stores data in a relational schema optimized for reads",
+          "correctAnswer": "Data warehouses",
+          "explanation": "Correct match: Data warehouses."
+        }
+      ]
     },
     {
       "id": "228",
@@ -436,11 +545,15 @@
       "promptImages": [
         "/dp900/question-assets/q228-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q228-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Synapse pipelines use the same data-integration engine as Azure Data Factory.",
+      "options": [
+        "Azure Databricks",
+        "Azure HDInsight",
+        "Azure SQL Database",
+        "Azure Synapse Analytics"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Azure Synapse Analytics"
     },
     {
       "id": "229",
@@ -466,11 +579,15 @@
       "promptImages": [
         "/dp900/question-assets/q230-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q230-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Synapse pipelines use the Azure Data Factory pipeline engine.",
+      "options": [
+        "Azure Databricks",
+        "Azure HDInsight",
+        "Azure SQL Database",
+        "Azure Synapse Analytics"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Azure Synapse Analytics"
     },
     {
       "id": "231",
@@ -481,11 +598,15 @@
       "promptImages": [
         "/dp900/question-assets/q231-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q231-answer-1.png"
+      "type": "single_choice",
+      "explanation": "An OLAP model is commonly called a cube.",
+      "options": [
+        "cube.",
+        "data lake.",
+        "dimension.",
+        "table."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "cube."
     },
     {
       "id": "232",
@@ -496,11 +617,15 @@
       "promptImages": [
         "/dp900/question-assets/q232-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q232-answer-1.png"
+      "type": "single_choice",
+      "explanation": "A scatter chart compares two numeric measures and reveals correlation.",
+      "options": [
+        "Bar charts",
+        "Pie charts",
+        "Scatter charts",
+        "Tables"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Scatter charts"
     },
     {
       "id": "233",
@@ -511,11 +636,15 @@
       "promptImages": [
         "/dp900/question-assets/q233-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q233-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "An attribute hierarchy supports drill-up and drill-down through dimension levels.",
+      "options": [
+        "a dashboard",
+        "a fact table",
+        "a unique key",
+        "an attribute hierarchy"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "an attribute hierarchy"
     },
     {
       "id": "234",
@@ -556,11 +685,25 @@
       "promptImages": [
         "/dp900/question-assets/q236-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q236-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Access tiers mainly change cost and access frequency characteristics; Cool storage is cheaper than Hot, and Archive has the highest retrieval latency.",
+      "statements": [
+        {
+          "text": "Hot-tier data is defined as being stored on a special high-performance media type.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Cool-tier storage cost is higher than Hot-tier storage cost.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Archive tier has the highest access latency.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "237",
@@ -571,11 +714,25 @@
       "promptImages": [
         "/dp900/question-assets/q237-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q237-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "OLTP handles transactional reads/writes; OLAP and warehouses favor analytical reads and aggregations.",
+      "statements": [
+        {
+          "text": "OLTP storage is optimized for interactive reads and writes.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "OLAP storage is optimized equally for transactional reads and writes.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Data warehouses are optimized primarily for read operations.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "238",
@@ -601,11 +758,15 @@
       "promptImages": [
         "/dp900/question-assets/q239-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q239-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Graph edges connect vertices (nodes).",
+      "options": [
+        "column families",
+        "facts",
+        "vertexes",
+        "tables"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "vertexes"
     },
     {
       "id": "240",
@@ -631,11 +792,15 @@
       "promptImages": [
         "/dp900/question-assets/q241-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q241-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Relational tables store structured data under a defined schema.",
+      "options": [
+        "blobs",
+        "semi-structured data",
+        "structured data",
+        "unstructured data"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "structured data"
     },
     {
       "id": "242",
@@ -661,11 +826,15 @@
       "promptImages": [
         "/dp900/question-assets/q243-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q243-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Primary and foreign keys enforce relationships between tables.",
+      "options": [
+        "collections",
+        "rows",
+        "keys",
+        "partitions"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "keys"
     },
     {
       "id": "244",
@@ -676,11 +845,15 @@
       "promptImages": [
         "/dp900/question-assets/q244-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q244-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "ELT performs transformation after loading, so the target platform must supply the transformation compute.",
+      "options": [
+        "a data pipeline that includes a transformation engine",
+        "a separate transformation engine",
+        "a target data store powerful enough to transform data",
+        "data that is fully processed before being loaded to the target data store"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "a target data store powerful enough to transform data"
     },
     {
       "id": "245",
@@ -691,11 +864,15 @@
       "promptImages": [
         "/dp900/question-assets/q245-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q245-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Dimensions are the entities used to slice and aggregate measures.",
+      "options": [
+        "cubes",
+        "dimensions",
+        "facts",
+        "schemas"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "dimensions"
     },
     {
       "id": "246",
@@ -706,11 +883,31 @@
       "promptImages": [
         "/dp900/question-assets/q246-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q246-answer-1.jpg"
+      "type": "matching",
+      "explanation": "Blob is object storage, Cosmos DB stores JSON documents, and Azure SQL stores relational tabular data. Data Factory is integration, not a storage service.",
+      "options": [
+        "Azure Blob Storage",
+        "Azure Cosmos DB for NoSQL",
+        "Azure Data Factory",
+        "Azure SQL Database"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Audio files",
+          "correctAnswer": "Azure Blob Storage",
+          "explanation": "Correct match: Azure Blob Storage."
+        },
+        {
+          "prompt": "JSON documents",
+          "correctAnswer": "Azure Cosmos DB for NoSQL",
+          "explanation": "Correct match: Azure Cosmos DB for NoSQL."
+        },
+        {
+          "prompt": "Tabular datasets",
+          "correctAnswer": "Azure SQL Database",
+          "explanation": "Correct match: Azure SQL Database."
+        }
+      ]
     },
     {
       "id": "247",
@@ -721,11 +918,25 @@
       "promptImages": [
         "/dp900/question-assets/q247-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q247-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Hot is commonly the default; page blobs support random writes, while append blobs support append operations; Archive rehydration takes time.",
+      "statements": [
+        {
+          "text": "Cool is the default access tier for a new general-purpose storage account.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Append blobs are optimized for random reads and writes.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Archive-tier retrieval can take hours.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "248",
@@ -736,11 +947,15 @@
       "promptImages": [
         "/dp900/question-assets/q248-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q248-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "The Cosmos DB for NoSQL API supports SQL-like SELECT queries over JSON items.",
+      "options": [
+        "for NoSQL",
+        "for Apache Gremlin",
+        "for MongoDB",
+        "for Table"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "for NoSQL"
     },
     {
       "id": "249",
@@ -751,11 +966,25 @@
       "promptImages": [
         "/dp900/question-assets/q249-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q249-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Azure Files lives in a storage account. Premium uses SSD; Standard uses HDD-based storage.",
+      "statements": [
+        {
+          "text": "Azure Files is created within a storage account.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "The Premium Azure Files tier uses HDD-based storage.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "The Standard Azure Files tier uses SSD storage.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "250",
@@ -766,11 +995,14 @@
       "promptImages": [
         "/dp900/question-assets/q250-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q250-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Power BI Desktop provides full data modeling and report editing.",
+      "options": [
+        "Microsoft Power BI Desktop",
+        "The Microsoft Power BI service",
+        "The Microsoft Power BI phone app"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Microsoft Power BI Desktop"
     }
   ]
 }

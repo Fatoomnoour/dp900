@@ -11,12 +11,25 @@
       "promptImages": [
         "/dp900/question-assets/q51-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q51-answer-1.jpg"
-      ],
-      "explanation": "Box 1: No Database normalization is the process of restructuring a relational database in accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity. Full normalisation will generally not improve performance, in fact it can often make it worse but it will keep your data duplicate free. Box 2: No Analytics systems are deformalized to increase performance. Transactional database systems are normalized to increase data consistency. Box 3: Yes Transactional database systems are more normalized and requires more joins.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "Normalization reduces duplicated update work and supports transactional write workloads. Analytical models are often denormalized, and normalized queries commonly need more joins.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "Normalizing a database increases the throughput of writing transactions.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Analytics systems are more normalized than transactional systems.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Normalizing a database can result in queries that require more joins.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "52",
@@ -27,12 +40,15 @@
       "promptImages": [
         "/dp900/question-assets/q52-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q52-answer-1.jpg"
+      "explanation": "Graph databases natively model and traverse relationships between entities.",
+      "type": "single_choice",
+      "options": [
+        "Column family databases",
+        "Document databases",
+        "Graph databases",
+        "Key-value stores"
       ],
-      "explanation": "A graph database stores two types of information, nodes and edges. Edges specify relationships between nodes. Nodes and edges can have properties that provide information about that node or edge, similar to columns in a table. Edges can also have a direction indicating the nature of the relationship.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Graph databases"
     },
     {
       "id": "53",
@@ -43,12 +59,15 @@
       "promptImages": [
         "/dp900/question-assets/q53-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q53-answer-1.jpg"
+      "explanation": "Key/value databases are optimized for lookup by key.",
+      "type": "single_choice",
+      "options": [
+        "complex multi-table joins",
+        "simple lookups",
+        "large binary streaming",
+        "OLAP aggregations"
       ],
-      "explanation": "A key/value store associates each data value with a unique key. Key/value stores are highly optimized for applications performing simple lookups, but are less suitable if you need to query data across different key/value stores. Key/value stores are also not optimized for querying by value. A single key/value store can be extremely scalable, as the data store can easily distribute data across multiple nodes on separate machines.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "simple lookups"
     },
     {
       "id": "54",
@@ -59,12 +78,15 @@
       "promptImages": [
         "/dp900/question-assets/q54-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q54-answer-1.jpg"
+      "explanation": "With SQL Server on Azure VMs, you manage the VM that hosts SQL Server.",
+      "type": "single_choice",
+      "options": [
+        "elastic pool",
+        "MySQL server",
+        "PostgreSQL server",
+        "virtual machine"
       ],
-      "explanation": "Explanation: SQL Server on Azure VM SQL Server on Azure VM falls into the industry category Infrastructure-as-a-Service (IaaS) and allows you to run SQL Server inside a fully managed virtual machine (VM) in Azure. The most significant difference from SQL Database and SQL Managed Instance is that SQL Server on Azure Virtual Machines allows full control over the database engine. You can choose when to start maintenance/patching, change the recovery model to simple or bulk-logged, pause or start the service when needed, and you can fully customize the SQL Server database engine. With this additional control comes the added responsibility to manage the virtual machine.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "virtual machine"
     },
     {
       "id": "55",
@@ -75,12 +97,15 @@
       "promptImages": [
         "/dp900/question-assets/q55-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q55-answer-1.jpg"
+      "explanation": "XML has tags and hierarchy but does not require a relational table schema, so it is semi-structured.",
+      "type": "single_choice",
+      "options": [
+        "relational data",
+        "semi-structured data",
+        "structured data",
+        "unstructured data"
       ],
-      "explanation": "For some semi-structured data formats (e.g. JSON), data sets are frequently a simple concatenation of multiple documents.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "semi-structured data"
     },
     {
       "id": "56",
@@ -91,12 +116,15 @@
       "promptImages": [
         "/dp900/question-assets/q56-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q56-answer-1.jpg"
+      "explanation": "JSON documents have an internal structure while properties may vary, so they are semi-structured.",
+      "type": "single_choice",
+      "options": [
+        "relational data",
+        "semi-structured data",
+        "structured data",
+        "unstructured data"
       ],
-      "explanation": "Semi-structured data ג€bridgeג€ between structured and Semi-structured data (e.g., JSON, CSV, XML) is the unstructured data. It does not have a predefined data model and is more complex than structured data, yet easier to store than unstructured data.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "semi-structured data"
     },
     {
       "id": "57",
@@ -158,12 +186,15 @@
       "promptImages": [
         "/dp900/question-assets/q60-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q60-answer-1.jpg"
+      "explanation": "A data analyst creates reports and visuals to support business decisions.",
+      "type": "single_choice",
+      "options": [
+        "A data analyst",
+        "A data engineer",
+        "A data scientist",
+        "A database administrator"
       ],
-      "explanation": "A data analyst's primary skill set revolves around data acquisition, handling, and processing. Incorrect: * A data engineer requires an intermediate level understanding of programming to build thorough algorithms along with a mastery of statistics and math. * A data scientist needs to be a master of both worlds. Data, stats, and math along with in-depth programming knowledge for Machine Learning and Deep Learning.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "A data analyst"
     },
     {
       "id": "61",
@@ -174,11 +205,15 @@
       "promptImages": [
         "/dp900/question-assets/q61-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q61-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Power BI Desktop provides the full modeling and report-authoring environment.",
+      "options": [
+        "Power BI Desktop",
+        "Power BI mobile app",
+        "Power BI Report Builder",
+        "Power BI service"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Power BI Desktop"
     },
     {
       "id": "62",
@@ -226,7 +261,9 @@
         "Azure CLI",
         "Azure PowerShell"
       ],
-      "correctAnswer": "Azure Data Studio"
+      "correctAnswer": "Azure Data Studio",
+      "statusNote": "Outdated/legacy question: SQL notebooks and Azure Data Studio are historical. Keep Azure Data Studio only as the source-bank answer.",
+      "explanation": "Azure Data Studio was the historical tool for cross-platform SQL notebooks; the product is now retired."
     },
     {
       "id": "65",
@@ -237,11 +274,30 @@
       "promptImages": [
         "/dp900/question-assets/q65-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q65-answer-1.jpg"
+      "type": "matching",
+      "explanation": "Tables store data, views are query-defined virtual tables, and indexes improve retrieval.",
+      "options": [
+        "Index",
+        "Table",
+        "View"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "A database object that holds data",
+          "correctAnswer": "Table",
+          "explanation": "Correct match: Table."
+        },
+        {
+          "prompt": "A database object whose content is defined by a query",
+          "correctAnswer": "View",
+          "explanation": "Correct match: View."
+        },
+        {
+          "prompt": "A database object that improves data retrieval speed",
+          "correctAnswer": "Index",
+          "explanation": "Correct match: Index."
+        }
+      ]
     },
     {
       "id": "66",
@@ -300,12 +356,31 @@
       "promptImages": [
         "/dp900/question-assets/q69-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q69-answer-1.jpg"
+      "explanation": "These are the historical tool mappings used by the source question.",
+      "type": "matching",
+      "statusNote": "Outdated/legacy question: Azure Data Studio was retired in 2026; keep this answer only for the historical dump wording.",
+      "options": [
+        "SQL Server Management Studio (SSMS)",
+        "Azure Data Studio",
+        "SQL Server Data Tools (SSDT)"
       ],
-      "explanation": "Box 1: Microsoft SQL Server Management Studio (SSMS) SQL Server Management Studio (SSMS) is an integrated environment for managing any SQL infrastructure, from SQL Server to Azure SQL Database. Box 2: Azure Data Studio Azure Data Studio offers a modern, keyboard-focused SQL coding experience that makes your everyday tasks easier with built-in features, such as multiple tab windows, a rich SQL editor, IntelliSense, keyword completion, code snippets, code navigation, and source control integration (Git). Run on-demand SQL queries, view and save results as text, JSON, or Excel. Edit data, organize your favorite database connections, and browse database objects in a familiar object browsing experience. Box 3: Microsoft SQL Server Data Tools (SSDT) SQL Server Data Tools (SSDT) is a modern development tool for building SQL Server relational databases, databases in Azure SQL, Analysis Services (AS) data models, Integration Services (IS) packages, and Reporting Services (RS) reports. With SSDT, you can design and deploy any SQL Server content type with the same ease as you would develop an application in Visual Studio.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Manage SQL Server databases with a full administrative GUI",
+          "correctAnswer": "SQL Server Management Studio (SSMS)",
+          "explanation": "Correct match: SQL Server Management Studio (SSMS)."
+        },
+        {
+          "prompt": "Cross-platform SQL editing and notebooks (historical)",
+          "correctAnswer": "Azure Data Studio",
+          "explanation": "Correct match: Azure Data Studio."
+        },
+        {
+          "prompt": "Develop database projects in Visual Studio",
+          "correctAnswer": "SQL Server Data Tools (SSDT)",
+          "explanation": "Correct match: SQL Server Data Tools (SSDT)."
+        }
+      ]
     },
     {
       "id": "70",
@@ -316,12 +391,25 @@
       "promptImages": [
         "/dp900/question-assets/q70-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q70-answer-1.jpg"
-      ],
-      "explanation": "Box 1: Yes Tables are database objects that contain all the data in a database. In tables, data is logically organized in a row-and-column format similar to a spreadsheet. Each row represents a unique record, and each column represents a field in the record. Box 2: No An index is an on-disk structure associated with a table or view that speeds retrieval of rows from the table or view. Box 3: Yes A view is a virtual table whose contents are defined by a query. Like a table, a view consists of a set of named columns and rows of data.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "Azure manages the operating system and platform for the PaaS database.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "Azure SQL Database is a PaaS offering.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Users manage the operating system for Azure SQL Database.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Azure SQL Database includes built-in high availability.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "71",
@@ -348,12 +436,25 @@
       "promptImages": [
         "/dp900/question-assets/q72-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q72-answer-1.jpg"
-      ],
-      "explanation": "Box 1: Yes Box 2: Yes Box 3: Yes Azure Defender provides security alerts and advanced threat protection for virtual machines, SQL databases, containers, web applications, your network, and more. Azure Defender provides security alerts and advanced threat protection for virtual machines, SQL databases, containers, web applications, your network, and more.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "Managed Instance is a managed SQL Server-compatible PaaS service with instance-scoped capabilities.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "Azure SQL Managed Instance supports SQL Agent.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure SQL Managed Instance supports multiple databases.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure SQL Managed Instance reduces infrastructure maintenance.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "73",
@@ -364,11 +465,26 @@
       "promptImages": [
         "/dp900/question-assets/q73-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q73-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "statusNote": "Outdated question: it references retired products. The answers shown are corrected for the current service landscape.",
+      "explanation": "Big Data Clusters and Azure Database for MariaDB are retired/legacy. Azure Synapse remains an analytical service.",
+      "statements": [
+        {
+          "text": "SQL Server Big Data Clusters are a current recommended Azure data service.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Azure Synapse Analytics supports analytical workloads.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure Database for MariaDB is a current generally available Azure service.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "74",
@@ -379,11 +495,25 @@
       "promptImages": [
         "/dp900/question-assets/q74-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q74-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "These are the basic components of a relational table.",
+      "statements": [
+        {
+          "text": "A relational database has tables.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Rows represent records/entities.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Columns represent attributes.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "75",
@@ -394,11 +524,26 @@
       "promptImages": [
         "/dp900/question-assets/q75-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q75-answer-1.jpg"
+      "type": "matching",
+      "explanation": "The two-part object name identifies a table; ProductName is a column in it.",
+      "options": [
+        "A table",
+        "A column",
+        "A row",
+        "A database"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "dbo.Products",
+          "correctAnswer": "A table",
+          "explanation": "Correct match: A table."
+        },
+        {
+          "prompt": "ProductName",
+          "correctAnswer": "A column",
+          "explanation": "Correct match: A column."
+        }
+      ]
     },
     {
       "id": "76",
@@ -409,11 +554,25 @@
       "promptImages": [
         "/dp900/question-assets/q76-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q76-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Primary keys are unique; foreign key values may repeat and reference a parent key.",
+      "statements": [
+        {
+          "text": "A primary key can contain duplicate values.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "A foreign key must be unique in the child table.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "A foreign key references a key in another table.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "77",
@@ -440,12 +599,26 @@
       "promptImages": [
         "/dp900/question-assets/q78-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q78-answer-1.jpg"
-      ],
-      "explanation": "Box 1: Yes Azure Data Studio is a cross-platform database tool for data professionals using on- premises and cloud data platforms on Windows, macOS, and Linux. You can use Azure Data Studio to connect to an Azure SQL Database server. You'll then run Transact-SQL (T-SQL) statements to create and query Azure SQL databases. Box 2: No SQL Server Management Studio is for configuring, managing, and administering all components within Microsoft SQL Server, not to create SQL notebooks. Instead use Azure Data Studio to create SQL notebook. Box 3: Yes You can use the Azure Data Studio to restore databases.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "These statements describe the historical Azure Data Studio product.",
+      "type": "true_false_table",
+      "statusNote": "Outdated/legacy question: Azure Data Studio has been retired. Use this only to understand the historical exam bank.",
+      "statements": [
+        {
+          "text": "Azure Data Studio historically ran on Windows, macOS, and Linux.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure Data Studio was a browser-only tool.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Azure Data Studio included SQL editing and notebook capabilities.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "79",
@@ -491,12 +664,25 @@
       "promptImages": [
         "/dp900/question-assets/q81-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q81-answer-1.jpg"
-      ],
-      "explanation": "Box 1: No Microsoft handles all patching and updating of the SQL and operating system code. You don't have to manage the underlying infrastructure. Box 2: Yes SQL Database is a fully managed service that has built-in high availability, backups, and other common maintenance operations. Box 3: No",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "A normal view is query-defined and does not store a separate full copy of the rows.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "A view physically stores a separate copy of all result rows by default.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "A view is defined by a query.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A view is used to enforce table uniqueness.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "82",
@@ -509,12 +695,27 @@
         "/dp900/question-assets/q82-prompt-2.png",
         "/dp900/question-assets/q82-prompt-3.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q82-answer-1.png"
+      "explanation": "WHERE filters rows; GROUP BY creates groups for aggregate functions.",
+      "type": "matching",
+      "options": [
+        "FROM",
+        "GROUP BY",
+        "HAVING",
+        "SELECT",
+        "WHERE"
       ],
-      "explanation": "Box 1: SELECT Box 2: GROUP BY Example: When used with a GROUP BY clause, each aggregate function produces a single value covering each group, instead of a single value covering the whole table. The following example produces summary values for each sales territory in the AdventureWorks2012 database. The summary lists the average bonus received by the sales people in each territory, and the sum of year-to-date sales for each territory. SELECT TerritoryID, AVG(Bonus)as 'Average bonus', SUM(SalesYTD) as 'YTD sales' FROM Sales.SalesPerson GROUP BY TerritoryID;",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Filter rows",
+          "correctAnswer": "WHERE",
+          "explanation": "Correct match: WHERE."
+        },
+        {
+          "prompt": "Group rows for aggregate calculations",
+          "correctAnswer": "GROUP BY",
+          "explanation": "Correct match: GROUP BY."
+        }
+      ]
     },
     {
       "id": "83",
@@ -554,7 +755,7 @@
       "sourcePage": 80,
       "topic": "DP-900 Source Bank",
       "question": "A team of developers has computers that run Windows 10 and Ubuntu Desktop. The developers need to connect to and query an Azure SQL database from each of their computers. The developers require code assistance features such as IntelliSense. What should the developers use?",
-      "explanation": "Azure Data Studio is a cross-platform database tool for data professionals who use on- premises and cloud data platforms on Windows, macOS, and Linux. Azure Data Studio offers a modern editor experience with IntelliSense, code snippets, source control integration, and an integrated terminal.",
+      "explanation": "Historically Azure Data Studio supported Windows/Linux and IntelliSense; the product is now retired.",
       "type": "single_choice",
       "options": [
         "sqlcmd",
@@ -562,7 +763,8 @@
         "Azure Data Studio",
         "Azure Data Explorer"
       ],
-      "correctAnswer": "Azure Data Studio"
+      "correctAnswer": "Azure Data Studio",
+      "statusNote": "Outdated/legacy question: Azure Data Studio was the historical cross-platform answer, but it has been retired."
     },
     {
       "id": "86",
@@ -573,11 +775,15 @@
       "promptImages": [
         "/dp900/question-assets/q86-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q86-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Transparent Data Encryption protects database data at rest.",
+      "options": [
+        "the database",
+        "the firewall",
+        "the network interface",
+        "the virtual machine"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "the database"
     },
     {
       "id": "87",
@@ -618,12 +824,15 @@
       "promptImages": [
         "/dp900/question-assets/q89-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q89-answer-1.jpg"
+      "explanation": "Azure SQL firewall rules control network access to the logical SQL server/database.",
+      "type": "single_choice",
+      "options": [
+        "a database view",
+        "a server-level firewall",
+        "an elastic pool",
+        "a stored procedure"
       ],
-      "explanation": "Explanation: When you create a new server in Azure SQL Database or Azure Synapse Analytics named mysqlserver, for example, a server-level firewall blocks all access to the public endpoint for the server",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "a server-level firewall"
     },
     {
       "id": "90",
@@ -649,11 +858,30 @@
       "promptImages": [
         "/dp900/question-assets/q91-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q91-answer-1.jpg"
+      "type": "matching",
+      "explanation": "Firewall, authentication, and encryption address different security layers.",
+      "options": [
+        "Authentication",
+        "Encryption",
+        "Firewall"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Restrict incoming network connections",
+          "correctAnswer": "Firewall",
+          "explanation": "Correct match: Firewall."
+        },
+        {
+          "prompt": "Verify the identity of a user",
+          "correctAnswer": "Authentication",
+          "explanation": "Correct match: Authentication."
+        },
+        {
+          "prompt": "Protect data from unauthorized reading",
+          "correctAnswer": "Encryption",
+          "explanation": "Correct match: Encryption."
+        }
+      ]
     },
     {
       "id": "92",
@@ -680,11 +908,15 @@
       "promptImages": [
         "/dp900/question-assets/q93-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q93-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Relational databases are appropriate when ACID consistency is important.",
+      "options": [
+        "schema changes occur frequently",
+        "strong consistency guarantees are required",
+        "the data is always unstructured",
+        "writes must be globally distributed with no coordination"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "strong consistency guarantees are required"
     },
     {
       "id": "94",
@@ -695,11 +927,15 @@
       "promptImages": [
         "/dp900/question-assets/q94-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q94-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Primary and foreign keys enforce relationships between relational tables.",
+      "options": [
+        "collections",
+        "documents",
+        "keys",
+        "partitions"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "keys"
     },
     {
       "id": "95",
@@ -710,11 +946,15 @@
       "promptImages": [
         "/dp900/question-assets/q95-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q95-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "A view is a database object whose result is defined by a query.",
+      "options": [
+        "A clustered index",
+        "A stored procedure",
+        "A table",
+        "A view"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "A view"
     },
     {
       "id": "96",
@@ -777,12 +1017,30 @@
       "promptImages": [
         "/dp900/question-assets/q99-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q99-answer-1.jpg"
+      "explanation": "Each Azure SQL deployment model fits a different management and resource-sharing requirement.",
+      "type": "matching",
+      "options": [
+        "single database",
+        "Managed Instance",
+        "elastic pool"
       ],
-      "explanation": "Box 1: Azure SQL Database single database Serverless is a compute tier for single databases in Azure SQL Database that automatically scales compute based on workload demand and bills for the amount of compute used per second. The serverless compute tier also automatically pauses databases during inactive periods when only storage is billed and automatically resumes databases when activity returns. Scenarios well suited for serverless compute Single databases with intermittent, unpredictable usage patterns interspersed with periods of inactivity, and lower average compute utilization over time. Single databases in the provisioned compute tier that are frequently rescaled and customers who prefer to delegate compute rescaling to the service. New single databases without usage history where compute sizing is difficult or not possible to estimate prior to deployment in SQL Database. Box 2: Azure SQL Managed Instance Azure SQL Managed Instance is the intelligent, scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service. Box 3: Azure SQL Database elastic pool Azure SQL Database elastic pools are a simple, cost-effective solution for managing and scaling multiple databases that have varying and unpredictable usage demands. The databases in an elastic pool are on a single server and share a set number of resources at a set price. Elastic pools in SQL Database enable software as a service (SaaS) developers to optimize the price performance for a group of databases within a prescribed budget while delivering performance elasticity for each database.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Serverless compute option",
+          "correctAnswer": "single database",
+          "explanation": "Correct match: single database."
+        },
+        {
+          "prompt": "Instance-scoped compatibility and SQL Agent",
+          "correctAnswer": "Managed Instance",
+          "explanation": "Correct match: Managed Instance."
+        },
+        {
+          "prompt": "Share compute resources among multiple databases",
+          "correctAnswer": "elastic pool",
+          "explanation": "Correct match: elastic pool."
+        }
+      ]
     },
     {
       "id": "100",
@@ -790,14 +1048,15 @@
       "sourcePage": 89,
       "topic": "DP-900 Source Bank",
       "question": "Which T-SQL statement should be used to instruct a database management system to use an index instead of performing a full table scan?",
-      "explanation": "Table hints override the default behavior of the Query Optimizer for the duration of the data manipulation language (DML) statement by specifying a locking method, one or more indexes, a query-processing operation such as a table scan or index seek, or other options. Table hints are specified in the FROM clause of the DML statement and affect only the table or view referenced in that clause. This applies to the following commands: DELETE INSERT SELECT UPDATE MERGE",
+      "explanation": "A WHERE predicate filters rows and may make an index useful to the optimizer, but it does not guarantee or force an index. In SQL Server, an explicit table hint such as WITH (INDEX(index_name)) is used to force one; therefore the source question is flawed if it claims WHERE forces index use.",
       "type": "single_choice",
       "options": [
         "SELECT",
         "WHERE",
         "JOIN"
       ],
-      "correctAnswer": "WHERE"
+      "correctAnswer": "WHERE",
+      "statusNote": "Ambiguous/incorrect wording: a WHERE clause can help the optimizer choose an index but does not force index usage. SQL Server forcing requires an index/table hint such as WITH (INDEX(...))."
     }
   ]
 }

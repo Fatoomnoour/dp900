@@ -11,11 +11,15 @@
       "promptImages": [
         "/dp900/question-assets/q251-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q251-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Models and reports are published from Desktop to the Power BI service.",
+      "options": [
+        "Power BI Desktop.",
+        "Power Query.",
+        "the Power BI phone app.",
+        "the Power BI service."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "the Power BI service."
     },
     {
       "id": "252",
@@ -41,11 +45,15 @@
       "promptImages": [
         "/dp900/question-assets/q253-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q253-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "OLAP systems often pre-aggregate measures to accelerate analytical queries.",
+      "options": [
+        "limited in size",
+        "optimized for transactions",
+        "pre-aggregated",
+        "read-only"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "pre-aggregated"
     },
     {
       "id": "254",
@@ -56,11 +64,31 @@
       "promptImages": [
         "/dp900/question-assets/q254-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q254-answer-1.jpg"
+      "type": "matching",
+      "explanation": "Data Explorer uses KQL; Stream Analytics and Synapse SQL use SQL-family query languages.",
+      "options": [
+        "JavaScript",
+        "KQL",
+        "Python",
+        "SQL"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Azure Data Explorer",
+          "correctAnswer": "KQL",
+          "explanation": "Correct match: KQL."
+        },
+        {
+          "prompt": "Azure Stream Analytics",
+          "correctAnswer": "SQL",
+          "explanation": "Correct match: SQL."
+        },
+        {
+          "prompt": "Azure Synapse Analytics",
+          "correctAnswer": "SQL",
+          "explanation": "Correct match: SQL."
+        }
+      ]
     },
     {
       "id": "255",
@@ -89,7 +117,8 @@
         "dimension",
         "fact"
       ],
-      "correctAnswer": "fact"
+      "correctAnswer": "dimension",
+      "explanation": "Dimensions contain descriptive entities used to slice and aggregate fact measures."
     },
     {
       "id": "257",
@@ -115,11 +144,25 @@
       "promptImages": [
         "/dp900/question-assets/q258-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q258-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Cleansing/transformation is a data-engineering/analytics task; backups are a DBA task; visualization is a data-analyst task.",
+      "statements": [
+        {
+          "text": "Database administrators apply data cleansing and turn data into useful information.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Data engineers are primarily responsible for database backups and restores.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Data analysts create visuals and enable data-driven decisions.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "259",
@@ -175,11 +218,16 @@
       "promptImages": [
         "/dp900/question-assets/q262-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q262-answer-1.jpg"
+      "type": "single_choice",
+      "statusNote": "Outdated/legacy product question: Azure SQL Edge is the historical answer used by this exam bank.",
+      "explanation": "Azure SQL Edge was designed for edge and IoT scenarios.",
+      "options": [
+        "Azure SQL Database",
+        "Azure SQL Edge",
+        "Azure SQL Managed Instance",
+        "SQL Server on Azure Virtual Machines"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Azure SQL Edge"
     },
     {
       "id": "263",
@@ -190,11 +238,25 @@
       "promptImages": [
         "/dp900/question-assets/q263-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q263-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Relational schemas are predefined and support structured data; key/value stores optimize simple key lookups, not joins.",
+      "statements": [
+        {
+          "text": "In a relational database, the schema is defined before data is written.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Key/value stores are optimized for complex queries containing multiple joins.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Relational databases commonly store and query structured data.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "264",
@@ -205,11 +267,15 @@
       "promptImages": [
         "/dp900/question-assets/q264-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q264-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "CSV uses commas to delimit fields and line breaks to terminate records.",
+      "options": [
+        "CSV",
+        "JSON",
+        "TSV",
+        "XML"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "CSV"
     },
     {
       "id": "265",
@@ -220,11 +286,15 @@
       "promptImages": [
         "/dp900/question-assets/q265-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q265-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "JSON represents hierarchical documents with named attributes.",
+      "options": [
+        "CSV",
+        "JSON",
+        "ORC",
+        "TSV"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "JSON"
     },
     {
       "id": "266",
@@ -235,11 +305,31 @@
       "promptImages": [
         "/dp900/question-assets/q266-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q266-answer-1.jpg"
+      "type": "matching",
+      "explanation": "Gremlin is graph, NoSQL is JSON documents, and Table API is key/value-style entities.",
+      "options": [
+        "Azure Cosmos DB for Apache Cassandra API",
+        "Azure Cosmos DB for Apache Gremlin API",
+        "Azure Cosmos DB for NoSQL API",
+        "Azure Cosmos DB for Table API"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Graph data",
+          "correctAnswer": "Azure Cosmos DB for Apache Gremlin API",
+          "explanation": "Correct match: Azure Cosmos DB for Apache Gremlin API."
+        },
+        {
+          "prompt": "JSON documents",
+          "correctAnswer": "Azure Cosmos DB for NoSQL API",
+          "explanation": "Correct match: Azure Cosmos DB for NoSQL API."
+        },
+        {
+          "prompt": "Key/value data",
+          "correctAnswer": "Azure Cosmos DB for Table API",
+          "explanation": "Correct match: Azure Cosmos DB for Table API."
+        }
+      ]
     },
     {
       "id": "267",
@@ -265,11 +355,15 @@
       "promptImages": [
         "/dp900/question-assets/q268-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q268-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Database administrators maintain availability, performance, and optimization of databases.",
+      "options": [
+        "Data analysts",
+        "Data engineers",
+        "Data scientists",
+        "Database administrators"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Database administrators"
     },
     {
       "id": "269",
@@ -280,11 +374,30 @@
       "promptImages": [
         "/dp900/question-assets/q269-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q269-answer-1.jpg"
+      "type": "matching",
+      "explanation": "Azure SQL Database and Managed Instance are managed PaaS; SQL Server on a VM is IaaS.",
+      "options": [
+        "Infrastructure as a service",
+        "Platform as a service",
+        "Software as a service"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Azure SQL Database",
+          "correctAnswer": "Platform as a service",
+          "explanation": "Correct match: Platform as a service."
+        },
+        {
+          "prompt": "Azure SQL Managed Instance",
+          "correctAnswer": "Platform as a service",
+          "explanation": "Correct match: Platform as a service."
+        },
+        {
+          "prompt": "SQL Server on Azure Virtual Machines",
+          "correctAnswer": "Infrastructure as a service",
+          "explanation": "Correct match: Infrastructure as a service."
+        }
+      ]
     },
     {
       "id": "270",
@@ -355,11 +468,31 @@
       "promptImages": [
         "/dp900/question-assets/q274-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q274-answer-1.jpg"
+      "type": "matching",
+      "explanation": "The data engineer builds pipelines, the architect designs the database, and the analyst builds the chart.",
+      "options": [
+        "Data analyst",
+        "Data architect",
+        "Data engineer",
+        "Database administrator"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Create a pipeline to transfer data to a data warehouse",
+          "correctAnswer": "Data engineer",
+          "explanation": "Correct match: Data engineer."
+        },
+        {
+          "prompt": "Create a transactional database",
+          "correctAnswer": "Data architect",
+          "explanation": "Correct match: Data architect."
+        },
+        {
+          "prompt": "Create a weekly sales chart",
+          "correctAnswer": "Data analyst",
+          "explanation": "Correct match: Data analyst."
+        }
+      ]
     },
     {
       "id": "275",
@@ -370,11 +503,30 @@
       "promptImages": [
         "/dp900/question-assets/q275-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q275-answer-1.png"
+      "type": "matching",
+      "explanation": "DBAs handle recovery, analysts build reporting, and engineers operate pipelines.",
+      "options": [
+        "Data analyst",
+        "Data engineer",
+        "Database administrator"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Database backup and recovery",
+          "correctAnswer": "Database administrator",
+          "explanation": "Correct match: Database administrator."
+        },
+        {
+          "prompt": "Enable advanced analytic capabilities through reports",
+          "correctAnswer": "Data analyst",
+          "explanation": "Correct match: Data analyst."
+        },
+        {
+          "prompt": "Monitor data pipelines",
+          "correctAnswer": "Data engineer",
+          "explanation": "Correct match: Data engineer."
+        }
+      ]
     },
     {
       "id": "276A",
@@ -385,11 +537,25 @@
       "promptImages": [
         "/dp900/question-assets/q276A-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q276A-answer-1.jpg"
+      "type": "matching",
+      "explanation": "ADLS Gen2 hierarchy is resource group → storage account → container/file system → directory → file. A file share belongs to Azure Files, not ADLS Gen2.",
+      "options": [
+        "Azure Storage account",
+        "Container / file system",
+        "File share"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Level below Azure Resource Group",
+          "correctAnswer": "Azure Storage account",
+          "explanation": "Correct match: Azure Storage account."
+        },
+        {
+          "prompt": "Level below Azure Storage account",
+          "correctAnswer": "Container / file system",
+          "explanation": "Correct match: Container / file system."
+        }
+      ]
     },
     {
       "id": "276B",
@@ -415,11 +581,25 @@
       "promptImages": [
         "/dp900/question-assets/q277-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q277-answer-1.png"
+      "type": "matching",
+      "explanation": "Analysts communicate insights; engineers build data pipelines.",
+      "options": [
+        "Data analyst",
+        "Data engineer",
+        "Database administrator"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Derive meaning through visualizations and charts",
+          "correctAnswer": "Data analyst",
+          "explanation": "Correct match: Data analyst."
+        },
+        {
+          "prompt": "Implement pipelines to transfer and transform data",
+          "correctAnswer": "Data engineer",
+          "explanation": "Correct match: Data engineer."
+        }
+      ]
     },
     {
       "id": "278",
@@ -430,11 +610,15 @@
       "promptImages": [
         "/dp900/question-assets/q278-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q278-answer-1.png"
+      "type": "single_choice",
+      "explanation": "JSON is self-describing and structured by fields, but properties can vary, so it is semi-structured.",
+      "options": [
+        "relational",
+        "semi-structured",
+        "structured",
+        "unstructured"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "semi-structured"
     },
     {
       "id": "279",
@@ -445,11 +629,16 @@
       "promptImages": [
         "/dp900/question-assets/q279-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q279-answer-1.png"
+      "type": "single_choice",
+      "statusNote": "Ambiguous wording: hidden-pattern discovery suggests data science, while graphical reporting suggests data analysis.",
+      "explanation": "The graphical-report portion points to a data analyst; finding hidden patterns can also describe a data scientist, making the original wording ambiguous.",
+      "options": [
+        "A data scientist",
+        "A data analyst",
+        "A data engineer",
+        "A database administrator"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "A data analyst"
     },
     {
       "id": "280",
@@ -474,11 +663,15 @@
       "promptImages": [
         "/dp900/question-assets/q281-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q281-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "UPDATE changes row data and is a DML statement; CREATE/DROP/RENAME define schema objects.",
+      "options": [
+        "CREATE",
+        "DROP",
+        "RENAME",
+        "UPDATE"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "UPDATE"
     },
     {
       "id": "282",
@@ -489,11 +682,26 @@
       "promptImages": [
         "/dp900/question-assets/q282-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q282-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "statusNote": "Outdated question: Azure Database for MariaDB has been retired.",
+      "explanation": "pgAdmin supports PostgreSQL. The MariaDB statement is not valid and the service is retired. The MySQL statement reflects the historical secure-connectivity expectation.",
+      "statements": [
+        {
+          "text": "pgAdmin can manage Azure Database for PostgreSQL.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure Database for MariaDB offers point-in-time restore for up to 365 days.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Azure Database for MySQL requires encrypted SSL/TLS connectivity under the question’s historical configuration.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "283",
@@ -504,11 +712,15 @@
       "promptImages": [
         "/dp900/question-assets/q283-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q283-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Azure Data Explorer uses Kusto Query Language (KQL).",
+      "options": [
+        "KQL",
+        "Python",
+        "Scala",
+        "SQL"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "KQL"
     },
     {
       "id": "284",
@@ -519,11 +731,15 @@
       "promptImages": [
         "/dp900/question-assets/q284-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q284-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "OLAP models store or expose aggregated data optimized for analytical queries.",
+      "options": [
+        "aggregated",
+        "normalized",
+        "semi-structured",
+        "unstructured"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "aggregated"
     },
     {
       "id": "285",
@@ -584,11 +800,25 @@
       "promptImages": [
         "/dp900/question-assets/q288-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q288-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Block sizes can vary within limits; blobs live in containers; without hierarchical namespace, folders are virtual prefixes rather than securable directories.",
+      "statements": [
+        {
+          "text": "Every block in a block blob has a fixed size.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Blobs in a storage account are stored in containers.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Without hierarchical namespace, permissions can be assigned to a real folder object.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "289",
@@ -599,11 +829,15 @@
       "promptImages": [
         "/dp900/question-assets/q289-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q289-answer-1.png"
+      "type": "single_choice",
+      "explanation": "Structured relational data requires adding the attribute to the table schema; existing rows can hold NULL or a default rather than all being manually updated.",
+      "options": [
+        "add a tag only to the relevant entities.",
+        "add the new column to the table schema and allow existing rows to use NULL/default values.",
+        "update every existing row with a non-null value.",
+        "update only records for which information is available without changing the schema."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "add the new column to the table schema and allow existing rows to use NULL/default values."
     },
     {
       "id": "290",
@@ -651,7 +885,9 @@
         "Azure SQL Database",
         "Azure SQL Edge"
       ],
-      "correctAnswer": "Azure SQL Edge"
+      "correctAnswer": "Azure SQL Edge",
+      "statusNote": "Outdated/legacy product question: Azure SQL Edge is the historical answer.",
+      "explanation": "Azure SQL Edge is the historical IoT/time-series edge answer in this source bank."
     },
     {
       "id": "293",
@@ -662,11 +898,15 @@
       "promptImages": [
         "/dp900/question-assets/q293-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q293-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Spark Structured Streaming uses DataFrames/Datasets as its tabular programming abstraction.",
+      "options": [
+        "dataframe",
+        "delta lake",
+        "data lake",
+        "data warehouse"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "dataframe"
     },
     {
       "id": "294",
@@ -707,11 +947,15 @@
       "promptImages": [
         "/dp900/question-assets/q296-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q296-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Power BI supports publishing and embedding analytical reports in web applications for external users.",
+      "options": [
+        "Azure Analysis Services",
+        "Azure Automation",
+        "Azure Data Lake Analytics",
+        "Microsoft Power BI"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Microsoft Power BI"
     },
     {
       "id": "297",
@@ -737,11 +981,25 @@
       "promptImages": [
         "/dp900/question-assets/q298-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q298-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Data engineers build ingestion pipelines. Governance policy is a broader governance/architecture responsibility, while backup and recovery is primarily a DBA responsibility.",
+      "statements": [
+        {
+          "text": "Data engineers identify organizational data-governance rules.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Data engineers create data-ingestion pipelines.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Data engineers implement database backup and recovery processes.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "299",
@@ -771,11 +1029,15 @@
       "promptImages": [
         "/dp900/question-assets/q300-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q300-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "A relational database serves structured data in tables.",
+      "options": [
+        "document",
+        "key-value",
+        "non-relational",
+        "relational"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "relational"
     },
     {
       "id": "301",
@@ -804,11 +1066,15 @@
       "promptImages": [
         "/dp900/question-assets/q302-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q302-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Avro is a row-oriented binary format whose files include a JSON schema header.",
+      "options": [
+        "AVRO",
+        "ORC",
+        "Parquet",
+        "XML"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "AVRO"
     },
     {
       "id": "303",
@@ -819,11 +1085,25 @@
       "promptImages": [
         "/dp900/question-assets/q303-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q303-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Stream works incrementally over incoming events; batch operates on accumulated datasets; rolling calculations are a standard stream pattern.",
+      "statements": [
+        {
+          "text": "Stream processing processes an entire static dataset at once.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Batch processing occurs immediately with seconds/milliseconds latency.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Stream processing supports rolling averages and simple continuous calculations.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "304",
@@ -834,11 +1114,14 @@
       "promptImages": [
         "/dp900/question-assets/q304-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q304-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Azure Databricks is the Azure implementation of the multi-cloud Apache Spark-based Databricks analytics platform.",
+      "options": [
+        "Azure Data Factory",
+        "Azure Databricks",
+        "Azure Analysis Services"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Azure Databricks"
     }
   ]
 }

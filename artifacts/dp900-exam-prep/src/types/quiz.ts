@@ -41,11 +41,13 @@ export interface MatchingPair {
   prompt: string;
   correctAnswer: string;
   explanation: string;
+  options?: string[];
 }
 
 export interface MatchingQuestion extends BaseQuestion {
   type: "matching";
   pairs: MatchingPair[];
+  options?: string[];
 }
 
 export interface VisualReviewQuestion extends BaseQuestion {

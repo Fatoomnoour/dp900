@@ -55,9 +55,15 @@ export function repairSavedProgress(
 
     for (const [questionId, answer] of Object.entries(saved.answers)) {
       const question = questionById.get(String(questionId));
-      repairedAnswers[questionId] = question
-        ? withGrade(answer, gradeAnswer(question, answer))
-        : answer;
+      if (!question) continue;
+
+      // A large source-bank upgrade converted the old self-review image questions
+      // into real auto-graded controls. Old visual_review answers are not compatible
+      // with the new question type, so discard only those answers and let the user
+      // answer the upgraded question normally instead of counting a false mistake.
+      if (question.type !== answer.type) continue;
+
+      repairedAnswers[questionId] = withGrade(answer, gradeAnswer(question, answer));
     }
 
     const correctCount = Object.values(repairedAnswers).filter((answer) => answer.isCorrect).length;
@@ -98,7 +104,8 @@ export function repairSavedProgress(
       const repairedMistakes = mistakes.filter((mistake) => {
         if (mistake.moduleId !== moduleId) return true;
         const answer = repairedAnswers[String(mistake.questionId)];
-        return !answer?.isCorrect;
+        if (!answer) return false; // remove stale mistakes from converted question types
+        return !answer.isCorrect;
       });
       localStorage.setItem(mistakesKey, JSON.stringify(repairedMistakes));
     }

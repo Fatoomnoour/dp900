@@ -279,6 +279,7 @@ function TrueFalseTableQuestion({ question, submitted, onAnswer, userAnswer }: {
 
   return (
     <div className="space-y-3">
+      <SourceImages sources={question.promptImages} alt={`Question ${question.id} source graphic`} />
       {question.statements.map((stmt, i) => {
         const picked = selected[i];
         const correct = stmt.correctAnswer;
@@ -321,6 +322,12 @@ function TrueFalseTableQuestion({ question, submitted, onAnswer, userAnswer }: {
           </div>
         );
       })}
+      {submitted && question.explanation && (
+        <ExplanationBox
+          text={question.explanation}
+          isCorrect={question.statements.every((statement, index) => selected[index] === statement.correctAnswer)}
+        />
+      )}
     </div>
   );
 }
@@ -333,7 +340,7 @@ function MatchingQuestion({ question, submitted, onAnswer, userAnswer }: {
   userAnswer?: Extract<UserAnswer, { type: "matching" }>;
 }) {
   const [selected, setSelected] = useState<Record<number, string>>(userAnswer?.selected ?? {});
-  const options = [...new Set(question.pairs.map((p) => p.correctAnswer))];
+  const defaultOptions = question.options ?? [...new Set(question.pairs.map((p) => p.correctAnswer))];
 
   useEffect(() => { if (userAnswer?.selected) setSelected(userAnswer.selected); }, [userAnswer]);
 
@@ -348,6 +355,7 @@ function MatchingQuestion({ question, submitted, onAnswer, userAnswer }: {
 
   return (
     <div className="space-y-3">
+      <SourceImages sources={question.promptImages} alt={`Question ${question.id} source graphic`} />
       {question.pairs.map((pair, i) => {
         const picked = selected[i] ?? "";
         const isCorrect = picked === pair.correctAnswer;
@@ -370,7 +378,7 @@ function MatchingQuestion({ question, submitted, onAnswer, userAnswer }: {
               }`}
             >
               <option value="">— اختر —</option>
-              {options.map((opt) => (
+              {(pair.options ?? defaultOptions).map((opt) => (
                 <option key={opt} value={opt}>{opt}</option>
               ))}
             </select>

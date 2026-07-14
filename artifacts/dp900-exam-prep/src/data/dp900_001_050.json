@@ -11,11 +11,15 @@
       "promptImages": [
         "/dp900/question-assets/q1-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q1-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Descriptive analytics answers what happened in the past.",
+      "options": [
+        "what is most likely to occur in the future.",
+        "what occurred in the past.",
+        "which actions you can perform to affect outcomes.",
+        "why something occurred in the past."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "what occurred in the past."
     },
     {
       "id": "2",
@@ -26,11 +30,25 @@
       "promptImages": [
         "/dp900/question-assets/q2-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q2-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Normalization reorganizes related tables; it does not eliminate relationships. It reduces duplication and improves integrity.",
+      "statements": [
+        {
+          "text": "Normalization involves eliminating relationships between database tables.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Normalizing a database reduces data redundancy.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Normalization improves data integrity.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "3",
@@ -41,12 +59,15 @@
       "promptImages": [
         "/dp900/question-assets/q3-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q3-answer-1.jpg"
+      "explanation": "ETL transforms the data before the Load step.",
+      "type": "single_choice",
+      "options": [
+        "a matching schema in the data source and the data target.",
+        "a target data store powerful enough to transform data.",
+        "data that is fully processed before being loaded to the target data store.",
+        "that the data target be a relational database."
       ],
-      "explanation": "Explanation: Extract, transform, and load (ETL) is a data pipeline used to collect data from various sources, transform the data according to business rules, and load it into a destination data store.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "data that is fully processed before being loaded to the target data store."
     },
     {
       "id": "4",
@@ -57,12 +78,15 @@
       "promptImages": [
         "/dp900/question-assets/q4-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q4-answer-1.jpg"
+      "explanation": "Batch processing works on accumulated data, so some latency is normally acceptable.",
+      "type": "single_choice",
+      "options": [
+        "data is always inserted one row at a time.",
+        "data is processed in real-time.",
+        "latency in delivering data processing results is acceptable.",
+        "processing can only execute serially."
       ],
-      "explanation": "Explanation: When to use batch processing. You might expect latencies when using batch processing. For many situations, however, this type of delay before the transfer of data begins is not a big issue - the processes that use this function are not mission critical at the exact moment.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "latency in delivering data processing results is acceptable."
     },
     {
       "id": "5",
@@ -73,11 +97,15 @@
       "promptImages": [
         "/dp900/question-assets/q5-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q5-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Transcribing audio uses AI speech recognition, which is a cognitive analytics capability.",
+      "options": [
+        "cognitive",
+        "descriptive",
+        "predictive",
+        "prescriptive"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "cognitive"
     },
     {
       "id": "6",
@@ -88,13 +116,32 @@
       "promptImages": [
         "/dp900/question-assets/q6-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q6-answer-1.jpg",
-        "/dp900/question-assets/q6-answer-2.jpg"
+      "explanation": "Diagnostic explains why, prescriptive recommends actions, and identifying named people is entity recognition, a cognitive AI task.",
+      "type": "matching",
+      "options": [
+        "Cognitive",
+        "Diagnostic",
+        "Descriptive",
+        "Predictive",
+        "Prescriptive"
       ],
-      "explanation": "Box 1: Diagnostic Diagnostic Analytics: At this stage you can begin to answer some of those why questions. Historical data can begin to be measured against other data to answer the question of why something happened in the past. This is the process of gathering and interpreting different data sets to identify anomalies, detect patters, and determine relationships. Box 2: Prescriptive Prescriptive analytics is a combination of data, mathematical models, and various business rules to infer actions to influence future desired outcomes. Predictive analytics, broadly speaking, is a category of business intelligence that uses descriptive and predictive variables from the past to analyze and identify the likelihood of an unknown future outcome Box 3: Descriptive - Generally speaking, data analytics comes in four types: - Descriptive, to answer the question: What's happening? - Diagnostic, to answer the question: Why's happening? - Predictive, to answer the question: What will happen? - Prescriptive, to answer the question: What actions should we take?",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Why did sales increase last month?",
+          "correctAnswer": "Diagnostic",
+          "explanation": "Correct match: Diagnostic."
+        },
+        {
+          "prompt": "How do I allocate my budget to buy different inventory items?",
+          "correctAnswer": "Prescriptive",
+          "explanation": "Correct match: Prescriptive."
+        },
+        {
+          "prompt": "Which people are mentioned in a company's business documents?",
+          "correctAnswer": "Cognitive",
+          "explanation": "Correct match: Cognitive."
+        }
+      ]
     },
     {
       "id": "7",
@@ -106,11 +153,30 @@
         "/dp900/question-assets/q7-prompt-1.jpg",
         "/dp900/question-assets/q7-prompt-2.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q7-answer-1.jpg"
+      "type": "matching",
+      "explanation": "The outer customer value is the root object; address is an object inside it; social media is an array of objects.",
+      "options": [
+        "a nested array",
+        "a nested object",
+        "a root object"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Customer",
+          "correctAnswer": "a root object",
+          "explanation": "Correct match: a root object."
+        },
+        {
+          "prompt": "Address",
+          "correctAnswer": "a nested object",
+          "explanation": "Correct match: a nested object."
+        },
+        {
+          "prompt": "Social media",
+          "correctAnswer": "a nested array",
+          "explanation": "Correct match: a nested array."
+        }
+      ]
     },
     {
       "id": "8",
@@ -122,14 +188,28 @@
         "/dp900/question-assets/q8-prompt-1.jpg",
         "/dp900/question-assets/q8-prompt-2.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q8-answer-1.jpg",
-        "/dp900/question-assets/q8-answer-2.jpg",
-        "/dp900/question-assets/q8-answer-3.jpg"
+      "explanation": "Sales is the central fact table and Customer is a dimension, so the model is a star schema.",
+      "type": "matching",
+      "options": [
+        "transactional model",
+        "star schema",
+        "snowflake schema",
+        "fact",
+        "dimension",
+        "bridge"
       ],
-      "explanation": "Box 1: star schema In computing, the star schema is the simplest style of data mart schema and is the approach most widely used to develop data warehouses and dimensional data marts. The star schema consists of one or more fact tables referencing any number of dimension tables. The star schema is an important special case of the snowflake schema, and is more effective for handling simpler queries. Example: Incorrect Answers: The data in the question is not normalized. The snowflake schema is a variation of the star schema, featuring normalization of dimension tables. Example: Note: A snowflake schema is a logical arrangement of tables in a multidimensional database such that the entity relationship diagram resembles a snowflake shape. The snowflake schema is represented by centralized fact tables which are connected to multiple dimensions.[citation needed]. \"Snowflaking\" is a method of normalizing the dimension tables in a star schema. When it is completely normalized along all the dimension tables, the resultant structure resembles a snowflake with the fact table in the middle. Box 2: dimension The star schema consists of one or more fact tables referencing any number of dimension tables.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "The data model",
+          "correctAnswer": "star schema",
+          "explanation": "Correct match: star schema."
+        },
+        {
+          "prompt": "Customer table",
+          "correctAnswer": "dimension",
+          "explanation": "Correct match: dimension."
+        }
+      ]
     },
     {
       "id": "9",
@@ -140,11 +220,15 @@
       "promptImages": [
         "/dp900/question-assets/q9-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q9-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "MPP distributes query processing across multiple compute nodes.",
+      "options": [
+        "distributes processing across compute nodes.",
+        "distributes processing across control nodes.",
+        "redirects client connections across compute nodes.",
+        "redirects client connections across control nodes."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "distributes processing across compute nodes."
     },
     {
       "id": "10",
@@ -155,11 +239,15 @@
       "promptImages": [
         "/dp900/question-assets/q10-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q10-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "A clustered index sorts and stores table rows according to its key values.",
+      "options": [
+        "A clustered index",
+        "A FileTable",
+        "A foreign key",
+        "A stored procedure"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "A clustered index"
     },
     {
       "id": "11",
@@ -170,12 +258,15 @@
       "promptImages": [
         "/dp900/question-assets/q11-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q11-answer-1.jpg"
+      "explanation": "Relational databases are well suited to high-volume transactional writes that need ACID guarantees.",
+      "type": "single_choice",
+      "options": [
+        "changes to relationships between entities.",
+        "geographically distributed writes.",
+        "transactional writes.",
+        "writes that have varying data structures."
       ],
-      "explanation": "ג€\" non-relational Disadvantages of non-relational databases include: Data Consistency databases do not perform ACID transactions. Note: Relational databases are optimized for writes. They are optimized for consistency and availability. Advantages of relational databases include simplicity, ease of data retrieval, data integrity, and flexibility. Incorrect Answers: Use a relational database when data that you work with is structured, and the structure is not subject to frequent changes. Use Cloud storage (no relational database) for geographically distributed writes.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "transactional writes."
     },
     {
       "id": "12",
@@ -186,12 +277,25 @@
       "promptImages": [
         "/dp900/question-assets/q12-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q12-answer-1.jpg"
-      ],
-      "explanation": "Box 1: Yes Big data solutions often use long-running batch jobs to filter, aggregate, and otherwise prepare the data for analysis. Usually these jobs involve reading source files from scalable storage (like HDFS, Azure Data Lake Store, and Azure Storage), processing them, and writing the output to new files in scalable storage. Box 2: No Box 3: No",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "Batch processing describes how data is processed, not a restriction on the destination. Its output can be written to file, relational, or NoSQL stores.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "Batch processing can output data to a file store.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Batch processing can output data to a relational database.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Batch processing can output data to a NoSQL database.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "13",
@@ -202,13 +306,30 @@
       "promptImages": [
         "/dp900/question-assets/q13-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q13-answer-1.jpg",
-        "/dp900/question-assets/q13-answer-2.jpg"
+      "explanation": "In ELT, data is extracted from the source, loaded into the target, and then transformed inside the target data warehouse.",
+      "type": "matching",
+      "options": [
+        "An in-memory data integration tool",
+        "The CRM system",
+        "The data warehouse"
       ],
-      "explanation": "Box 1: The CRM system Data is extracted from the CRM system. Box 2: The data warehouse Data is loaded to the data warehouse. Box 3: An in-memory data integration tool The data transformation that takes place usually involves various operations, such as filtering, sorting, aggregating, joining data, cleaning data, deduplicating, and validating data.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Extract",
+          "correctAnswer": "The CRM system",
+          "explanation": "Correct match: The CRM system."
+        },
+        {
+          "prompt": "Load",
+          "correctAnswer": "The data warehouse",
+          "explanation": "Correct match: The data warehouse."
+        },
+        {
+          "prompt": "Transform",
+          "correctAnswer": "The data warehouse",
+          "explanation": "Correct match: The data warehouse."
+        }
+      ]
     },
     {
       "id": "14",
@@ -219,12 +340,15 @@
       "promptImages": [
         "/dp900/question-assets/q14-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q14-answer-1.jpg"
+      "explanation": "Descriptive analytics summarizes what has already happened.",
+      "type": "single_choice",
+      "options": [
+        "cognitive",
+        "descriptive",
+        "predictive",
+        "prescriptive"
       ],
-      "explanation": "Generally speaking, data analytics comes in four types (Figure 1): Descriptive, to answer the question: What's happening? Diagnostic, to answer the question: Why's happening? Predictive, to answer the question: What will happen? Prescriptive, to answer the question: What actions should we take?",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "descriptive"
     },
     {
       "id": "15",
@@ -235,13 +359,30 @@
       "promptImages": [
         "/dp900/question-assets/q15-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q15-answer-1.jpg",
-        "/dp900/question-assets/q15-answer-2.jpg"
+      "explanation": "Each visual is matched to its standard Power BI use case.",
+      "type": "matching",
+      "options": [
+        "Treemap",
+        "Key influencer",
+        "Scatter chart"
       ],
-      "explanation": "Box 1: Tree map Treemaps are charts of colored rectangles, with size representing value. They can be hierarchical, with rectangles nested within the main rectangles. Box 2: Key influencer A key influencer chart displays the major contributors to a selected result or value. Box 3: Scatter Scatter and Bubble charts display relationships between 2 (scatter) or 3 (bubble) quantitative measures -- whether or not, in which order, etc.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Show quantities sold by product category as nested rectangles",
+          "correctAnswer": "Treemap",
+          "explanation": "Correct match: Treemap."
+        },
+        {
+          "prompt": "Identify factors that affect a metric",
+          "correctAnswer": "Key influencer",
+          "explanation": "Correct match: Key influencer."
+        },
+        {
+          "prompt": "Compare two numeric measures and identify correlation",
+          "correctAnswer": "Scatter chart",
+          "explanation": "Correct match: Scatter chart."
+        }
+      ]
     },
     {
       "id": "16",
@@ -271,13 +412,25 @@
       "promptImages": [
         "/dp900/question-assets/q17-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q17-answer-1.jpg",
-        "/dp900/question-assets/q17-answer-2.jpg"
-      ],
-      "explanation": "Box 1: Yes ג€\" servers, storage, and networking ג€\" but also Like IaaS, PaaS includes infrastructure middleware, development tools, business intelligence (BI) services, database management systems, and more. PaaS is designed to support the complete web application lifecycle: building, testing, deploying, managing, and updating. PaaS allows you to avoid the expense and complexity of buying and managing software licenses, the underlying application infrastructure and middleware, container orchestrators such as Kubernetes, or the development tools and other resources Box 2: No You manage the applications and services you develop, and the cloud service provider typically manages everything else. Box 3: No There really is no way to pause / stop billing for your Azure SQL Database. Microsoft's official answer \"Yes, you can export your database. Delete the Azure SQL database and that will pause billing. Then when you need it you can create a new database and import your previously exported DB.\"",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "A warehouse integrates multiple sources and is optimized for analytical reads and historical data, not OLTP writes.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "A data warehouse can contain data from multiple sources.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A data warehouse is optimized for transactional writes.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "A data warehouse normally stores only current operational data.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "18",
@@ -320,12 +473,15 @@
       "promptImages": [
         "/dp900/question-assets/q20-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q20-answer-1.jpg"
+      "explanation": "Key/value stores are optimized for direct lookup by key.",
+      "type": "single_choice",
+      "options": [
+        "complex joins",
+        "full-text search",
+        "simple lookups",
+        "multi-table transactions"
       ],
-      "explanation": "Box 1: simple lookups A key/value store associates each data value with a unique key. Most key/value stores only support simple query, insert, and delete operations. To modify a value (either partially or completely), an application must overwrite the existing data for the entire value. In most implementations, reading or writing a single value is an atomic operation. An application can store arbitrary data as a set of values. Any schema information must be provided by the application. The key/value store simply retrieves or stores the value by key.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "simple lookups"
     },
     {
       "id": "21",
@@ -336,26 +492,28 @@
       "promptImages": [
         "/dp900/question-assets/q21-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q21-answer-1.png"
-      ],
-      "explanation": "تصحيح خبير: ملف الـPDF بدّل الإجابتين الثانية والثالثة. كما أن شرحه ذكر Azure Cosmos DB Table API، بينما الاختيار المعروض في السؤال هو Gremlin API. Table API/Storage يناسب key-value، أما Gremlin فيناسب العلاقات والـgraph data.",
+      "explanation": "Blob stores image objects; Table storage is a key/value-style NoSQL service; Gremlin models relationships as graph edges.",
       "type": "matching",
+      "options": [
+        "Azure Blob storage",
+        "Azure Cosmos DB Gremlin API",
+        "Azure Table storage"
+      ],
       "pairs": [
         {
           "prompt": "Image files",
           "correctAnswer": "Azure Blob storage",
-          "explanation": "Azure Blob Storage هو Object Storage مناسب للبيانات غير المهيكلة مثل الصور والفيديو والملفات الثنائية."
+          "explanation": "Correct match: Azure Blob storage."
         },
         {
           "prompt": "Key/value pairs",
           "correctAnswer": "Azure Table storage",
-          "explanation": "Azure Table Storage هو مخزن NoSQL من نوع key/attribute بدون مخطط ثابت، وتُعرَّف كل entity باستخدام PartitionKey وRowKey."
+          "explanation": "Correct match: Azure Table storage."
         },
         {
           "prompt": "Relationships between employees",
           "correctAnswer": "Azure Cosmos DB Gremlin API",
-          "explanation": "Gremlin API هو Graph Database؛ يمثّل الموظفين كعُقد (vertices) والعلاقات بينهم كحواف (edges)، لذلك هو الأنسب للبيانات شديدة الترابط."
+          "explanation": "Correct match: Azure Cosmos DB Gremlin API."
         }
       ]
     },
@@ -368,12 +526,25 @@
       "promptImages": [
         "/dp900/question-assets/q22-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q22-answer-1.jpg"
+      "explanation": "ADLS Gen2 hierarchy is resource group → storage account → container/file system → directories → files.",
+      "type": "matching",
+      "options": [
+        "Azure Storage account",
+        "File share",
+        "Container"
       ],
-      "explanation": "Box 1: Azure Storage account Azure file shares are deployed into storage accounts, which are top-level objects that represent a shared pool of storage. Box 2: File share",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "The level directly below an Azure resource group",
+          "correctAnswer": "Azure Storage account",
+          "explanation": "Correct match: Azure Storage account."
+        },
+        {
+          "prompt": "The level directly below the storage account",
+          "correctAnswer": "Container",
+          "explanation": "Correct match: Container."
+        }
+      ]
     },
     {
       "id": "23",
@@ -403,12 +574,30 @@
       "promptImages": [
         "/dp900/question-assets/q24-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q24-answer-1.jpg"
+      "explanation": "Datasets describe data, linked services describe connections, and pipelines orchestrate activities.",
+      "type": "matching",
+      "options": [
+        "Dataset",
+        "Linked service",
+        "Pipeline"
       ],
-      "explanation": "Box 1: Dataset Datasets must be created from paths in Azure datastores or public web URLs, for the data to be accessible by Azure Machine Learning. Box 2: Linked service Linked services are much like connection strings, which define the connection information needed for Data Factory to connect to external resources. Box 3: Pipeline A pipeline is a logical grouping of activities that together perform a task.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Defines the data structure used by an activity",
+          "correctAnswer": "Dataset",
+          "explanation": "Correct match: Dataset."
+        },
+        {
+          "prompt": "Contains connection information to a data source",
+          "correctAnswer": "Linked service",
+          "explanation": "Correct match: Linked service."
+        },
+        {
+          "prompt": "Groups activities into a workflow",
+          "correctAnswer": "Pipeline",
+          "explanation": "Correct match: Pipeline."
+        }
+      ]
     },
     {
       "id": "25",
@@ -419,12 +608,29 @@
       "promptImages": [
         "/dp900/question-assets/q25-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q25-answer-1.jpg"
+      "explanation": "Time- or volume-triggered groups are batch; continuous event ingestion is streaming.",
+      "type": "matching",
+      "options": [
+        "Batch",
+        "Streaming"
       ],
-      "explanation": "Box 1: Batch Batch processing refers to the processing of blocks of data that have already been stored over a period of time. Box 2: Streaming Stream processing is a big data technology that allows us to process data in real-time as they arrive and detect conditions within a small period of time from the point of receiving the data. It allows us to feed data into analytics tools as soon as they get generated and get instant analytics results. Box 3: Batch",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Product catalog loaded every 12 hours",
+          "correctAnswer": "Batch",
+          "explanation": "Correct match: Batch."
+        },
+        {
+          "prompt": "Online purchase events loaded in real time",
+          "correctAnswer": "Streaming",
+          "explanation": "Correct match: Streaming."
+        },
+        {
+          "prompt": "Inventory updates loaded every one million transactions",
+          "correctAnswer": "Batch",
+          "explanation": "Correct match: Batch."
+        }
+      ]
     },
     {
       "id": "26",
@@ -435,13 +641,30 @@
       "promptImages": [
         "/dp900/question-assets/q26-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q26-answer-1.jpg",
-        "/dp900/question-assets/q26-answer-2.jpg"
+      "explanation": "In ELT, transformation runs after loading, inside the destination data warehouse.",
+      "type": "matching",
+      "options": [
+        "An in-memory data integration tool",
+        "The CRM system",
+        "The data warehouse"
       ],
-      "explanation": "Box 1: The CRM system Data is extracted from the CRM system. Box 2: The data warehouse Data is loaded to the data warehouse. Box 3: A standalone data analysis tool The data transformation that takes place usually involves various operations, such as filtering, sorting, aggregating, joining data, cleaning data, deduplicating, and validating data.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Extract",
+          "correctAnswer": "The CRM system",
+          "explanation": "Correct match: The CRM system."
+        },
+        {
+          "prompt": "Load",
+          "correctAnswer": "The data warehouse",
+          "explanation": "Correct match: The data warehouse."
+        },
+        {
+          "prompt": "Transform",
+          "correctAnswer": "The data warehouse",
+          "explanation": "Correct match: The data warehouse."
+        }
+      ]
     },
     {
       "id": "27",
@@ -451,9 +674,6 @@
       "question": "Your company recently reported sales from the third quarter. You have the chart shown in the following exhibit. Which type of analysis is shown in the fourth quarter?",
       "promptImages": [
         "/dp900/question-assets/q27-prompt-1.png"
-      ],
-      "answerImages": [
-        "/dp900/question-assets/q27-answer-1.jpg"
       ],
       "explanation": "Predictive, to answer the question: What will happen?",
       "type": "single_choice",
@@ -490,13 +710,15 @@
       "promptImages": [
         "/dp900/question-assets/q29-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q29-answer-1.jpg",
-        "/dp900/question-assets/q29-answer-2.jpg"
+      "explanation": "Creating closed captions from audio uses speech-to-text, a cognitive AI capability.",
+      "type": "single_choice",
+      "options": [
+        "Cognitive analytics",
+        "Descriptive analytics",
+        "Diagnostic analytics",
+        "Predictive analytics"
       ],
-      "explanation": "Explanation: Descriptive, to answer the question: What's happening? Note: Azure Media Indexer enables you to make content of your media files searchable and to generate a full-text transcript for closed captioning and keywords. You can process one media file or multiple media files in a batch.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Cognitive analytics"
     },
     {
       "id": "30",
@@ -507,13 +729,15 @@
       "promptImages": [
         "/dp900/question-assets/q30-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q30-answer-1.jpg",
-        "/dp900/question-assets/q30-answer-2.jpg"
+      "explanation": "Descriptive analytics reports what happened.",
+      "type": "single_choice",
+      "options": [
+        "Cognitive analytics",
+        "Descriptive analytics",
+        "Diagnostic analytics",
+        "Predictive analytics"
       ],
-      "explanation": "Generally speaking, data analytics comes in four types: 1. Descriptive, to answer the question: What's happening? 2. Diagnostic, to answer the question: Why's happening? 3. Predictive, to answer the question: What will happen? 4. Prescriptive, to answer the question: What actions should we take?",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Descriptive analytics"
     },
     {
       "id": "31",
@@ -556,12 +780,15 @@
       "promptImages": [
         "/dp900/question-assets/q33-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q33-answer-1.jpg"
+      "explanation": "The Cosmos DB for NoSQL/Core SQL API supports SELECT-style queries over JSON documents.",
+      "type": "single_choice",
+      "options": [
+        "Core (SQL)",
+        "Gremlin",
+        "MongoDB",
+        "Table"
       ],
-      "explanation": "Explanation: Azure Cosmos DB SQL API accounts provide support for querying items using the Structured Query Language (SQL) syntax.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Core (SQL)"
     },
     {
       "id": "34",
@@ -587,11 +814,25 @@
       "promptImages": [
         "/dp900/question-assets/q35-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q35-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "ETL transforms before loading. ELT loads first and transforms in the destination, often improving large-scale ingestion speed.",
+      "statements": [
+        {
+          "text": "ETL can remove or mask sensitive data before it is moved to the destination.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "In ELT, data is transformed before it is loaded into the destination.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "ELT can speed loading of very large data volumes by loading first and transforming in the target.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "36",
@@ -602,11 +843,25 @@
       "promptImages": [
         "/dp900/question-assets/q36-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q36-answer-1.jpg"
+      "type": "matching",
+      "explanation": "A database installed on a VM is IaaS; Azure Database for PostgreSQL is a managed PaaS database service.",
+      "options": [
+        "Infrastructure as a service (IaaS)",
+        "Platform as a service (PaaS)",
+        "Software as a service (SaaS)"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "PostgreSQL on Azure Virtual Machines",
+          "correctAnswer": "Infrastructure as a service (IaaS)",
+          "explanation": "Correct match: Infrastructure as a service (IaaS)."
+        },
+        {
+          "prompt": "Azure Database for PostgreSQL",
+          "correctAnswer": "Platform as a service (PaaS)",
+          "explanation": "Correct match: Platform as a service (PaaS)."
+        }
+      ]
     },
     {
       "id": "37",
@@ -647,11 +902,15 @@
       "promptImages": [
         "/dp900/question-assets/q39-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q39-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Relational data is organized into tables made of rows and columns.",
+      "options": [
+        "graph of nodes and edges",
+        "key/value pairs",
+        "tabular form of rows and columns",
+        "unstructured binary objects"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "tabular form of rows and columns"
     },
     {
       "id": "40",
@@ -662,11 +921,25 @@
       "promptImages": [
         "/dp900/question-assets/q40-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q40-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Managed Instance supports multiple databases and cross-database queries. Elastic pools pool Azure SQL databases, not VMs. Azure SQL Database does not support every SQL Server feature.",
+      "statements": [
+        {
+          "text": "Each Azure SQL Managed Instance supports multiple databases that can be accessed by cross-database queries.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Elastic pools share resources across multiple SQL Server instances on Azure Virtual Machines.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Azure SQL Database is fully compatible with every feature of on-premises SQL Server.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "41",
@@ -677,11 +950,15 @@
       "promptImages": [
         "/dp900/question-assets/q41-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q41-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "A stored procedure is saved executable SQL logic in the database.",
+      "options": [
+        "clustered index",
+        "foreign key",
+        "stored procedure",
+        "view"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "stored procedure"
     },
     {
       "id": "42",
@@ -692,12 +969,32 @@
       "promptImages": [
         "/dp900/question-assets/q42-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q42-answer-1.jpg"
+      "explanation": "Explaining why is diagnostic, recommending an action is prescriptive, and recognizing a logo in a document is cognitive image recognition.",
+      "type": "matching",
+      "options": [
+        "Cognitive",
+        "Diagnostic",
+        "Descriptive",
+        "Predictive",
+        "Prescriptive"
       ],
-      "explanation": "Box 1: Diagnostic Diagnostic Analytics: At this stage you can begin to answer some of those why questions. Historical data can begin to be measured against other data to answer the question of why something happened in the past. This is the process of gathering and interpreting different data sets to identify anomalies, detect patters, and determine relationships. Box 2: Prescriptive Prescriptive analytics is a combination of data, mathematical models, and various business rules to infer actions to influence future desired outcomes. Predictive analytics, broadly speaking, is a category of business intelligence that uses descriptive and predictive variables from the past to analyze and identify the likelihood of an unknown future outcome Box 3: Cognitive",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Why did sales increase last month?",
+          "correctAnswer": "Diagnostic",
+          "explanation": "Correct match: Diagnostic."
+        },
+        {
+          "prompt": "How should budget be allocated to inventory?",
+          "correctAnswer": "Prescriptive",
+          "explanation": "Correct match: Prescriptive."
+        },
+        {
+          "prompt": "Which company logo appears in PDF files?",
+          "correctAnswer": "Cognitive",
+          "explanation": "Correct match: Cognitive."
+        }
+      ]
     },
     {
       "id": "43",
@@ -708,11 +1005,25 @@
       "promptImages": [
         "/dp900/question-assets/q43-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q43-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Non-relational stores can use flexible schemas and different structures within the same collection.",
+      "statements": [
+        {
+          "text": "Non-relational data is always stored in tables.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Non-relational data always uses a fixed schema.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Entities in the same collection can have different fields.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "44",
@@ -754,12 +1065,15 @@
       "promptImages": [
         "/dp900/question-assets/q46-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q46-answer-1.jpg"
+      "explanation": "A treemap compares hierarchical categories using nested rectangles.",
+      "type": "single_choice",
+      "options": [
+        "area chart",
+        "funnel chart",
+        "scatter chart",
+        "treemap"
       ],
-      "explanation": "A treemap chart divides the chart area into rectangles that represent the different levels and relative sizes of the data hierarchy.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "treemap"
     },
     {
       "id": "47",
@@ -785,12 +1099,27 @@
       "promptImages": [
         "/dp900/question-assets/q48-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q48-answer-1.jpg"
+      "explanation": "MAX returns the greatest value and MIN the smallest.",
+      "type": "matching",
+      "options": [
+        "AVG",
+        "COUNT",
+        "MAX",
+        "MIN",
+        "SUM"
       ],
-      "explanation": "An aggregate function performs a calculation on a set of values, and returns a single value. The following are aggregate functions: • APPROX_COUNT_DISTINCT • AVG • CHECKSUM_AGG • COUNT • COUNT_BIG GROUPING • GROUPING_ID • MAX • MIN • STDEV • STDEVP • STRING_AGG • SUM • VAR • VARP",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Return the highest value",
+          "correctAnswer": "MAX",
+          "explanation": "Correct match: MAX."
+        },
+        {
+          "prompt": "Return the lowest value",
+          "correctAnswer": "MIN",
+          "explanation": "Correct match: MIN."
+        }
+      ]
     },
     {
       "id": "49",
@@ -801,12 +1130,25 @@
       "promptImages": [
         "/dp900/question-assets/q49-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q49-answer-1.jpg"
-      ],
-      "explanation": "Box 1: Yes Batch processing refers to processing of high volume of data in batch within a specific time span. It processes large volume of data all at once. Batch processing is used when data size is known and finite. It takes little longer time to processes data. Box 2: Yes Stream processing refers to processing of continuous stream of data immediately as it is produced. It analyzes streaming data in real time. Stream processing is used when the data size is unknown and infinite and continuous. Box 3: No",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "A table has one primary key constraint, although that key can contain multiple columns.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "A primary key uniquely identifies each row.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A foreign key links related tables.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A table can have more than one primary key constraint.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "50",
@@ -817,12 +1159,15 @@
       "promptImages": [
         "/dp900/question-assets/q50-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q50-answer-1.jpg"
+      "explanation": "Rows in a relational table conform to the same table schema and column set.",
+      "type": "single_choice",
+      "options": [
+        "different sets of columns",
+        "same set of columns",
+        "no schema",
+        "only one row"
       ],
-      "explanation": "Explanation: The same set of columns. In relational databases, a row is a data record within a table. Each row, which represents a complete record of specific item data, holds different data within the same structure. A row is occasionally referred to as a tuple. Incorrect: Not: a key value pair. Unlike relational databases, key-value databases do not have a specified structure. Relational databases store data in tables where each column has an assigned data type. Key-value databases are a collection of key-value pairs that are stored as individual records and do not have a predefined data structure.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "same set of columns"
     }
   ]
 }

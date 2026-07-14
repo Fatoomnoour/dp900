@@ -46,11 +46,25 @@
       "promptImages": [
         "/dp900/question-assets/q153-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q153-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "A dashboard belongs to a workspace, and its tiles may come from multiple datasets or Excel content.",
+      "statements": [
+        {
+          "text": "A Power BI dashboard is associated with a single workspace.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A Power BI dashboard can only display visualizations from a single dataset.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "A Power BI dashboard can display visualizations from an Excel workbook.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "154",
@@ -77,12 +91,15 @@
       "promptImages": [
         "/dp900/question-assets/q155-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q155-answer-1.jpg"
+      "explanation": "Paginated reports are fixed-layout documents optimized for printing and archiving.",
+      "type": "single_choice",
+      "options": [
+        "dashboard",
+        "interactive report",
+        "paginated report",
+        "subscription"
       ],
-      "explanation": "Paginated Reports in Power BI now allows users to generate these fixed-layout documents optimized for printing and archiving, such as PDF and Word files. These document-style reports with visualizations that provide additional control, like which tables expand horizontally and vertically to display all their data and continue from page to page as needed.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "paginated report"
     },
     {
       "id": "156",
@@ -127,12 +144,25 @@
       "promptImages": [
         "/dp900/question-assets/q158-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q158-answer-1.jpg"
-      ],
-      "explanation": "Box 1: No You can duplicate a dashboard. The duplicate ends up in the same Power BI workspace. There is no current functionality that allows you to move reports from one workspace to another. Box 2: No Box 3: Yes",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "The corrected key is Yes/No/Yes for the current question wording; dashboards can use content from multiple sources and Excel.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "You can copy a dashboard between Power BI workspaces.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A Power BI dashboard can only display visualizations from a single dataset.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "A Power BI dashboard can display visualizations from an Excel workbook.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "159",
@@ -181,12 +211,48 @@
       "promptImages": [
         "/dp900/question-assets/q161-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q161-answer-1.jpg"
+      "explanation": "The architecture maps ingestion, storage, processing, search, semantic modeling, and reporting to the corresponding Azure services.",
+      "type": "matching",
+      "options": [
+        "Azure Cognitive Search",
+        "Azure Data Factory",
+        "Azure Data Lake Storage",
+        "Azure Analysis Services",
+        "Azure Synapse Analytics",
+        "Power BI"
       ],
-      "explanation": "Box Ingest: Azure Data Factory You can build a data ingestion pipeline with Azure Data Factory (ADF). Box Preprocess & model: Azure Synapse Analytics Use Azure Synapse Analytics to preprocess data and deploy machine learning models.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Ingest",
+          "correctAnswer": "Azure Data Factory",
+          "explanation": "Correct match: Azure Data Factory."
+        },
+        {
+          "prompt": "Store",
+          "correctAnswer": "Azure Data Lake Storage",
+          "explanation": "Correct match: Azure Data Lake Storage."
+        },
+        {
+          "prompt": "Preprocess & model",
+          "correctAnswer": "Azure Synapse Analytics",
+          "explanation": "Correct match: Azure Synapse Analytics."
+        },
+        {
+          "prompt": "Search",
+          "correctAnswer": "Azure Cognitive Search",
+          "explanation": "Correct match: Azure Cognitive Search."
+        },
+        {
+          "prompt": "OLAP",
+          "correctAnswer": "Azure Analysis Services",
+          "explanation": "Correct match: Azure Analysis Services."
+        },
+        {
+          "prompt": "Reporting",
+          "correctAnswer": "Power BI",
+          "explanation": "Correct match: Power BI."
+        }
+      ]
     },
     {
       "id": "162",
@@ -197,12 +263,29 @@
       "promptImages": [
         "/dp900/question-assets/q162-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q162-answer-1.jpg"
+      "explanation": "Historical accumulated data is batch; continuous live tracking is streaming.",
+      "type": "matching",
+      "options": [
+        "Batch",
+        "Streaming"
       ],
-      "explanation": "Box 1: Batch The batch processing model requires a set of data that is collected over time while the stream processing model requires data to be fed into an analytics tool, often in micro- batches, and in real-time. The batch Processing model handles a large batch of data while the Stream processing model handles individual records or micro-batches of few records. In Batch Processing, it processes over all or most of the data but in Stream Processing, it processes over data on a rolling window or most recent record. Box 2: Batch Box 3: Streaming",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Analyze web traffic collected during the previous year",
+          "correctAnswer": "Batch",
+          "explanation": "Correct match: Batch."
+        },
+        {
+          "prompt": "Classify images uploaded last month",
+          "correctAnswer": "Batch",
+          "explanation": "Correct match: Batch."
+        },
+        {
+          "prompt": "Track current website users in real time",
+          "correctAnswer": "Streaming",
+          "explanation": "Correct match: Streaming."
+        }
+      ]
     },
     {
       "id": "163",
@@ -213,12 +296,15 @@
       "promptImages": [
         "/dp900/question-assets/q163-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q163-answer-1.jpg"
+      "explanation": "A data warehouse consolidates data from multiple sources for centralized analytics.",
+      "type": "single_choice",
+      "options": [
+        "from a single source is distributed to multiple locations",
+        "from multiple sources is combined in a single location",
+        "is added to a queue for multiple systems to process",
+        "is used to train machine learning models"
       ],
-      "explanation": "Note: The data warehouse workload encompasses: - The entire process of loading data into the warehouse - Performing data warehouse analysis and reporting - Managing data in the data warehouse - Exporting data from the data warehouse",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "from multiple sources is combined in a single location"
     },
     {
       "id": "164",
@@ -229,12 +315,25 @@
       "promptImages": [
         "/dp900/question-assets/q164-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q164-answer-1.jpg"
-      ],
-      "explanation": "Box 1: No A pipeline is a logical grouping of activities that together perform a task. Box 2: Yes You can construct pipeline hierarchies with data factory. Box 3: Yes A pipeline is a logical grouping of activities that together perform a task.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "A pipeline is a logical workflow of activities, can call child pipelines, and each step is an activity.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "A pipeline represents a data structure in Azure Data Factory.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "An Azure Data Factory pipeline can execute another pipeline.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A processing step in a pipeline is an activity.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "165",
@@ -245,12 +344,31 @@
       "promptImages": [
         "/dp900/question-assets/q165-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q165-answer-1.jpg"
+      "explanation": "Data Factory can write Parquet, Data Lake stores the files, and Synapse can expose/query them as tabular analytical data.",
+      "type": "matching",
+      "options": [
+        "Azure Data Factory",
+        "Azure Data Lake Storage",
+        "Azure SQL Database",
+        "Azure Synapse Analytics"
       ],
-      "explanation": "Box 1: Azure Data Factory Box 2: Azure Data Lake Storage Azure Data Lake Storage (ADLA) now natively supports Parquet files. ADLA adds a public preview of the native extractor and outputter for the popular Parquet file format Box 3: Azure Synapse Analytics Use Azure Synapse Analytics Workspaces.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Output data to Parquet format",
+          "correctAnswer": "Azure Data Factory",
+          "explanation": "Correct match: Azure Data Factory."
+        },
+        {
+          "prompt": "Store data that is in Parquet format",
+          "correctAnswer": "Azure Data Lake Storage",
+          "explanation": "Correct match: Azure Data Lake Storage."
+        },
+        {
+          "prompt": "Persist a tabular representation of data stored in Parquet",
+          "correctAnswer": "Azure Synapse Analytics",
+          "explanation": "Correct match: Azure Synapse Analytics."
+        }
+      ]
     },
     {
       "id": "166",
@@ -261,12 +379,25 @@
       "promptImages": [
         "/dp900/question-assets/q166-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q166-answer-1.jpg"
-      ],
-      "explanation": "Box 1: Yes Compute is separate from storage, which enables you to scale compute independently of the data in your system. Box 2: Yes You can use the Azure portal to pause and resume the dedicated SQL pool compute resources. Pausing the data warehouse pauses compute. If your data warehouse was paused for the entire hour, you will not be charged compute during that hour. Box 3: No Storage is sold in 1 TB allocations. If you grow beyond 1 TB of storage, your storage account will automatically grow to 2 TBs.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "Synapse separates compute from scalable storage; dedicated compute can be paused and storage can grow.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "Azure Synapse Analytics scales storage and compute independently.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure Synapse Analytics compute can be paused to reduce cost.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A Synapse data warehouse has a fixed storage capacity.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "167",
@@ -293,12 +424,28 @@
       "promptImages": [
         "/dp900/question-assets/q168-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q168-answer-1.png"
+      "explanation": "Data Factory orchestrates ETL; Synapse Analytics provides the analytical data warehouse.",
+      "type": "matching",
+      "options": [
+        "Azure Analysis Services",
+        "Azure Data Factory",
+        "Azure Table storage",
+        "SQL Server",
+        "Azure Synapse Analytics",
+        "Azure Cosmos DB"
       ],
-      "explanation": "Box 1: Azure Data factory Relevant Azure service for the three ETL phases are Azure Data Factory and SQL Server Integration Services (SSIS). Box 2: Azure Synapse Analytics You can copy and transform data in Azure Synapse Analytics by using Azure Data Factory Note: Azure Synapse Analytics connector is supported for the following activities: - Copy activity with supported source/sink matrix table - Mapping data flow - Lookup activity - GetMetadata activity",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Extract/Transform/Load (ETL)",
+          "correctAnswer": "Azure Data Factory",
+          "explanation": "Correct match: Azure Data Factory."
+        },
+        {
+          "prompt": "Data warehouse",
+          "correctAnswer": "Azure Synapse Analytics",
+          "explanation": "Correct match: Azure Synapse Analytics."
+        }
+      ]
     },
     {
       "id": "169",
@@ -309,11 +456,25 @@
       "promptImages": [
         "/dp900/question-assets/q169-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q169-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Databricks is Spark analytics, Analysis Services is analytical/semantic rather than transactional, and Data Factory orchestrates integration.",
+      "statements": [
+        {
+          "text": "Azure Databricks is an Apache Spark-based analytics platform.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure Analysis Services is used for transactional workloads.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Azure Data Factory orchestrates data integration workflows.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "170",
@@ -339,11 +500,15 @@
       "promptImages": [
         "/dp900/question-assets/q171-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q171-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Batch workloads collect data and run when a schedule, volume, or other trigger condition is met.",
+      "options": [
+        "process data in memory, row-by-row.",
+        "collect and process data at most once a day.",
+        "process data as new data is received in near real-time.",
+        "collect data and then process the data when a condition is met."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "collect data and then process the data when a condition is met."
     },
     {
       "id": "172",
@@ -354,11 +519,25 @@
       "promptImages": [
         "/dp900/question-assets/q172-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q172-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Monthly payroll is batch. Continuously arriving telemetry is streaming even when its arrival frequency is relatively low.",
+      "statements": [
+        {
+          "text": "Processing salary payments once a month is a batch workload.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A wind turbine sending 50 readings per second is a streaming workload.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A home electricity meter sending readings once a day is a streaming workload.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "173",
@@ -384,11 +563,25 @@
       "promptImages": [
         "/dp900/question-assets/q174-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q174-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Stream processing works over recent events with low latency and supports rolling calculations; batch processing is not required to be immediate.",
+      "statements": [
+        {
+          "text": "Stream processing accesses the most recent data in a rolling time window.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Batch processing must occur immediately with seconds or milliseconds of latency.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Stream processing is used for simple response functions and rolling aggregates.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "175",
@@ -403,7 +596,9 @@
         "Synapse Link",
         "Synapse Studio"
       ],
-      "correctAnswer": "Synapse Link"
+      "correctAnswer": "Synapse Link",
+      "statusNote": "Outdated/legacy architecture wording: Azure Synapse Link is the intended answer for near-real-time HTAP-style analytical access.",
+      "explanation": "Synapse Link is the intended source-bank answer for analytical queries over operational data with minimal ETL."
     },
     {
       "id": "176",
@@ -432,11 +627,25 @@
       "promptImages": [
         "/dp900/question-assets/q177-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q177-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Batch handles large accumulated datasets and may have higher latency; streaming usually performs relatively simple low-latency operations.",
+      "statements": [
+        {
+          "text": "Batch processing is optimized for handling large datasets.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Stream processing is optimized for complex analysis of entire datasets.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Batch-processing latency is typically seconds or milliseconds.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "178",
@@ -466,11 +675,14 @@
       "promptImages": [
         "/dp900/question-assets/q179-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q179-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Cosmos DB graph data is queried as vertices/nodes and edges with Gremlin.",
+      "options": [
+        "as nodes and edges by using the Gremlin language",
+        "as a partitioned row store by using Cassandra Query Language (CQL)",
+        "as a partitioned row store by using Language-Integrated Query (LINQ)"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "as nodes and edges by using the Gremlin language"
     },
     {
       "id": "180",
@@ -511,11 +723,15 @@
       "promptImages": [
         "/dp900/question-assets/q182-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q182-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Power BI dashboards are created and managed in the Power BI service.",
+      "options": [
+        "only the Microsoft Power BI Desktop app",
+        "only the Microsoft Power BI mobile app",
+        "only the Microsoft Power BI service",
+        "either Power BI Desktop or the Power BI service"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "only the Microsoft Power BI service"
     },
     {
       "id": "183",
@@ -526,11 +742,30 @@
       "promptImages": [
         "/dp900/question-assets/q183-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q183-answer-1.jpg"
+      "type": "matching",
+      "explanation": "Normalization separates attributes into columns, entities into tables, and uses foreign keys for relationships.",
+      "options": [
+        "Attributes",
+        "Entities",
+        "Foreign keys"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Get separated into individual columns",
+          "correctAnswer": "Attributes",
+          "explanation": "Correct match: Attributes."
+        },
+        {
+          "prompt": "Get separated into individual tables",
+          "correctAnswer": "Entities",
+          "explanation": "Correct match: Entities."
+        },
+        {
+          "prompt": "Link two related entities",
+          "correctAnswer": "Foreign keys",
+          "explanation": "Correct match: Foreign keys."
+        }
+      ]
     },
     {
       "id": "184",
@@ -560,11 +795,36 @@
       "promptImages": [
         "/dp900/question-assets/q185-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q185-answer-1.jpg"
+      "type": "matching",
+      "explanation": "These are the four ACID guarantees.",
+      "options": [
+        "Atomicity",
+        "Consistency",
+        "Isolation",
+        "Durability"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Concurrent transactions cannot interfere with one another",
+          "correctAnswer": "Isolation",
+          "explanation": "Correct match: Isolation."
+        },
+        {
+          "prompt": "A transaction succeeds completely or fails completely",
+          "correctAnswer": "Atomicity",
+          "explanation": "Correct match: Atomicity."
+        },
+        {
+          "prompt": "A transaction moves the database from one valid state to another",
+          "correctAnswer": "Consistency",
+          "explanation": "Correct match: Consistency."
+        },
+        {
+          "prompt": "A committed transaction remains committed",
+          "correctAnswer": "Durability",
+          "explanation": "Correct match: Durability."
+        }
+      ]
     },
     {
       "id": "186",
@@ -591,11 +851,15 @@
       "promptImages": [
         "/dp900/question-assets/q187-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q187-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "ADLS Gen2 requires hierarchical namespace to provide directory and file semantics.",
+      "options": [
+        "Blob soft delete",
+        "Hierarchical namespace",
+        "Large file shares",
+        "Versioning"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Hierarchical namespace"
     },
     {
       "id": "188",
@@ -685,11 +949,15 @@
       "promptImages": [
         "/dp900/question-assets/q193-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q193-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Page blobs are optimized for random reads and writes, such as virtual hard disks.",
+      "options": [
+        "append operations.",
+        "random read and write operations.",
+        "storing key/value data.",
+        "storing large binary objects that change infrequently."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "random read and write operations."
     },
     {
       "id": "194",
@@ -715,11 +983,15 @@
       "promptImages": [
         "/dp900/question-assets/q195-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q195-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "A clustered index orders table rows by the index key.",
+      "options": [
+        "A clustered index",
+        "A FileTable",
+        "A foreign key",
+        "A stored procedure"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "A clustered index"
     },
     {
       "id": "196",
@@ -745,11 +1017,14 @@
       "promptImages": [
         "/dp900/question-assets/q197-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q197-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "A graph has a defined model of vertices and edges with properties, so this exam classifies it as structured data.",
+      "options": [
+        "semi-structured data.",
+        "structured data.",
+        "unstructured data."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "structured data."
     },
     {
       "id": "198",
@@ -760,11 +1035,15 @@
       "promptImages": [
         "/dp900/question-assets/q198-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q198-answer-1.png"
+      "type": "single_choice",
+      "explanation": "Synapse combines SQL data warehousing, data lake integration, and Apache Spark analytics.",
+      "options": [
+        "Azure Databricks",
+        "Azure HDInsight",
+        "Azure Stream Analytics",
+        "Azure Synapse Analytics"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Azure Synapse Analytics"
     },
     {
       "id": "199",
@@ -775,11 +1054,14 @@
       "promptImages": [
         "/dp900/question-assets/q199-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q199-answer-1.png"
+      "type": "single_choice",
+      "explanation": "At the intersection of dimension members, an analytical model exposes an aggregated measure value.",
+      "options": [
+        "a cube.",
+        "an aggregated dimension.",
+        "an aggregated measure."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "an aggregated measure."
     },
     {
       "id": "200",

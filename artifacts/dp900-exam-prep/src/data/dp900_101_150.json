@@ -11,12 +11,15 @@
       "promptImages": [
         "/dp900/question-assets/q101-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q101-answer-1.jpg"
+      "explanation": "Synapse Analytics is designed for large-scale relational analytical workloads and SQL semantics.",
+      "type": "single_choice",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure Data Lake Storage Gen2",
+        "Azure SQL Database",
+        "Azure Synapse Analytics"
       ],
-      "explanation": "Azure Synapse Analytics is an platform as a service (PAAS) that combines data integration, warehousing, and analytics into one solution. Azure Synapse Analytics offers cloud-based, relational data warehousing services, massively parallel processing (MPP) scale-out technology, and enough computational power to efficiently manage petabytes and petabytes of data. Incorrect: * Azure Database for MariaDB is a relational database service based on the open- source MariaDB Server engine. It's a fully managed database as a service offering that can handle mission-critical workloads with predictable performance and dynamic scalability. * Azure SQL Database is a fully managed platform as a service (PaaS) database engine that handles most of the database management functions such as upgrading, patching, backups, and monitoring without user involvement. Azure SQL Database is always running on the latest stable version of the SQL Server database engine and patched OS with 99.99% availability. PaaS capabilities built into Azure SQL Database enable you to focus on the domain-specific database administration and optimization activities that are critical for your business.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "Azure Synapse Analytics"
     },
     {
       "id": "102",
@@ -27,12 +30,15 @@
       "promptImages": [
         "/dp900/question-assets/q102-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q102-answer-1.jpg"
+      "explanation": "A clustered index determines the physical order of table rows by key.",
+      "type": "single_choice",
+      "options": [
+        "A clustered index",
+        "A foreign key",
+        "A stored procedure",
+        "A view"
       ],
-      "explanation": "A clustered index defines the order in which data is physically stored in a table. Table data can be sorted in only way, therefore, there can be only one clustered index per table. In SQL Server, the primary key constraint automatically creates a clustered index on that particular column.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "A clustered index"
     },
     {
       "id": "103",
@@ -58,12 +64,15 @@
       "promptImages": [
         "/dp900/question-assets/q104-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q104-answer-1.jpg"
+      "explanation": "A primary key uniquely identifies each row.",
+      "type": "single_choice",
+      "options": [
+        "foreign key",
+        "nonclustered index",
+        "primary key",
+        "WHERE clause"
       ],
-      "explanation": "A primary key is a special relational database table column (or combination of columns) designated to uniquely identify each table record (row).",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "primary key"
     },
     {
       "id": "105",
@@ -74,12 +83,15 @@
       "promptImages": [
         "/dp900/question-assets/q105-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q105-answer-1.jpg"
+      "explanation": "A view is defined by a query.",
+      "type": "single_choice",
+      "options": [
+        "A foreign key",
+        "A table",
+        "A view",
+        "An index"
       ],
-      "explanation": "A database view is a subset of a database and is based on a query that runs on one or more database tables.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "A view"
     },
     {
       "id": "106",
@@ -122,12 +134,32 @@
       "promptImages": [
         "/dp900/question-assets/q108-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q108-answer-1.jpg"
+      "explanation": "The data model should match the access pattern.",
+      "type": "matching",
+      "options": [
+        "Column-family",
+        "Document",
+        "Graph",
+        "Key/value",
+        "Object"
       ],
-      "explanation": "Box 1: Key/value A key/value store associates each data value with a unique key. Box 2: Object Object storage is optimized for storing and retrieving large binary objects (images, files, video and audio streams, large application data objects and documents, virtual machine disk images). Box 3: Graph A graph database stores two types of information, nodes and edges. Edges specify relationships between nodes. Nodes and edges can have properties that provide information about that node or edge, similar to columns in a table. Edges can also have a direction indicating the nature of the relationship.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Direct lookup by a unique key",
+          "correctAnswer": "Key/value",
+          "explanation": "Correct match: Key/value."
+        },
+        {
+          "prompt": "Store large files such as images and video",
+          "correctAnswer": "Object",
+          "explanation": "Correct match: Object."
+        },
+        {
+          "prompt": "Analyze connected entities and relationships",
+          "correctAnswer": "Graph",
+          "explanation": "Correct match: Graph."
+        }
+      ]
     },
     {
       "id": "109",
@@ -178,7 +210,9 @@
         "Azure Blob storage",
         "Azure Queue storage"
       ],
-      "correctAnswer": "Azure Data Lake Storage"
+      "correctAnswer": "Azure Data Lake Storage",
+      "statusNote": "Terminology correction: ADLS Gen2 uses POSIX-style ACLs for file/directory-level permissions. Azure RBAC generally applies at broader resource scopes.",
+      "explanation": "Azure Data Lake Storage Gen2 supports fine-grained access on directories and files through POSIX-style access control lists (ACLs). Azure RBAC controls access at Azure resource scopes and is not the precise term for per-file/per-directory permissions."
     },
     {
       "id": "112",
@@ -218,11 +252,31 @@
       "promptImages": [
         "/dp900/question-assets/q114-prompt-1.png"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q114-answer-1.jpg"
+      "type": "matching",
+      "explanation": "Cosmos DB APIs expose models suited to graph, document, and table/key-value data.",
+      "options": [
+        "Gremlin API",
+        "MongoDB API",
+        "NoSQL API",
+        "Table API"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Graph data",
+          "correctAnswer": "Gremlin API",
+          "explanation": "Correct match: Gremlin API."
+        },
+        {
+          "prompt": "JSON documents compatible with MongoDB",
+          "correctAnswer": "MongoDB API",
+          "explanation": "Correct match: MongoDB API."
+        },
+        {
+          "prompt": "Key/value table entities",
+          "correctAnswer": "Table API",
+          "explanation": "Correct match: Table API."
+        }
+      ]
     },
     {
       "id": "115",
@@ -233,12 +287,15 @@
       "promptImages": [
         "/dp900/question-assets/q115-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q115-answer-1.jpg"
+      "explanation": "ADLS Gen2 capabilities require the hierarchical namespace on the storage account.",
+      "type": "single_choice",
+      "options": [
+        "enable the hierarchical namespace.",
+        "enable blob soft delete.",
+        "enable large file shares.",
+        "enable versioning."
       ],
-      "explanation": "A key mechanism that allows Azure Data Lake Storage Gen2 to provide file system performance at object storage scale and prices is the addition of a hierarchical namespace. This allows the collection of objects/files within an account to be organized into a hierarchy of directories and nested subdirectories in the same way that the file system on your computer is organized. With a hierarchical namespace enabled, a storage account becomes capable of providing the scalability and cost-effectiveness of object storage, with file system semantics that are familiar to analytics engines and frameworks. One advantage of hierarchical namespace is atomic directory manipulation: Object stores approximate a directory hierarchy by adopting a convention of embedding slashes (/) in the object name to denote path segments.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "enable the hierarchical namespace."
     },
     {
       "id": "116",
@@ -249,11 +306,14 @@
       "promptImages": [
         "/dp900/question-assets/q116-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q116-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Cosmos DB graph data is represented as vertices/nodes and edges and queried with Gremlin.",
+      "options": [
+        "as nodes and edges by using the Gremlin language.",
+        "as a partitioned row store by using Cassandra Query Language (CQL).",
+        "as a partitioned row store by using Language-Integrated Query (LINQ)."
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "as nodes and edges by using the Gremlin language."
     },
     {
       "id": "117",
@@ -312,12 +372,25 @@
       "promptImages": [
         "/dp900/question-assets/q120-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q120-answer-1.jpg"
-      ],
-      "explanation": "Box 1: Yes Azure Databricks can consume data from SQL Databases using JDBC and from SQL Databases using the Apache Spark connector. The Apache Spark connector for Azure SQL Database and SQL Server enables these databases to act as input data sources and output data sinks for Apache Spark jobs. Box 2: Yes You can stream data into Azure Databricks using Event Hubs. Box 3: Yes You can run Spark jobs with data stored in Azure Cosmos DB using the Cosmos DB Spark connector. Cosmos can be used for batch and stream processing, and as a serving layer for low latency access. You can use the connector with Azure Databricks or Azure HDInsight, which provide managed Spark clusters on Azure.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "Each Azure Storage service is optimized for the stated data pattern.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "Azure Blob Storage stores unstructured objects.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure Files provides managed file shares.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Azure Table Storage is a NoSQL key/value-style store.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "121",
@@ -328,12 +401,26 @@
       "promptImages": [
         "/dp900/question-assets/q121-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q121-answer-1.jpg"
+      "explanation": "Cosmos DB supports document queries, while Azure Files exposes SMB shares.",
+      "type": "matching",
+      "options": [
+        "Azure Blob Storage",
+        "Azure Cosmos DB",
+        "Azure Files",
+        "Azure Table storage"
       ],
-      "explanation": "Box 1: Azure Cosmos DB In Azure Cosmos DB's SQL (Core) API, items are stored as JSON. The type system and expressions are restricted to deal only with JSON types. Box 2: Azure Files Azure Files offers native cloud file sharing services based on the SMB protocol.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Run SQL-like queries against JSON documents",
+          "correctAnswer": "Azure Cosmos DB",
+          "explanation": "Correct match: Azure Cosmos DB."
+        },
+        {
+          "prompt": "Access a cloud file share with SMB",
+          "correctAnswer": "Azure Files",
+          "explanation": "Correct match: Azure Files."
+        }
+      ]
     },
     {
       "id": "122",
@@ -344,11 +431,15 @@
       "promptImages": [
         "/dp900/question-assets/q122-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q122-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "An Azure Storage account is the top-level namespace for storage services.",
+      "options": [
+        "account",
+        "container",
+        "file share",
+        "table"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "account"
     },
     {
       "id": "123",
@@ -391,12 +482,30 @@
       "promptImages": [
         "/dp900/question-assets/q125-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q125-answer-1.jpg"
-      ],
-      "explanation": "Box 1: Yes For read access to the secondary region, configure your storage account to use read- access geo-redundant storage (RA-GRS) or read-access geo-zone- redundant storage (RA-GZRS). Box 2: No Box 3: Yes Box 4: Yes Azure Cosmos DB supports multi-region writes.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "Azure Storage has one primary write region; Cosmos DB supports globally distributed reads and optional multi-region writes.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "Azure Table storage can provide concurrent reads from different regions with read-access geo-redundancy.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "A single Azure Table storage account supports concurrent writes to multiple regions.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Cosmos DB for Table can support reads in multiple regions.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Cosmos DB for Table can support writes in multiple regions.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "126",
@@ -407,12 +516,14 @@
       "promptImages": [
         "/dp900/question-assets/q126-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q126-answer-1.jpg"
+      "explanation": "Hierarchical namespace enables directory/file ACL semantics in ADLS Gen2.",
+      "type": "single_choice",
+      "options": [
+        "enable the hierarchical namespace.",
+        "set Account kind to BlobStorage.",
+        "set Replication to Read-access geo-redundant storage (RA-GRS)."
       ],
-      "explanation": "A key mechanism that allows Azure Data Lake Storage Gen2 to provide file system performance at object storage scale and prices is the addition of a hierarchical namespace. This allows the collection of objects/files within an account to be organized into a hierarchy of directories and nested subdirectories in the same way that the file system on your computer is organized. With a hierarchical namespace enabled, a storage account becomes capable of providing the scalability and cost-effectiveness of object storage, with file system semantics that are familiar to analytics engines and frameworks.",
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "enable the hierarchical namespace."
     },
     {
       "id": "127",
@@ -459,7 +570,8 @@
         "columnar",
         "document"
       ],
-      "correctAnswer": "columnar"
+      "correctAnswer": "key/value",
+      "explanation": "Session and shopping-cart data needs fast lookup by a session/user key, which is a key/value access pattern."
     },
     {
       "id": "130",
@@ -486,12 +598,25 @@
       "promptImages": [
         "/dp900/question-assets/q131-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q131-answer-1.jpg"
-      ],
-      "explanation": "Box 1: No The API determines the type of account to create. Azure Cosmos DB provides five APIs: Core (SQL) and MongoDB for document data, Gremlin for graph data, Azure Table, and Cassandra. Currently, you must create a separate account for each API. Box 2: Yes Azure Cosmos DB uses partitioning to scale individual containers in a database to meet the performance needs of your application. In partitioning, the items in a container are divided into distinct subsets called logical partitions. Logical partitions are formed based on the value of a partition key that is associated with each item in a container. Box 3: No Logical partitions are formed based on the value of a partition key that is associated with each item in a container.",
-      "type": "visual_review",
-      "answerText": "A"
+      "explanation": "The API is selected at account creation; a logical partition groups items with the same partition-key value.",
+      "type": "true_false_table",
+      "statements": [
+        {
+          "text": "The Cosmos DB API is configured separately for each database in one account.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "Partition keys help scale data and optimize queries.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Items in the same logical partition can have different partition-key values.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        }
+      ]
     },
     {
       "id": "132",
@@ -499,7 +624,7 @@
       "sourcePage": 111,
       "topic": "DP-900 Source Bank",
       "question": "Your company is designing an application that will write a high volume of JSON data and will have an application-defined schema. Which type of data store should you use?",
-      "explanation": "A key/value store associates each data value with a unique key. An application can store arbitrary data as a set of values. Any schema information must be provided by the application. The key/value store simply retrieves or stores the value by key.",
+      "explanation": "JSON entities with varying properties fit a document database and flexible schema.",
       "type": "single_choice",
       "options": [
         "columnar",
@@ -507,7 +632,8 @@
         "document",
         "graph"
       ],
-      "correctAnswer": "document"
+      "correctAnswer": "document",
+      "statusNote": "Explanation corrected: a document database is appropriate because each JSON document can have a flexible set of properties; this is not a key/value-only explanation."
     },
     {
       "id": "133",
@@ -550,11 +676,25 @@
       "promptImages": [
         "/dp900/question-assets/q135-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q135-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "All three statements describe Azure Storage and ADLS Gen2 correctly.",
+      "statements": [
+        {
+          "text": "Cross-region data transfer can incur additional cost.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "Blob, table, queue, and file services can exist under one general-purpose storage account.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "ADLS Gen2 is implemented using an Azure Storage account.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "136",
@@ -565,11 +705,15 @@
       "promptImages": [
         "/dp900/question-assets/q136-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q136-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "A graph database directly represents connected entities and their relationships.",
+      "options": [
+        "column-family",
+        "document",
+        "graph",
+        "key/value"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "graph"
     },
     {
       "id": "137",
@@ -598,11 +742,30 @@
       "promptImages": [
         "/dp900/question-assets/q138-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q138-answer-1.jpg"
-      ],
-      "type": "visual_review",
-      "answerText": "A"
+      "type": "true_false_table",
+      "explanation": "Logical partitions share one partition-key value, and Azure Table identity is the PartitionKey/RowKey pair.",
+      "statements": [
+        {
+          "text": "A partition key helps distribute Cosmos DB data.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "All items in one logical partition can use different partition-key values.",
+          "correctAnswer": "No",
+          "explanation": "The correct answer is No."
+        },
+        {
+          "text": "A row key identifies an entity within an Azure Table partition.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        },
+        {
+          "text": "PartitionKey plus RowKey uniquely identify an Azure Table entity.",
+          "correctAnswer": "Yes",
+          "explanation": "The correct answer is Yes."
+        }
+      ]
     },
     {
       "id": "139",
@@ -629,11 +792,15 @@
       "promptImages": [
         "/dp900/question-assets/q140-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q140-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "PolyBase lets Synapse SQL query external data in Blob Storage/Data Lake using T-SQL.",
+      "options": [
+        "A hierarchical namespace",
+        "Azure Synapse Link",
+        "PolyBase",
+        "The Data Movement Service (DMS)"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "PolyBase"
     },
     {
       "id": "141",
@@ -704,12 +871,30 @@
       "promptImages": [
         "/dp900/question-assets/q145-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q145-answer-1.jpg"
+      "explanation": "Copy moves data, mapping data flow transforms it, and Lookup is a control-flow activity.",
+      "type": "matching",
+      "options": [
+        "Data movement",
+        "Data transformation",
+        "Control"
       ],
-      "explanation": "Box 1: Data movement Box 2: Data transformation A pipeline could contain a set of activities that ingest and clean log data, and then kick off a mapping data flow to analyze the log data. Box 3: Control Lookup Activity is a control flow activity. Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.",
-      "type": "visual_review",
-      "answerText": "A"
+      "pairs": [
+        {
+          "prompt": "Copy activity",
+          "correctAnswer": "Data movement",
+          "explanation": "Correct match: Data movement."
+        },
+        {
+          "prompt": "Mapping data flow",
+          "correctAnswer": "Data transformation",
+          "explanation": "Correct match: Data transformation."
+        },
+        {
+          "prompt": "Lookup activity",
+          "correctAnswer": "Control",
+          "explanation": "Correct match: Control."
+        }
+      ]
     },
     {
       "id": "146",
@@ -749,7 +934,9 @@
       "correctAnswers": [
         "report and dashboard creation",
         "report sharing and distribution"
-      ]
+      ],
+      "statusNote": "Legacy exam wording: the intended historical Power BI Service capabilities are retained, but the service has gained more authoring features over time.",
+      "explanation": "The historical exam distinction placed full modeling/report authoring in Desktop and sharing/dashboard tasks in the Power BI service. Current service capabilities have expanded, so interpret the choices in the context of the original exam version."
     },
     {
       "id": "148",
@@ -760,11 +947,15 @@
       "promptImages": [
         "/dp900/question-assets/q148-prompt-1.jpg"
       ],
-      "answerImages": [
-        "/dp900/question-assets/q148-answer-1.jpg"
+      "type": "single_choice",
+      "explanation": "Control-flow activities orchestrate dependencies between pipeline activities.",
+      "options": [
+        "a control flow",
+        "a dataset",
+        "a linked service",
+        "an integration runtime"
       ],
-      "type": "visual_review",
-      "answerText": "A"
+      "correctAnswer": "a control flow"
     },
     {
       "id": "149",

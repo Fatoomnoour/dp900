@@ -7,8 +7,9 @@ import data151 from "../data/dp900_151_200.json";
 import data201 from "../data/dp900_201_250.json";
 import data251 from "../data/dp900_251_304.json";
 import dataDump from "../data/dp900_dump.json";
+import dataDp700 from "../data/dp700_verified.json";
 
-const allFiles = [data001, data051, data101, data151, data201, data251];
+const allFiles = [data001, data051, data101, data151, data201, data251, dataDp700];
 
 export const MODULES: Omit<Module, "questions">[] = [
   { id: "module-1", name: "Core Data Concepts", nameEn: "Core Data Concepts", range: "001-050", startId: 1, endId: 50 },
@@ -19,6 +20,7 @@ export const MODULES: Omit<Module, "questions">[] = [
   { id: "module-6", name: "Final Review", nameEn: "Final Review & Mixed Topics", range: "251-304", startId: 251, endId: 304 },
   { id: "module-full", name: "Full Mock Exam", nameEn: "Full Mock Exam (306 entries, Q1-Q304)", range: "001-304", startId: 1, endId: 304 },
   { id: "module-dump", name: "DUMP Questions", nameEn: "Real Exam Dump (82 Questions)", range: "dump", startId: 0, endId: 0 },
+  { id: "module-dp700", name: "DP-700 Verified Practice", nameEn: "Fabric Data Engineer — Verified Review", range: "001-025", startId: 1001, endId: 1025 },
 ];
 
 function getAllRawQuestions(): Question[] {
@@ -42,6 +44,7 @@ export function getModules(): Module[] {
   return MODULES.map((m) => {
     if (m.id === "module-full") return { ...m, questions: all };
     if (m.id === "module-dump") return { ...m, questions: getDumpQuestions() };
+    if (m.id === "module-dp700") return { ...m, questions: (dataDp700 as { questions: unknown[] }).questions as Question[] };
     const qs = all.filter((q) => {
       const numId = typeof q.id === "string" ? parseFloat(q.id) : q.id;
       return numId >= m.startId && numId <= m.endId;

@@ -1,0 +1,487 @@
+{
+  "source": "DP-700 verified review",
+  "range": "001-025",
+  "questions": [
+    {
+      "id": "dp700-1",
+      "sourceNumber": 1,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Spark session isolation",
+      "question": "Bronze and silver Spark processes must run in isolation. Which setting is the most direct choice?",
+      "type": "single_choice",
+      "explanation": "High concurrency shares compatible Spark sessions. Disabling it is the direct setting for independent sessions; executor sizing does not establish session isolation.",
+      "options": [
+        "Disable high concurrency",
+        "Create a custom pool",
+        "Modify the number of executors",
+        "Set the default environment"
+      ],
+      "correctAnswer": "Disable high concurrency",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-engineering/high-concurrency-overview",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-2",
+      "sourceNumber": 2,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Spark session sharing",
+      "question": "Two compatible notebooks must attach to the same running Spark session. What should you enable?",
+      "type": "single_choice",
+      "explanation": "High concurrency enables compatible notebooks to share a Spark session.",
+      "options": [
+        "Enable high concurrency for notebooks",
+        "Enable dynamic allocation",
+        "Change the runtime version",
+        "Increase the number of executors"
+      ],
+      "correctAnswer": "Enable high concurrency for notebooks",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-engineering/high-concurrency-overview",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-3",
+      "sourceNumber": 3,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Lakehouse permissions",
+      "question": "Analysts need SQL-only access to lakehouse tables without workspace membership or Spark/file access. What should you grant?",
+      "type": "single_choice",
+      "explanation": "Direct sharing with SQL endpoint data access gives the required T-SQL access without broader workspace or Spark permissions.",
+      "options": [
+        "Workspace Viewer",
+        "Workspace Contributor",
+        "Direct lakehouse sharing with Read all SQL Endpoint data",
+        "Read all Apache Spark permission"
+      ],
+      "correctAnswer": "Direct lakehouse sharing with Read all SQL Endpoint data",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sharing",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-4",
+      "sourceNumber": 4,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Workspace roles",
+      "question": "A user needs to view workspace items and already has required object-level permissions. Which workspace role is least privileged?",
+      "type": "single_choice",
+      "explanation": "Viewer provides visibility without the broad authoring and write capabilities of Contributor.",
+      "options": [
+        "Admin",
+        "Member",
+        "Contributor",
+        "Viewer"
+      ],
+      "correctAnswer": "Viewer",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/fundamentals/roles-workspaces",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-5",
+      "sourceNumber": 5,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "PII isolation",
+      "question": "An engineer must write Customer data but must not read a PII Employee table. Which design is safest?",
+      "type": "single_choice",
+      "explanation": "Separating sensitive data reduces the permission blast radius and supports least privilege.",
+      "options": [
+        "Grant Admin temporarily",
+        "Move Employee to a separate lakehouse/workspace and grant only required access",
+        "Grant Spark read access to the entire lakehouse",
+        "Add the engineer as Contributor to the PII workspace"
+      ],
+      "correctAnswer": "Move Employee to a separate lakehouse/workspace and grant only required access",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/fundamentals/roles-workspaces",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-6",
+      "sourceNumber": 6,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Warehouse RLS",
+      "question": "Which pair is used for predicate-based RLS in a Fabric warehouse?",
+      "type": "single_choice",
+      "explanation": "The function defines the predicate and the security policy binds it to the protected table.",
+      "options": [
+        "Stored procedure and schema",
+        "Inline table-valued predicate function and security policy",
+        "Primary key and foreign key",
+        "View and index"
+      ],
+      "correctAnswer": "Inline table-valued predicate function and security policy",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-warehouse/row-level-security",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-7",
+      "sourceNumber": 7,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Dynamic data masking",
+      "question": "A user may query CreditCard but values must be partially obscured. Which feature matches?",
+      "type": "single_choice",
+      "explanation": "Masking allows a query while obscuring the returned value; DENY prevents access.",
+      "options": [
+        "Column DENY",
+        "Dynamic data masking with a partial mask",
+        "Row-level security",
+        "Workspace Viewer"
+      ],
+      "correctAnswer": "Dynamic data masking with a partial mask",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-warehouse/dynamic-data-masking",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-8",
+      "sourceNumber": 8,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Lakehouse selection",
+      "question": "A semi-structured dataset is written with Spark, stored as Delta, and queried with Spark and SQL. Which item fits best?",
+      "type": "single_choice",
+      "explanation": "A lakehouse supports Spark, Delta tables, OneLake files, and SQL analytics access.",
+      "options": [
+        "Lakehouse",
+        "Warehouse only",
+        "Eventhouse",
+        "Data mart"
+      ],
+      "correctAnswer": "Lakehouse",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-overview",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-9",
+      "sourceNumber": 9,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Ingestion and orchestration",
+      "question": "An on-premises SQL Server database must be copied into a Fabric warehouse through a gateway. Which item should orchestrate the copy?",
+      "type": "single_choice",
+      "explanation": "A pipeline Copy activity is the standard low-code pattern for source-to-warehouse ingestion through a gateway.",
+      "options": [
+        "KQL queryset",
+        "Data pipeline",
+        "Semantic model",
+        "Eventstream"
+      ],
+      "correctAnswer": "Data pipeline",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-factory/data-pipelines",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-10",
+      "sourceNumber": 10,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Pipeline triggers",
+      "question": "A pipeline must start when a file arrives in storage. Which trigger should you use?",
+      "type": "single_choice",
+      "explanation": "A storage-event trigger responds to file-arrival events; a schedule trigger is time-based.",
+      "options": [
+        "Schedule trigger",
+        "Storage-event trigger",
+        "Manual trigger only",
+        "Query Insights alert"
+      ],
+      "correctAnswer": "Storage-event trigger",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-runs",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-11",
+      "sourceNumber": 11,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "CI/CD authentication",
+      "question": "An Azure DevOps pipeline must call Fabric REST APIs without interactive sign-in. Which authentication method is appropriate?",
+      "type": "single_choice",
+      "explanation": "A service principal provides non-interactive application authentication. A private endpoint handles network access, not identity.",
+      "options": [
+        "Username and password",
+        "Service principal",
+        "Managed private endpoint",
+        "Workspace Viewer"
+      ],
+      "correctAnswer": "Service principal",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/cicd/deployment-pipelines/automate-deployment-pipelines",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-12",
+      "sourceNumber": 12,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Lifecycle management",
+      "question": "Which statement correctly distinguishes Git integration from deployment pipelines?",
+      "type": "single_choice",
+      "explanation": "Git and deployment pipelines are complementary lifecycle-management features.",
+      "options": [
+        "Git versions workspace items; deployment pipelines promote content between stages",
+        "Deployment pipelines replace Git repositories",
+        "Git is only for semantic models",
+        "Deployment pipelines are only for KQL queries"
+      ],
+      "correctAnswer": "Git versions workspace items; deployment pipelines promote content between stages",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-13",
+      "sourceNumber": 13,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Dimensional modeling",
+      "question": "A customer location must be analyzed as it was at the time of each sale. Which SCD type is required?",
+      "type": "single_choice",
+      "explanation": "Type 2 creates versioned rows, commonly with ValidFrom and ValidTo, preserving history.",
+      "options": [
+        "Type 0",
+        "Type 1",
+        "Type 2",
+        "Type 3"
+      ],
+      "correctAnswer": "Type 2",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-warehouse/dimensional-modeling-overview",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-14",
+      "sourceNumber": 14,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Delta maintenance",
+      "question": "A Delta table has thousands of small active Parquet files. Which operation consolidates them?",
+      "type": "single_choice",
+      "explanation": "OPTIMIZE compacts active small files. VACUUM removes obsolete files no longer referenced by the Delta log.",
+      "options": [
+        "OPTIMIZE",
+        "VACUUM",
+        "USER_NAME()",
+        "DENY"
+      ],
+      "correctAnswer": "OPTIMIZE",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-table-maintenance",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-15",
+      "sourceNumber": 15,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Delta maintenance",
+      "question": "A weekly job must remove old files no longer referenced by a Delta table log. Which operation is appropriate?",
+      "type": "single_choice",
+      "explanation": "VACUUM removes obsolete files subject to retention and time-travel considerations.",
+      "options": [
+        "VACUUM",
+        "OPTIMIZE",
+        "ROLLUP",
+        "CUBE"
+      ],
+      "correctAnswer": "VACUUM",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-table-maintenance",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-16",
+      "sourceNumber": 16,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "V-Order",
+      "question": "Which statement best describes V-Order?",
+      "type": "single_choice",
+      "explanation": "V-Order improves compression and read efficiency but can add write overhead; it is not file deletion or RLS.",
+      "options": [
+        "A write-time Parquet layout optimization for read-heavy workloads",
+        "A command that deletes obsolete files",
+        "An RLS function",
+        "A requirement for every Spark read"
+      ],
+      "correctAnswer": "A write-time Parquet layout optimization for read-heavy workloads",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-engineering/delta-optimization-and-v-order",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-17",
+      "sourceNumber": 17,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Direct Lake fundamentals",
+      "question": "Compared with Import refresh, a normal Direct Lake refresh primarily performs what operation?",
+      "type": "single_choice",
+      "explanation": "Direct Lake framing analyzes Delta metadata and updates references; it is not a full Import-style data copy.",
+      "options": [
+        "Copies the entire dataset into a semantic-model cache",
+        "Updates metadata references, known as framing",
+        "Deletes the Delta table",
+        "Converts all tables to DirectQuery"
+      ],
+      "correctAnswer": "Updates metadata references, known as framing",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-overview",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-18",
+      "sourceNumber": 18,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Direct Lake modes",
+      "question": "Which statement distinguishes Direct Lake on OneLake from Direct Lake on SQL?",
+      "type": "single_choice",
+      "explanation": "Direct Lake on OneLake reads supported Delta sources through OneLake; Direct Lake on SQL can fall back to DirectQuery in some cases.",
+      "options": [
+        "OneLake can use Fabric Delta sources without SQL endpoint DirectQuery fallback",
+        "OneLake always requires SQL views",
+        "OneLake is identical to DirectQuery",
+        "OneLake cannot use Delta tables"
+      ],
+      "correctAnswer": "OneLake can use Fabric Delta sources without SQL endpoint DirectQuery fallback",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-overview",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-19",
+      "sourceNumber": 19,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Direct Lake fallback",
+      "question": "A Direct Lake on SQL model uses a SQL view. What can happen?",
+      "type": "single_choice",
+      "explanation": "Direct Lake on SQL can fall back when it cannot load directly from a Delta table, including view scenarios.",
+      "options": [
+        "The table may fall back to DirectQuery",
+        "The view is automatically converted to Delta",
+        "RLS is disabled globally",
+        "The workspace becomes Pro mode"
+      ],
+      "correctAnswer": "The table may fall back to DirectQuery",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-how-it-works",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-20",
+      "sourceNumber": 20,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Direct Lake performance",
+      "question": "Which layout is generally recommended for Power BI Direct Lake consumption?",
+      "type": "single_choice",
+      "explanation": "Current cross-workload guidance emphasizes large row groups, fewer files, consistent sizes, and V-Order for Direct Lake.",
+      "options": [
+        "Many tiny row groups",
+        "Large row groups, commonly about 8 million or more rows when appropriate",
+        "One row per file",
+        "No row groups"
+      ],
+      "correctAnswer": "Large row groups, commonly about 8 million or more rows when appropriate",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/fundamentals/table-maintenance-optimization",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-21",
+      "sourceNumber": 21,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Direct Lake guardrails",
+      "question": "A Direct Lake model exceeds a capacity-specific guardrail and visuals show errors. Which action may directly address the capacity constraint?",
+      "type": "single_choice",
+      "explanation": "Guardrails are capacity-specific. Scaling can add headroom, but model/layout optimization and cost must also be considered.",
+      "options": [
+        "Scale to an appropriate higher Fabric capacity",
+        "Rename the report",
+        "Run USER_NAME()",
+        "Add a dashboard filter"
+      ],
+      "correctAnswer": "Scale to an appropriate higher Fabric capacity",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-overview",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-22",
+      "sourceNumber": 22,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Direct Lake memory residency",
+      "question": "Which state generally provides the best Direct Lake response performance?",
+      "type": "single_choice",
+      "explanation": "Warm data is resident in memory; hot data also benefits from populated caches. Cold queries incur loading/transcoding work.",
+      "options": [
+        "Cold",
+        "Warm or hot",
+        "Unframed",
+        "Vacuumed"
+      ],
+      "correctAnswer": "Warm or hot",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-understand-storage",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-23",
+      "sourceNumber": 23,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Warehouse monitoring",
+      "question": "You need historical warehouse query statements and submitting users. Which tool should you use?",
+      "type": "single_choice",
+      "explanation": "Query Insights is for historical query analysis; active-session DMVs answer a different question.",
+      "options": [
+        "Query Insights",
+        "Workspace Viewer",
+        "Eventstream window",
+        "VACUUM"
+      ],
+      "correctAnswer": "Query Insights",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-warehouse/query-insights",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-24",
+      "sourceNumber": 24,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Warehouse monitoring",
+      "question": "You need current active database sessions and users. Which tool is appropriate?",
+      "type": "single_choice",
+      "explanation": "Session DMVs expose current session information; they are not historical query views.",
+      "options": [
+        "Dynamic management views such as sys.dm_exec_sessions",
+        "Deployment pipeline comparison",
+        "Endorsement settings",
+        "Shortcut cache"
+      ],
+      "correctAnswer": "Dynamic management views such as sys.dm_exec_sessions",
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-warehouse/monitor",
+      "reviewStatus": "independently verified"
+    },
+    {
+      "id": "dp700-25",
+      "sourceNumber": 25,
+      "source": "DP-700 verified review",
+      "sourcePage": null,
+      "topic": "Dimensional modeling",
+      "question": "Which three columns normally belong in a product dimension?",
+      "type": "multiple_choice",
+      "explanation": "Product identifiers and descriptive attributes belong in DimProduct; transactional measures and identifiers belong in the fact.",
+      "options": [
+        "Date",
+        "ProductName",
+        "ProductColor",
+        "TransactionID",
+        "SalesAmount",
+        "ProductID"
+      ],
+      "correctAnswers": [
+        "ProductName",
+        "ProductColor",
+        "ProductID"
+      ],
+      "officialReference": "https://learn.microsoft.com/en-us/fabric/data-warehouse/dimensional-modeling-overview",
+      "reviewStatus": "independently verified"
+    }
+  ]
+}
